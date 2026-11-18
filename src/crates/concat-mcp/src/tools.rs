@@ -24,7 +24,9 @@ use crate::backend::Backend;
 use crate::schema::Schemas;
 use crate::summary;
 
+#[rustfmt::skip]
 mod capcut_bridge;
+#[rustfmt::skip]
 mod capcut_tools;
 
 /// The longest preview side handed back when the agent names no size: a
@@ -762,7 +764,8 @@ fn run(tool: &Tool, arguments: Value, context: Context<'_>) -> Result<Outcome, A
         Action::CapCutTranslate => {
             let command = capcut_bridge::translate(&arguments);
             let path = arguments.get("path").cloned().unwrap_or(Value::Null);
-            let result = backend.call(request("edit.apply", json!({ "path": path, "command": command }))?)?;
+            let request = request("edit.apply", json!({ "path": path, "command": command }))?;
+            let result = backend.call(request)?;
             Ok(Outcome::json(summary::view(&result)))
         }
     }
