@@ -1,0 +1,250 @@
+{
+  "count": 27,
+  "source": "google/fonts GitHub (SIL OFL 1.1 / Apache 2.0)",
+  "note": "Free for personal and commercial use. Keep license files with the fonts.",
+  "fonts": [
+    {
+      "family": "Anton",
+      "file": "anton-Regular.ttf",
+      "category": "Display / impact (titles, kinetic text)",
+      "licenseFile": "anton-Regular.ttf-LICENSE.txt",
+      "licenseType": "OFL",
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/anton/Anton-Regular.ttf",
+      "bytes": 170812
+    },
+    {
+      "family": "Bebas Neue",
+      "file": "bebasneue-Regular.ttf",
+      "category": "Display / impact (titles, kinetic text)",
+      "licenseFile": "bebasneue-Regular.ttf-LICENSE.txt",
+      "licenseType": "OFL",
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/bebasneue/BebasNeue-Regular.ttf",
+      "bytes": 61400
+    },
+    {
+      "family": "Archivo Black",
+      "file": "archivoblack-Regular.ttf",
+      "category": "Display / impact (titles, kinetic text)",
+      "licenseFile": "archivoblack-Regular.ttf-LICENSE.txt",
+      "licenseType": "OFL",
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/archivoblack/ArchivoBlack-Regular.ttf",
+      "bytes": 90988
+    },
+    {
+      "family": "Oswald",
+      "file": "oswald-Regular.ttf",
+      "category": "Display / impact (titles, kinetic text)",
+      "licenseFile": "oswald-Regular.ttf-LICENSE.txt",
+      "licenseType": "OFL",
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/oswald/Oswald%5Bwght%5D.ttf",
+      "bytes": 172088
+    },
+    {
+      "family": "Alfa Slab One",
+      "file": "alfaslabone-Regular.ttf",
+      "category": "Display / impact (titles, kinetic text)",
+      "licenseFile": "alfaslabone-Regular.ttf-LICENSE.txt",
+      "licenseType": "OFL",
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/alfaslabone/AlfaSlabOne-Regular.ttf",
+      "bytes": 97376
+    },
+    {
+      "family": "Abril Fatface",
+      "file": "abrilfatface-Regular.ttf",
+      "category": "Display / impact (titles, kinetic text)",
+      "licenseFile": "abrilfatface-Regular.ttf-LICENSE.txt",
+      "licenseType": "OFL",
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/abrilfatface/AbrilFatface-Regular.ttf",
+      "bytes": 67364
+    },
+    {
+      "family": "Bangers",
+      "file": "bangers-Regular.ttf",
+      "category": "Display / impact (titles, kinetic text)",
+      "licenseFile": "bangers-Regular.ttf-LICENSE.txt",
+      "licenseType": "OFL",
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/bangers/Bangers-Regular.ttf",
+      "bytes": 93148
+    },
+    {
+      "family": "Teko",
+      "file": "teko-Regular.ttf",
+      "category": "Display / impact (titles, kinetic text)",
+      "licenseFile": "teko-Regular.ttf-LICENSE.txt",
+      "licenseType": "OFL",
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/teko/Teko%5Bwght%5D.ttf",
+      "bytes": 292108
+    },
+    {
+      "family": "Inter",
+      "file": "inter-Regular.ttf",
+      "category": "Clean sans (captions, UI, lower thirds)",
+      "licenseFile": "inter-Regular.ttf-LICENSE.txt",
+      "licenseType": "OFL",
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/inter/Inter%5Bopsz%2Cwght%5D.ttf",
+      "bytes": 876576
+    },
+    {
+      "family": "Montserrat",
+      "file": "montserrat-Regular.ttf",
+      "category": "Clean sans (captions, UI, lower thirds)",
+      "licenseFile": "montserrat-Regular.ttf-LICENSE.txt",
+      "licenseType": "OFL",
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/montserrat/Montserrat%5Bwght%5D.ttf",
+      "bytes": 744936
+    },
+    {
+      "family": "Poppins",
+      "file": "poppins-Regular.ttf",
+      "category": "Clean sans (captions, UI, lower thirds)",
+      "licenseFile": "poppins-Regular.ttf-LICENSE.txt",
+      "licenseType": "OFL",
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/poppins/Poppins-Black.ttf",
+      "bytes": 153440
+    },
+    {
+      "family": "Roboto",
+      "file": "roboto-Regular.ttf",
+      "category": "Clean sans (captions, UI, lower thirds)",
+      "licenseFile": "roboto-Regular.ttf-LICENSE.txt",
+      "licenseType": "OFL",
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/roboto/Roboto%5Bwdth%2Cwght%5D.ttf",
+      "bytes": 488584
+    },
+    {
+      "family": "Open Sans",
+      "file": "opensans-Regular.ttf",
+      "category": "Clean sans (captions, UI, lower thirds)",
+      "licenseFile": "opensans-Regular.ttf-LICENSE.txt",
+      "licenseType": "OFL",
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/opensans/OpenSans%5Bwdth%2Cwght%5D.ttf",
+      "bytes": 532636
+    },
+    {
+      "family": "Lato",
+      "file": "lato-Regular.ttf",
+      "category": "Clean sans (captions, UI, lower thirds)",
+      "licenseFile": "lato-Regular.ttf-LICENSE.txt",
+      "licenseType": "OFL",
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/lato/Lato-Black.ttf",
+      "bytes": 664748
+    },
+    {
+      "family": "Raleway",
+      "file": "raleway-Regular.ttf",
+      "category": "Clean sans (captions, UI, lower thirds)",
+      "licenseFile": "raleway-Regular.ttf-LICENSE.txt",
+      "licenseType": "OFL",
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/raleway/Raleway%5Bwght%5D.ttf",
+      "bytes": 312352
+    },
+    {
+      "family": "Work Sans",
+      "file": "worksans-Regular.ttf",
+      "category": "Clean sans (captions, UI, lower thirds)",
+      "licenseFile": "worksans-Regular.ttf-LICENSE.txt",
+      "licenseType": "OFL",
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/worksans/WorkSans%5Bwght%5D.ttf",
+      "bytes": 361072
+    },
+    {
+      "family": "Playfair Display",
+      "file": "playfairdisplay-Regular.ttf",
+      "category": "Serif (elegant, editorial)",
+      "licenseFile": "playfairdisplay-Regular.ttf-LICENSE.txt",
+      "licenseType": "OFL",
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/playfairdisplay/PlayfairDisplay%5Bwght%5D.ttf",
+      "bytes": 300724
+    },
+    {
+      "family": "Merriweather",
+      "file": "merriweather-Regular.ttf",
+      "category": "Serif (elegant, editorial)",
+      "licenseFile": "merriweather-Regular.ttf-LICENSE.txt",
+      "licenseType": "OFL",
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/merriweather/Merriweather%5Bopsz%2Cwdth%2Cwght%5D.ttf",
+      "bytes": 4628080
+    },
+    {
+      "family": "Lora",
+      "file": "lora-Regular.ttf",
+      "category": "Serif (elegant, editorial)",
+      "licenseFile": "lora-Regular.ttf-LICENSE.txt",
+      "licenseType": "OFL",
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/lora/Lora%5Bwght%5D.ttf",
+      "bytes": 212196
+    },
+    {
+      "family": "Cormorant Garamond",
+      "file": "cormorantgaramond-Regular.ttf",
+      "category": "Serif (elegant, editorial)",
+      "licenseFile": "cormorantgaramond-Regular.ttf-LICENSE.txt",
+      "licenseType": "OFL",
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/cormorantgaramond/CormorantGaramond%5Bwght%5D.ttf",
+      "bytes": 1195560
+    },
+    {
+      "family": "Dancing Script",
+      "file": "dancingscript-Regular.ttf",
+      "category": "Script / handwriting",
+      "licenseFile": "dancingscript-Regular.ttf-LICENSE.txt",
+      "licenseType": "OFL",
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/dancingscript/DancingScript%5Bwght%5D.ttf",
+      "bytes": 133636
+    },
+    {
+      "family": "Pacifico",
+      "file": "pacifico-Regular.ttf",
+      "category": "Script / handwriting",
+      "licenseFile": "pacifico-Regular.ttf-LICENSE.txt",
+      "licenseType": "OFL",
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/pacifico/Pacifico-Regular.ttf",
+      "bytes": 329380
+    },
+    {
+      "family": "Caveat",
+      "file": "caveat-Regular.ttf",
+      "category": "Script / handwriting",
+      "licenseFile": "caveat-Regular.ttf-LICENSE.txt",
+      "licenseType": "OFL",
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/caveat/Caveat%5Bwght%5D.ttf",
+      "bytes": 403648
+    },
+    {
+      "family": "JetBrains Mono",
+      "file": "jetbrainsmono-Regular.ttf",
+      "category": "Mono / tech",
+      "licenseFile": "jetbrainsmono-Regular.ttf-LICENSE.txt",
+      "licenseType": "OFL",
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/jetbrainsmono/JetBrainsMono%5Bwght%5D.ttf",
+      "bytes": 187208
+    },
+    {
+      "family": "Fira Code",
+      "file": "firacode-Regular.ttf",
+      "category": "Mono / tech",
+      "licenseFile": "firacode-Regular.ttf-LICENSE.txt",
+      "licenseType": "OFL",
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/firacode/FiraCode%5Bwght%5D.ttf",
+      "bytes": 260364
+    },
+    {
+      "family": "Roboto Mono",
+      "file": "robotomono-Regular.ttf",
+      "category": "Mono / tech",
+      "licenseFile": "robotomono-Regular.ttf-LICENSE.txt",
+      "licenseType": "OFL",
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/robotomono/RobotoMono%5Bwght%5D.ttf",
+      "bytes": 183700
+    },
+    {
+      "family": "Space Mono",
+      "file": "spacemono-Regular.ttf",
+      "category": "Mono / tech",
+      "licenseFile": "spacemono-Regular.ttf-LICENSE.txt",
+      "licenseType": "OFL",
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/spacemono/SpaceMono-Bold.ttf",
+      "bytes": 98232
+    }
+  ]
+}
