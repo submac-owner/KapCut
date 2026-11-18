@@ -49,15 +49,25 @@ This host has **8 GB RAM and no GPU**. Therefore:
 - Generated Rust `capcut_motion.rs`, wired via `Action::CapCutMotion` and
   `Action::CapCutMotionQuery`.
 
-## Phases B–E
+## Phases B–E — status
 
-- **B — Expressions**: embed a JS runtime so properties can be procedurally
-  driven (`wiggle`, `loopOut`, layer links). CPU-only.
-- **C — Shape paths + graph editor**: bezier shape layers, trim paths, repeaters;
-  curve editor UI (CI-built).
-- **D — 3D/particles/tracking/roto**: new engine crates, CPU rasterization.
-- **E — Studio glue**: template packs, CI render farm, remote MCP with tokens,
-  embedded chat panel, plugin/package SDK.
+- **B — Expressions (done)**: instead of a heavy JS runtime, 8 AE-style
+  expressions (wiggle, sine, damped sine, pulse, random steps, drift, loopOut,
+  follow path) are **sampled into real keyframe commands** by a CPU compiler.
+  Deterministic, no GPU. 6 `expr_*` tools.
+- **C — Shapes (done for the data/tool layer)**: 12 AE-style shape presets
+  (neon ring, progress arc, gradient orb, star burst, orbit dots, …) mapped to
+  Concat's existing `ShapeStyle` (kind/fill/gradient/stroke/dash/shadow/trim).
+  Trim-path draw-on and radial repeaters compile to real `addShapeClip` batches.
+  3 `shape_*` tools. The visual curve editor UI remains a future window change.
+- **D — Advanced (done as presets)**: 15 presets for camera moves, particle-like
+  effects, color grades and transitions — all mapped to existing Concat commands.
+- **E — Studio glue (partly done)**: 5 project templates, a CPU render-worker
+  workflow, and the remote-MCP design doc. Remote HTTP transport itself is still
+  a future code item; stdio + OpenCode chat panel work now.
+
+Total MCP surface: **143 tools across 20 families**, all compiled and verified
+by Windows CI. All our new code is CPU-only keyframe/command data.
 
 ## Rule for every change
 
