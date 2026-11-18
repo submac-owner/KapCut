@@ -212,6 +212,21 @@ add("style","style_mix","Mix styles","Blend two style presets.","op","batch")
 add("style","style_template","Apply template","Instantiate a CapCut-style template.","op","batch")
 add("style","style_random","Random style","Generate a randomized style combination.","op","batch")
 
+# ---- motion / compositing (14) ----
+add("motion","motion_list_presets","List motion presets","List named motion-graphics presets with kind and duration.","motion_query","capcut_motion")
+add("motion","motion_apply_preset","Apply motion preset","Compile a named preset into keyframed edits on a clip.","motion","capcut_motion")
+add("motion","motion_key_add","Add motion key","Keyframe scale/offset/rotation/stretch/opacity/volume at 0..1.","op","setClipKey")
+add("motion","motion_key_clear","Clear motion key","Remove one keyframe from a property.","op","clearClipKey",destructive=True)
+add("motion","motion_keys_clear","Clear motion keys","Remove all keys from a property.","op","clearClipKeys",destructive=True)
+add("motion","motion_effect_animate","Animate effect param","Keyframe a parameter of a clip effect link.","op","setEffectKey")
+add("motion","motion_mask_animate","Animate mask","Keyframe a mask parameter.","op","setMaskKey")
+add("motion","motion_shape_add","Add shape layer","Add an animated shape layer (AE-style motion graphics).","op","addShapeClip")
+add("motion","motion_loop","Loop motion","Repeat a preset cycle across a clip.","motion","capcut_motion")
+add("motion","motion_text_animate","Animate text","Apply a per-character/word kinetic text animation preset.","motion","capcut_motion")
+add("motion","motion_copy","Copy motion","Copy all keyframes from one clip to another.","motion","capcut_motion")
+add("motion","motion_ffmpeg_graph","CPU render graph","Get the CPU-only FFmpeg filter graph for a preset.","motion_query","capcut_motion")
+add("motion","motion_compile","Compile motion","Compile a preset into a Concat batch command.","motion","capcut_motion")
+
 add("agent","kapcut_translate","Translate CapCut material",
     "Translate a CapCut material (capcutType/value or effectName/start/duration) into real Concat edit commands.","bridge","capcut_bridge")
 
@@ -274,6 +289,10 @@ lines = [
 for t in T:
     if t["target_kind"] == "bridge":
         action = "Action::CapCutTranslate"
+    elif t["target_kind"] == "motion":
+        action = "Action::CapCutMotion"
+    elif t["target_kind"] == "motion_query":
+        action = "Action::CapCutMotionQuery"
     elif t["target_kind"] == "op":
         action = "Action::Command { op: " + rs_str(t["target"]) + " }"
     else:

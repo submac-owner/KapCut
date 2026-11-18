@@ -27,6 +27,8 @@ use crate::summary;
 #[rustfmt::skip]
 mod capcut_bridge;
 #[rustfmt::skip]
+mod capcut_motion;
+#[rustfmt::skip]
 mod capcut_tools;
 
 /// The longest preview side handed back when the agent names no size: a
@@ -86,6 +88,10 @@ pub enum Action {
     PreviewFrame,
     /// Translate a CapCut material into Concat edit commands and apply them.
     CapCutTranslate,
+    /// Compile a motion preset into Concat keyframe commands and apply them.
+    CapCutMotion,
+    /// Query motion presets or the CPU FFmpeg render graph (read-only).
+    CapCutMotionQuery,
 }
 
 /// How a reply is shown to the agent.
@@ -767,6 +773,23 @@ fn run(tool: &Tool, arguments: Value, context: Context<'_>) -> Result<Outcome, A
             let request = request("edit.apply", json!({ "path": path, "command": command }))?;
             let result = backend.call(request)?;
             Ok(Outcome::json(summary::view(&result)))
+        }
+        Action::CapCutMotion => {
+            let command = capcut_motion::compile(&arguments);
+            let path = arguments.get("path").cloned().unwrap_or(Value::Null);
+            let request = request("edit.apply", json!({ "path": path, "command": command }))?;
+            let result = backend.call(request)?;
+            Ok(Outcome::json(summary::view(&result)))
+        }
+        Action::CapCutMotionQuery => {
+            let want_graph = arguments.get("presetId").is_some()
+                && arguments.get("graph").and_then(Value::as_bool).unwrap_or(false);
+            let out = if want_graph {
+                capcut_motion::ffmpeg_graph(&arguments)
+            } else {
+                capcut_motion::list_presets()
+            };
+            Ok(Outcome::json(out))
         }
     }
 }
