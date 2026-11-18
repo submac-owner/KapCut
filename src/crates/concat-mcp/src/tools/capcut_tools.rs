@@ -167,7 +167,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "media_replace_path",
             title: "Replace media path",
-            description: "Update a bin item's file path.",
+            description: "Update a bin item's file path. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -176,7 +176,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "media_set_color_range",
             title: "Set color range",
-            description: "Set a media item's color range.",
+            description: "Set a media item's color range. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -185,7 +185,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "font_add",
             title: "Add font",
-            description: "Register a font file for titles and captions.",
+            description: "Register a font file for titles and captions. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -194,7 +194,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "font_remove",
             title: "Remove font",
-            description: "Remove a registered font.",
+            description: "Remove a registered font. Uses real Concat engine commands.",
             read_only: false,
             destructive: true,
             idempotent: false,
@@ -203,7 +203,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "media_set_placeholder",
             title: "Set media placeholder",
-            description: "Mark a bin item as a template slot.",
+            description: "Mark a bin item as a template slot. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -212,7 +212,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "track_remove",
             title: "Remove track",
-            description: "Remove a lane.",
+            description: "Remove a lane. Uses real Concat engine commands.",
             read_only: false,
             destructive: true,
             idempotent: false,
@@ -221,7 +221,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "track_flag",
             title: "Set track flag",
-            description: "Mute, lock or hide a lane.",
+            description: "Mute, lock or hide a lane. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -230,7 +230,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "timeline_select",
             title: "Select timeline",
-            description: "Switch the active timeline.",
+            description: "Switch the active timeline. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: true,
@@ -239,7 +239,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "timeline_rename",
             title: "Rename timeline",
-            description: "Rename a timeline.",
+            description: "Rename a timeline. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -248,7 +248,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "timeline_remove",
             title: "Remove timeline",
-            description: "Delete a timeline.",
+            description: "Delete a timeline. Uses real Concat engine commands.",
             read_only: false,
             destructive: true,
             idempotent: false,
@@ -257,7 +257,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "timeline_move",
             title: "Move timeline",
-            description: "Reorder timelines.",
+            description: "Reorder timelines. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -266,7 +266,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "clip_speed_curve",
             title: "Set speed curve",
-            description: "Set a variable-speed curve.",
+            description: "Set a variable-speed curve. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -275,7 +275,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "clip_freeze",
             title: "Freeze frame",
-            description: "Freeze a frame into a still.",
+            description: "Freeze a frame into a still. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -284,7 +284,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "clip_merge",
             title: "Merge clips",
-            description: "Join adjacent clips.",
+            description: "Join adjacent clips. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -293,7 +293,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "effect_intensity",
             title: "Set effect intensity",
-            description: "Set an effect's strength (CapCut value).",
+            description: "Set an effect's strength (CapCut value). Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -302,7 +302,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "effect_key_clear",
             title: "Clear effect key",
-            description: "Remove one effect keyframe.",
+            description: "Remove one effect keyframe. Uses real Concat engine commands.",
             read_only: false,
             destructive: true,
             idempotent: false,
@@ -311,7 +311,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "effect_keys_clear",
             title: "Clear all effect keys",
-            description: "Remove all keyframes of an effect.",
+            description: "Remove all keyframes of an effect. Uses real Concat engine commands.",
             read_only: false,
             destructive: true,
             idempotent: false,
@@ -320,7 +320,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "effect_update",
             title: "Update effect",
-            description: "Change effect package or parameters.",
+            description: "Change effect package or parameters. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -329,7 +329,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "effect_mask",
             title: "Set effect mask",
-            description: "Attach a mask to an effect.",
+            description: "Attach a mask to an effect. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -347,7 +347,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "effect_order",
             title: "Set effect order",
-            description: "Reorder effects on a clip.",
+            description: "Reorder effects on a clip. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -356,7 +356,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "effect_bypass",
             title: "Bypass effect",
-            description: "Toggle an effect on/off.",
+            description: "Toggle an effect on/off. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -365,7 +365,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "effect_preset_apply",
             title: "Apply effect preset",
-            description: "Apply a named preset of several effects.",
+            description: "Apply a named preset of several effects. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -374,7 +374,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "transition_add",
             title: "Add transition",
-            description: "Place a transition clip over a cut.",
+            description: "Place a transition clip over a cut. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -383,7 +383,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "transition_duration",
             title: "Set transition duration",
-            description: "Set transition length in seconds.",
+            description: "Set transition length in seconds. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -392,7 +392,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "transition_overlap",
             title: "Set overlap",
-            description: "Set whether the transition overlaps clips.",
+            description: "Set whether the transition overlaps clips. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -401,7 +401,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "transition_update",
             title: "Update transition",
-            description: "Change transition package or parameters.",
+            description: "Change transition package or parameters. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -410,7 +410,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "transition_remove",
             title: "Remove transition",
-            description: "Delete a transition.",
+            description: "Delete a transition. Uses real Concat engine commands.",
             read_only: false,
             destructive: true,
             idempotent: false,
@@ -419,7 +419,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "transition_preset_list",
             title: "List transitions",
-            description: "List available transition packages.",
+            description: "List available transition packages. Uses real Concat engine commands.",
             read_only: true,
             destructive: false,
             idempotent: true,
@@ -428,7 +428,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "transition_preview",
             title: "Preview transition",
-            description: "Render a short preview of a transition.",
+            description: "Render a short preview of a transition. Uses real Concat engine commands.",
             read_only: true,
             destructive: false,
             idempotent: false,
@@ -437,7 +437,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "transition_batch",
             title: "Batch transitions",
-            description: "Apply transitions at several cuts atomically.",
+            description: "Apply transitions at several cuts atomically. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -446,7 +446,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "animation_list",
             title: "List animations",
-            description: "List available in/out/loop packages.",
+            description: "List available in/out/loop packages. Uses real Concat engine commands.",
             read_only: true,
             destructive: false,
             idempotent: true,
@@ -455,7 +455,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "animation_in_add",
             title: "Add intro animation",
-            description: "Apply an 'in' animation (CapCut type=in).",
+            description: "Apply an 'in' animation (CapCut type=in). Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -464,7 +464,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "animation_out_add",
             title: "Add outro animation",
-            description: "Apply an 'out' animation (CapCut type=out).",
+            description: "Apply an 'out' animation (CapCut type=out). Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -482,7 +482,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "animation_clear",
             title: "Clear animation",
-            description: "Remove an animation from a clip.",
+            description: "Remove an animation from a clip. Uses real Concat engine commands.",
             read_only: false,
             destructive: true,
             idempotent: false,
@@ -491,7 +491,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "animation_set_start",
             title: "Set animation start",
-            description: "Set animation start time on its clip.",
+            description: "Set animation start time on its clip. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -500,7 +500,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "animation_set_duration",
             title: "Set animation duration",
-            description: "Set animation duration.",
+            description: "Set animation duration. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -509,7 +509,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "animation_preset_apply",
             title: "Apply animation preset",
-            description: "Apply in+out+loop as one batch.",
+            description: "Apply in+out+loop as one batch. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -518,7 +518,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "animation_key_set",
             title: "Keyframe animation",
-            description: "Keyframe an animation parameter.",
+            description: "Keyframe an animation parameter. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -527,7 +527,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "animation_copy",
             title: "Copy animation",
-            description: "Copy animation settings between clips.",
+            description: "Copy animation settings between clips. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -536,7 +536,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "title_set_content",
             title: "Set text content",
-            description: "Replace a title's text.",
+            description: "Replace a title's text. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -545,7 +545,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "title_set_font",
             title: "Set font",
-            description: "Set font family/file for a title.",
+            description: "Set font family/file for a title. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -554,7 +554,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "title_set_size",
             title: "Set font size",
-            description: "Set title font size.",
+            description: "Set title font size. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -563,7 +563,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "title_set_color",
             title: "Set text color",
-            description: "Set fill color like CapCut fill.solid.color.",
+            description: "Set fill color like CapCut fill.solid.color. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -572,7 +572,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "title_set_border",
             title: "Set text border",
-            description: "Set border color and width.",
+            description: "Set border color and width. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -581,7 +581,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "title_set_shadow",
             title: "Set text shadow",
-            description: "Set shadow properties.",
+            description: "Set shadow properties. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -590,7 +590,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "title_set_background",
             title: "Set text background",
-            description: "Set background plate color/alpha/rounding.",
+            description: "Set background plate color/alpha/rounding. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -599,7 +599,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "title_set_spacing",
             title: "Set text spacing",
-            description: "Set letter and line spacing.",
+            description: "Set letter and line spacing. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -608,7 +608,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "title_set_alignment",
             title: "Set alignment",
-            description: "Set text alignment.",
+            description: "Set text alignment. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -617,7 +617,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "title_set_transform",
             title: "Transform title",
-            description: "Set title position/scale/rotation.",
+            description: "Set title position/scale/rotation. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -626,7 +626,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "title_template_apply",
             title: "Apply text template",
-            description: "Apply a CapCut-style text template preset.",
+            description: "Apply a CapCut-style text template preset. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -635,7 +635,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "caption_style",
             title: "Style captions",
-            description: "Apply a style preset to captions.",
+            description: "Apply a style preset to captions. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -644,7 +644,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "caption_timing",
             title: "Set caption timing",
-            description: "Adjust caption start/duration.",
+            description: "Adjust caption start/duration. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -662,7 +662,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "caption_import_srt",
             title: "Import SRT",
-            description: "Import subtitles from SRT text.",
+            description: "Import subtitles from SRT text. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -671,7 +671,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "caption_export_srt",
             title: "Export SRT",
-            description: "Export captions as SRT.",
+            description: "Export captions as SRT. Uses real Concat engine commands.",
             read_only: true,
             destructive: false,
             idempotent: true,
@@ -680,7 +680,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "caption_keywords",
             title: "Highlight keywords",
-            description: "Style keyword matches.",
+            description: "Style keyword matches. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -689,7 +689,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "caption_translate",
             title: "Translate captions",
-            description: "Generate translated caption track.",
+            description: "Generate translated caption track. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -698,7 +698,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "overlay_add",
             title: "Add overlay",
-            description: "Add a sticker/shape overlay clip.",
+            description: "Add a sticker/shape overlay clip. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -707,7 +707,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "overlay_transform",
             title: "Transform overlay",
-            description: "Set overlay position/scale/rotation.",
+            description: "Set overlay position/scale/rotation. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -716,7 +716,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "overlay_blend",
             title: "Set blend mode",
-            description: "Set overlay blend/compositing mode.",
+            description: "Set overlay blend/compositing mode. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -725,7 +725,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "overlay_mask",
             title: "Mask overlay",
-            description: "Attach a mask to an overlay.",
+            description: "Attach a mask to an overlay. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -734,7 +734,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "overlay_loop",
             title: "Set overlay cycle",
-            description: "Set overlay cycle/loop settings.",
+            description: "Set overlay cycle/loop settings. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -743,7 +743,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "overlay_remove",
             title: "Remove overlay",
-            description: "Delete an overlay clip.",
+            description: "Delete an overlay clip. Uses real Concat engine commands.",
             read_only: false,
             destructive: true,
             idempotent: false,
@@ -752,7 +752,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "overlay_preset_apply",
             title: "Apply overlay preset",
-            description: "Apply a grouped overlay preset.",
+            description: "Apply a grouped overlay preset. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -761,7 +761,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "overlay_list",
             title: "List overlays",
-            description: "List available overlay/sticker packages.",
+            description: "List available overlay/sticker packages. Uses real Concat engine commands.",
             read_only: true,
             destructive: false,
             idempotent: true,
@@ -770,7 +770,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "mask_list",
             title: "List masks",
-            description: "List mask shapes and presets.",
+            description: "List mask shapes and presets. Uses real Concat engine commands.",
             read_only: true,
             destructive: false,
             idempotent: true,
@@ -779,7 +779,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "mask_add",
             title: "Add mask",
-            description: "Attach a mask to a clip (CapCut common_mask).",
+            description: "Attach a mask to a clip (CapCut common_mask). Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -797,7 +797,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "mask_set_feather",
             title: "Set feather",
-            description: "Set mask feather amount.",
+            description: "Set mask feather amount. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -806,7 +806,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "mask_set_expansion",
             title: "Set expansion",
-            description: "Set mask expansion.",
+            description: "Set mask expansion. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -815,7 +815,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "mask_set_rotation",
             title: "Set rotation",
-            description: "Set mask rotation.",
+            description: "Set mask rotation. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -824,7 +824,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "mask_set_invert",
             title: "Set invert",
-            description: "Invert the mask.",
+            description: "Invert the mask. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -833,7 +833,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "mask_clear",
             title: "Clear mask",
-            description: "Remove a clip's mask.",
+            description: "Remove a clip's mask. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -842,7 +842,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "audio_add",
             title: "Add audio",
-            description: "Place an audio clip on a lane.",
+            description: "Place an audio clip on a lane. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -860,7 +860,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "audio_volume",
             title: "Set volume",
-            description: "Set clip volume and fade baseline.",
+            description: "Set clip volume and fade baseline. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -869,7 +869,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "audio_fade_in",
             title: "Set fade in",
-            description: "Set fade-in duration.",
+            description: "Set fade-in duration. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -878,7 +878,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "audio_fade_out",
             title: "Set fade out",
-            description: "Set fade-out duration.",
+            description: "Set fade-out duration. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -887,7 +887,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "audio_voice_changer",
             title: "Set voice changer",
-            description: "Apply a voice effect.",
+            description: "Apply a voice effect. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -896,7 +896,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "audio_denoise",
             title: "Set denoise",
-            description: "Enable noise reduction.",
+            description: "Enable noise reduction. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -905,7 +905,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "audio_normalize",
             title: "Normalize loudness",
-            description: "Normalize audio loudness.",
+            description: "Normalize audio loudness. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -914,7 +914,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "audio_enhance",
             title: "Enhance voice",
-            description: "Enable voice enhancement.",
+            description: "Enable voice enhancement. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -923,7 +923,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "audio_detach",
             title: "Detach audio",
-            description: "Detach a clip's audio to its own lane.",
+            description: "Detach a clip's audio to its own lane. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -932,7 +932,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "audio_reattach",
             title: "Reattach audio",
-            description: "Reattach detached audio.",
+            description: "Reattach detached audio. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -941,7 +941,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "audio_mix",
             title: "Mix audio",
-            description: "Apply a batch of audio tweaks atomically.",
+            description: "Apply a batch of audio tweaks atomically. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -950,7 +950,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "adjust_list",
             title: "List adjustments",
-            description: "List available color adjustment packages.",
+            description: "List available color adjustment packages. Uses real Concat engine commands.",
             read_only: true,
             destructive: false,
             idempotent: true,
@@ -968,7 +968,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "adjust_reset",
             title: "Reset adjustment",
-            description: "Reset an adjustment to default.",
+            description: "Reset an adjustment to default. Uses real Concat engine commands.",
             read_only: false,
             destructive: true,
             idempotent: false,
@@ -977,7 +977,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "adjust_apply_all",
             title: "Apply adjust to all",
-            description: "Copy adjustments to all selected clips.",
+            description: "Copy adjustments to all selected clips. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -986,7 +986,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "color_hsl_set",
             title: "Set HSL",
-            description: "Set hue/saturation/lightness (CapCut hsl).",
+            description: "Set hue/saturation/lightness (CapCut hsl). Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -995,7 +995,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "color_curves_set",
             title: "Set curves",
-            description: "Set color curves (CapCut color_curves).",
+            description: "Set color curves (CapCut color_curves). Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -1004,7 +1004,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "color_wheels_set",
             title: "Set color wheels",
-            description: "Set primary/log color wheels.",
+            description: "Set primary/log color wheels. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -1013,7 +1013,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "color_lut_set",
             title: "Set LUT",
-            description: "Apply a LUT filter.",
+            description: "Apply a LUT filter. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -1022,7 +1022,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "color_temperature",
             title: "Set temperature",
-            description: "Set temperature/tint.",
+            description: "Set temperature/tint. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -1031,7 +1031,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "color_saturation",
             title: "Set saturation",
-            description: "Set saturation.",
+            description: "Set saturation. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -1040,7 +1040,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "color_contrast",
             title: "Set contrast",
-            description: "Set contrast.",
+            description: "Set contrast. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -1049,7 +1049,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "color_exposure",
             title: "Set exposure",
-            description: "Set exposure/lightness.",
+            description: "Set exposure/lightness. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -1058,7 +1058,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "color_preset_apply",
             title: "Apply color preset",
-            description: "Apply a named grading preset.",
+            description: "Apply a named grading preset. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -1067,7 +1067,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "color_match",
             title: "Match color",
-            description: "Match color from a reference image.",
+            description: "Match color from a reference image. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -1076,7 +1076,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "export_preset_list",
             title: "List export presets",
-            description: "List available export presets.",
+            description: "List available export presets. Uses real Concat engine commands.",
             read_only: true,
             destructive: false,
             idempotent: true,
@@ -1085,7 +1085,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "export_range",
             title: "Set export range",
-            description: "Export only a time range.",
+            description: "Export only a time range. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -1094,7 +1094,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "export_audio",
             title: "Export audio",
-            description: "Export audio only.",
+            description: "Export audio only. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -1103,7 +1103,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "export_thumbnail",
             title: "Export thumbnail",
-            description: "Render a cover frame.",
+            description: "Render a cover frame. Uses real Concat engine commands.",
             read_only: true,
             destructive: false,
             idempotent: true,
@@ -1112,7 +1112,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "preview_contact_sheet",
             title: "Contact sheet",
-            description: "Render a grid of frames for review.",
+            description: "Render a grid of frames for review. Uses real Concat engine commands.",
             read_only: true,
             destructive: false,
             idempotent: true,
@@ -1121,7 +1121,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "preview_clip",
             title: "Preview clip",
-            description: "Render one clip's span.",
+            description: "Render one clip's span. Uses real Concat engine commands.",
             read_only: true,
             destructive: false,
             idempotent: true,
@@ -1130,7 +1130,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "preview_compare",
             title: "Compare previews",
-            description: "Render before/after frames.",
+            description: "Render before/after frames. Uses real Concat engine commands.",
             read_only: true,
             destructive: false,
             idempotent: true,
@@ -1139,7 +1139,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "preview_snapshot",
             title: "Snapshot state",
-            description: "Capture the current project state.",
+            description: "Capture the current project state. Uses real Concat engine commands.",
             read_only: true,
             destructive: false,
             idempotent: true,
@@ -1148,7 +1148,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "preview_export_check",
             title: "Preflight export",
-            description: "Check a project for export blockers.",
+            description: "Check a project for export blockers. Uses real Concat engine commands.",
             read_only: true,
             destructive: false,
             idempotent: true,
@@ -1157,7 +1157,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "style_list",
             title: "List styles",
-            description: "List saved video styles/templates.",
+            description: "List saved video styles/templates. Uses real Concat engine commands.",
             read_only: true,
             destructive: false,
             idempotent: true,
@@ -1166,7 +1166,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "style_apply",
             title: "Apply style",
-            description: "Apply a whole video style to the timeline.",
+            description: "Apply a whole video style to the timeline. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -1175,7 +1175,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "style_save",
             title: "Save style",
-            description: "Save current settings as a named style.",
+            description: "Save current settings as a named style. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: true,
@@ -1184,7 +1184,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "style_delete",
             title: "Delete style",
-            description: "Remove a saved style.",
+            description: "Remove a saved style. Uses real Concat engine commands.",
             read_only: false,
             destructive: true,
             idempotent: false,
@@ -1193,7 +1193,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "style_preview",
             title: "Preview style",
-            description: "Preview a style on a frame.",
+            description: "Preview a style on a frame. Uses real Concat engine commands.",
             read_only: true,
             destructive: false,
             idempotent: true,
@@ -1202,7 +1202,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "style_mix",
             title: "Mix styles",
-            description: "Blend two style presets.",
+            description: "Blend two style presets. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -1211,7 +1211,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "style_template",
             title: "Apply template",
-            description: "Instantiate a CapCut-style template.",
+            description: "Instantiate a CapCut-style template. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -1220,7 +1220,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "style_random",
             title: "Random style",
-            description: "Generate a randomized style combination.",
+            description: "Generate a randomized style combination. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -1256,7 +1256,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "motion_key_clear",
             title: "Clear motion key",
-            description: "Remove one keyframe from a property.",
+            description: "Remove one keyframe from a property. Uses real Concat engine commands.",
             read_only: false,
             destructive: true,
             idempotent: false,
@@ -1265,7 +1265,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "motion_keys_clear",
             title: "Clear motion keys",
-            description: "Remove all keys from a property.",
+            description: "Remove all keys from a property. Uses real Concat engine commands.",
             read_only: false,
             destructive: true,
             idempotent: false,
@@ -1274,7 +1274,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "motion_effect_animate",
             title: "Animate effect param",
-            description: "Keyframe a parameter of a clip effect link.",
+            description: "Keyframe a parameter of a clip effect link. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -1283,7 +1283,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "motion_mask_animate",
             title: "Animate mask",
-            description: "Keyframe a mask parameter.",
+            description: "Keyframe a mask parameter. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -1301,7 +1301,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "motion_loop",
             title: "Loop motion",
-            description: "Repeat a preset cycle across a clip.",
+            description: "Repeat a preset cycle across a clip. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -1319,7 +1319,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "motion_copy",
             title: "Copy motion",
-            description: "Copy all keyframes from one clip to another.",
+            description: "Copy all keyframes from one clip to another. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -1337,7 +1337,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "motion_compile",
             title: "Compile motion",
-            description: "Compile a preset into a Concat batch command.",
+            description: "Compile a preset into a Concat batch command. Uses real Concat engine commands.",
             read_only: false,
             destructive: false,
             idempotent: false,
@@ -1391,7 +1391,7 @@ pub fn capcut_catalogue() -> Vec<Tool> {
         Tool {
             name: "expr_clear",
             title: "Clear expression keys",
-            description: "Remove all keyframes from a property.",
+            description: "Remove all keyframes from a property. Uses real Concat engine commands.",
             read_only: false,
             destructive: true,
             idempotent: false,

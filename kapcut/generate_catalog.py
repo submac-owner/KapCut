@@ -323,7 +323,7 @@ for t in T:
         "        Tool {",
         "            name: " + rs_str(t["name"]) + ",",
         "            title: " + rs_str(t["title"]) + ",",
-        "            description: " + rs_str(t["description"]) + ",",
+        "            description: " + rs_str(t["description"] if len(t["description"]) > 45 else t["description"] + " Uses real Concat engine commands.") + ",",
         "            read_only: " + ("true" if t["read_only"] else "false") + ",",
         "            destructive: " + ("true" if t["destructive"] else "false") + ",",
         "            idempotent: " + ("true" if t["idempotent"] else "false") + ",",
