@@ -244,7 +244,6 @@ pub fn map_effect(name: &str, start: f64, duration: f64) -> Vec<Value> {
 
 /// Translate a CapCut-style material request into one Concat edit command.
 pub fn translate(args: &Value) -> Value {
-    let path = args.get("path").cloned().unwrap_or(Value::Null);
     let mut commands: Vec<Value> = Vec::new();
     if let Some(t) = args.get("capcutType").and_then(Value::as_str) {
         let v = args.get("value").and_then(Value::as_f64).unwrap_or(0.0);
