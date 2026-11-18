@@ -1,4 +1,3 @@
-#![rustfmt::skip]
 // SPDX-License-Identifier: AGPL-3.0-or-later
 // SPDX-FileCopyrightText: 2026 Jareer Abdullah and Concat contributors
 
@@ -61,6 +60,7 @@ fn stage_place(stage: &str) -> usize {
 
 /// What a tool does with its arguments.
 #[derive(Clone, Copy, Debug)]
+#[rustfmt::skip]
 pub enum Action {
     /// An API method, its arguments the method's params.
     Method {
@@ -177,6 +177,7 @@ impl Tool {
 }
 
 /// Every tool, in the order `tools/list` gives them.
+#[rustfmt::skip]
 pub fn catalogue() -> Vec<Tool> {
     use Reply::{Raw, Summary};
     let mut all = vec![
@@ -636,6 +637,7 @@ impl Default for Toolbox {
 }
 
 /// The schema a tool's arguments follow.
+#[rustfmt::skip]
 fn input_schema(schemas: &Schemas, tool: &Tool) -> Option<Value> {
     match tool.action {
         Action::Method { method, .. } => schemas.method(method),
@@ -752,6 +754,7 @@ fn edit(op: &str, mut arguments: Value) -> Result<Request, ApiError> {
     request("edit.apply", json!({ "path": path, "command": arguments }))
 }
 
+#[rustfmt::skip]
 fn run(tool: &Tool, arguments: Value, context: Context<'_>) -> Result<Outcome, ApiError> {
     let backend = context.backend;
     match tool.action {
@@ -1029,6 +1032,7 @@ fn preview(mut arguments: Value, backend: &mut dyn Backend) -> Result<Outcome, A
 }
 
 #[cfg(test)]
+#[rustfmt::skip]
 mod tests {
     use super::*;
     use crate::schema::check;
