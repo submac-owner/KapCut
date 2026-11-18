@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "note": "AE-style shape presets mapped onto Concat's existing ShapeStyle vocabulary (ShapeKind + fill/gradient/stroke/dash/shadow/trim). Trim paths animate through keyframed shape clips; no engine change needed.",
+  "shapes": [
+    {
+      "id": "neon_ring", "name": "Neon Ring", "kind": "drawing",
+      "style": {"kind": "Circle", "width": 0.4, "fill": "", "stroke": "#00E5FF", "strokeWidth": 0.006, "shadow": {"color": "#00E5FF", "blur": 0.05}},
+      "trim": {"start": 0, "end": 1},
+      "keys": {"rotation": [{"at": 0, "value": 0, "ease": "linear"}, {"at": 1, "value": 360, "ease": "linear"}]}
+    },
+    {
+      "id": "progress_arc", "name": "Progress Arc", "kind": "drawing",
+      "style": {"kind": "Circle", "width": 0.35, "fill": "", "stroke": "#FFFFFF", "strokeWidth": 0.01},
+      "trim": {"start": 0, "end": 0.75},
+      "keys": {"rotation": [{"at": 0, "value": -90, "ease": "linear"}, {"at": 1, "value": 270, "ease": "linear"}]}
+    },
+    {
+      "id": "dashed_trail", "name": "Dashed Trail", "kind": "drawing",
+      "style": {"kind": "Line", "width": 0.6, "fill": "", "stroke": "#FF3B6B", "strokeWidth": 0.004, "dash": "dash"},
+      "trim": {"start": 0, "end": 1},
+      "keys": {"scale": [{"at": 0, "value": 0.8, "ease": "out"}, {"at": 1, "value": 1.0}]}
+    },
+    {
+      "id": "gradient_orb", "name": "Gradient Orb", "kind": "figure",
+      "style": {"kind": "Circle", "width": 0.3, "fill": "#6C5CE7", "gradient": {"from": "#6C5CE7", "to": "#00E5FF", "angle": 45}},
+      "keys": {"scale": [{"at": 0, "value": 0.9, "ease": "inOut"}, {"at": 0.5, "value": 1.08, "ease": "inOut"}, {"at": 1, "value": 0.9}]}
+    },
+    {
+      "id": "star_burst", "name": "Star Burst", "kind": "figure",
+      "style": {"kind": "Star", "sides": 8, "points": 8, "innerRadius": 0.45, "width": 0.4, "fill": "#FFD166"},
+      "keys": {"rotation": [{"at": 0, "value": 0, "ease": "out"}, {"at": 1, "value": 180, "ease": "linear"}], "opacity": [{"at": 0, "value": 0}, {"at": 0.15, "value": 1}]}
+    },
+    {
+      "id": "pill_label", "name": "Pill Label", "kind": "figure",
+      "style": {"kind": "Square", "width": 0.35, "height": 0.12, "cornerRadius": 1.0, "fill": "#111827", "stroke": "#FFFFFF", "strokeWidth": 0.002},
+      "keys": {"opacity": [{"at": 0, "value": 0, "ease": "out"}, {"at": 1, "value": 1}]}
+    },
+    {
+      "id": "hex_badge", "name": "Hex Badge", "kind": "figure",
+      "style": {"kind": "Polygon", "sides": 6, "width": 0.25, "fill": "#2563EB", "stroke": "#60A5FA", "strokeWidth": 0.004},
+      "keys": {"scale": [{"at": 0, "value": 0, "ease": "out"}, {"at": 1, "value": 1}]}
+    },
+    {
+      "id": "heart_pop", "name": "Heart Pop", "kind": "figure",
+      "style": {"kind": "Heart", "width": 0.25, "fill": "#EF476F"},
+      "keys": {"scale": [{"at": 0, "value": 0.2, "ease": "out"}, {"at": 0.6, "value": 1.15, "ease": "in"}, {"at": 1, "value": 1}]}
+    },
+    {
+      "id": "arrow_sweep", "name": "Arrow Sweep", "kind": "drawing",
+      "style": {"kind": "Arrow", "width": 0.5, "fill": "", "stroke": "#FFFFFF", "strokeWidth": 0.008, "endHead": "triangle"},
+      "trim": {"start": 0, "end": 1},
+      "keys": {"offsetX": [{"at": 0, "value": -0.4, "ease": "out"}, {"at": 1, "value": 0.4}]}
+    },
+    {
+      "id": "triangle_wipe", "name": "Triangle Wipe", "kind": "figure",
+      "style": {"kind": "Triangle", "width": 0.5, "fill": "#06D6A0"},
+      "keys": {"offsetY": [{"at": 0, "value": 0.6, "ease": "out"}, {"at": 1, "value": 0}]}
+    },
+    {
+      "id": "glow_frame", "name": "Glow Frame", "kind": "drawing",
+      "style": {"kind": "Square", "width": 0.8, "height": 0.5, "fill": "", "stroke": "#FFFFFF", "strokeWidth": 0.003, "shadow": {"color": "#FFFFFF", "blur": 0.03}},
+      "trim": {"start": 0, "end": 1},
+      "keys": {"opacity": [{"at": 0, "value": 0}, {"at": 0.2, "value": 1}]}
+    },
+    {
+      "id": "orbit_dots", "name": "Orbit Dots", "kind": "compound",
+      "style": {"kind": "Circle", "width": 0.06, "fill": "#A78BFA"},
+      "repeat": {"count": 8, "mode": "radial", "radius": 0.3},
+      "keys": {"rotation": [{"at": 0, "value": 0, "ease": "linear"}, {"at": 1, "value": 360, "ease": "linear"}]}
+    }
+  ]
+}
