@@ -24,6 +24,8 @@ use crate::backend::Backend;
 use crate::schema::Schemas;
 use crate::summary;
 
+mod capcut_tools;
+
 /// The longest preview side handed back when the agent names no size: a
 /// frame an agent can look at without a 4K PNG in its context.
 const PREVIEW_SIDE: f64 = 1280.0;
@@ -165,7 +167,7 @@ impl Tool {
 /// Every tool, in the order `tools/list` gives them.
 pub fn catalogue() -> Vec<Tool> {
     use Reply::{Raw, Summary};
-    vec![
+    let mut all = vec![
         Tool {
             name: "concat_version",
             title: "Concat version",
@@ -494,7 +496,9 @@ pub fn catalogue() -> Vec<Tool> {
             idempotent: true,
             action: Action::PreviewFrame,
         },
-    ]
+    ];
+    all.extend(capcut_tools::capcut_catalogue());
+    all
 }
 
 /// What a tool call came to: MCP content, and whether it is an error the
