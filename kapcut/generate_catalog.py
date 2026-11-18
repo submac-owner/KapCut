@@ -212,6 +212,9 @@ add("style","style_mix","Mix styles","Blend two style presets.","op","batch")
 add("style","style_template","Apply template","Instantiate a CapCut-style template.","op","batch")
 add("style","style_random","Random style","Generate a randomized style combination.","op","batch")
 
+add("agent","kapcut_translate","Translate CapCut material",
+    "Translate a CapCut material (capcutType/value or effectName/start/duration) into real Concat edit commands.","bridge","capcut_bridge")
+
 # ---- agent (6) ----
 add("agent","discover_tools","Discover tools","List KapCut tools grouped by family.","method","kapcut.discover",ro=True,idempotent=True)
 add("agent","describe_tool","Describe tool","Get full schema and example for one tool.","method","kapcut.describe",ro=True,idempotent=True)
@@ -269,7 +272,9 @@ lines = [
     "    vec![",
 ]
 for t in T:
-    if t["target_kind"] == "op":
+    if t["target_kind"] == "bridge":
+        action = "Action::CapCutTranslate"
+    elif t["target_kind"] == "op":
         action = "Action::Command { op: " + rs_str(t["target"]) + " }"
     else:
         reply = "Reply::Raw"

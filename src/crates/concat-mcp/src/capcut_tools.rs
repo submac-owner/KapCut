@@ -1083,5 +1083,14 @@ pub fn capcut_catalogue() -> Vec<Tool> {
             idempotent: false,
             action: Action::Command { op: "batch" },
         },
+        Tool {
+            name: "kapcut_translate",
+            title: "Translate CapCut material",
+            description: "Translate a CapCut material (capcutType/value or effectName/start/duration) into real Concat edit commands.",
+            read_only: false,
+            destructive: false,
+            idempotent: false,
+            action: Action::CapCutTranslate,
+        },
     ]
 }

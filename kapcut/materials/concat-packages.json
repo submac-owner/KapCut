@@ -1,0 +1,3458 @@
+{
+  "count": 132,
+  "packages": [
+    {
+      "id": "concat.adjust",
+      "name": "Adjust",
+      "kind": "filter",
+      "category": "Adjust",
+      "description": "The manual colour panel every picture clip carries: exposure, tone, balance, sharpness and edge.",
+      "params": [
+        {
+          "key": "temperature",
+          "group": "Color",
+          "label": "Temperature",
+          "type": "number",
+          "min": 2000,
+          "max": 11000,
+          "default": 6500,
+          "unit": "K",
+          "animate": false
+        },
+        {
+          "key": "tint",
+          "group": "Color",
+          "label": "Tint",
+          "type": "number",
+          "min": -100,
+          "max": 100,
+          "default": 0,
+          "unit": "%",
+          "animate": false
+        },
+        {
+          "key": "saturation",
+          "group": "Color",
+          "label": "Saturation",
+          "type": "number",
+          "min": -100,
+          "max": 100,
+          "default": 0,
+          "unit": "%",
+          "animate": false
+        },
+        {
+          "key": "exposure",
+          "group": "Lightness",
+          "label": "Exposure",
+          "type": "number",
+          "min": -3,
+          "max": 3,
+          "default": 0,
+          "unit": "EV",
+          "animate": false
+        },
+        {
+          "key": "brightness",
+          "group": "Lightness",
+          "label": "Brightness",
+          "type": "number",
+          "min": -100,
+          "max": 100,
+          "default": 0,
+          "unit": "%",
+          "animate": false
+        },
+        {
+          "key": "contrast",
+          "group": "Lightness",
+          "label": "Contrast",
+          "type": "number",
+          "min": -100,
+          "max": 100,
+          "default": 0,
+          "unit": "%",
+          "animate": false
+        },
+        {
+          "key": "highlights",
+          "group": "Lightness",
+          "label": "Highlights",
+          "type": "number",
+          "min": -100,
+          "max": 100,
+          "default": 0,
+          "unit": "%",
+          "animate": false
+        },
+        {
+          "key": "shadows",
+          "group": "Lightness",
+          "label": "Shadows",
+          "type": "number",
+          "min": -100,
+          "max": 100,
+          "default": 0,
+          "unit": "%",
+          "animate": false
+        },
+        {
+          "key": "whites",
+          "group": "Lightness",
+          "label": "Whites",
+          "type": "number",
+          "min": -100,
+          "max": 100,
+          "default": 0,
+          "unit": "%",
+          "animate": false
+        },
+        {
+          "key": "blacks",
+          "group": "Lightness",
+          "label": "Blacks",
+          "type": "number",
+          "min": -100,
+          "max": 100,
+          "default": 0,
+          "unit": "%",
+          "animate": false
+        },
+        {
+          "key": "sharpen",
+          "group": "Effects",
+          "label": "Sharpen",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 0,
+          "unit": "%",
+          "animate": false
+        },
+        {
+          "key": "fade",
+          "group": "Effects",
+          "label": "Fade",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 0,
+          "unit": "%",
+          "animate": false
+        },
+        {
+          "key": "vignette",
+          "group": "Effects",
+          "label": "Vignette",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 0,
+          "unit": "%",
+          "animate": false
+        },
+        {
+          "key": "lift",
+          "group": "Wheels",
+          "label": "Lift",
+          "type": "wheel",
+          "min": -1,
+          "max": 1,
+          "default": 0,
+          "unit": null,
+          "animate": true
+        },
+        {
+          "key": "gamma",
+          "group": "Wheels",
+          "label": "Gamma",
+          "type": "wheel",
+          "min": -1,
+          "max": 1,
+          "default": 0,
+          "unit": null,
+          "animate": true
+        },
+        {
+          "key": "gain",
+          "group": "Wheels",
+          "label": "Gain",
+          "type": "wheel",
+          "min": -1,
+          "max": 1,
+          "default": 0,
+          "unit": null,
+          "animate": true
+        },
+        {
+          "key": "luma",
+          "group": "Curves",
+          "label": "Luma",
+          "type": "curve",
+          "min": null,
+          "max": null,
+          "default": null,
+          "unit": null,
+          "animate": false
+        },
+        {
+          "key": "red",
+          "group": "Curves",
+          "label": "Red",
+          "type": "curve",
+          "min": null,
+          "max": null,
+          "default": null,
+          "unit": null,
+          "animate": false
+        },
+        {
+          "key": "green",
+          "group": "Curves",
+          "label": "Green",
+          "type": "curve",
+          "min": null,
+          "max": null,
+          "default": null,
+          "unit": null,
+          "animate": false
+        },
+        {
+          "key": "blue",
+          "group": "Curves",
+          "label": "Blue",
+          "type": "curve",
+          "min": null,
+          "max": null,
+          "default": null,
+          "unit": null,
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.after-hours",
+      "name": "After Hours",
+      "kind": "filter",
+      "category": "Cinematic",
+      "description": "Deep blacks, a cool cast over everything but the lamps, colour low, a little grain. Late-night desk and monologue footage.",
+      "params": [
+        {
+          "key": "depth",
+          "group": null,
+          "label": "Depth",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 60,
+          "unit": "%",
+          "animate": false
+        },
+        {
+          "key": "grain",
+          "group": null,
+          "label": "Grain",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 25,
+          "unit": "%",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.aquamarine",
+      "name": "Aquamarine",
+      "kind": "filter",
+      "category": "Everyday",
+      "description": "Water and sky turned aquamarine and brightened, sand and skin left warm and clean. The beach-day look creators reach for first.",
+      "params": [
+        {
+          "key": "water",
+          "group": null,
+          "label": "Water",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 60,
+          "unit": "%",
+          "animate": false
+        },
+        {
+          "key": "brightness",
+          "group": null,
+          "label": "Brightness",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 40,
+          "unit": "%",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.autumn",
+      "name": "Autumn",
+      "kind": "filter",
+      "category": "Scenery",
+      "description": "Greens pulled toward amber, the picture dipped in fall light.",
+      "params": []
+    },
+    {
+      "id": "concat.bass",
+      "name": "Bass",
+      "kind": "audio",
+      "category": "Tone",
+      "description": "More low end.",
+      "params": [
+        {
+          "key": "gain",
+          "group": null,
+          "label": "Gain",
+          "type": "number",
+          "min": 0,
+          "max": 12,
+          "default": 5,
+          "unit": "dB",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.beat-shake",
+      "name": "Beat Shake",
+      "kind": "effect",
+      "category": "Shake",
+      "description": "A hit on every beat at the tempo you set, each knocked a different way, from the moment the clip or layer starts.",
+      "params": [
+        {
+          "key": "bpm",
+          "group": null,
+          "label": "Tempo",
+          "type": "number",
+          "min": 40,
+          "max": 240,
+          "default": 120,
+          "unit": "BPM",
+          "animate": false
+        },
+        {
+          "key": "amount",
+          "group": null,
+          "label": "Amount",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 50,
+          "unit": "%",
+          "animate": false
+        },
+        {
+          "key": "length",
+          "group": null,
+          "label": "Hit Length",
+          "type": "number",
+          "min": 10,
+          "max": 100,
+          "default": 60,
+          "unit": "%",
+          "animate": false
+        },
+        {
+          "key": "punch",
+          "group": null,
+          "label": "Zoom Punch",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 30,
+          "unit": "%",
+          "animate": false
+        },
+        {
+          "key": "blur",
+          "group": null,
+          "label": "Motion Blur",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 50,
+          "unit": "%",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.bleach-bypass",
+      "name": "Bleach Bypass",
+      "kind": "filter",
+      "category": "Cinematic",
+      "description": "The silver-retention film process: colour washed out, contrast pushed hard.",
+      "params": []
+    },
+    {
+      "id": "concat.bloom-pulse",
+      "name": "Bloom Pulse",
+      "kind": "effect",
+      "category": "Light",
+      "description": "A soft bloom over the highlights that breathes in and out.",
+      "params": [
+        {
+          "key": "amount",
+          "group": null,
+          "label": "Amount",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 50,
+          "unit": "%",
+          "animate": false
+        },
+        {
+          "key": "speed",
+          "group": null,
+          "label": "Speed",
+          "type": "number",
+          "min": 0.5,
+          "max": 5,
+          "default": 2,
+          "unit": null,
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.blur-dissolve",
+      "name": "Blur Dissolve",
+      "kind": "transition",
+      "category": "Dissolve",
+      "description": "Both shots go soft towards the cut and the swap happens inside the blur, then the next one comes back into focus.",
+      "params": [
+        {
+          "key": "strength",
+          "group": null,
+          "label": "Strength",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 60,
+          "unit": "%",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.blush",
+      "name": "Blush",
+      "kind": "filter",
+      "category": "Portrait",
+      "description": "Skin warmed toward peach and softened, shadows lifted so lines ease, contrast low. Portraits and talking heads; it is meant to run at half strength.",
+      "params": [
+        {
+          "key": "glow",
+          "group": null,
+          "label": "Glow",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 50,
+          "unit": "%",
+          "animate": false
+        },
+        {
+          "key": "softness",
+          "group": null,
+          "label": "Softness",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 40,
+          "unit": "%",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.bright",
+      "name": "Bright",
+      "kind": "audio",
+      "category": "Tone",
+      "description": "Air and presence: a lift above six kilohertz.",
+      "params": [
+        {
+          "key": "gain",
+          "group": null,
+          "label": "Gain",
+          "type": "number",
+          "min": 0,
+          "max": 12,
+          "default": 5,
+          "unit": "dB",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.bronze",
+      "name": "Bronze",
+      "kind": "filter",
+      "category": "Retro",
+      "description": "Sepia that keeps its contrast and its highlights, so it reads as old film rather than a brown wash.",
+      "params": [
+        {
+          "key": "tone",
+          "group": null,
+          "label": "Tone",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 80,
+          "unit": "%",
+          "animate": false
+        },
+        {
+          "key": "contrast",
+          "group": null,
+          "label": "Contrast",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 30,
+          "unit": "%",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.cathedral",
+      "name": "Cathedral",
+      "kind": "audio",
+      "category": "Space",
+      "description": "Stone and height: reflections that take a while to arrive.",
+      "params": [
+        {
+          "key": "size",
+          "group": null,
+          "label": "Size",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 55,
+          "unit": "%",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.chipmunk",
+      "name": "Chipmunk",
+      "kind": "audio",
+      "category": "Voice",
+      "description": "Higher and squeakier.",
+      "params": [
+        {
+          "key": "pitch",
+          "group": null,
+          "label": "Pitch",
+          "type": "number",
+          "min": 3,
+          "max": 12,
+          "default": 7,
+          "unit": "st",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.chroma-key",
+      "name": "Chroma Key",
+      "kind": "effect",
+      "category": "Cutout",
+      "description": "Keys out a green or blue screen - found by itself, or the colour picked off the picture - even where it is unevenly lit, cleaning its colour off the edges and the spill off the subject. For a black background, use Remove Black.",
+      "params": [
+        {
+          "key": "color",
+          "group": null,
+          "label": "Key colour",
+          "type": "color",
+          "min": 0,
+          "max": 4294967295,
+          "default": 0,
+          "unit": null,
+          "animate": false
+        },
+        {
+          "key": "strength",
+          "group": null,
+          "label": "Strength",
+          "type": "number",
+          "min": 50,
+          "max": 200,
+          "default": 100,
+          "unit": "%",
+          "animate": false
+        },
+        {
+          "key": "shadows",
+          "group": null,
+          "label": "Shadows",
+          "type": "number",
+          "min": 0,
+          "max": 90,
+          "default": 50,
+          "unit": "%",
+          "animate": false
+        },
+        {
+          "key": "balance",
+          "group": null,
+          "label": "Balance",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 50,
+          "unit": "%",
+          "animate": false
+        },
+        {
+          "key": "clip_black",
+          "group": null,
+          "label": "Clip black",
+          "type": "number",
+          "min": 0,
+          "max": 50,
+          "default": 10,
+          "unit": "%",
+          "animate": false
+        },
+        {
+          "key": "clip_white",
+          "group": null,
+          "label": "Clip white",
+          "type": "number",
+          "min": 50,
+          "max": 100,
+          "default": 85,
+          "unit": "%",
+          "animate": false
+        },
+        {
+          "key": "grow",
+          "group": null,
+          "label": "Shrink / grow",
+          "type": "number",
+          "min": -10,
+          "max": 10,
+          "default": 0,
+          "unit": "px",
+          "animate": false
+        },
+        {
+          "key": "feather",
+          "group": null,
+          "label": "Edge softness",
+          "type": "number",
+          "min": 0,
+          "max": 8,
+          "default": 0,
+          "unit": "px",
+          "animate": false
+        },
+        {
+          "key": "spill",
+          "group": null,
+          "label": "Spill",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 100,
+          "unit": "%",
+          "animate": false
+        },
+        {
+          "key": "restore",
+          "group": null,
+          "label": "Keep brightness",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 100,
+          "unit": "%",
+          "animate": false
+        },
+        {
+          "key": "view",
+          "group": null,
+          "label": "View",
+          "type": "enum",
+          "min": 0,
+          "max": 2,
+          "default": 0,
+          "unit": null,
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.chromatic-aberration",
+      "name": "Chromatic Aberration",
+      "kind": "effect",
+      "category": "Distort",
+      "description": "Red and blue pulled apart towards the edges, the colour fringing of a cheap lens.",
+      "params": [
+        {
+          "key": "shift",
+          "group": null,
+          "label": "Shift",
+          "type": "int",
+          "min": 1,
+          "max": 24,
+          "default": 4,
+          "unit": "px",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.city-lights",
+      "name": "City Lights",
+      "kind": "filter",
+      "category": "Stylised",
+      "description": "Night city: the lights and signs made vivid and blooming, blacks kept deep and cool, faces left clean. Made for the strip.",
+      "params": [
+        {
+          "key": "lights",
+          "group": null,
+          "label": "Lights",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 60,
+          "unit": "%",
+          "animate": false
+        },
+        {
+          "key": "depth",
+          "group": null,
+          "label": "Depth",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 40,
+          "unit": "%",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.classic-chrome",
+      "name": "Classic Chrome",
+      "kind": "filter",
+      "category": "Film",
+      "description": "Muted highlights and deep, open shadows: the restrained look of a classic colour negative.",
+      "params": []
+    },
+    {
+      "id": "concat.clean",
+      "name": "Clean",
+      "kind": "filter",
+      "category": "Everyday",
+      "description": "Barely there: neutral, a gentle curve, a touch more colour, and the reds calmed so a face reads even. What a talking head wants.",
+      "params": [
+        {
+          "key": "amount",
+          "group": null,
+          "label": "Amount",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 50,
+          "unit": "%",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.clock-wipe",
+      "name": "Clock Wipe",
+      "kind": "transition",
+      "category": "Wipe",
+      "description": "A hand sweeps once round the face of the frame from twelve, leaving the next shot behind it.",
+      "params": []
+    },
+    {
+      "id": "concat.cloudless-sky",
+      "name": "Cloudless Sky",
+      "kind": "filter",
+      "category": "Everyday",
+      "description": "Skies deeper and bluer, foliage cooler and calmer, the rest of the picture and every face untouched. Travel footage.",
+      "params": [
+        {
+          "key": "sky",
+          "group": null,
+          "label": "Sky",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 60,
+          "unit": "%",
+          "animate": false
+        },
+        {
+          "key": "greens",
+          "group": null,
+          "label": "Greens",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 40,
+          "unit": "%",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.color-wheels",
+      "name": "Color Wheels",
+      "kind": "effect",
+      "category": "Color",
+      "description": "Lift, gamma and gain: the shadows, midtones and highlights each pushed towards a hue and made brighter or darker.",
+      "params": [
+        {
+          "key": "lift",
+          "group": "Wheels",
+          "label": "Lift",
+          "type": "wheel",
+          "min": -1,
+          "max": 1,
+          "default": 0,
+          "unit": null,
+          "animate": true
+        },
+        {
+          "key": "gamma",
+          "group": "Wheels",
+          "label": "Gamma",
+          "type": "wheel",
+          "min": -1,
+          "max": 1,
+          "default": 0,
+          "unit": null,
+          "animate": true
+        },
+        {
+          "key": "gain",
+          "group": "Wheels",
+          "label": "Gain",
+          "type": "wheel",
+          "min": -1,
+          "max": 1,
+          "default": 0,
+          "unit": null,
+          "animate": true
+        }
+      ]
+    },
+    {
+      "id": "concat.contrast",
+      "name": "Contrast",
+      "kind": "effect",
+      "category": "Color",
+      "description": "More or less contrast in stops about middle grey, highlights past white kept and black never crushed.",
+      "params": [
+        {
+          "key": "amount",
+          "group": null,
+          "label": "Contrast",
+          "type": "number",
+          "min": -100,
+          "max": 100,
+          "default": 0,
+          "unit": "%",
+          "animate": true
+        }
+      ]
+    },
+    {
+      "id": "concat.contrast-pop",
+      "name": "Contrast Pop",
+      "kind": "filter",
+      "category": "Color",
+      "description": "Deeper shadows, brighter highlights.",
+      "params": [
+        {
+          "key": "contrast",
+          "group": null,
+          "label": "Contrast",
+          "type": "number",
+          "min": 1,
+          "max": 2,
+          "default": 1.25,
+          "unit": null,
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.cool",
+      "name": "Cool",
+      "kind": "filter",
+      "category": "Color",
+      "description": "Shifts the picture towards daylight shade.",
+      "params": [
+        {
+          "key": "temperature",
+          "group": null,
+          "label": "Temperature",
+          "type": "number",
+          "min": 7000,
+          "max": 11000,
+          "default": 8500,
+          "unit": "K",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.cool-blue",
+      "name": "Cool Blue",
+      "kind": "filter",
+      "category": "Cinematic",
+      "description": "Blue in the shadows and midtones, highlights and skin left neutral, contrast up. Cities at dusk.",
+      "params": [
+        {
+          "key": "chill",
+          "group": null,
+          "label": "Chill",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 60,
+          "unit": "%",
+          "animate": false
+        },
+        {
+          "key": "contrast",
+          "group": null,
+          "label": "Contrast",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 30,
+          "unit": "%",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.corona",
+      "name": "Corona",
+      "kind": "effect",
+      "category": "Film",
+      "description": "A cool blue-white corona gathered off the picture's blown highlights by a golden-angle spiral blur - built from nothing, not a port of the stock halation.",
+      "params": [
+        {
+          "key": "threshold",
+          "group": null,
+          "label": "Threshold",
+          "type": "number",
+          "min": 20,
+          "max": 95,
+          "default": 60,
+          "unit": "%",
+          "animate": false
+        },
+        {
+          "key": "radius",
+          "group": null,
+          "label": "Radius",
+          "type": "number",
+          "min": 4,
+          "max": 60,
+          "default": 18,
+          "unit": "%",
+          "animate": false
+        },
+        {
+          "key": "amount",
+          "group": null,
+          "label": "Amount",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 55,
+          "unit": "%",
+          "animate": false
+        },
+        {
+          "key": "cool",
+          "group": null,
+          "label": "Coolness",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 70,
+          "unit": "%",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.cube",
+      "name": "Cube",
+      "kind": "transition",
+      "category": "Spin",
+      "description": "The two shots are neighbouring faces of a box that turns a quarter of the way round, with the turning-away face falling into shade.",
+      "params": []
+    },
+    {
+      "id": "concat.curves",
+      "name": "Curves",
+      "kind": "effect",
+      "category": "Color",
+      "description": "The picture's levels bent along curves you draw: luma for brightness alone, then red, green and blue.",
+      "params": [
+        {
+          "key": "luma",
+          "group": "Curves",
+          "label": "Luma",
+          "type": "curve",
+          "min": null,
+          "max": null,
+          "default": null,
+          "unit": null,
+          "animate": false
+        },
+        {
+          "key": "red",
+          "group": "Curves",
+          "label": "Red",
+          "type": "curve",
+          "min": null,
+          "max": null,
+          "default": null,
+          "unit": null,
+          "animate": false
+        },
+        {
+          "key": "green",
+          "group": "Curves",
+          "label": "Green",
+          "type": "curve",
+          "min": null,
+          "max": null,
+          "default": null,
+          "unit": null,
+          "animate": false
+        },
+        {
+          "key": "blue",
+          "group": "Curves",
+          "label": "Blue",
+          "type": "curve",
+          "min": null,
+          "max": null,
+          "default": null,
+          "unit": null,
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.cyberpunk",
+      "name": "Cyberpunk",
+      "kind": "filter",
+      "category": "Cinematic",
+      "description": "Magenta into the shadows, cyan into the light, pushed hard and neon-bright.",
+      "params": []
+    },
+    {
+      "id": "concat.deep",
+      "name": "Deep",
+      "kind": "audio",
+      "category": "Voice",
+      "description": "Lower and fuller.",
+      "params": [
+        {
+          "key": "pitch",
+          "group": null,
+          "label": "Pitch",
+          "type": "number",
+          "min": -8,
+          "max": -1,
+          "default": -3,
+          "unit": "st",
+          "animate": false
+        },
+        {
+          "key": "body",
+          "group": null,
+          "label": "Body",
+          "type": "number",
+          "min": 0,
+          "max": 8,
+          "default": 3,
+          "unit": "dB",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.delicious",
+      "name": "Delicious",
+      "kind": "filter",
+      "category": "Food",
+      "description": "Warm and saturated, the appetising push every food shot wants.",
+      "params": []
+    },
+    {
+      "id": "concat.denoise",
+      "name": "Noise Reduction",
+      "kind": "audio",
+      "category": "Clean",
+      "description": "Takes the hum and hiss out from under the voice.",
+      "params": [
+        {
+          "key": "strength",
+          "group": null,
+          "label": "Strength",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 50,
+          "unit": "%",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.dissolve",
+      "name": "Dissolve",
+      "kind": "transition",
+      "category": "Basic",
+      "description": "One shot melts evenly into the next.",
+      "params": []
+    },
+    {
+      "id": "concat.distorted",
+      "name": "Distorted",
+      "kind": "audio",
+      "category": "Tone",
+      "description": "Driven hard and clipped.",
+      "params": [
+        {
+          "key": "drive",
+          "group": null,
+          "label": "Drive",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 50,
+          "unit": "%",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.dreamy",
+      "name": "Dreamy",
+      "kind": "filter",
+      "category": "Vibe",
+      "description": "A soft, hazy bloom over lifted pastel blacks.",
+      "params": []
+    },
+    {
+      "id": "concat.echo",
+      "name": "Echo",
+      "kind": "audio",
+      "category": "Space",
+      "description": "One repeat, fading.",
+      "params": [
+        {
+          "key": "delay",
+          "group": null,
+          "label": "Delay",
+          "type": "number",
+          "min": 0.05,
+          "max": 1,
+          "default": 0.25,
+          "unit": "s",
+          "animate": false
+        },
+        {
+          "key": "decay",
+          "group": null,
+          "label": "Decay",
+          "type": "number",
+          "min": 0.1,
+          "max": 0.9,
+          "default": 0.4,
+          "unit": null,
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.enhance-voice",
+      "name": "Enhance Voice",
+      "kind": "audio",
+      "category": "Clean",
+      "description": "Clears the room out of a recording: rumble, hiss, sibilance and uneven level.",
+      "params": [
+        {
+          "key": "amount",
+          "group": null,
+          "label": "Amount",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 60,
+          "unit": "%",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.exposure",
+      "name": "Exposure",
+      "kind": "effect",
+      "category": "Color",
+      "description": "Brighter or darker by stops of light, as the lens would make it, highlights kept.",
+      "params": [
+        {
+          "key": "stops",
+          "group": null,
+          "label": "Exposure",
+          "type": "number",
+          "min": -4,
+          "max": 4,
+          "default": 0,
+          "unit": "EV",
+          "animate": true
+        }
+      ]
+    },
+    {
+      "id": "concat.fade-black",
+      "name": "Fade to Black",
+      "kind": "transition",
+      "category": "Basic",
+      "description": "The outgoing shot fades down to black, then the incoming one fades up out of it.",
+      "params": []
+    },
+    {
+      "id": "concat.fade-white",
+      "name": "Fade to White",
+      "kind": "transition",
+      "category": "Basic",
+      "description": "The outgoing shot fades up to white, then the incoming one fades down out of it.",
+      "params": []
+    },
+    {
+      "id": "concat.falling-dust",
+      "name": "Falling Dust",
+      "kind": "filter",
+      "category": "Retro",
+      "description": "A warm fade with dust drifting down through it and a light leak in one corner. The CPU shows the fade and a whisper of noise.",
+      "params": [
+        {
+          "key": "dust",
+          "group": null,
+          "label": "Dust",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 60,
+          "unit": "%",
+          "animate": false
+        },
+        {
+          "key": "leak",
+          "group": null,
+          "label": "Light leak",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 50,
+          "unit": "%",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.film",
+      "name": "Film",
+      "kind": "filter",
+      "category": "Cinematic",
+      "description": "A film curve with a real toe and shoulder, warm halation around the lights, and grain that moves. Print stock, not a filter.",
+      "params": [
+        {
+          "key": "grain",
+          "group": null,
+          "label": "Grain",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 40,
+          "unit": "%",
+          "animate": false
+        },
+        {
+          "key": "warmth",
+          "group": null,
+          "label": "Warmth",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 50,
+          "unit": "%",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.film-burn",
+      "name": "Film Burn",
+      "kind": "transition",
+      "category": "Dissolve",
+      "description": "A warm over-exposed flash burns through the cut.",
+      "params": [
+        {
+          "key": "heat",
+          "group": null,
+          "label": "Heat",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 70,
+          "unit": "%",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.film-grain",
+      "name": "Film Grain",
+      "kind": "effect",
+      "category": "Stylize",
+      "description": "Dancing grain, the texture of film stock.",
+      "params": [
+        {
+          "key": "amount",
+          "group": null,
+          "label": "Amount",
+          "type": "int",
+          "min": 2,
+          "max": 40,
+          "default": 12,
+          "unit": null,
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.fisheye",
+      "name": "Fisheye",
+      "kind": "effect",
+      "category": "Distort",
+      "description": "The bulge of a very wide lens.",
+      "params": [
+        {
+          "key": "strength",
+          "group": null,
+          "label": "Strength",
+          "type": "number",
+          "min": 5,
+          "max": 100,
+          "default": 50,
+          "unit": "%",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.fresh",
+      "name": "Fresh",
+      "kind": "filter",
+      "category": "Everyday",
+      "description": "Daylight footage made to pop: midtones lifted, colour brought up where it is muted, a breath of mint in the brightest whites, skin left alone.",
+      "params": [
+        {
+          "key": "pop",
+          "group": null,
+          "label": "Pop",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 50,
+          "unit": "%",
+          "animate": false
+        },
+        {
+          "key": "brightness",
+          "group": null,
+          "label": "Brightness",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 40,
+          "unit": "%",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.gaussian-blur",
+      "name": "Gaussian Blur",
+      "kind": "effect",
+      "category": "Blur",
+      "description": "A soft, even blur.",
+      "params": [
+        {
+          "key": "radius",
+          "group": null,
+          "label": "Radius",
+          "type": "number",
+          "min": 1,
+          "max": 50,
+          "default": 10,
+          "unit": "px",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.glitch-transition",
+      "name": "Glitch",
+      "kind": "transition",
+      "category": "Glitch",
+      "description": "The picture breaks into torn bands that jump sideways and flicker between the two shots until the next one holds.",
+      "params": [
+        {
+          "key": "amount",
+          "group": null,
+          "label": "Amount",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 70,
+          "unit": "%",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.glitch-warp",
+      "name": "Glitch Warp",
+      "kind": "transition",
+      "category": "Glitch",
+      "description": "Chromatic slice tear and digital pixel displacement transition.",
+      "params": [
+        {
+          "key": "amount",
+          "group": null,
+          "label": "Amount",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 75,
+          "unit": "%",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.glow",
+      "name": "Glow",
+      "kind": "effect",
+      "category": "Stylize",
+      "description": "A soft bloom around the bright parts of the picture.",
+      "params": [
+        {
+          "key": "amount",
+          "group": null,
+          "label": "Amount",
+          "type": "number",
+          "min": 10,
+          "max": 100,
+          "default": 45,
+          "unit": "%",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.golden-hour",
+      "name": "Golden Hour",
+      "kind": "filter",
+      "category": "Everyday",
+      "description": "Late light: a warm balance that keeps its brightness, orange in the highlights, a whisper of magenta in the shadows, blacks lifted a touch.",
+      "params": [
+        {
+          "key": "glow",
+          "group": null,
+          "label": "Glow",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 50,
+          "unit": "%",
+          "animate": false
+        },
+        {
+          "key": "warmth",
+          "group": null,
+          "label": "Warmth",
+          "type": "number",
+          "min": 3500,
+          "max": 6500,
+          "default": 4600,
+          "unit": "K",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.halation",
+      "name": "Halation",
+      "kind": "effect",
+      "category": "Film",
+      "description": "The red-orange halo film lays around its blown highlights, where light passes through the emulsion, scatters off the backing and comes back.",
+      "params": [
+        {
+          "key": "threshold",
+          "group": null,
+          "label": "Threshold",
+          "type": "number",
+          "min": 20,
+          "max": 95,
+          "default": 55,
+          "unit": "%",
+          "animate": false
+        },
+        {
+          "key": "radius",
+          "group": null,
+          "label": "Radius",
+          "type": "number",
+          "min": 4,
+          "max": 60,
+          "default": 22,
+          "unit": "%",
+          "animate": false
+        },
+        {
+          "key": "amount",
+          "group": null,
+          "label": "Amount",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 45,
+          "unit": "%",
+          "animate": false
+        },
+        {
+          "key": "tint",
+          "group": null,
+          "label": "Tint",
+          "type": "number",
+          "min": -100,
+          "max": 100,
+          "default": 0,
+          "unit": "%",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.halftone",
+      "name": "Halftone",
+      "kind": "effect",
+      "category": "Retro",
+      "description": "The picture reduced to a grid of black and white dots.",
+      "params": [
+        {
+          "key": "size",
+          "group": null,
+          "label": "Dot size",
+          "type": "int",
+          "min": 4,
+          "max": 40,
+          "default": 6,
+          "unit": "px",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.hall",
+      "name": "Hall",
+      "kind": "audio",
+      "category": "Space",
+      "description": "A concert hall: long, even reflections.",
+      "params": [
+        {
+          "key": "size",
+          "group": null,
+          "label": "Size",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 50,
+          "unit": "%",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.high-contrast-mono",
+      "name": "High-Contrast Mono",
+      "kind": "filter",
+      "category": "Black & White",
+      "description": "Black and white pushed hard: deep blacks, bright whites, nothing in between.",
+      "params": []
+    },
+    {
+      "id": "concat.impact",
+      "name": "Impact",
+      "kind": "effect",
+      "category": "Shake",
+      "description": "One hard hit when the clip or layer starts: the frame jolts, punches in and rings out. Drop it on the beat.",
+      "params": [
+        {
+          "key": "amount",
+          "group": null,
+          "label": "Amount",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 60,
+          "unit": "%",
+          "animate": false
+        },
+        {
+          "key": "length",
+          "group": null,
+          "label": "Length",
+          "type": "number",
+          "min": 0.1,
+          "max": 2,
+          "default": 0.45,
+          "unit": "s",
+          "animate": false
+        },
+        {
+          "key": "punch",
+          "group": null,
+          "label": "Zoom Punch",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 40,
+          "unit": "%",
+          "animate": false
+        },
+        {
+          "key": "direction",
+          "group": null,
+          "label": "Direction",
+          "type": "enum",
+          "min": 0,
+          "max": 2,
+          "default": 0,
+          "unit": null,
+          "animate": false
+        },
+        {
+          "key": "blur",
+          "group": null,
+          "label": "Motion Blur",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 60,
+          "unit": "%",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.indie",
+      "name": "Indie",
+      "kind": "filter",
+      "category": "Cinematic",
+      "description": "Muted and green-teal through the midtones, a gentle film curve, warmth only where a face is. The quiet grade of an indie film.",
+      "params": [
+        {
+          "key": "amount",
+          "group": null,
+          "label": "Amount",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 60,
+          "unit": "%",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.instant-print",
+      "name": "Instant Print",
+      "kind": "filter",
+      "category": "Retro",
+      "description": "The instant print: a cream matte, warm highlights, cyan creeping into the shadows, a little softness in the corners.",
+      "params": [
+        {
+          "key": "fade",
+          "group": null,
+          "label": "Fade",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 60,
+          "unit": "%",
+          "animate": false
+        },
+        {
+          "key": "warmth",
+          "group": null,
+          "label": "Warmth",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 50,
+          "unit": "%",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.iris",
+      "name": "Iris",
+      "kind": "transition",
+      "category": "Wipe",
+      "description": "A round opening grows from the centre until the next shot fills the frame.",
+      "params": [
+        {
+          "key": "softness",
+          "group": null,
+          "label": "Softness",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 15,
+          "unit": "%",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.landscape-pop",
+      "name": "Vivid Landscape",
+      "kind": "filter",
+      "category": "Scenery",
+      "description": "Greens and blues pushed richer, the punch a travel shot wants.",
+      "params": []
+    },
+    {
+      "id": "concat.light-leak-flash",
+      "name": "Light Leak Flash",
+      "kind": "transition",
+      "category": "Light",
+      "description": "Organic overexposed film burn flash bridging the cut.",
+      "params": [
+        {
+          "key": "strength",
+          "group": null,
+          "label": "Strength",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 80,
+          "unit": "%",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.light-leak-transition",
+      "name": "Light Leak",
+      "kind": "transition",
+      "category": "Light",
+      "description": "A wash of warm light flares across the frame and the next shot is left behind it as it passes.",
+      "params": [
+        {
+          "key": "warmth",
+          "group": null,
+          "label": "Warmth",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 70,
+          "unit": "%",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.linear-wipe",
+      "name": "Linear Wipe",
+      "kind": "transition",
+      "category": "Wipe",
+      "description": "A straight line crosses the frame and leaves the next shot behind it.",
+      "params": [
+        {
+          "key": "direction",
+          "group": null,
+          "label": "Direction",
+          "type": "enum",
+          "min": 0,
+          "max": 3,
+          "default": 0,
+          "unit": null,
+          "animate": false
+        },
+        {
+          "key": "softness",
+          "group": null,
+          "label": "Softness",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 20,
+          "unit": "%",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.linen",
+      "name": "Linen",
+      "kind": "filter",
+      "category": "Everyday",
+      "description": "Whitewash's warm twin: the same soft matte with cream in the whites and a little gold in the middle. Interiors and morning light.",
+      "params": [
+        {
+          "key": "matte",
+          "group": null,
+          "label": "Matte",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 60,
+          "unit": "%",
+          "animate": false
+        },
+        {
+          "key": "warmth",
+          "group": null,
+          "label": "Warmth",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 50,
+          "unit": "%",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.lofi",
+      "name": "Lo-fi",
+      "kind": "audio",
+      "category": "Tone",
+      "description": "A small old speaker: no top end, and a grain to the sound.",
+      "params": [
+        {
+          "key": "bits",
+          "group": null,
+          "label": "Bits",
+          "type": "number",
+          "min": 4,
+          "max": 12,
+          "default": 8,
+          "unit": null,
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.loudness",
+      "name": "Normalize Loudness",
+      "kind": "audio",
+      "category": "Clean",
+      "description": "Brings the whole clip to one loudness, the way broadcast and the platforms expect.",
+      "params": [
+        {
+          "key": "target",
+          "group": null,
+          "label": "Target",
+          "type": "number",
+          "min": -30,
+          "max": -12,
+          "default": -23,
+          "unit": "dB",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.luma-key",
+      "name": "Luma Key",
+      "kind": "effect",
+      "category": "Cutout",
+      "description": "Keys out the dark of the picture - fire, smoke or sparks shot on black - or, inverted, the light.",
+      "params": [
+        {
+          "key": "threshold",
+          "group": null,
+          "label": "Threshold",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 10,
+          "unit": "%",
+          "animate": false
+        },
+        {
+          "key": "softness",
+          "group": null,
+          "label": "Softness",
+          "type": "number",
+          "min": 0,
+          "max": 50,
+          "default": 10,
+          "unit": "%",
+          "animate": false
+        },
+        {
+          "key": "invert",
+          "group": null,
+          "label": "Invert",
+          "type": "bool",
+          "min": 0,
+          "max": 1,
+          "default": 0,
+          "unit": null,
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.luminous",
+      "name": "Luminous",
+      "kind": "filter",
+      "category": "Portrait",
+      "description": "Faces brightened and evened: skin lifted, reds calmed, the balance neutral, the rest of the frame left where it was.",
+      "params": [
+        {
+          "key": "brighten",
+          "group": null,
+          "label": "Brighten",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 50,
+          "unit": "%",
+          "animate": false
+        },
+        {
+          "key": "even",
+          "group": null,
+          "label": "Even",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 50,
+          "unit": "%",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.megaphone",
+      "name": "Megaphone",
+      "kind": "audio",
+      "category": "Voice",
+      "description": "Harsh, mid-focused projection from a handheld megaphone.",
+      "params": [
+        {
+          "key": "drive",
+          "group": null,
+          "label": "Drive",
+          "type": "number",
+          "min": 1,
+          "max": 10,
+          "default": 5,
+          "unit": null,
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.mint-haze",
+      "name": "Mint Haze",
+      "kind": "filter",
+      "category": "Stylised",
+      "description": "Soft green through the midtones and whites, colour muted, a light matte. The trend look, gentle enough for a face.",
+      "params": [
+        {
+          "key": "amount",
+          "group": null,
+          "label": "Amount",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 60,
+          "unit": "%",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.mono",
+      "name": "Mono",
+      "kind": "filter",
+      "category": "Retro",
+      "description": "Black and white through a coloured filter: red darkens skies and lightens skin, green does the reverse. A little grain if you want it.",
+      "params": [
+        {
+          "key": "colour",
+          "group": null,
+          "label": "Colour filter",
+          "type": "number",
+          "min": -100,
+          "max": 100,
+          "default": 40,
+          "unit": "%",
+          "animate": false
+        },
+        {
+          "key": "contrast",
+          "group": null,
+          "label": "Contrast",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 40,
+          "unit": "%",
+          "animate": false
+        },
+        {
+          "key": "grain",
+          "group": null,
+          "label": "Grain",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 0,
+          "unit": "%",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.moody",
+      "name": "Moody",
+      "kind": "filter",
+      "category": "Cinematic",
+      "description": "Blacks crushed by a film toe, colour drained, bronze through the middle, cool in the shadows, the corners closing in.",
+      "params": [
+        {
+          "key": "depth",
+          "group": null,
+          "label": "Depth",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 60,
+          "unit": "%",
+          "animate": false
+        },
+        {
+          "key": "warmth",
+          "group": null,
+          "label": "Warmth",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 50,
+          "unit": "%",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.motion-blur",
+      "name": "Motion Blur",
+      "kind": "effect",
+      "category": "Blur",
+      "description": "A streak along a line, as if the camera panned.",
+      "params": [
+        {
+          "key": "length",
+          "group": null,
+          "label": "Length",
+          "type": "number",
+          "min": 2,
+          "max": 60,
+          "default": 18,
+          "unit": "px",
+          "animate": false
+        },
+        {
+          "key": "angle",
+          "group": null,
+          "label": "Angle",
+          "type": "number",
+          "min": -90,
+          "max": 90,
+          "default": 0,
+          "unit": "\u00b0",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.natural",
+      "name": "Natural",
+      "kind": "filter",
+      "category": "Portrait",
+      "description": "A gentle, true-to-life lift: barely-there warmth, skin left alone.",
+      "params": []
+    },
+    {
+      "id": "concat.neon",
+      "name": "Neon",
+      "kind": "filter",
+      "category": "Stylised",
+      "description": "Magenta in the shadows, cyan in the highlights, hard contrast, colour turned up, and the lights themselves blooming. Night streets and signage.",
+      "params": [
+        {
+          "key": "glow",
+          "group": null,
+          "label": "Glow",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 60,
+          "unit": "%",
+          "animate": false
+        },
+        {
+          "key": "punch",
+          "group": null,
+          "label": "Punch",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 50,
+          "unit": "%",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.night",
+      "name": "Night",
+      "kind": "filter",
+      "category": "Cinematic",
+      "description": "Low light opened up: shadows lifted with the noise softened before it rises, whites held, the blue of the night kept.",
+      "params": [
+        {
+          "key": "lift",
+          "group": null,
+          "label": "Lift",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 60,
+          "unit": "%",
+          "animate": false
+        },
+        {
+          "key": "clarity",
+          "group": null,
+          "label": "Clarity",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 40,
+          "unit": "%",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.noir",
+      "name": "Noir",
+      "kind": "filter",
+      "category": "Cinematic",
+      "description": "Desaturated and heavy, with a cold cast into the shadows and the corners dimmed.",
+      "params": []
+    },
+    {
+      "id": "concat.pink-fuzz",
+      "name": "Pink Fuzz",
+      "kind": "filter",
+      "category": "Stylised",
+      "description": "Low contrast, pink and lavender in the light, and a soft bloom over it all. The dreamy one.",
+      "params": [
+        {
+          "key": "haze",
+          "group": null,
+          "label": "Haze",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 60,
+          "unit": "%",
+          "animate": false
+        },
+        {
+          "key": "blush",
+          "group": null,
+          "label": "Blush",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 50,
+          "unit": "%",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.pitch",
+      "name": "Pitch",
+      "kind": "audio",
+      "category": "Voice",
+      "description": "Up or down by semitones, the length untouched.",
+      "params": [
+        {
+          "key": "semitones",
+          "group": null,
+          "label": "Semitones",
+          "type": "number",
+          "min": -12,
+          "max": 12,
+          "default": 0,
+          "unit": "st",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.pixelate",
+      "name": "Pixelate",
+      "kind": "effect",
+      "category": "Distort",
+      "description": "Big square pixels.",
+      "params": [
+        {
+          "key": "size",
+          "group": null,
+          "label": "Size",
+          "type": "int",
+          "min": 2,
+          "max": 64,
+          "default": 16,
+          "unit": "px",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.plate",
+      "name": "Plate",
+      "kind": "audio",
+      "category": "Space",
+      "description": "A studio plate: dense, bright and short.",
+      "params": [
+        {
+          "key": "size",
+          "group": null,
+          "label": "Size",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 40,
+          "unit": "%",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.point-and-shoot",
+      "name": "Point and Shoot",
+      "kind": "filter",
+      "category": "Retro",
+      "description": "The 2000s point-and-shoot: hard flash, whites blown, colour up, a cool cyan cast, over-sharpened with the sensor's noise.",
+      "params": [
+        {
+          "key": "flash",
+          "group": null,
+          "label": "Flash",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 60,
+          "unit": "%",
+          "animate": false
+        },
+        {
+          "key": "noise",
+          "group": null,
+          "label": "Noise",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 40,
+          "unit": "%",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.posterize",
+      "name": "Posterize",
+      "kind": "effect",
+      "category": "Stylize",
+      "description": "Flat bands of colour, like a screen print.",
+      "params": [
+        {
+          "key": "levels",
+          "group": null,
+          "label": "Levels",
+          "type": "int",
+          "min": 2,
+          "max": 8,
+          "default": 4,
+          "unit": null,
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.prism-shake",
+      "name": "Prism Shake",
+      "kind": "effect",
+      "category": "Shake",
+      "description": "Red, green and blue each shake on their own, so every edge fringes with colour as the frame trembles.",
+      "params": [
+        {
+          "key": "amount",
+          "group": null,
+          "label": "Amount",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 50,
+          "unit": "%",
+          "animate": false
+        },
+        {
+          "key": "speed",
+          "group": null,
+          "label": "Speed",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 50,
+          "unit": "%",
+          "animate": false
+        },
+        {
+          "key": "split",
+          "group": null,
+          "label": "Split",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 60,
+          "unit": "%",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.push",
+      "name": "Push",
+      "kind": "transition",
+      "category": "Slide",
+      "description": "The next shot shoves the last one out of frame, both moving as one, with a streak of motion blur at full speed.",
+      "params": [
+        {
+          "key": "direction",
+          "group": null,
+          "label": "Direction",
+          "type": "enum",
+          "min": 0,
+          "max": 3,
+          "default": 0,
+          "unit": null,
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.radio",
+      "name": "Radio",
+      "kind": "audio",
+      "category": "Tone",
+      "description": "A small speaker on a long wave: narrow band, a little crunch.",
+      "params": [
+        {
+          "key": "noise",
+          "group": null,
+          "label": "Noise",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 30,
+          "unit": "%",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.remove-black",
+      "name": "Remove Black",
+      "kind": "effect",
+      "category": "Cutout",
+      "description": "Takes out a black background - fire, sparks, smoke, light leaks or a logo shot on black - keeping its glow as see-through light, with no dark fringe, over whatever is beneath and in an export with transparency.",
+      "params": [
+        {
+          "key": "threshold",
+          "group": null,
+          "label": "Black level",
+          "type": "number",
+          "min": 0,
+          "max": 50,
+          "default": 4,
+          "unit": "%",
+          "animate": false
+        },
+        {
+          "key": "strength",
+          "group": null,
+          "label": "Strength",
+          "type": "number",
+          "min": 50,
+          "max": 400,
+          "default": 100,
+          "unit": "%",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.retro-70s",
+      "name": "Retro 70s",
+      "kind": "filter",
+      "category": "Film",
+      "description": "A heavy warm fade with a yellowed, sun-bleached cast.",
+      "params": []
+    },
+    {
+      "id": "concat.retro-cartoon",
+      "name": "Retro Cartoon",
+      "kind": "filter",
+      "category": "Stylised",
+      "description": "Flat bands of colour with inked edges, like a printed comic.",
+      "params": [
+        {
+          "key": "levels",
+          "group": null,
+          "label": "Levels",
+          "type": "number",
+          "min": 2,
+          "max": 8,
+          "default": 5,
+          "unit": null,
+          "animate": false
+        },
+        {
+          "key": "ink",
+          "group": null,
+          "label": "Ink",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 60,
+          "unit": "%",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.rgb-split-wipe",
+      "name": "RGB Split",
+      "kind": "transition",
+      "category": "Glitch",
+      "description": "Red, green and blue tear apart through the cut, each switching shots at its own moment, and lock back together.",
+      "params": [
+        {
+          "key": "spread",
+          "group": null,
+          "label": "Spread",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 60,
+          "unit": "%",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.robot",
+      "name": "Robot",
+      "kind": "audio",
+      "category": "Voice",
+      "description": "A metallic, modulated voice.",
+      "params": [
+        {
+          "key": "depth",
+          "group": null,
+          "label": "Depth",
+          "type": "number",
+          "min": 1,
+          "max": 10,
+          "default": 5,
+          "unit": null,
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.room",
+      "name": "Room",
+      "kind": "audio",
+      "category": "Space",
+      "description": "The early reflections of a room.",
+      "params": [
+        {
+          "key": "size",
+          "group": null,
+          "label": "Size",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 40,
+          "unit": "%",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.rosy",
+      "name": "Rosy",
+      "kind": "filter",
+      "category": "Portrait",
+      "description": "A soft pink lift into the highlights, flattering and warm.",
+      "params": []
+    },
+    {
+      "id": "concat.saturation",
+      "name": "Saturation",
+      "kind": "effect",
+      "category": "Color",
+      "description": "Richer or greyer colour, about each pixel's own brightness.",
+      "params": [
+        {
+          "key": "amount",
+          "group": null,
+          "label": "Saturation",
+          "type": "number",
+          "min": -100,
+          "max": 100,
+          "default": 0,
+          "unit": "%",
+          "animate": true
+        }
+      ]
+    },
+    {
+      "id": "concat.sci-fi",
+      "name": "Sci-Fi",
+      "kind": "filter",
+      "category": "Cinematic",
+      "description": "A cool, sterile steel-and-teal grade, saturation held back.",
+      "params": []
+    },
+    {
+      "id": "concat.shake",
+      "name": "Shake",
+      "kind": "effect",
+      "category": "Shake",
+      "description": "A camera that will not keep still: a handheld drift, a nervous jitter or a quake, with a turn and a smear of its own.",
+      "params": [
+        {
+          "key": "style",
+          "group": null,
+          "label": "Style",
+          "type": "enum",
+          "min": 0,
+          "max": 2,
+          "default": 0,
+          "unit": null,
+          "animate": false
+        },
+        {
+          "key": "amount",
+          "group": null,
+          "label": "Amount",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 50,
+          "unit": "%",
+          "animate": false
+        },
+        {
+          "key": "speed",
+          "group": null,
+          "label": "Speed",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 50,
+          "unit": "%",
+          "animate": false
+        },
+        {
+          "key": "rotation",
+          "group": null,
+          "label": "Rotation",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 40,
+          "unit": "%",
+          "animate": false
+        },
+        {
+          "key": "blur",
+          "group": null,
+          "label": "Motion Blur",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 40,
+          "unit": "%",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.shape-wipe",
+      "name": "Shape Wipe",
+      "kind": "transition",
+      "category": "Wipe",
+      "description": "The next shot shows through a circle, heart or star that grows from the centre until it covers the frame.",
+      "params": [
+        {
+          "key": "shape",
+          "group": null,
+          "label": "Shape",
+          "type": "enum",
+          "min": 0,
+          "max": 2,
+          "default": 0,
+          "unit": null,
+          "animate": false
+        },
+        {
+          "key": "softness",
+          "group": null,
+          "label": "Softness",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 15,
+          "unit": "%",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.sharpen",
+      "name": "Sharpen",
+      "kind": "effect",
+      "category": "Basic",
+      "description": "Crisper edges.",
+      "params": [
+        {
+          "key": "amount",
+          "group": null,
+          "label": "Amount",
+          "type": "number",
+          "min": 0.2,
+          "max": 3,
+          "default": 1,
+          "unit": null,
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.silver",
+      "name": "Silver",
+      "kind": "filter",
+      "category": "Black & White",
+      "description": "A cool, soft black and white with the shadows lifted, like a silver print.",
+      "params": []
+    },
+    {
+      "id": "concat.slide",
+      "name": "Slide",
+      "kind": "transition",
+      "category": "Slide",
+      "description": "The next shot glides in over the last one and settles, casting a soft shadow on the shot it covers.",
+      "params": [
+        {
+          "key": "direction",
+          "group": null,
+          "label": "Direction",
+          "type": "enum",
+          "min": 0,
+          "max": 3,
+          "default": 0,
+          "unit": null,
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.soft-light",
+      "name": "Soft Light",
+      "kind": "filter",
+      "category": "Everyday",
+      "description": "A matte: blacks lifted, whites eased down, contrast low, and a soft bloom in the light with cream in it. Airy and flattering.",
+      "params": [
+        {
+          "key": "lift",
+          "group": null,
+          "label": "Lift",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 50,
+          "unit": "%",
+          "animate": false
+        },
+        {
+          "key": "warmth",
+          "group": null,
+          "label": "Warmth",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 40,
+          "unit": "%",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.spin",
+      "name": "Spin",
+      "kind": "transition",
+      "category": "Spin",
+      "description": "The frame whirls round, blurring as it turns, and the next shot spins out of the turn and comes to rest.",
+      "params": [
+        {
+          "key": "turns",
+          "group": null,
+          "label": "Turns",
+          "type": "number",
+          "min": 0.5,
+          "max": 2,
+          "default": 1,
+          "unit": null,
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.spooky",
+      "name": "Spooky",
+      "kind": "filter",
+      "category": "Stylised",
+      "description": "Drained colour, a green-cyan cast, a hard toe, and a heavy vignette. For the season.",
+      "params": [
+        {
+          "key": "dread",
+          "group": null,
+          "label": "Dread",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 60,
+          "unit": "%",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.stadium",
+      "name": "Stadium",
+      "kind": "audio",
+      "category": "Space",
+      "description": "Vast stadium echoes and reverberations across a massive arena.",
+      "params": [
+        {
+          "key": "size",
+          "group": null,
+          "label": "Size",
+          "type": "number",
+          "min": 1,
+          "max": 10,
+          "default": 6,
+          "unit": null,
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.super-8",
+      "name": "Super 8",
+      "kind": "filter",
+      "category": "Film",
+      "description": "Faded, warm and grainy: an old home movie run through a projector.",
+      "params": []
+    },
+    {
+      "id": "concat.sweet",
+      "name": "Sweet",
+      "kind": "audio",
+      "category": "Voice",
+      "description": "A brighter, lighter, closer voice. Pitch at 0 follows the amount.",
+      "params": [
+        {
+          "key": "amount",
+          "group": null,
+          "label": "Amount",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 65,
+          "unit": "%",
+          "animate": false
+        },
+        {
+          "key": "pitch",
+          "group": null,
+          "label": "Pitch",
+          "type": "number",
+          "min": 0,
+          "max": 8,
+          "default": 0,
+          "unit": "st",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.swirl",
+      "name": "Swirl",
+      "kind": "transition",
+      "category": "Spin",
+      "description": "Both shots twist round the centre like water down a drain, and the next one untwists out of the whirl.",
+      "params": [
+        {
+          "key": "twist",
+          "group": null,
+          "label": "Twist",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 70,
+          "unit": "%",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.teal-orange",
+      "name": "Teal & Orange",
+      "kind": "filter",
+      "category": "Cinematic",
+      "description": "Teal in the shadows, orange in the highlights, skin held as skin, a film curve over it. The blockbuster grade, and the most requested look there is.",
+      "params": [
+        {
+          "key": "amount",
+          "group": null,
+          "label": "Amount",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 70,
+          "unit": "%",
+          "animate": false
+        },
+        {
+          "key": "contrast",
+          "group": null,
+          "label": "Contrast",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 25,
+          "unit": "%",
+          "animate": false
+        },
+        {
+          "key": "skin",
+          "group": null,
+          "label": "Protect skin",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 80,
+          "unit": "%",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.telephone",
+      "name": "Telephone",
+      "kind": "audio",
+      "category": "Tone",
+      "description": "The narrow band of a phone line.",
+      "params": [
+        {
+          "key": "drive",
+          "group": null,
+          "label": "Drive",
+          "type": "number",
+          "min": 0,
+          "max": 10,
+          "default": 3,
+          "unit": null,
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.treble",
+      "name": "Treble",
+      "kind": "audio",
+      "category": "Tone",
+      "description": "More sparkle.",
+      "params": [
+        {
+          "key": "gain",
+          "group": null,
+          "label": "Gain",
+          "type": "number",
+          "min": 0,
+          "max": 12,
+          "default": 4,
+          "unit": "dB",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.tropical",
+      "name": "Tropical",
+      "kind": "filter",
+      "category": "Scenery",
+      "description": "Saturated and bright, the water pushed teal.",
+      "params": []
+    },
+    {
+      "id": "concat.underwater",
+      "name": "Underwater",
+      "kind": "audio",
+      "category": "Space",
+      "description": "Submerged beneath the surface with heavy low-pass filtering.",
+      "params": [
+        {
+          "key": "depth",
+          "group": null,
+          "label": "Depth",
+          "type": "number",
+          "min": 1,
+          "max": 10,
+          "default": 5,
+          "unit": null,
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.vaporwave",
+      "name": "Vaporwave",
+      "kind": "filter",
+      "category": "Vibe",
+      "description": "Magenta and cyan pushed hard, a saturated retro-synth cast.",
+      "params": []
+    },
+    {
+      "id": "concat.vhs",
+      "name": "VHS",
+      "kind": "filter",
+      "category": "Retro",
+      "description": "Colour bleeding sideways, scan lines, softness, tape noise and too much saturation, with the slight vertical smear of a worn head.",
+      "params": [
+        {
+          "key": "bleed",
+          "group": null,
+          "label": "Bleed",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 60,
+          "unit": "%",
+          "animate": false
+        },
+        {
+          "key": "lines",
+          "group": null,
+          "label": "Lines",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 50,
+          "unit": "%",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.vibrance",
+      "name": "Vibrance",
+      "kind": "filter",
+      "category": "Color",
+      "description": "Richer colour where it is muted, without blowing out what is already strong.",
+      "params": [
+        {
+          "key": "amount",
+          "group": null,
+          "label": "Amount",
+          "type": "number",
+          "min": 0.1,
+          "max": 2,
+          "default": 0.7,
+          "unit": null,
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.vignette",
+      "name": "Vignette",
+      "kind": "effect",
+      "category": "Stylize",
+      "description": "Darkened corners that draw the eye to the middle.",
+      "params": [
+        {
+          "key": "strength",
+          "group": null,
+          "label": "Strength",
+          "type": "number",
+          "min": 10,
+          "max": 100,
+          "default": 50,
+          "unit": "%",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.vintage",
+      "name": "Vintage",
+      "kind": "filter",
+      "category": "Retro",
+      "description": "A seventies print: matte blacks and whites, colour faded, greens gone to yellow, a soft vignette.",
+      "params": [
+        {
+          "key": "age",
+          "group": null,
+          "label": "Age",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 60,
+          "unit": "%",
+          "animate": false
+        },
+        {
+          "key": "tint",
+          "group": null,
+          "label": "Tint",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 50,
+          "unit": "%",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.vinyl",
+      "name": "Vinyl",
+      "kind": "audio",
+      "category": "Tone",
+      "description": "Warm, vintage turntable character with band-limited sound.",
+      "params": [
+        {
+          "key": "warmth",
+          "group": null,
+          "label": "Warmth",
+          "type": "number",
+          "min": 0,
+          "max": 10,
+          "default": 5,
+          "unit": null,
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.vivid",
+      "name": "Vivid",
+      "kind": "filter",
+      "category": "Everyday",
+      "description": "Colour that sings and contrast that bites, with a little edge: the look that reads as a better camera. Skin is held back from the boost.",
+      "params": [
+        {
+          "key": "colour",
+          "group": null,
+          "label": "Colour",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 60,
+          "unit": "%",
+          "animate": false
+        },
+        {
+          "key": "punch",
+          "group": null,
+          "label": "Punch",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 50,
+          "unit": "%",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.walnut",
+      "name": "Walnut",
+      "kind": "filter",
+      "category": "Everyday",
+      "description": "The caf\u00e9 look: warm brown through the middle, greens muted to olive, contrast eased. Cosy, and kind to wood and skin alike.",
+      "params": [
+        {
+          "key": "warmth",
+          "group": null,
+          "label": "Warmth",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 60,
+          "unit": "%",
+          "animate": false
+        },
+        {
+          "key": "soften",
+          "group": null,
+          "label": "Soften",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 40,
+          "unit": "%",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.warm",
+      "name": "Warm",
+      "kind": "filter",
+      "category": "Color",
+      "description": "Shifts the picture towards candlelight.",
+      "params": [
+        {
+          "key": "temperature",
+          "group": null,
+          "label": "Temperature",
+          "type": "number",
+          "min": 3000,
+          "max": 6000,
+          "default": 4600,
+          "unit": "K",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.wet-street",
+      "name": "Wet Street",
+      "kind": "filter",
+      "category": "Cinematic",
+      "description": "Cool, hazy and drained, with the wet reflections lifted and blooming. Street-level walks at the end of the day.",
+      "params": [
+        {
+          "key": "haze",
+          "group": null,
+          "label": "Haze",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 60,
+          "unit": "%",
+          "animate": false
+        },
+        {
+          "key": "chill",
+          "group": null,
+          "label": "Chill",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 50,
+          "unit": "%",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.whip-pan",
+      "name": "Whip Pan",
+      "kind": "transition",
+      "category": "Wipe",
+      "description": "The camera whips sideways so fast the frame smears, and lands on the next shot.",
+      "params": [
+        {
+          "key": "speed",
+          "group": null,
+          "label": "Speed",
+          "type": "number",
+          "min": 20,
+          "max": 100,
+          "default": 80,
+          "unit": "%",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.whisper",
+      "name": "Whisper",
+      "kind": "audio",
+      "category": "Voice",
+      "description": "Airy, breathy tone with attenuated low end and enhanced presence.",
+      "params": [
+        {
+          "key": "air",
+          "group": null,
+          "label": "Air",
+          "type": "number",
+          "min": 1,
+          "max": 10,
+          "default": 5,
+          "unit": null,
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.white-balance",
+      "name": "White Balance",
+      "kind": "effect",
+      "category": "Color",
+      "description": "The picture as if lit warmer or cooler, and turned towards magenta or green, as the eye adapts to the light.",
+      "params": [
+        {
+          "key": "temperature",
+          "group": null,
+          "label": "Temperature",
+          "type": "number",
+          "min": 2000,
+          "max": 11000,
+          "default": 6500,
+          "unit": "K",
+          "animate": true
+        },
+        {
+          "key": "tint",
+          "group": null,
+          "label": "Tint",
+          "type": "number",
+          "min": -100,
+          "max": 100,
+          "default": 0,
+          "unit": "%",
+          "animate": true
+        }
+      ]
+    },
+    {
+      "id": "concat.whitewash",
+      "name": "Whitewash",
+      "kind": "filter",
+      "category": "Everyday",
+      "description": "Bright and matte: whites soft and cool, blacks lifted well off the floor, colour quiet. The clean minimal look of a white room.",
+      "params": [
+        {
+          "key": "matte",
+          "group": null,
+          "label": "Matte",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 60,
+          "unit": "%",
+          "animate": false
+        },
+        {
+          "key": "cool",
+          "group": null,
+          "label": "Cool",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 40,
+          "unit": "%",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.window-seat",
+      "name": "Window Seat",
+      "kind": "filter",
+      "category": "Cinematic",
+      "description": "Soft cinema: blacks lifted, the light blooming warm, shadows a touch cool, skin kept. The look of a story told in a window seat.",
+      "params": [
+        {
+          "key": "haze",
+          "group": null,
+          "label": "Haze",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 50,
+          "unit": "%",
+          "animate": false
+        },
+        {
+          "key": "warmth",
+          "group": null,
+          "label": "Warmth",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 50,
+          "unit": "%",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.winter-cool",
+      "name": "Winter Cool",
+      "kind": "filter",
+      "category": "Scenery",
+      "description": "Desaturated and blue, the blacks lifted to a matte wintry haze.",
+      "params": []
+    },
+    {
+      "id": "concat.zoom-blur",
+      "name": "Zoom Blur",
+      "kind": "effect",
+      "category": "Blur",
+      "description": "A rush towards a point, as if the lens zoomed during the shot.",
+      "params": [
+        {
+          "key": "amount",
+          "group": null,
+          "label": "Amount",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 25,
+          "unit": "%",
+          "animate": true
+        },
+        {
+          "key": "x",
+          "group": null,
+          "label": "Centre X",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 50,
+          "unit": "%",
+          "animate": false
+        },
+        {
+          "key": "y",
+          "group": null,
+          "label": "Centre Y",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 50,
+          "unit": "%",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.zoom-blur-transition",
+      "name": "Zoom Blur",
+      "kind": "transition",
+      "category": "Zoom",
+      "description": "The camera lunges into the last shot in a rush of streaks, and the next one rushes back out to meet it.",
+      "params": [
+        {
+          "key": "strength",
+          "group": null,
+          "label": "Strength",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "default": 70,
+          "unit": "%",
+          "animate": false
+        }
+      ]
+    },
+    {
+      "id": "concat.zoom-transition",
+      "name": "Zoom",
+      "kind": "transition",
+      "category": "Zoom",
+      "description": "One unbroken push of the camera: into the last shot and on out of it into the next, streaked by the speed.",
+      "params": [
+        {
+          "key": "direction",
+          "group": null,
+          "label": "Direction",
+          "type": "enum",
+          "min": 0,
+          "max": 1,
+          "default": 0,
+          "unit": null,
+          "animate": false
+        }
+      ]
+    }
+  ]
+}

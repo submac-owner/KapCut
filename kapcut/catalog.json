@@ -1,8 +1,9 @@
 {
   "schemaVersion": 1,
   "name": "kapcut",
-  "toolCount": 120,
+  "toolCount": 121,
   "families": [
+    "agent",
     "animations",
     "audio",
     "captions",
@@ -1460,6 +1461,18 @@
       "destructive": false,
       "idempotent": false,
       "capcut_source": "style_*"
+    },
+    {
+      "family": "agent",
+      "name": "kapcut_translate",
+      "title": "Translate CapCut material",
+      "description": "Translate a CapCut material (capcutType/value or effectName/start/duration) into real Concat edit commands.",
+      "target_kind": "bridge",
+      "target": "capcut_bridge",
+      "read_only": false,
+      "destructive": false,
+      "idempotent": false,
+      "capcut_source": "agent_*"
     }
   ]
 }

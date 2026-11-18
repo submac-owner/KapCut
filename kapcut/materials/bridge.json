@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 1,
+  "adjustMap": {
+    "contrast": [
+      "concat.adjust",
+      "contrast",
+      100
+    ],
+    "saturation": [
+      "concat.adjust",
+      "saturation",
+      100
+    ],
+    "sharpen": [
+      "concat.adjust",
+      "sharpen",
+      100
+    ],
+    "highlight": [
+      "concat.adjust",
+      "highlights",
+      100
+    ],
+    "shadow": [
+      "concat.adjust",
+      "shadows",
+      100
+    ],
+    "brightness": [
+      "concat.adjust",
+      "brightness",
+      100
+    ],
+    "temperature": [
+      "concat.adjust",
+      "temperature",
+      "kelvin"
+    ],
+    "tone": [
+      "concat.adjust",
+      "temperature",
+      "kelvin"
+    ],
+    "hsl": [
+      "concat.adjust",
+      "saturation",
+      100
+    ],
+    "vignetting": [
+      "concat.adjust",
+      "vignette",
+      100
+    ],
+    "fade": [
+      "concat.adjust",
+      "fade",
+      100
+    ],
+    "clear": [
+      "concat.adjust",
+      "sharpen",
+      100
+    ],
+    "light_sensation": [
+      "concat.adjust",
+      "exposure",
+      3
+    ],
+    "black_white": [
+      "concat.adjust",
+      "saturation",
+      -100
+    ]
+  },
+  "effectMap": {
+    "chroma": "concat.chroma-key",
+    "green screen": "concat.chroma-key",
+    "green_screen": "concat.chroma-key",
+    "luma key": "concat.luma-key",
+    "remove black": "concat.remove-black",
+    "glow": "concat.glow",
+    "blur": "concat.gaussian-blur",
+    "box blur": "concat.gaussian-blur",
+    "zoom blur": "concat.zoom-blur",
+    "motion blur": "concat.motion-blur",
+    "vhs": "concat.vhs",
+    "sepia": "concat.vintage",
+    "neon": "concat.neon",
+    "film grain": "concat.film-grain",
+    "shake": "concat.shake",
+    "beat shake": "concat.beat-shake",
+    "swirl": "concat.swirl",
+    "fisheye": "concat.fisheye",
+    "echo": "concat.echo",
+    "dissolve": "concat.dissolve",
+    "bloom": "concat.bloom-pulse",
+    "dust": "concat.falling-dust",
+    "after hours": "concat.after-hours",
+    "aquamarine": "concat.aquamarine",
+    "autumn": "concat.autumn",
+    "blush": "concat.blush",
+    "impact": "concat.impact",
+    "color wheels": "concat.color-wheels",
+    "contrast": "concat.contrast",
+    "sharpen": "concat.sharpen",
+    "vignette": "concat.vignette",
+    "saturation": "concat.saturation",
+    "exposure": "concat.exposure",
+    "denoise": "concat.denoise",
+    "noise reduction": "concat.denoise",
+    "robot": "concat.robot",
+    "chipmunk": "concat.chipmunk",
+    "telephone": "concat.telephone",
+    "megaphone": "concat.megaphone",
+    "enhance voice": "concat.enhance-voice",
+    "loudness": "concat.loudness",
+    "clock wipe": "concat.clock-wipe",
+    "linear wipe": "concat.linear-wipe",
+    "shape wipe": "concat.shape-wipe",
+    "rgb split wipe": "concat.rgb-split-wipe",
+    "iris": "concat.iris",
+    "slide": "concat.slide",
+    "push": "concat.push",
+    "cube": "concat.cube",
+    "fade black": "concat.fade-black",
+    "fade white": "concat.fade-white",
+    "glitch": "concat.glitch-warp",
+    "pixelate": "concat.pixelate",
+    "halftone": "concat.halftone",
+    "posterize": "concat.posterize",
+    "chromatic aberration": "concat.chromatic-aberration",
+    "halation": "concat.halation",
+    "light leak": "concat.light-leak-flash"
+  },
+  "effectParamMap": {
+    "effects_adjust_speed": "speed",
+    "effects_adjust_intensity": "intensity"
+  }
+}

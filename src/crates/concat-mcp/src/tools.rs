@@ -24,6 +24,7 @@ use crate::backend::Backend;
 use crate::schema::Schemas;
 use crate::summary;
 
+mod capcut_bridge;
 mod capcut_tools;
 
 /// The longest preview side handed back when the agent names no size: a
@@ -81,6 +82,8 @@ pub enum Action {
     Mask,
     /// `preview.frame`, as an image.
     PreviewFrame,
+    /// Translate a CapCut material into Concat edit commands and apply them.
+    CapCutTranslate,
 }
 
 /// How a reply is shown to the agent.
@@ -754,6 +757,12 @@ fn run(tool: &Tool, arguments: Value, context: Context<'_>) -> Result<Outcome, A
         Action::PreviewFrame => preview(arguments, backend),
         Action::Mask => {
             let result = backend.call(mask(arguments)?)?;
+            Ok(Outcome::json(summary::view(&result)))
+        }
+        Action::CapCutTranslate => {
+            let command = capcut_bridge::translate(&arguments);
+            let path = arguments.get("path").cloned().unwrap_or(Value::Null);
+            let result = backend.call(request("edit.apply", json!({ "path": path, "command": command }))?)?;
             Ok(Outcome::json(summary::view(&result)))
         }
     }

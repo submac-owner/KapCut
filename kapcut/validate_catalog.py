@@ -24,6 +24,8 @@ valid_methods = {
 for t in tools:
     if t["target_kind"] == "method" and t["target"] not in valid_methods:
         errors.append(f"{t['name']}: unknown method {t['target']}")
+    if t["target_kind"] == "bridge" and t["target"] != "capcut_bridge":
+        errors.append(f"{t['name']}: unknown bridge {t['target']}")
     if t["target_kind"] == "op" and not re.match(r"^[a-z][A-Za-z]+$", t["target"]):
         errors.append(f"{t['name']}: bad op {t['target']}")
     if not t["description"] or len(t["description"]) < 12:
