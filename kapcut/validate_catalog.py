@@ -33,7 +33,7 @@ for t in tools:
     if not t["description"] or len(t["description"]) < 12:
         errors.append(f"{t['name']}: description too short")
 
-rs = (root / "src/crates/concat-mcp/src/capcut_tools.rs").read_text(encoding="utf-8")
+rs = (root / "src/crates/concat-mcp/src/tools/capcut_tools.rs").read_text(encoding="utf-8")
 if rs.count('name: "') != len(tools):
     errors.append(f"Rust tool count mismatch: {rs.count('name: \"')} vs {len(tools)}")
 

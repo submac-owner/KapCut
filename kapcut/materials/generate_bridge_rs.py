@@ -3,7 +3,7 @@
 import json, pathlib
 
 HERE = pathlib.Path(__file__).resolve().parent
-OUT = pathlib.Path(__file__).resolve().parents[2] / "src/crates/concat-mcp/src/capcut_bridge.rs"
+OUT = pathlib.Path(__file__).resolve().parents[2] / "src/crates/concat-mcp/src/tools/capcut_bridge.rs"
 b = json.loads((HERE / "bridge.json").read_text(encoding="utf-8"))
 reg = json.loads((HERE / "concat-packages.json").read_text(encoding="utf-8"))
 params = {p["id"]: sorted(x["key"] for x in p["params"]) for p in reg["packages"]}

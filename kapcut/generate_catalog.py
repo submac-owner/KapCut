@@ -12,7 +12,7 @@ import json, pathlib
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 OUT_JSON = ROOT / "kapcut" / "catalog.json"
-OUT_RS = ROOT / "src" / "crates" / "concat-mcp" / "src" / "capcut_tools.rs"
+OUT_RS = ROOT / "src" / "crates" / "concat-mcp" / "src" / "tools" / "capcut_tools.rs"
 
 # (name, title, short description, target kind, target, flags)
 # kind: "op" = edit.apply command, "method" = API method

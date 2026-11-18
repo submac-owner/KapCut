@@ -653,6 +653,23 @@ fn input_schema(schemas: &Schemas, tool: &Tool) -> Option<Value> {
             Some(schema)
         }
         Action::PreviewFrame => schemas.method("preview.frame"),
+        Action::CapCutTranslate | Action::CapCutMotion | Action::CapCutMotionQuery => {
+            Some(json!({
+                "type": "object",
+                "properties": {
+                    "path": { "type": "string", "description": "The project folder." },
+                    "capcutType": { "type": "string", "description": "CapCut adjust type, e.g. contrast." },
+                    "value": { "type": "number", "description": "CapCut normalized slider value." },
+                    "effectName": { "type": "string", "description": "CapCut effect name to translate." },
+                    "presetId": { "type": "string", "description": "Motion preset id; see motion_list_presets." },
+                    "clipId": { "type": "string", "description": "Target clip id." },
+                    "clipDuration": { "type": "number", "description": "Target clip duration in seconds." },
+                    "start": { "type": "number", "description": "Start on the clip in seconds." },
+                    "loops": { "type": "number", "description": "Loop count for loop presets." }
+                },
+                "required": ["path"]
+            }))
+        }
         Action::Mask => {
             let update = schemas.command("updateClip")?;
             let mut masks = update
@@ -1208,6 +1225,9 @@ mod tests {
                     request("export.status", sample)
                 }
                 Action::PreviewFrame => request("preview.frame", sample.clone()),
+                Action::CapCutTranslate | Action::CapCutMotion | Action::CapCutMotionQuery => {
+                    request("edit.apply", sample.clone())
+                }
                 Action::Mask => mask(sample.clone()),
             };
             let built = built.unwrap_or_else(|error| panic!("{name}: {error}"));

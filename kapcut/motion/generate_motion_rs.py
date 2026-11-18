@@ -3,7 +3,7 @@
 import json, pathlib
 
 HERE = pathlib.Path(__file__).resolve().parent
-OUT = pathlib.Path(__file__).resolve().parents[2] / "src/crates/concat-mcp/src/capcut_motion.rs"
+OUT = pathlib.Path(__file__).resolve().parents[2] / "src/crates/concat-mcp/src/tools/capcut_motion.rs"
 presets = json.loads((HERE / "presets.json").read_text(encoding="utf-8"))["presets"]
 raw = json.dumps(presets, separators=(",", ":"), ensure_ascii=False)
 
