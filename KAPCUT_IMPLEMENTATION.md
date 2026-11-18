@@ -12,6 +12,15 @@ embedded chat panel driving OpenCode. Local machine = debug/analysis only;
 - **Generated Rust**: `src/crates/concat-mcp/src/capcut_tools.rs`, wired into
   `tools::catalogue()` in `src/crates/concat-mcp/src/tools.rs`.
 - **Generator + validator**: `kapcut/generate_catalog.py`, `kapcut/validate_catalog.py`.
+- **Material bridge**: `kapcut/materials/` — registry of Concat's **132 real
+  effect packages**, 58 CapCut→Concat effect mappings and 14 adjust mappings,
+  plus Python reference implementation + tests and generated Rust
+  (`capcut_bridge.rs`). It converts CapCut draft materials into real
+  `edit.apply` commands (`setEffectKey` on `concat.adjust`, `addLayerClip` with
+  real package IDs). Verified against the real draft: 7 commands translated.
+- **Bridge tool**: `kapcut_translate` (Action::CapCutTranslate) is in the catalog
+  and wired into the MCP server, so an agent can translate a CapCut material
+  and apply it.
 - **Chat panel prototype**: `kapcut/chat-panel/` — static UI + Node bridge that
   talks to OpenCode's HTTP API (`opencode api`).
 - Concat's existing `.github/workflows/ci.yml` and `release.yml` handle CI/builds.
@@ -63,8 +72,11 @@ then ask for edits. Tool calls appear in the log.
 
 ## Remaining work
 
-1. CI verification of the generated Rust (first push to a branch).
-2. Implement `discover_tools`/`describe_tool` and tool-family filtering in `concat-mcp`.
+1. CI verification of the generated Rust (runs triggered on the pushed commit).
+2. Extend the bridge: exact preset definitions for CapCut transitions,
+   animations, text styles and masks (the current mappings are semantic
+   approximations, e.g. "Chroma Stretch" -> `concat.chroma-key`).
+3. Implement `discover_tools`/`describe_tool` and tool-family filtering in `concat-mcp`.
 3. CapCut-style preset packages: effects, filters, transitions, animations,
    text/font styles, masks, audio and color presets built from open shaders/fonts.
 4. Remote MCP HTTP transport + auth + outside-agent docs.
