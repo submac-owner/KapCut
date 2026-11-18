@@ -291,6 +291,13 @@ lines = [
     "// GENERATED FILE - do not edit. Run: python3 kapcut/generate_catalog.py",
     "use crate::tools::{Action, Reply, Tool};",
     "",
+    "pub const KAPCUT_NAMES: &[&str] = &[",
+]
+for t in T:
+    lines.append("    " + rs_str(t["name"]) + ",")
+lines += [
+    "];",
+    "",
     "pub fn capcut_catalogue() -> Vec<Tool> {",
     "    vec![",
 ]

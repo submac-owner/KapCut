@@ -471,7 +471,10 @@ mod tests {
             .map(|tool| (tool["name"].to_string(), tool.to_string().len()))
             .collect();
         let total: usize = sizes.iter().map(|(_, size)| size).sum();
-        assert!(total < 180_000, "{total}: {sizes:?}");
+        // KapCut adds 140 generated CapCut/AE-style tools on compact shared
+        // schemas. The budget grows to cover them; the per-tool cap below
+        // still keeps each tool small, and family filtering is planned.
+        assert!(total < 300_000, "{total}: {sizes:?}");
         for (name, size) in &sizes {
             assert!(*size < 72_000, "{name}: {size}");
         }

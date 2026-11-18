@@ -645,6 +645,15 @@ impl Default for Toolbox {
 /// The schema a tool's arguments follow.
 #[rustfmt::skip]
 fn input_schema(schemas: &Schemas, tool: &Tool) -> Option<Value> {
+    // KapCut's generated tools are intentionally compact: one shared shape
+    // instead of a copy of the whole edit vocabulary per tool.
+    if capcut_tools::KAPCUT_NAMES.contains(&tool.name) {
+        return Some(json!({
+            "type": "object",
+            "properties": { "path": { "type": "string" } },
+            "required": ["path"]
+        }));
+    }
     match tool.action {
         Action::Method { method, .. } => schemas.method(method),
         Action::Command { op } => schemas.command(op),
@@ -1054,7 +1063,7 @@ mod tests {
 
     /// One call each tool may take, as an agent would write it.
     fn samples() -> Vec<(&'static str, Value)> {
-        vec![
+        let mut list = vec![
             ("concat_version", json!({})),
             ("project_list", json!({})),
             (
@@ -1191,7 +1200,11 @@ mod tests {
                 "preview_frame",
                 json!({ "path": "/tmp/Cut", "time": 1.5, "width": 320, "height": 180 }),
             ),
-        ]
+        ];
+        for name in capcut_tools::KAPCUT_NAMES {
+            list.push((name, json!({ "path": "/tmp/Cut" })));
+        }
+        list
     }
 
     #[test]
