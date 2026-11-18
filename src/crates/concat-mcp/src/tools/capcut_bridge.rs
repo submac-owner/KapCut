@@ -176,8 +176,6 @@ pub fn map_adjust(capcut_type: &str, value: f64, clip_id: &str, entry: usize) ->
 
 pub fn map_effect(name: &str, start: f64, duration: f64) -> Vec<Value> {
     let lower = name.to_ascii_lowercase();
-pub fn map_effect(name: &str, start: f64, duration: f64) -> Vec<Value> {
-    let lower = name.to_ascii_lowercase();
     let mut package = "";
     if package.is_empty() && lower.contains("after hours") { package = "concat.after-hours"; }
     if package.is_empty() && lower.contains("aquamarine") { package = "concat.aquamarine"; }

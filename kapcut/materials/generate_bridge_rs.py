@@ -51,12 +51,6 @@ L += [
  "",
  "pub fn map_effect(name: &str, start: f64, duration: f64) -> Vec<Value> {",
  "    let lower = name.to_ascii_lowercase();",
- "    let package = match lower.as_str() {",
-]
-# Rust match on substrings: generate if-chains instead
-L[-1] = "pub fn map_effect(name: &str, start: f64, duration: f64) -> Vec<Value> {"
-L += [
- "    let lower = name.to_ascii_lowercase();",
  "    let mut package = \"\";",
 ]
 for needle, pkg in sorted(b["effectMap"].items()):
