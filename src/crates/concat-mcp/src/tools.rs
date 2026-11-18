@@ -27,6 +27,8 @@ use crate::summary;
 #[rustfmt::skip]
 mod capcut_bridge;
 #[rustfmt::skip]
+mod capcut_expr;
+#[rustfmt::skip]
 mod capcut_motion;
 #[rustfmt::skip]
 mod capcut_tools;
@@ -93,6 +95,10 @@ pub enum Action {
     CapCutMotion,
     /// Query motion presets or the CPU FFmpeg render graph (read-only).
     CapCutMotionQuery,
+    /// Compile a CPU expression into Concat keyframe commands and apply them.
+    CapCutExpr,
+    /// List available CPU expression templates (read-only).
+    CapCutExprQuery,
 }
 
 /// How a reply is shown to the agent.
@@ -656,7 +662,8 @@ fn input_schema(schemas: &Schemas, tool: &Tool) -> Option<Value> {
             Some(schema)
         }
         Action::PreviewFrame => schemas.method("preview.frame"),
-        Action::CapCutTranslate | Action::CapCutMotion | Action::CapCutMotionQuery => {
+        Action::CapCutTranslate | Action::CapCutMotion | Action::CapCutMotionQuery
+        | Action::CapCutExpr | Action::CapCutExprQuery => {
             Some(json!({
                 "type": "object",
                 "properties": {
@@ -812,6 +819,14 @@ fn run(tool: &Tool, arguments: Value, context: Context<'_>) -> Result<Outcome, A
             };
             Ok(Outcome::json(out))
         }
+        Action::CapCutExpr => {
+            let command = capcut_expr::compile(&arguments);
+            let path = arguments.get("path").cloned().unwrap_or(Value::Null);
+            let request = request("edit.apply", json!({ "path": path, "command": command }))?;
+            let result = backend.call(request)?;
+            Ok(Outcome::json(summary::view(&result)))
+        }
+        Action::CapCutExprQuery => Ok(Outcome::json(capcut_expr::list_expressions())),
     }
 }
 
@@ -1230,7 +1245,8 @@ mod tests {
                     request("export.status", sample)
                 }
                 Action::PreviewFrame => request("preview.frame", sample.clone()),
-                Action::CapCutTranslate | Action::CapCutMotion | Action::CapCutMotionQuery => {
+                Action::CapCutTranslate | Action::CapCutMotion | Action::CapCutMotionQuery
+                | Action::CapCutExpr | Action::CapCutExprQuery => {
                     request("edit.apply", sample.clone())
                 }
                 Action::Mask => mask(sample.clone()),

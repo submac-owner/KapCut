@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "note": "CPU-first expression compiler. Each expression is sampled into real Concat setClipKey commands; no JS engine, no GPU. Params are the public knobs; the compiler samples deterministically.",
+  "expressions": [
+    {
+      "id": "wiggle", "name": "Wiggle", "category": "procedural",
+      "description": "Smooth pseudo-random oscillation. Seeded, so it is reproducible.",
+      "params": {"frequency": 2.0, "amplitude": 0.05, "seed": 1}, "samples": 32, "ease": "linear"
+    },
+    {
+      "id": "sine", "name": "Sine Wave", "category": "wave",
+      "description": "Pure sine motion for loops, pulses and oscillation.",
+      "params": {"frequency": 1.0, "amplitude": 0.1, "phase": 0.0}, "samples": 32, "ease": "inOut"
+    },
+    {
+      "id": "damped_sine", "name": "Damped Sine", "category": "wave",
+      "description": "Bounce that settles - spring, recoil, elastic ease.",
+      "params": {"frequency": 3.0, "amplitude": 0.25, "damping": 4.0}, "samples": 40, "ease": "linear"
+    },
+    {
+      "id": "pulse", "name": "Pulse", "category": "step",
+      "description": "Duty-cycle pulse between two values - strobes and blinks.",
+      "params": {"period": 0.5, "duty": 0.5, "high": 1.0, "low": 0.0}, "samples": 48, "ease": "linear"
+    },
+    {
+      "id": "random_steps", "name": "Random Steps", "category": "step",
+      "description": "Seeded random values held between steps - glitch and vernacular motion.",
+      "params": {"interval": 0.25, "min": -0.1, "max": 0.1, "seed": 7}, "samples": 40, "ease": "linear"
+    },
+    {
+      "id": "drift", "name": "Drift", "category": "ramp",
+      "description": "Linear ramp from start to start+slope*time.",
+      "params": {"start": 0.0, "slope": 0.02}, "samples": 8, "ease": "linear"
+    },
+    {
+      "id": "loop_out", "name": "Loop Out", "category": "loop",
+      "description": "Repeat a source span; pingpong alternates direction.",
+      "params": {"cycle": 1.0, "mode": "cycle", "from": 0.0, "to": 1.0}, "samples": 48, "ease": "inOut"
+    },
+    {
+      "id": "follow_path", "name": "Follow Path", "category": "path",
+      "description": "Move along control points; compiles to offsetX + offsetY keyframes.",
+      "params": {"points": [[0, 0], [0.3, 0.2], [-0.2, -0.1], [0, 0]]}, "samples": 40, "ease": "inOut"
+    }
+  ]
+}

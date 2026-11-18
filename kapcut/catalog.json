@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "name": "kapcut",
-  "toolCount": 134,
+  "toolCount": 140,
   "families": [
     "agent",
     "animations",
@@ -11,6 +11,7 @@
     "color",
     "effects",
     "export",
+    "expressions",
     "masks",
     "media",
     "motion",
@@ -1618,6 +1619,78 @@
       "destructive": false,
       "idempotent": false,
       "capcut_source": "motion_*"
+    },
+    {
+      "family": "expressions",
+      "name": "expr_list",
+      "title": "List expressions",
+      "description": "List CPU expression templates (wiggle, sine, loopOut, follow path...).",
+      "target_kind": "expr_query",
+      "target": "capcut_expr",
+      "read_only": false,
+      "destructive": false,
+      "idempotent": false,
+      "capcut_source": "expressions_*"
+    },
+    {
+      "family": "expressions",
+      "name": "expr_compile",
+      "title": "Compile expression",
+      "description": "Sample an expression into real keyframe commands on a clip.",
+      "target_kind": "expr",
+      "target": "capcut_expr",
+      "read_only": false,
+      "destructive": false,
+      "idempotent": false,
+      "capcut_source": "expressions_*"
+    },
+    {
+      "family": "expressions",
+      "name": "expr_wiggle",
+      "title": "Wiggle",
+      "description": "Apply seeded smooth random oscillation to a property.",
+      "target_kind": "expr",
+      "target": "capcut_expr",
+      "read_only": false,
+      "destructive": false,
+      "idempotent": false,
+      "capcut_source": "expressions_*"
+    },
+    {
+      "family": "expressions",
+      "name": "expr_loop_out",
+      "title": "Loop Out",
+      "description": "Repeat a source span with cycle/pingpong/offset modes.",
+      "target_kind": "expr",
+      "target": "capcut_expr",
+      "read_only": false,
+      "destructive": false,
+      "idempotent": false,
+      "capcut_source": "expressions_*"
+    },
+    {
+      "family": "expressions",
+      "name": "expr_follow_path",
+      "title": "Follow path",
+      "description": "Move a clip along control points via offsetX/offsetY keys.",
+      "target_kind": "expr",
+      "target": "capcut_expr",
+      "read_only": false,
+      "destructive": false,
+      "idempotent": false,
+      "capcut_source": "expressions_*"
+    },
+    {
+      "family": "expressions",
+      "name": "expr_clear",
+      "title": "Clear expression keys",
+      "description": "Remove all keyframes from a property.",
+      "target_kind": "op",
+      "target": "clearClipKeys",
+      "read_only": false,
+      "destructive": true,
+      "idempotent": false,
+      "capcut_source": "expressions_*"
     },
     {
       "family": "agent",
