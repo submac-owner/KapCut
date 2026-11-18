@@ -141,6 +141,9 @@ pub const KAPCUT_NAMES: &[&str] = &[
     "expr_loop_out",
     "expr_follow_path",
     "expr_clear",
+    "shape_list",
+    "shape_compile",
+    "shape_add",
     "kapcut_translate",
 ];
 
@@ -1396,6 +1399,33 @@ pub fn capcut_catalogue() -> Vec<Tool> {
             destructive: true,
             idempotent: false,
             action: Action::Command { op: "clearClipKeys" },
+        },
+        Tool {
+            name: "shape_list",
+            title: "List shape presets",
+            description: "List AE-style shape presets using Concat's real shape vocabulary.",
+            read_only: false,
+            destructive: false,
+            idempotent: false,
+            action: Action::CapCutShapeQuery,
+        },
+        Tool {
+            name: "shape_compile",
+            title: "Compile shape preset",
+            description: "Compile a shape preset into addShapeClip and keyframe commands.",
+            read_only: false,
+            destructive: false,
+            idempotent: false,
+            action: Action::CapCutShape,
+        },
+        Tool {
+            name: "shape_add",
+            title: "Add shape layer",
+            description: "Add a styled shape layer (with optional trim/repeat) to the timeline.",
+            read_only: false,
+            destructive: false,
+            idempotent: false,
+            action: Action::CapCutShape,
         },
         Tool {
             name: "kapcut_translate",

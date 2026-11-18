@@ -235,6 +235,11 @@ add("expressions","expr_loop_out","Loop Out","Repeat a source span with cycle/pi
 add("expressions","expr_follow_path","Follow path","Move a clip along control points via offsetX/offsetY keys.","expr","capcut_expr")
 add("expressions","expr_clear","Clear expression keys","Remove all keyframes from a property.","op","clearClipKeys",destructive=True)
 
+# ---- shapes (3) ----
+add("shapes","shape_list","List shape presets","List AE-style shape presets using Concat's real shape vocabulary.","shape_query","capcut_shape")
+add("shapes","shape_compile","Compile shape preset","Compile a shape preset into addShapeClip and keyframe commands.","shape","capcut_shape")
+add("shapes","shape_add","Add shape layer","Add a styled shape layer (with optional trim/repeat) to the timeline.","shape","capcut_shape")
+
 add("agent","kapcut_translate","Translate CapCut material",
     "Translate a CapCut material (capcutType/value or effectName/start/duration) into real Concat edit commands.","bridge","capcut_bridge")
 
@@ -312,6 +317,10 @@ for t in T:
         action = "Action::CapCutExpr"
     elif t["target_kind"] == "expr_query":
         action = "Action::CapCutExprQuery"
+    elif t["target_kind"] == "shape":
+        action = "Action::CapCutShape"
+    elif t["target_kind"] == "shape_query":
+        action = "Action::CapCutShapeQuery"
     elif t["target_kind"] == "op":
         action = "Action::Command { op: " + rs_str(t["target"]) + " }"
     else:

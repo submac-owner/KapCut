@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "name": "kapcut",
-  "toolCount": 140,
+  "toolCount": 143,
   "families": [
     "agent",
     "animations",
@@ -18,6 +18,7 @@
     "overlays",
     "preview",
     "project",
+    "shapes",
     "style",
     "text",
     "timeline",
@@ -1691,6 +1692,42 @@
       "destructive": true,
       "idempotent": false,
       "capcut_source": "expressions_*"
+    },
+    {
+      "family": "shapes",
+      "name": "shape_list",
+      "title": "List shape presets",
+      "description": "List AE-style shape presets using Concat's real shape vocabulary.",
+      "target_kind": "shape_query",
+      "target": "capcut_shape",
+      "read_only": false,
+      "destructive": false,
+      "idempotent": false,
+      "capcut_source": "shapes_*"
+    },
+    {
+      "family": "shapes",
+      "name": "shape_compile",
+      "title": "Compile shape preset",
+      "description": "Compile a shape preset into addShapeClip and keyframe commands.",
+      "target_kind": "shape",
+      "target": "capcut_shape",
+      "read_only": false,
+      "destructive": false,
+      "idempotent": false,
+      "capcut_source": "shapes_*"
+    },
+    {
+      "family": "shapes",
+      "name": "shape_add",
+      "title": "Add shape layer",
+      "description": "Add a styled shape layer (with optional trim/repeat) to the timeline.",
+      "target_kind": "shape",
+      "target": "capcut_shape",
+      "read_only": false,
+      "destructive": false,
+      "idempotent": false,
+      "capcut_source": "shapes_*"
     },
     {
       "family": "agent",

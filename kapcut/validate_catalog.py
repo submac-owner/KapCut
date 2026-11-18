@@ -30,6 +30,8 @@ for t in tools:
         errors.append(f"{t['name']}: unknown motion backend {t['target']}")
     if t["target_kind"] in ("expr", "expr_query") and t["target"] != "capcut_expr":
         errors.append(f"{t['name']}: unknown expression backend {t['target']}")
+    if t["target_kind"] in ("shape", "shape_query") and t["target"] != "capcut_shape":
+        errors.append(f"{t['name']}: unknown shape backend {t['target']}")
     if t["target_kind"] == "op" and not re.match(r"^[a-z][A-Za-z]+$", t["target"]):
         errors.append(f"{t['name']}: bad op {t['target']}")
     if not t["description"] or len(t["description"]) < 12:

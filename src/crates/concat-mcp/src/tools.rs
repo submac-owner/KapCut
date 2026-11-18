@@ -31,6 +31,8 @@ mod capcut_expr;
 #[rustfmt::skip]
 mod capcut_motion;
 #[rustfmt::skip]
+mod capcut_shape;
+#[rustfmt::skip]
 mod capcut_tools;
 
 /// The longest preview side handed back when the agent names no size: a
@@ -99,6 +101,10 @@ pub enum Action {
     CapCutExpr,
     /// List available CPU expression templates (read-only).
     CapCutExprQuery,
+    /// Compile an AE-style shape preset into Concat shape commands and apply.
+    CapCutShape,
+    /// List available shape presets (read-only).
+    CapCutShapeQuery,
 }
 
 /// How a reply is shown to the agent.
@@ -672,7 +678,8 @@ fn input_schema(schemas: &Schemas, tool: &Tool) -> Option<Value> {
         }
         Action::PreviewFrame => schemas.method("preview.frame"),
         Action::CapCutTranslate | Action::CapCutMotion | Action::CapCutMotionQuery
-        | Action::CapCutExpr | Action::CapCutExprQuery => {
+        | Action::CapCutExpr | Action::CapCutExprQuery
+        | Action::CapCutShape | Action::CapCutShapeQuery => {
             Some(json!({
                 "type": "object",
                 "properties": {
@@ -836,6 +843,14 @@ fn run(tool: &Tool, arguments: Value, context: Context<'_>) -> Result<Outcome, A
             Ok(Outcome::json(summary::view(&result)))
         }
         Action::CapCutExprQuery => Ok(Outcome::json(capcut_expr::list_expressions())),
+        Action::CapCutShape => {
+            let command = capcut_shape::compile(&arguments);
+            let path = arguments.get("path").cloned().unwrap_or(Value::Null);
+            let request = request("edit.apply", json!({ "path": path, "command": command }))?;
+            let result = backend.call(request)?;
+            Ok(Outcome::json(summary::view(&result)))
+        }
+        Action::CapCutShapeQuery => Ok(Outcome::json(capcut_shape::list_shapes())),
     }
 }
 
@@ -1262,7 +1277,8 @@ mod tests {
                 }
                 Action::PreviewFrame => request("preview.frame", sample.clone()),
                 Action::CapCutTranslate | Action::CapCutMotion | Action::CapCutMotionQuery
-                | Action::CapCutExpr | Action::CapCutExprQuery => {
+                | Action::CapCutExpr | Action::CapCutExprQuery
+                | Action::CapCutShape | Action::CapCutShapeQuery => {
                     request("edit.apply", sample.clone())
                 }
                 Action::Mask => mask(sample.clone()),

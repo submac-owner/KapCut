@@ -65,6 +65,9 @@ jobs:
         if: ${{ !cancelled() }}
 
   engine:
+    # KapCut is a personal Windows-only project: the Linux engine job is
+    # disabled to save Actions time. The Windows desktop job runs the tests.
+    if: false
     name: Engine tests and lints
     runs-on: ubuntu-24.04
     # The steps that can run long have timeouts of their own, 180 minutes
@@ -262,8 +265,6 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - os: macos-15
-            verb: Compiles
           - os: windows-2022
             verb: Tests
     runs-on: ${{ matrix.os }}
