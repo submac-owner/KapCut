@@ -12,7 +12,7 @@ L = [
  "use serde_json::{json, Value};",
  "use std::f64::consts::PI;",
  "",
- "const SHAPES_JSON: &str = r#\"" + raw + "\"#;",
+ "const SHAPES_JSON: &str = r##\"" + raw + "\"##;",
  "",
  "fn shapes() -> Vec<Value> { serde_json::from_str(SHAPES_JSON).unwrap_or_default() }",
  "",
