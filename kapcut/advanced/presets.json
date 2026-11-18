@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "note": "Phase D advanced studio presets. All map to existing Concat commands (shapes, keys, effects, transitions) and the CPU compilers. No engine change, no GPU.",
+  "families": {
+    "camera": [
+      {"id": "cam_push_in", "name": "Camera Push In", "keys": {"scale": [{"at": 0, "value": 1, "ease": "inOut"}, {"at": 1, "value": 1.25, "ease": "inOut"}]}},
+      {"id": "cam_pull_out", "name": "Camera Pull Out", "keys": {"scale": [{"at": 0, "value": 1.25, "ease": "inOut"}, {"at": 1, "value": 1, "ease": "inOut"}]}},
+      {"id": "cam_orbit", "name": "Camera Orbit", "keys": {"offsetX": [{"at": 0, "value": -0.08, "ease": "inOut"}, {"at": 0.5, "value": 0.08, "ease": "inOut"}, {"at": 1, "value": -0.08}]}},
+      {"id": "cam_crane", "name": "Camera Crane", "keys": {"offsetY": [{"at": 0, "value": 0.15, "ease": "inOut"}, {"at": 1, "value": -0.15}]}}
+    ],
+    "particles": [
+      {"id": "fx_dust", "name": "Floating Dust", "shape": "orbit_dots", "effect": "concat.falling-dust", "keys": {"opacity": [{"at": 0, "value": 0, "ease": "inOut"}, {"at": 0.3, "value": 0.8}, {"at": 1, "value": 0}]}},
+      {"id": "fx_embers", "name": "Embers", "shape": "star_burst", "effect": "concat.glow", "keys": {"scale": [{"at": 0, "value": 0.6, "ease": "out"}, {"at": 1, "value": 1.1}]}},
+      {"id": "fx_glitch_rain", "name": "Glitch Rain", "shape": "dashed_trail", "effect": "concat.glitch-warp", "keys": {"offsetY": [{"at": 0, "value": -0.5, "ease": "linear"}, {"at": 1, "value": 0.5}]}}
+    ],
+    "grade": [
+      {"id": "grade_teal_orange", "name": "Teal & Orange", "adjust": {"contrast": 18, "saturation": 12, "temperature": 7200}, "effect": "concat.teal-orange"},
+      {"id": "grade_noir", "name": "Noir", "adjust": {"saturation": -100, "contrast": 35}, "effect": "concat.noir"},
+      {"id": "grade_vintage", "name": "Vintage Film", "adjust": {"saturation": -20, "fade": 30}, "effect": "concat.vintage"},
+      {"id": "grade_vivid", "name": "Vivid Pop", "adjust": {"saturation": 35, "contrast": 20}, "effect": "concat.vibrance"}
+    ],
+    "transition": [
+      {"id": "tr_whip", "name": "Whip Pan", "effect": "concat.whip-pan"},
+      {"id": "tr_glitch", "name": "Glitch", "effect": "concat.glitch-transition"},
+      {"id": "tr_zoom", "name": "Zoom", "effect": "concat.zoom-transition"},
+      {"id": "tr_light", "name": "Light Leak", "effect": "concat.light-leak-transition"}
+    ]
+  }
+}

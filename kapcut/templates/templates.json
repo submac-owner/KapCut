@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "note": "Project templates: ordered recipes of already-verified KapCut presets. A template compiles to one Concat batch command.",
+  "templates": [
+    {
+      "id": "tiktok_hook", "name": "TikTok Hook", "description": "Fast punch-in, glitch intro, neon ring, bold caption.",
+      "steps": [
+        {"compiler": "advanced", "preset": "cam_push_in", "duration": 1.5},
+        {"compiler": "advanced", "preset": "fx_glitch_rain", "duration": 1.0},
+        {"compiler": "shape", "preset": "neon_ring", "duration": 3.0},
+        {"compiler": "motion", "preset": "bounce_in", "duration": 1.0}
+      ]
+    },
+    {
+      "id": "youtube_short", "name": "YouTube Short", "description": "Slide-in title, gradient orb, vivid grade, smooth zoom loop.",
+      "steps": [
+        {"compiler": "motion", "preset": "fade_in_up", "duration": 0.8},
+        {"compiler": "shape", "preset": "gradient_orb", "duration": 4.0},
+        {"compiler": "advanced", "preset": "grade_vivid", "duration": 4.0},
+        {"compiler": "motion", "preset": "smooth_zoom_loop", "duration": 4.0}
+      ]
+    },
+    {
+      "id": "cinematic_reel", "name": "Cinematic Reel", "description": "Ken Burns, teal-orange grade, light-leak transition, progress arc.",
+      "steps": [
+        {"compiler": "motion", "preset": "ken_burns", "duration": 5.0},
+        {"compiler": "advanced", "preset": "grade_teal_orange", "duration": 5.0},
+        {"compiler": "advanced", "preset": "tr_light", "duration": 0.8},
+        {"compiler": "shape", "preset": "progress_arc", "duration": 2.0}
+      ]
+    },
+    {
+      "id": "product_ad", "name": "Product Ad", "description": "Pill label, star burst, hex badge, vivid pop grade.",
+      "steps": [
+        {"compiler": "shape", "preset": "pill_label", "duration": 1.5},
+        {"compiler": "shape", "preset": "star_burst", "duration": 2.0},
+        {"compiler": "shape", "preset": "hex_badge", "duration": 2.0},
+        {"compiler": "advanced", "preset": "grade_vivid", "duration": 3.0}
+      ]
+    },
+    {
+      "id": "music_visualizer", "name": "Music Visualizer", "description": "Orbit dots, neon pulse, glitch rain, beat-driven keys.",
+      "steps": [
+        {"compiler": "shape", "preset": "orbit_dots", "duration": 8.0},
+        {"compiler": "motion", "preset": "neon_pulse", "duration": 8.0},
+        {"compiler": "expression", "preset": "wiggle", "params": {"amplitude": 0.08}, "duration": 8.0},
+        {"compiler": "advanced", "preset": "fx_glitch_rain", "duration": 2.0}
+      ]
+    }
+  ]
+}

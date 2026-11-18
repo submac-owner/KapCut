@@ -1,0 +1,30 @@
+name: KapCut Render Worker
+# Enable when a render job is needed. Runs on GitHub's CPU runners only;
+# no GPU, no local render load. Triggered manually with a project path and
+# an output name.
+on:
+  workflow_dispatch:
+    inputs:
+      project:
+        description: Project folder inside the repo or an artifact path
+        required: true
+      output:
+        description: Output file name
+        required: true
+        default: render.mp4
+
+jobs:
+  render:
+    runs-on: windows-2022
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install FFmpeg
+        run: choco install ffmpeg -y --no-progress
+      - name: Render project (CPU only)
+        run: |
+          ffmpeg -y -i "${{ inputs.project }}" -c:v libx264 -preset medium -crf 23 "${{ inputs.output }}"
+      - name: Upload render
+        uses: actions/upload-artifact@v4
+        with:
+          name: kapcut-render
+          path: ${{ inputs.output }}
