@@ -166,7 +166,7 @@ pub fn invent_style(args: &Value) -> Value {
         "style":{ "content":title, "font_family":"Anton", "font_size":0.14, "font_weight":800,
         "color":text_color, "align":"center" } }));
     commands.extend(keys_for(animator, "title0", 1.0, dur - 2.0, 0.0));
-    for fx in effects {
+    for fx in &effects {
         commands.push(json!({ "op":"addLayerClip", "start":0.0, "duration":dur,
             "effectId":fx, "name":fx, "sound":false }));
     }
@@ -224,7 +224,7 @@ pub fn invent_editing_style(args: &Value) -> Value {
         for i in 0..count {
             let content = if i == 0 { title.to_string() } else { format!("POINT {}", i+1) };
             commands.push(json!({ "op":"addTextClip", "start":i as f64*dur/count as f64,
-                "duration":dur/count as f64 - 0.1, "name":content,
+                "duration":dur/count as f64 - 0.1, "name":content.clone(),
                 "style":{ "content":content, "font_family":"Montserrat", "font_size":0.08,
                 "font_weight":700, "color":tcolor, "align":"center" } }));
         }
