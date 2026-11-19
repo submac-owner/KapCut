@@ -111,6 +111,8 @@ pub enum Action {
     CapCutStudio,
     /// List studio templates or return the design system (read-only).
     CapCutStudioQuery,
+    /// Invent a full editing style from a description and/or reference profile.
+    CapCutStudioEdit,
 }
 
 /// How a reply is shown to the agent.
@@ -686,7 +688,7 @@ fn input_schema(schemas: &Schemas, tool: &Tool) -> Option<Value> {
         Action::CapCutTranslate | Action::CapCutMotion | Action::CapCutMotionQuery
         | Action::CapCutExpr | Action::CapCutExprQuery
         | Action::CapCutShape | Action::CapCutShapeQuery
-        | Action::CapCutStudio | Action::CapCutStudioQuery => {
+        | Action::CapCutStudio | Action::CapCutStudioQuery | Action::CapCutStudioEdit => {
             Some(json!({
                 "type": "object",
                 "properties": {
@@ -858,6 +860,13 @@ fn run(tool: &Tool, arguments: Value, context: Context<'_>) -> Result<Outcome, A
             Ok(Outcome::json(summary::view(&result)))
         }
         Action::CapCutShapeQuery => Ok(Outcome::json(capcut_shape::list_shapes())),
+        Action::CapCutStudioEdit => {
+            let command = capcut_studio::invent_editing_style(&arguments);
+            let path = arguments.get("path").cloned().unwrap_or(Value::Null);
+            let request = request("edit.apply", json!({ "path": path, "command": command }))?;
+            let result = backend.call(request)?;
+            Ok(Outcome::json(summary::view(&result)))
+        }
         Action::CapCutStudio => {
             let command = if arguments.get("description").is_some() {
                 capcut_studio::invent_style(&arguments)
@@ -1310,7 +1319,7 @@ mod tests {
                 Action::CapCutTranslate | Action::CapCutMotion | Action::CapCutMotionQuery
                 | Action::CapCutExpr | Action::CapCutExprQuery
                 | Action::CapCutShape | Action::CapCutShapeQuery
-                | Action::CapCutStudio | Action::CapCutStudioQuery => {
+                | Action::CapCutStudio | Action::CapCutStudioQuery | Action::CapCutStudioEdit => {
                     request("edit.apply", sample.clone())
                 }
                 Action::Mask => mask(sample.clone()),

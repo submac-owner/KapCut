@@ -151,6 +151,7 @@ pub const KAPCUT_NAMES: &[&str] = &[
     "studio_list_animators",
     "studio_beat_sync",
     "studio_invent_style",
+    "studio_edit_style",
     "kapcut_translate",
 ];
 
@@ -1496,6 +1497,15 @@ pub fn capcut_catalogue() -> Vec<Tool> {
             destructive: false,
             idempotent: false,
             action: Action::CapCutStudio,
+        },
+        Tool {
+            name: "studio_edit_style",
+            title: "Invent editing style",
+            description: "Decode a description or reference profile into a full five-dial editing plan.",
+            read_only: false,
+            destructive: false,
+            idempotent: false,
+            action: Action::CapCutStudioEdit,
         },
         Tool {
             name: "kapcut_translate",

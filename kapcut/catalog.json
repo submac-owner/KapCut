@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "name": "kapcut",
-  "toolCount": 150,
+  "toolCount": 151,
   "families": [
     "agent",
     "animations",
@@ -1808,6 +1808,18 @@
       "title": "Invent a style",
       "description": "Turn a style description into a fresh layered composition recipe.",
       "target_kind": "studio",
+      "target": "capcut_studio",
+      "read_only": false,
+      "destructive": false,
+      "idempotent": false,
+      "capcut_source": "studio_*"
+    },
+    {
+      "family": "studio",
+      "name": "studio_edit_style",
+      "title": "Invent editing style",
+      "description": "Decode a description or reference profile into a full five-dial editing plan.",
+      "target_kind": "studio_edit",
       "target": "capcut_studio",
       "read_only": false,
       "destructive": false,
