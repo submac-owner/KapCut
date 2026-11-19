@@ -240,6 +240,11 @@ add("shapes","shape_list","List shape presets","List AE-style shape presets usin
 add("shapes","shape_compile","Compile shape preset","Compile a shape preset into addShapeClip and keyframe commands.","shape","capcut_shape")
 add("shapes","shape_add","Add shape layer","Add a styled shape layer (with optional trim/repeat) to the timeline.","shape","capcut_shape")
 
+# ---- studio composition (3) ----
+add("studio","studio_list_templates","List studio templates","List studio-grade composition templates with palette and duration.","studio_query","capcut_studio")
+add("studio","studio_design","Get design system","Return typography, palette, motion and layout tokens.","studio_query","capcut_studio")
+add("studio","studio_compose","Compose studio template","Build a full layered composition (shapes, text, keys, effects, camera) from a template.","studio","capcut_studio")
+
 add("agent","kapcut_translate","Translate CapCut material",
     "Translate a CapCut material (capcutType/value or effectName/start/duration) into real Concat edit commands.","bridge","capcut_bridge")
 
@@ -321,6 +326,10 @@ for t in T:
         action = "Action::CapCutShape"
     elif t["target_kind"] == "shape_query":
         action = "Action::CapCutShapeQuery"
+    elif t["target_kind"] == "studio":
+        action = "Action::CapCutStudio"
+    elif t["target_kind"] == "studio_query":
+        action = "Action::CapCutStudioQuery"
     elif t["target_kind"] == "op":
         action = "Action::Command { op: " + rs_str(t["target"]) + " }"
     else:

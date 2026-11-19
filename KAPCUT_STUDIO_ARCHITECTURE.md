@@ -69,6 +69,27 @@ This host has **8 GB RAM and no GPU**. Therefore:
 Total MCP surface: **143 tools across 20 families**, all compiled and verified
 by Windows CI. All our new code is CPU-only keyframe/command data.
 
+## Phase F — Studio Composition Engine (in progress)
+
+- `kapcut/studio/design.json` — design tokens (4 palettes, type scale, fonts,
+  easing curves, motion durations, layout grid).
+- `kapcut/studio/templates.json` — 4 layered composition templates (Kinetic
+  Title, Particle Reveal, Color Grade Showcase, Logo Lockup) with shapes,
+  typography, effects and camera rigs.
+- `kapcut/studio/compose.py` — compiles a template into real Concat commands:
+  background + element layers, gradient/stroke/shadow shape styles, per-word
+  text, staggered keyframes, particle fields, effect layers, camera rig.
+- 3 `studio_*` MCP tools; total catalog **146 tools / 21 families**.
+
+## Holds (per user directive)
+
+- **No Windows installer / exe builds** until the studio reaches the mixed
+  After Effects + CapCut + Premiere Pro + DaVinci Resolve capability set.
+  The existing draft release stays as-is; do not publish or re-tag.
+- **OpenCode side panel must host OpenCode's full UI** (sessions, model picker,
+  diffs, tools), not the minimal chat prototype. See
+  `docs/KAPCUT_OPENCODE_PANEL.md` for the native WebView design.
+
 ## Rule for every change
 
 1. Data/preset first (JSON) -> generator -> Rust module -> catalog -> CI.

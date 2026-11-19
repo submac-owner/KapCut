@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "note": "Studio composition templates. Each is a layered design with typography, shapes, animation, effects and camera motion; compiled to real Concat commands.",
+  "templates": [
+    {
+      "id": "kinetic_title", "name": "Kinetic Title Reveal", "duration": 8, "palette": "midnight",
+      "background": { "kind": "square", "width": 2.0, "height": 2.0, "fill": "#070B14" },
+      "elements": [
+        { "type": "shape", "kind": "circle", "width": 0.9, "fill": "", "stroke": "#00E5FF", "strokeWidth": 0.002, "at": 0.4, "duration": 6.5, "anim": "draw_on", "camera": true },
+        { "type": "shape", "kind": "circle", "width": 0.6, "fill": "#111A2E", "stroke": "#7C5CFC", "strokeWidth": 0.003, "shadow": { "color": "#7C5CFC", "blur": 0.08 }, "at": 0.8, "duration": 6, "anim": "bounce_in", "stagger": 0.2 },
+        { "type": "text", "content": "MOTION", "font": "display", "size": "display", "color": "#F5F7FF", "at": 1.2, "duration": 5.5, "anim": "typewriter", "y": 0.36 },
+        { "type": "text", "content": "DESIGN SYSTEM", "font": "heading", "size": "caption", "color": "#00E5FF", "at": 2.0, "duration": 4.5, "anim": "fade_in_up", "y": 0.52 },
+        { "type": "shape", "kind": "line", "width": 0.5, "stroke": "#FF3B6B", "strokeWidth": 0.002, "at": 2.4, "duration": 4, "anim": "draw_on", "y": 0.62 }
+      ],
+      "effects": [ { "id": "concat.glow", "at": 0, "duration": 8 }, { "id": "concat.film-grain", "at": 0, "duration": 8 } ],
+      "camera": { "scale": [ [0,1.0], [0.5,1.04], [1,1.0] ], "offsetX": [ [0,-0.02], [1,0.02] ] }
+    },
+    {
+      "id": "particle_reveal", "name": "Particle Field Reveal", "duration": 10, "palette": "violet",
+      "background": { "kind": "square", "width": 2.0, "height": 2.0, "fill": "#0B0716" },
+      "elements": [
+        { "type": "particlefield", "count": 14, "kind": "circle", "size": 0.02, "fill": "#B388FF", "at": 0.3, "duration": 9, "anim": "float", "seed": 11 },
+        { "type": "shape", "kind": "star", "points": 6, "innerRadius": 0.4, "width": 0.7, "fill": "#1C1133", "stroke": "#B388FF", "strokeWidth": 0.003, "at": 1.5, "duration": 7, "anim": "bounce_in" },
+        { "type": "text", "content": "AGENTIC", "font": "display", "size": "display", "color": "#F6F0FF", "at": 2.0, "duration": 6, "anim": "glitch_in", "y": 0.36 },
+        { "type": "text", "content": "VIDEO PRODUCTION", "font": "mono", "size": "caption", "color": "#00E5FF", "at": 3.0, "duration": 5, "anim": "fade_in_up", "y": 0.52 }
+      ],
+      "effects": [ { "id": "concat.neon", "at": 1.5, "duration": 7 }, { "id": "concat.chromatic-aberration", "at": 2, "duration": 6 } ],
+      "camera": { "scale": [ [0,0.96], [0.5,1.06], [1,1.0] ] }
+    },
+    {
+      "id": "color_grade_showcase", "name": "Color Grade Showcase", "duration": 12, "palette": "ember",
+      "background": { "kind": "square", "width": 2.0, "height": 2.0, "fill": "#120806" },
+      "elements": [
+        { "type": "shape", "kind": "square", "width": 1.2, "height": 0.7, "fill": "#2A140F", "stroke": "#FF6B35", "strokeWidth": 0.002, "at": 0.5, "duration": 10, "anim": "fade_in_up", "y": 0.1 },
+        { "type": "text", "content": "GRADE", "font": "display", "size": "display", "color": "#FFD166", "at": 1.0, "duration": 9, "anim": "bounce_in", "y": 0.36 },
+        { "type": "text", "content": "TEAL · ORANGE · NOIR · VINTAGE", "font": "heading", "size": "body", "color": "#FFF4E6", "at": 2.0, "duration": 8, "anim": "typewriter", "y": 0.55 },
+        { "type": "shape", "kind": "line", "width": 0.8, "stroke": "#FFD166", "strokeWidth": 0.003, "at": 2.5, "duration": 7, "anim": "draw_on", "y": 0.68 }
+      ],
+      "effects": [ { "id": "concat.teal-orange", "at": 0, "duration": 4 }, { "id": "concat.noir", "at": 4, "duration": 4 }, { "id": "concat.vintage", "at": 8, "duration": 4 } ],
+      "camera": { "offsetX": [ [0,-0.03], [1,0.03] ], "scale": [ [0,1.02], [1,1.08] ] }
+    },
+    {
+      "id": "logo_lockup", "name": "Logo Lockup / End Card", "duration": 6, "palette": "forest",
+      "background": { "kind": "square", "width": 2.0, "height": 2.0, "fill": "#04120D" },
+      "elements": [
+        { "type": "shape", "kind": "circle", "width": 0.5, "fill": "", "stroke": "#06D6A0", "strokeWidth": 0.005, "shadow": { "color": "#06D6A0", "blur": 0.06 }, "at": 0.3, "duration": 5, "anim": "draw_on" },
+        { "type": "text", "content": "KAPCUT", "font": "display", "size": "display", "color": "#EAFFF8", "at": 0.8, "duration": 4.5, "anim": "bounce_in", "y": 0.38 },
+        { "type": "text", "content": "STUDIO", "font": "heading", "size": "h2", "color": "#06D6A0", "at": 1.4, "duration": 4, "anim": "fade_in_up", "y": 0.55 },
+        { "type": "shape", "kind": "line", "width": 0.3, "stroke": "#118AB2", "strokeWidth": 0.002, "at": 1.8, "duration": 3.5, "anim": "draw_on", "y": 0.66 }
+      ],
+      "effects": [ { "id": "concat.halation", "at": 0, "duration": 6 } ],
+      "camera": { "scale": [ [0,1.1], [0.5,1.0], [1,1.02] ] }
+    }
+  ]
+}

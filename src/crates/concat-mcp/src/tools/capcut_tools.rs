@@ -144,6 +144,9 @@ pub const KAPCUT_NAMES: &[&str] = &[
     "shape_list",
     "shape_compile",
     "shape_add",
+    "studio_list_templates",
+    "studio_design",
+    "studio_compose",
     "kapcut_translate",
 ];
 
@@ -1426,6 +1429,33 @@ pub fn capcut_catalogue() -> Vec<Tool> {
             destructive: false,
             idempotent: false,
             action: Action::CapCutShape,
+        },
+        Tool {
+            name: "studio_list_templates",
+            title: "List studio templates",
+            description: "List studio-grade composition templates with palette and duration.",
+            read_only: false,
+            destructive: false,
+            idempotent: false,
+            action: Action::CapCutStudioQuery,
+        },
+        Tool {
+            name: "studio_design",
+            title: "Get design system",
+            description: "Return typography, palette, motion and layout tokens.",
+            read_only: false,
+            destructive: false,
+            idempotent: false,
+            action: Action::CapCutStudioQuery,
+        },
+        Tool {
+            name: "studio_compose",
+            title: "Compose studio template",
+            description: "Build a full layered composition (shapes, text, keys, effects, camera) from a template.",
+            read_only: false,
+            destructive: false,
+            idempotent: false,
+            action: Action::CapCutStudio,
         },
         Tool {
             name: "kapcut_translate",

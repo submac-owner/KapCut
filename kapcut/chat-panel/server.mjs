@@ -9,11 +9,13 @@ import { promisify } from "node:util";
 const exec = promisify(execFile);
 const ROOT = path.dirname(new URL(import.meta.url).pathname).replace(/^\/(\w:)/, "$1");
 const PORT = Number(process.env.KAPCUT_CHAT_PORT || 7421);
+const OPENCODE = process.env.OPENCODE_CLI ||
+  "C:\\Users\\Admin\\AppData\\Roaming\\ai.opencode.desktop\\cli\\2.2.6-x64\\opencode-cli.exe";
 
 async function api(method, endpoint, data) {
   const args = ["api", method, endpoint];
   if (data !== undefined) args.push("--data", JSON.stringify(data));
-  const { stdout } = await exec("opencode", args, { maxBuffer: 16 * 1024 * 1024 });
+  const { stdout } = await exec(OPENCODE, args, { maxBuffer: 16 * 1024 * 1024 });
   return JSON.parse(stdout || "null");
 }
 

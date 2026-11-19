@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "name": "KapCut Studio Design System",
+  "note": "Design tokens for studio-grade compositions. Everything maps to Concat's real shape/text/effect model; no GPU.",
+  "palettes": {
+    "midnight": { "bg": "#070B14", "surface": "#111A2E", "primary": "#00E5FF", "secondary": "#7C5CFC", "accent": "#FF3B6B", "text": "#F5F7FF", "muted": "#8FA3C8" },
+    "ember": { "bg": "#120806", "surface": "#2A140F", "primary": "#FF6B35", "secondary": "#FFD166", "accent": "#EF476F", "text": "#FFF4E6", "muted": "#C9A88E" },
+    "forest": { "bg": "#04120D", "surface": "#0C2A1F", "primary": "#06D6A0", "secondary": "#118AB2", "accent": "#FFD166", "text": "#EAFFF8", "muted": "#8FBFAE" },
+    "violet": { "bg": "#0B0716", "surface": "#1C1133", "primary": "#B388FF", "secondary": "#00E5FF", "accent": "#FF3B6B", "text": "#F6F0FF", "muted": "#A99BC4" }
+  },
+  "typeScale": {
+    "display": { "size": 0.14, "weight": 800 },
+    "h1": { "size": 0.09, "weight": 700 },
+    "h2": { "size": 0.06, "weight": 600 },
+    "body": { "size": 0.035, "weight": 400 },
+    "caption": { "size": 0.024, "weight": 400 }
+  },
+  "fonts": {
+    "display": "Anton",
+    "heading": "Montserrat",
+    "body": "Inter",
+    "mono": "JetBrains Mono",
+    "script": "Dancing Script"
+  },
+  "motion": {
+    "ease": { "linear": [0,0,1,1], "out": [0,0,0.58,1], "in": [0.42,0,1,1], "inOut": [0.42,0,0.58,1] },
+    "durations": { "in": 0.8, "out": 0.6, "loop": 2.0, "stagger": 0.12, "transition": 0.7 },
+    "principles": ["anticipation", "overshoot", "follow-through", "stagger", "secondary-action"]
+  },
+  "layout": {
+    "safeMargin": 0.08,
+    "gridColumns": 12,
+    "titleY": 0.36,
+    "subtitleY": 0.52,
+    "accentY": 0.68
+  }
+}

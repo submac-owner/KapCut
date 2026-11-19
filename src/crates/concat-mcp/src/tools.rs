@@ -33,6 +33,8 @@ mod capcut_motion;
 #[rustfmt::skip]
 mod capcut_shape;
 #[rustfmt::skip]
+mod capcut_studio;
+#[rustfmt::skip]
 mod capcut_tools;
 
 /// The longest preview side handed back when the agent names no size: a
@@ -105,6 +107,10 @@ pub enum Action {
     CapCutShape,
     /// List available shape presets (read-only).
     CapCutShapeQuery,
+    /// Compose a studio template into layered Concat commands and apply.
+    CapCutStudio,
+    /// List studio templates or return the design system (read-only).
+    CapCutStudioQuery,
 }
 
 /// How a reply is shown to the agent.
@@ -679,7 +685,8 @@ fn input_schema(schemas: &Schemas, tool: &Tool) -> Option<Value> {
         Action::PreviewFrame => schemas.method("preview.frame"),
         Action::CapCutTranslate | Action::CapCutMotion | Action::CapCutMotionQuery
         | Action::CapCutExpr | Action::CapCutExprQuery
-        | Action::CapCutShape | Action::CapCutShapeQuery => {
+        | Action::CapCutShape | Action::CapCutShapeQuery
+        | Action::CapCutStudio | Action::CapCutStudioQuery => {
             Some(json!({
                 "type": "object",
                 "properties": {
@@ -851,6 +858,20 @@ fn run(tool: &Tool, arguments: Value, context: Context<'_>) -> Result<Outcome, A
             Ok(Outcome::json(summary::view(&result)))
         }
         Action::CapCutShapeQuery => Ok(Outcome::json(capcut_shape::list_shapes())),
+        Action::CapCutStudio => {
+            let command = capcut_studio::compose(&arguments);
+            let path = arguments.get("path").cloned().unwrap_or(Value::Null);
+            let request = request("edit.apply", json!({ "path": path, "command": command }))?;
+            let result = backend.call(request)?;
+            Ok(Outcome::json(summary::view(&result)))
+        }
+        Action::CapCutStudioQuery => {
+            if arguments.get("design").and_then(Value::as_bool).unwrap_or(false) {
+                Ok(Outcome::json(capcut_studio::design_system()))
+            } else {
+                Ok(Outcome::json(capcut_studio::list_templates()))
+            }
+        }
     }
 }
 
@@ -1278,7 +1299,8 @@ mod tests {
                 Action::PreviewFrame => request("preview.frame", sample.clone()),
                 Action::CapCutTranslate | Action::CapCutMotion | Action::CapCutMotionQuery
                 | Action::CapCutExpr | Action::CapCutExprQuery
-                | Action::CapCutShape | Action::CapCutShapeQuery => {
+                | Action::CapCutShape | Action::CapCutShapeQuery
+                | Action::CapCutStudio | Action::CapCutStudioQuery => {
                     request("edit.apply", sample.clone())
                 }
                 Action::Mask => mask(sample.clone()),
