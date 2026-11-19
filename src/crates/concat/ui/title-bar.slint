@@ -282,7 +282,10 @@ export component TitleBar inherits Rectangle {
         // application — so the launch screen has no reason to be shut out of
         // it, and every reason not to be: it is now the only way through to
         // the theme.
-        if !root.covered: VerticalLayout {
+        // These sit side by side in the strip. A VerticalLayout here stacked
+        // them and clipped everything below the first button in the short
+        // title bar, which hid the agent-panel and studio-look buttons.
+        if !root.covered: HorizontalLayout {
             alignment: center;
             HeaderIconButton {
                 glyph: Glyph.settings;
