@@ -34,6 +34,25 @@ fn discovery_dirs() -> Vec<PathBuf> {
     dirs
 }
 
+/// OpenCode desktop keeps logs in dated subfolders under `logs/`. Collect
+/// files recursively, a couple of levels deep, newest first.
+fn collect_logs(dir: &Path, depth: usize, out: &mut Vec<PathBuf>) {
+    if depth > 2 {
+        return;
+    }
+    let Ok(entries) = fs::read_dir(dir) else {
+        return;
+    };
+    for entry in entries.filter_map(Result::ok) {
+        let path = entry.path();
+        if path.is_dir() {
+            collect_logs(&path, depth + 1, out);
+        } else if path.is_file() {
+            out.push(path);
+        }
+    }
+}
+
 /// Pull the first local service URL out of a log line.
 fn find_local_url(text: &str) -> Option<String> {
     for host in ["http://127.0.0.1:", "http://localhost:"] {
@@ -62,17 +81,11 @@ pub fn discover_url() -> String {
         }
     }
     for dir in discovery_dirs() {
-        let Ok(entries) = fs::read_dir(dir) else {
-            continue;
-        };
-        let mut files: Vec<_> = entries.filter_map(Result::ok).collect();
-        files.sort_by_key(|e| e.metadata().and_then(|m| m.modified()).ok());
+        let mut files = Vec::new();
+        collect_logs(&dir, 0, &mut files);
+        files.sort_by_key(|p| p.metadata().and_then(|m| m.modified()).ok());
         files.reverse();
-        for entry in files {
-            let path = entry.path();
-            if !path.is_file() {
-                continue;
-            }
+        for path in files {
             if let Ok(text) = fs::read_to_string(&path) {
                 if let Some(url) = find_local_url(&text) {
                     return url;
