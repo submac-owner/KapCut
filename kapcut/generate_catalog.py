@@ -250,6 +250,12 @@ add("studio","studio_beat_sync","Beat-synced motion","Generate BPM-based keyfram
 add("studio","studio_invent_style","Invent a style","Turn a style description into a fresh layered composition recipe.","studio","capcut_studio")
 add("studio","studio_edit_style","Invent editing style","Decode a description or reference profile into a full five-dial editing plan.","studio_edit","capcut_studio")
 
+# ---- overlay frames & animations (4) ----
+add("overlays","overlay_list_frames","List overlay frames","List 55+ overlay frame styles (paper, vintage, dossier, film, ...).","overlay_query","capcut_overlay")
+add("overlays","overlay_list_animations","List overlay animations","List 50+ in/out/loop overlay animations.","overlay_query","capcut_overlay")
+add("overlays","overlay_add_frame","Add overlay frame","Add a styled frame around an overlay with optional animation.","overlay_apply","capcut_overlay")
+add("overlays","overlay_animate","Animate overlay","Apply an in/out/loop animation to an overlay clip.","overlay_apply","capcut_overlay")
+
 add("agent","kapcut_translate","Translate CapCut material",
     "Translate a CapCut material (capcutType/value or effectName/start/duration) into real Concat edit commands.","bridge","capcut_bridge")
 
@@ -331,6 +337,10 @@ for t in T:
         action = "Action::CapCutShape"
     elif t["target_kind"] == "shape_query":
         action = "Action::CapCutShapeQuery"
+    elif t["target_kind"] == "overlay_query":
+        action = "Action::CapCutOverlayQuery"
+    elif t["target_kind"] == "overlay_apply":
+        action = "Action::CapCutOverlayApply"
     elif t["target_kind"] == "studio_edit":
         action = "Action::CapCutStudioEdit"
     elif t["target_kind"] == "studio":

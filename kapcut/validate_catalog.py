@@ -34,6 +34,8 @@ for t in tools:
         errors.append(f"{t['name']}: unknown shape backend {t['target']}")
     if t["target_kind"] in ("studio", "studio_query", "studio_edit") and t["target"] != "capcut_studio":
         errors.append(f"{t['name']}: unknown studio backend {t['target']}")
+    if t["target_kind"] in ("overlay_query", "overlay_apply") and t["target"] != "capcut_overlay":
+        errors.append(f"{t['name']}: unknown overlay backend {t['target']}")
     if t["target_kind"] == "op" and not re.match(r"^[a-z][A-Za-z]+$", t["target"]):
         errors.append(f"{t['name']}: bad op {t['target']}")
     if not t["description"] or len(t["description"]) < 12:

@@ -1,0 +1,1445 @@
+{
+ "count": 58,
+ "animations": [
+  {
+   "id": "anim_fade_in",
+   "name": "Fade \u2014 IN",
+   "family": "fade",
+   "phase": "in",
+   "category": "overlay-animation",
+   "keys": [
+    {
+     "property": "opacity",
+     "at": 0.0,
+     "value": 0.0,
+     "ease": "out"
+    },
+    {
+     "property": "opacity",
+     "at": 1.0,
+     "value": 1.0,
+     "ease": "out"
+    }
+   ]
+  },
+  {
+   "id": "anim_fade_out",
+   "name": "Fade \u2014 OUT",
+   "family": "fade",
+   "phase": "out",
+   "category": "overlay-animation",
+   "keys": [
+    {
+     "property": "opacity",
+     "at": 0.0,
+     "value": 0.0,
+     "ease": "in"
+    },
+    {
+     "property": "opacity",
+     "at": 1.0,
+     "value": 0.0,
+     "ease": "in"
+    }
+   ]
+  },
+  {
+   "id": "anim_fade_loop",
+   "name": "Fade \u2014 LOOP",
+   "family": "fade",
+   "phase": "loop",
+   "category": "overlay-animation",
+   "keys": [
+    {
+     "property": "opacity",
+     "at": 0.0,
+     "value": 0.0,
+     "ease": "inOut"
+    },
+    {
+     "property": "opacity",
+     "at": 1.0,
+     "value": 1.0,
+     "ease": "inOut"
+    }
+   ]
+  },
+  {
+   "id": "anim_slide_up_in",
+   "name": "Slide Up \u2014 IN",
+   "family": "slide_up",
+   "phase": "in",
+   "category": "overlay-animation",
+   "keys": [
+    {
+     "property": "offsetY",
+     "at": 0.0,
+     "value": 0.3,
+     "ease": "out"
+    },
+    {
+     "property": "offsetY",
+     "at": 1.0,
+     "value": 0.0,
+     "ease": "out"
+    }
+   ]
+  },
+  {
+   "id": "anim_slide_up_out",
+   "name": "Slide Up \u2014 OUT",
+   "family": "slide_up",
+   "phase": "out",
+   "category": "overlay-animation",
+   "keys": [
+    {
+     "property": "offsetY",
+     "at": 0.0,
+     "value": 0.0,
+     "ease": "in"
+    },
+    {
+     "property": "offsetY",
+     "at": 1.0,
+     "value": 0.0,
+     "ease": "in"
+    }
+   ]
+  },
+  {
+   "id": "anim_slide_up_loop",
+   "name": "Slide Up \u2014 LOOP",
+   "family": "slide_up",
+   "phase": "loop",
+   "category": "overlay-animation",
+   "keys": [
+    {
+     "property": "offsetY",
+     "at": 0.0,
+     "value": 0.3,
+     "ease": "inOut"
+    },
+    {
+     "property": "offsetY",
+     "at": 1.0,
+     "value": 0.0,
+     "ease": "inOut"
+    }
+   ]
+  },
+  {
+   "id": "anim_slide_down_in",
+   "name": "Slide Down \u2014 IN",
+   "family": "slide_down",
+   "phase": "in",
+   "category": "overlay-animation",
+   "keys": [
+    {
+     "property": "offsetY",
+     "at": 0.0,
+     "value": -0.3,
+     "ease": "out"
+    },
+    {
+     "property": "offsetY",
+     "at": 1.0,
+     "value": 0.0,
+     "ease": "out"
+    }
+   ]
+  },
+  {
+   "id": "anim_slide_down_out",
+   "name": "Slide Down \u2014 OUT",
+   "family": "slide_down",
+   "phase": "out",
+   "category": "overlay-animation",
+   "keys": [
+    {
+     "property": "offsetY",
+     "at": 0.0,
+     "value": 0.0,
+     "ease": "in"
+    },
+    {
+     "property": "offsetY",
+     "at": 1.0,
+     "value": 0.0,
+     "ease": "in"
+    }
+   ]
+  },
+  {
+   "id": "anim_slide_down_loop",
+   "name": "Slide Down \u2014 LOOP",
+   "family": "slide_down",
+   "phase": "loop",
+   "category": "overlay-animation",
+   "keys": [
+    {
+     "property": "offsetY",
+     "at": 0.0,
+     "value": -0.3,
+     "ease": "inOut"
+    },
+    {
+     "property": "offsetY",
+     "at": 1.0,
+     "value": 0.0,
+     "ease": "inOut"
+    }
+   ]
+  },
+  {
+   "id": "anim_slide_left_in",
+   "name": "Slide Left \u2014 IN",
+   "family": "slide_left",
+   "phase": "in",
+   "category": "overlay-animation",
+   "keys": [
+    {
+     "property": "offsetX",
+     "at": 0.0,
+     "value": 0.35,
+     "ease": "out"
+    },
+    {
+     "property": "offsetX",
+     "at": 1.0,
+     "value": 0.0,
+     "ease": "out"
+    }
+   ]
+  },
+  {
+   "id": "anim_slide_left_out",
+   "name": "Slide Left \u2014 OUT",
+   "family": "slide_left",
+   "phase": "out",
+   "category": "overlay-animation",
+   "keys": [
+    {
+     "property": "offsetX",
+     "at": 0.0,
+     "value": 0.0,
+     "ease": "in"
+    },
+    {
+     "property": "offsetX",
+     "at": 1.0,
+     "value": 0.0,
+     "ease": "in"
+    }
+   ]
+  },
+  {
+   "id": "anim_slide_left_loop",
+   "name": "Slide Left \u2014 LOOP",
+   "family": "slide_left",
+   "phase": "loop",
+   "category": "overlay-animation",
+   "keys": [
+    {
+     "property": "offsetX",
+     "at": 0.0,
+     "value": 0.35,
+     "ease": "inOut"
+    },
+    {
+     "property": "offsetX",
+     "at": 1.0,
+     "value": 0.0,
+     "ease": "inOut"
+    }
+   ]
+  },
+  {
+   "id": "anim_slide_right_in",
+   "name": "Slide Right \u2014 IN",
+   "family": "slide_right",
+   "phase": "in",
+   "category": "overlay-animation",
+   "keys": [
+    {
+     "property": "offsetX",
+     "at": 0.0,
+     "value": -0.35,
+     "ease": "out"
+    },
+    {
+     "property": "offsetX",
+     "at": 1.0,
+     "value": 0.0,
+     "ease": "out"
+    }
+   ]
+  },
+  {
+   "id": "anim_slide_right_out",
+   "name": "Slide Right \u2014 OUT",
+   "family": "slide_right",
+   "phase": "out",
+   "category": "overlay-animation",
+   "keys": [
+    {
+     "property": "offsetX",
+     "at": 0.0,
+     "value": 0.0,
+     "ease": "in"
+    },
+    {
+     "property": "offsetX",
+     "at": 1.0,
+     "value": 0.0,
+     "ease": "in"
+    }
+   ]
+  },
+  {
+   "id": "anim_slide_right_loop",
+   "name": "Slide Right \u2014 LOOP",
+   "family": "slide_right",
+   "phase": "loop",
+   "category": "overlay-animation",
+   "keys": [
+    {
+     "property": "offsetX",
+     "at": 0.0,
+     "value": -0.35,
+     "ease": "inOut"
+    },
+    {
+     "property": "offsetX",
+     "at": 1.0,
+     "value": 0.0,
+     "ease": "inOut"
+    }
+   ]
+  },
+  {
+   "id": "anim_pop_in",
+   "name": "Pop \u2014 IN",
+   "family": "pop",
+   "phase": "in",
+   "category": "overlay-animation",
+   "keys": [
+    {
+     "property": "scale",
+     "at": 0.0,
+     "value": 0.2,
+     "ease": "out"
+    },
+    {
+     "property": "scale",
+     "at": 0.6,
+     "value": 1.2,
+     "ease": "out"
+    },
+    {
+     "property": "scale",
+     "at": 1.0,
+     "value": 1.0,
+     "ease": "out"
+    }
+   ]
+  },
+  {
+   "id": "anim_pop_out",
+   "name": "Pop \u2014 OUT",
+   "family": "pop",
+   "phase": "out",
+   "category": "overlay-animation",
+   "keys": [
+    {
+     "property": "scale",
+     "at": 0.0,
+     "value": 1.0,
+     "ease": "in"
+    },
+    {
+     "property": "scale",
+     "at": 0.6,
+     "value": 1.0,
+     "ease": "in"
+    },
+    {
+     "property": "scale",
+     "at": 1.0,
+     "value": 1.0,
+     "ease": "in"
+    }
+   ]
+  },
+  {
+   "id": "anim_pop_loop",
+   "name": "Pop \u2014 LOOP",
+   "family": "pop",
+   "phase": "loop",
+   "category": "overlay-animation",
+   "keys": [
+    {
+     "property": "scale",
+     "at": 0.0,
+     "value": 0.2,
+     "ease": "inOut"
+    },
+    {
+     "property": "scale",
+     "at": 0.6,
+     "value": 1.2,
+     "ease": "inOut"
+    },
+    {
+     "property": "scale",
+     "at": 1.0,
+     "value": 1.0,
+     "ease": "inOut"
+    }
+   ]
+  },
+  {
+   "id": "anim_zoom_in_in",
+   "name": "Zoom In \u2014 IN",
+   "family": "zoom_in",
+   "phase": "in",
+   "category": "overlay-animation",
+   "keys": [
+    {
+     "property": "scale",
+     "at": 0.0,
+     "value": 0.6,
+     "ease": "out"
+    },
+    {
+     "property": "scale",
+     "at": 1.0,
+     "value": 1.05,
+     "ease": "out"
+    }
+   ]
+  },
+  {
+   "id": "anim_zoom_in_out",
+   "name": "Zoom In \u2014 OUT",
+   "family": "zoom_in",
+   "phase": "out",
+   "category": "overlay-animation",
+   "keys": [
+    {
+     "property": "scale",
+     "at": 0.0,
+     "value": 1.0,
+     "ease": "in"
+    },
+    {
+     "property": "scale",
+     "at": 1.0,
+     "value": 1.0,
+     "ease": "in"
+    }
+   ]
+  },
+  {
+   "id": "anim_zoom_in_loop",
+   "name": "Zoom In \u2014 LOOP",
+   "family": "zoom_in",
+   "phase": "loop",
+   "category": "overlay-animation",
+   "keys": [
+    {
+     "property": "scale",
+     "at": 0.0,
+     "value": 0.6,
+     "ease": "inOut"
+    },
+    {
+     "property": "scale",
+     "at": 1.0,
+     "value": 1.05,
+     "ease": "inOut"
+    }
+   ]
+  },
+  {
+   "id": "anim_zoom_out_in",
+   "name": "Zoom Out \u2014 IN",
+   "family": "zoom_out",
+   "phase": "in",
+   "category": "overlay-animation",
+   "keys": [
+    {
+     "property": "scale",
+     "at": 0.0,
+     "value": 1.4,
+     "ease": "out"
+    },
+    {
+     "property": "scale",
+     "at": 1.0,
+     "value": 1.0,
+     "ease": "out"
+    }
+   ]
+  },
+  {
+   "id": "anim_zoom_out_out",
+   "name": "Zoom Out \u2014 OUT",
+   "family": "zoom_out",
+   "phase": "out",
+   "category": "overlay-animation",
+   "keys": [
+    {
+     "property": "scale",
+     "at": 0.0,
+     "value": 1.0,
+     "ease": "in"
+    },
+    {
+     "property": "scale",
+     "at": 1.0,
+     "value": 1.0,
+     "ease": "in"
+    }
+   ]
+  },
+  {
+   "id": "anim_zoom_out_loop",
+   "name": "Zoom Out \u2014 LOOP",
+   "family": "zoom_out",
+   "phase": "loop",
+   "category": "overlay-animation",
+   "keys": [
+    {
+     "property": "scale",
+     "at": 0.0,
+     "value": 1.4,
+     "ease": "inOut"
+    },
+    {
+     "property": "scale",
+     "at": 1.0,
+     "value": 1.0,
+     "ease": "inOut"
+    }
+   ]
+  },
+  {
+   "id": "anim_spin_in",
+   "name": "Spin \u2014 IN",
+   "family": "spin",
+   "phase": "in",
+   "category": "overlay-animation",
+   "keys": [
+    {
+     "property": "rotation",
+     "at": 0.0,
+     "value": -180.0,
+     "ease": "out"
+    },
+    {
+     "property": "rotation",
+     "at": 1.0,
+     "value": 0.0,
+     "ease": "out"
+    }
+   ]
+  },
+  {
+   "id": "anim_spin_out",
+   "name": "Spin \u2014 OUT",
+   "family": "spin",
+   "phase": "out",
+   "category": "overlay-animation",
+   "keys": [
+    {
+     "property": "rotation",
+     "at": 0.0,
+     "value": 0.0,
+     "ease": "in"
+    },
+    {
+     "property": "rotation",
+     "at": 1.0,
+     "value": 0.0,
+     "ease": "in"
+    }
+   ]
+  },
+  {
+   "id": "anim_spin_loop",
+   "name": "Spin \u2014 LOOP",
+   "family": "spin",
+   "phase": "loop",
+   "category": "overlay-animation",
+   "keys": [
+    {
+     "property": "rotation",
+     "at": 0.0,
+     "value": -180.0,
+     "ease": "inOut"
+    },
+    {
+     "property": "rotation",
+     "at": 1.0,
+     "value": 0.0,
+     "ease": "inOut"
+    }
+   ]
+  },
+  {
+   "id": "anim_spin_back_in",
+   "name": "Spin Back \u2014 IN",
+   "family": "spin_back",
+   "phase": "in",
+   "category": "overlay-animation",
+   "keys": [
+    {
+     "property": "rotation",
+     "at": 0.0,
+     "value": 180.0,
+     "ease": "out"
+    },
+    {
+     "property": "rotation",
+     "at": 1.0,
+     "value": 0.0,
+     "ease": "out"
+    }
+   ]
+  },
+  {
+   "id": "anim_spin_back_out",
+   "name": "Spin Back \u2014 OUT",
+   "family": "spin_back",
+   "phase": "out",
+   "category": "overlay-animation",
+   "keys": [
+    {
+     "property": "rotation",
+     "at": 0.0,
+     "value": 0.0,
+     "ease": "in"
+    },
+    {
+     "property": "rotation",
+     "at": 1.0,
+     "value": 0.0,
+     "ease": "in"
+    }
+   ]
+  },
+  {
+   "id": "anim_spin_back_loop",
+   "name": "Spin Back \u2014 LOOP",
+   "family": "spin_back",
+   "phase": "loop",
+   "category": "overlay-animation",
+   "keys": [
+    {
+     "property": "rotation",
+     "at": 0.0,
+     "value": 180.0,
+     "ease": "inOut"
+    },
+    {
+     "property": "rotation",
+     "at": 1.0,
+     "value": 0.0,
+     "ease": "inOut"
+    }
+   ]
+  },
+  {
+   "id": "anim_flip_x_in",
+   "name": "Flip X \u2014 IN",
+   "family": "flip_x",
+   "phase": "in",
+   "category": "overlay-animation",
+   "keys": [
+    {
+     "property": "stretchX",
+     "at": 0.0,
+     "value": -1.0,
+     "ease": "out"
+    },
+    {
+     "property": "stretchX",
+     "at": 1.0,
+     "value": 1.0,
+     "ease": "out"
+    }
+   ]
+  },
+  {
+   "id": "anim_flip_x_out",
+   "name": "Flip X \u2014 OUT",
+   "family": "flip_x",
+   "phase": "out",
+   "category": "overlay-animation",
+   "keys": [
+    {
+     "property": "stretchX",
+     "at": 0.0,
+     "value": 0.0,
+     "ease": "in"
+    },
+    {
+     "property": "stretchX",
+     "at": 1.0,
+     "value": 0.0,
+     "ease": "in"
+    }
+   ]
+  },
+  {
+   "id": "anim_flip_x_loop",
+   "name": "Flip X \u2014 LOOP",
+   "family": "flip_x",
+   "phase": "loop",
+   "category": "overlay-animation",
+   "keys": [
+    {
+     "property": "stretchX",
+     "at": 0.0,
+     "value": -1.0,
+     "ease": "inOut"
+    },
+    {
+     "property": "stretchX",
+     "at": 1.0,
+     "value": 1.0,
+     "ease": "inOut"
+    }
+   ]
+  },
+  {
+   "id": "anim_flip_y_in",
+   "name": "Flip Y \u2014 IN",
+   "family": "flip_y",
+   "phase": "in",
+   "category": "overlay-animation",
+   "keys": [
+    {
+     "property": "stretchY",
+     "at": 0.0,
+     "value": -1.0,
+     "ease": "out"
+    },
+    {
+     "property": "stretchY",
+     "at": 1.0,
+     "value": 1.0,
+     "ease": "out"
+    }
+   ]
+  },
+  {
+   "id": "anim_flip_y_out",
+   "name": "Flip Y \u2014 OUT",
+   "family": "flip_y",
+   "phase": "out",
+   "category": "overlay-animation",
+   "keys": [
+    {
+     "property": "stretchY",
+     "at": 0.0,
+     "value": 0.0,
+     "ease": "in"
+    },
+    {
+     "property": "stretchY",
+     "at": 1.0,
+     "value": 0.0,
+     "ease": "in"
+    }
+   ]
+  },
+  {
+   "id": "anim_flip_y_loop",
+   "name": "Flip Y \u2014 LOOP",
+   "family": "flip_y",
+   "phase": "loop",
+   "category": "overlay-animation",
+   "keys": [
+    {
+     "property": "stretchY",
+     "at": 0.0,
+     "value": -1.0,
+     "ease": "inOut"
+    },
+    {
+     "property": "stretchY",
+     "at": 1.0,
+     "value": 1.0,
+     "ease": "inOut"
+    }
+   ]
+  },
+  {
+   "id": "anim_bounce_in",
+   "name": "Bounce \u2014 IN",
+   "family": "bounce",
+   "phase": "in",
+   "category": "overlay-animation",
+   "keys": [
+    {
+     "property": "scale",
+     "at": 0.0,
+     "value": 0.2,
+     "ease": "out"
+    },
+    {
+     "property": "scale",
+     "at": 0.5,
+     "value": 1.18,
+     "ease": "out"
+    },
+    {
+     "property": "scale",
+     "at": 0.75,
+     "value": 0.94,
+     "ease": "out"
+    },
+    {
+     "property": "scale",
+     "at": 1.0,
+     "value": 1.0,
+     "ease": "out"
+    }
+   ]
+  },
+  {
+   "id": "anim_bounce_out",
+   "name": "Bounce \u2014 OUT",
+   "family": "bounce",
+   "phase": "out",
+   "category": "overlay-animation",
+   "keys": [
+    {
+     "property": "scale",
+     "at": 0.0,
+     "value": 1.0,
+     "ease": "in"
+    },
+    {
+     "property": "scale",
+     "at": 0.5,
+     "value": 1.0,
+     "ease": "in"
+    },
+    {
+     "property": "scale",
+     "at": 0.75,
+     "value": 1.0,
+     "ease": "in"
+    },
+    {
+     "property": "scale",
+     "at": 1.0,
+     "value": 1.0,
+     "ease": "in"
+    }
+   ]
+  },
+  {
+   "id": "anim_bounce_loop",
+   "name": "Bounce \u2014 LOOP",
+   "family": "bounce",
+   "phase": "loop",
+   "category": "overlay-animation",
+   "keys": [
+    {
+     "property": "scale",
+     "at": 0.0,
+     "value": 0.2,
+     "ease": "inOut"
+    },
+    {
+     "property": "scale",
+     "at": 0.5,
+     "value": 1.18,
+     "ease": "inOut"
+    },
+    {
+     "property": "scale",
+     "at": 0.75,
+     "value": 0.94,
+     "ease": "inOut"
+    },
+    {
+     "property": "scale",
+     "at": 1.0,
+     "value": 1.0,
+     "ease": "inOut"
+    }
+   ]
+  },
+  {
+   "id": "anim_glitch_in",
+   "name": "Glitch \u2014 IN",
+   "family": "glitch",
+   "phase": "in",
+   "category": "overlay-animation",
+   "keys": [
+    {
+     "property": "offsetX",
+     "at": 0.0,
+     "value": 0.08,
+     "ease": "out"
+    },
+    {
+     "property": "offsetX",
+     "at": 0.3,
+     "value": -0.05,
+     "ease": "out"
+    },
+    {
+     "property": "offsetX",
+     "at": 0.6,
+     "value": 0.03,
+     "ease": "out"
+    },
+    {
+     "property": "offsetX",
+     "at": 1.0,
+     "value": 0.0,
+     "ease": "out"
+    }
+   ]
+  },
+  {
+   "id": "anim_glitch_out",
+   "name": "Glitch \u2014 OUT",
+   "family": "glitch",
+   "phase": "out",
+   "category": "overlay-animation",
+   "keys": [
+    {
+     "property": "offsetX",
+     "at": 0.0,
+     "value": 0.0,
+     "ease": "in"
+    },
+    {
+     "property": "offsetX",
+     "at": 0.3,
+     "value": 0.0,
+     "ease": "in"
+    },
+    {
+     "property": "offsetX",
+     "at": 0.6,
+     "value": 0.0,
+     "ease": "in"
+    },
+    {
+     "property": "offsetX",
+     "at": 1.0,
+     "value": 0.0,
+     "ease": "in"
+    }
+   ]
+  },
+  {
+   "id": "anim_glitch_loop",
+   "name": "Glitch \u2014 LOOP",
+   "family": "glitch",
+   "phase": "loop",
+   "category": "overlay-animation",
+   "keys": [
+    {
+     "property": "offsetX",
+     "at": 0.0,
+     "value": 0.08,
+     "ease": "inOut"
+    },
+    {
+     "property": "offsetX",
+     "at": 0.3,
+     "value": -0.05,
+     "ease": "inOut"
+    },
+    {
+     "property": "offsetX",
+     "at": 0.6,
+     "value": 0.03,
+     "ease": "inOut"
+    },
+    {
+     "property": "offsetX",
+     "at": 1.0,
+     "value": 0.0,
+     "ease": "inOut"
+    }
+   ]
+  },
+  {
+   "id": "anim_drop_in",
+   "name": "Drop In \u2014 IN",
+   "family": "drop",
+   "phase": "in",
+   "category": "overlay-animation",
+   "keys": [
+    {
+     "property": "offsetY",
+     "at": 0.0,
+     "value": -0.5,
+     "ease": "out"
+    },
+    {
+     "property": "offsetY",
+     "at": 0.6,
+     "value": 0.06,
+     "ease": "out"
+    },
+    {
+     "property": "offsetY",
+     "at": 1.0,
+     "value": 0.0,
+     "ease": "out"
+    }
+   ]
+  },
+  {
+   "id": "anim_drop_out",
+   "name": "Drop In \u2014 OUT",
+   "family": "drop",
+   "phase": "out",
+   "category": "overlay-animation",
+   "keys": [
+    {
+     "property": "offsetY",
+     "at": 0.0,
+     "value": 0.0,
+     "ease": "in"
+    },
+    {
+     "property": "offsetY",
+     "at": 0.6,
+     "value": 0.0,
+     "ease": "in"
+    },
+    {
+     "property": "offsetY",
+     "at": 1.0,
+     "value": 0.0,
+     "ease": "in"
+    }
+   ]
+  },
+  {
+   "id": "anim_drop_loop",
+   "name": "Drop In \u2014 LOOP",
+   "family": "drop",
+   "phase": "loop",
+   "category": "overlay-animation",
+   "keys": [
+    {
+     "property": "offsetY",
+     "at": 0.0,
+     "value": -0.5,
+     "ease": "inOut"
+    },
+    {
+     "property": "offsetY",
+     "at": 0.6,
+     "value": 0.06,
+     "ease": "inOut"
+    },
+    {
+     "property": "offsetY",
+     "at": 1.0,
+     "value": 0.0,
+     "ease": "inOut"
+    }
+   ]
+  },
+  {
+   "id": "anim_swing_in",
+   "name": "Swing \u2014 IN",
+   "family": "swing",
+   "phase": "in",
+   "category": "overlay-animation",
+   "keys": [
+    {
+     "property": "rotation",
+     "at": 0.0,
+     "value": -12.0,
+     "ease": "out"
+    },
+    {
+     "property": "rotation",
+     "at": 0.5,
+     "value": 8.0,
+     "ease": "out"
+    },
+    {
+     "property": "rotation",
+     "at": 1.0,
+     "value": 0.0,
+     "ease": "out"
+    }
+   ]
+  },
+  {
+   "id": "anim_swing_out",
+   "name": "Swing \u2014 OUT",
+   "family": "swing",
+   "phase": "out",
+   "category": "overlay-animation",
+   "keys": [
+    {
+     "property": "rotation",
+     "at": 0.0,
+     "value": 0.0,
+     "ease": "in"
+    },
+    {
+     "property": "rotation",
+     "at": 0.5,
+     "value": 0.0,
+     "ease": "in"
+    },
+    {
+     "property": "rotation",
+     "at": 1.0,
+     "value": 0.0,
+     "ease": "in"
+    }
+   ]
+  },
+  {
+   "id": "anim_swing_loop",
+   "name": "Swing \u2014 LOOP",
+   "family": "swing",
+   "phase": "loop",
+   "category": "overlay-animation",
+   "keys": [
+    {
+     "property": "rotation",
+     "at": 0.0,
+     "value": -12.0,
+     "ease": "inOut"
+    },
+    {
+     "property": "rotation",
+     "at": 0.5,
+     "value": 8.0,
+     "ease": "inOut"
+    },
+    {
+     "property": "rotation",
+     "at": 1.0,
+     "value": 0.0,
+     "ease": "inOut"
+    }
+   ]
+  },
+  {
+   "id": "anim_reveal_in",
+   "name": "Reveal \u2014 IN",
+   "family": "reveal",
+   "phase": "in",
+   "category": "overlay-animation",
+   "keys": [
+    {
+     "property": "opacity",
+     "at": 0.0,
+     "value": 0.0,
+     "ease": "out"
+    },
+    {
+     "property": "opacity",
+     "at": 0.2,
+     "value": 1.0,
+     "ease": "out"
+    },
+    {
+     "property": "scale",
+     "at": 0.0,
+     "value": 0.85,
+     "ease": "out"
+    },
+    {
+     "property": "scale",
+     "at": 1.0,
+     "value": 1.0,
+     "ease": "out"
+    }
+   ]
+  },
+  {
+   "id": "anim_reveal_out",
+   "name": "Reveal \u2014 OUT",
+   "family": "reveal",
+   "phase": "out",
+   "category": "overlay-animation",
+   "keys": [
+    {
+     "property": "opacity",
+     "at": 0.0,
+     "value": 0.0,
+     "ease": "in"
+    },
+    {
+     "property": "opacity",
+     "at": 0.2,
+     "value": 0.0,
+     "ease": "in"
+    },
+    {
+     "property": "scale",
+     "at": 0.0,
+     "value": 1.0,
+     "ease": "in"
+    },
+    {
+     "property": "scale",
+     "at": 1.0,
+     "value": 1.0,
+     "ease": "in"
+    }
+   ]
+  },
+  {
+   "id": "anim_reveal_loop",
+   "name": "Reveal \u2014 LOOP",
+   "family": "reveal",
+   "phase": "loop",
+   "category": "overlay-animation",
+   "keys": [
+    {
+     "property": "opacity",
+     "at": 0.0,
+     "value": 0.0,
+     "ease": "inOut"
+    },
+    {
+     "property": "opacity",
+     "at": 0.2,
+     "value": 1.0,
+     "ease": "inOut"
+    },
+    {
+     "property": "scale",
+     "at": 0.0,
+     "value": 0.85,
+     "ease": "inOut"
+    },
+    {
+     "property": "scale",
+     "at": 1.0,
+     "value": 1.0,
+     "ease": "inOut"
+    }
+   ]
+  },
+  {
+   "id": "anim_pulse_in",
+   "name": "Pulse \u2014 IN",
+   "family": "pulse",
+   "phase": "in",
+   "category": "overlay-animation",
+   "keys": [
+    {
+     "property": "scale",
+     "at": 0.0,
+     "value": 1.0,
+     "ease": "out"
+    },
+    {
+     "property": "scale",
+     "at": 0.5,
+     "value": 1.12,
+     "ease": "out"
+    },
+    {
+     "property": "scale",
+     "at": 1.0,
+     "value": 1.0,
+     "ease": "out"
+    }
+   ]
+  },
+  {
+   "id": "anim_pulse_out",
+   "name": "Pulse \u2014 OUT",
+   "family": "pulse",
+   "phase": "out",
+   "category": "overlay-animation",
+   "keys": [
+    {
+     "property": "scale",
+     "at": 0.0,
+     "value": 1.0,
+     "ease": "in"
+    },
+    {
+     "property": "scale",
+     "at": 0.5,
+     "value": 1.0,
+     "ease": "in"
+    },
+    {
+     "property": "scale",
+     "at": 1.0,
+     "value": 1.0,
+     "ease": "in"
+    }
+   ]
+  },
+  {
+   "id": "anim_pulse_loop",
+   "name": "Pulse \u2014 LOOP",
+   "family": "pulse",
+   "phase": "loop",
+   "category": "overlay-animation",
+   "keys": [
+    {
+     "property": "scale",
+     "at": 0.0,
+     "value": 1.0,
+     "ease": "inOut"
+    },
+    {
+     "property": "scale",
+     "at": 0.5,
+     "value": 1.12,
+     "ease": "inOut"
+    },
+    {
+     "property": "scale",
+     "at": 1.0,
+     "value": 1.0,
+     "ease": "inOut"
+    }
+   ]
+  },
+  {
+   "id": "anim_float_in",
+   "name": "Float \u2014 IN",
+   "family": "float",
+   "phase": "in",
+   "category": "overlay-animation",
+   "keys": [
+    {
+     "property": "offsetY",
+     "at": 0.0,
+     "value": -0.02,
+     "ease": "out"
+    },
+    {
+     "property": "offsetY",
+     "at": 0.5,
+     "value": 0.03,
+     "ease": "out"
+    },
+    {
+     "property": "offsetY",
+     "at": 1.0,
+     "value": -0.02,
+     "ease": "out"
+    }
+   ]
+  },
+  {
+   "id": "anim_float_out",
+   "name": "Float \u2014 OUT",
+   "family": "float",
+   "phase": "out",
+   "category": "overlay-animation",
+   "keys": [
+    {
+     "property": "offsetY",
+     "at": 0.0,
+     "value": 0.0,
+     "ease": "in"
+    },
+    {
+     "property": "offsetY",
+     "at": 0.5,
+     "value": 0.0,
+     "ease": "in"
+    },
+    {
+     "property": "offsetY",
+     "at": 1.0,
+     "value": 0.0,
+     "ease": "in"
+    }
+   ]
+  },
+  {
+   "id": "anim_float_loop",
+   "name": "Float \u2014 LOOP",
+   "family": "float",
+   "phase": "loop",
+   "category": "overlay-animation",
+   "keys": [
+    {
+     "property": "offsetY",
+     "at": 0.0,
+     "value": -0.02,
+     "ease": "inOut"
+    },
+    {
+     "property": "offsetY",
+     "at": 0.5,
+     "value": 0.03,
+     "ease": "inOut"
+    },
+    {
+     "property": "offsetY",
+     "at": 1.0,
+     "value": -0.02,
+     "ease": "inOut"
+    }
+   ]
+  },
+  {
+   "id": "anim_dossier_reveal_in",
+   "name": "Dossier Reveal \u2014 IN",
+   "family": "dossier",
+   "phase": "in",
+   "category": "overlay-animation",
+   "keys": [
+    {
+     "property": "opacity",
+     "at": 0,
+     "value": 0,
+     "ease": "out"
+    },
+    {
+     "property": "opacity",
+     "at": 0.25,
+     "value": 1,
+     "ease": "linear"
+    },
+    {
+     "property": "offsetY",
+     "at": 0,
+     "value": 0.12,
+     "ease": "out"
+    },
+    {
+     "property": "offsetY",
+     "at": 1,
+     "value": 0,
+     "ease": "linear"
+    },
+    {
+     "property": "rotation",
+     "at": 0,
+     "value": 3,
+     "ease": "out"
+    },
+    {
+     "property": "rotation",
+     "at": 1,
+     "value": 0,
+     "ease": "linear"
+    }
+   ]
+  }
+ ]
+}

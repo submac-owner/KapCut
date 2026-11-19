@@ -158,6 +158,8 @@ export component TitleBar inherits Rectangle {
     callback open-settings();
     /// Open the full OpenCode UI in a docked WebView side panel.
     callback open-opencode();
+    /// Apply the next studio look (graded effect layer) to the timeline.
+    callback cycle-studio-look();
     /// A view was picked from the add-panel list.
     callback add-pane(kind: PaneKind);
     callback export-clicked();
@@ -289,6 +291,10 @@ export component TitleBar inherits Rectangle {
             HeaderIconButton {
                 glyph: Glyph.discord;
                 clicked => { root.open-opencode(); }
+            }
+            HeaderIconButton {
+                glyph: Glyph.shapes;
+                clicked => { root.cycle-studio-look(); }
             }
         }
 

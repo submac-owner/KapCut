@@ -432,6 +432,7 @@ export component App inherits Window {
 
     callback open-settings();
     callback open-opencode();
+    callback cycle-studio-look();
     callback export-clicked();
 
     /// The project sheet, opened from the Details panel.
@@ -772,6 +773,7 @@ export component App inherits Window {
                 close => { root.titlebar-close(); }
                 open-settings => { root.open-settings(); }
                 open-opencode => { root.open-opencode(); }
+                cycle-studio-look => { root.cycle-studio-look(); }
                 add-pane(kind) => { Editor.dock-add(kind); }
                 export-clicked => { root.export-clicked(); }
             }

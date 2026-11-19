@@ -1,0 +1,1665 @@
+{
+ "count": 55,
+ "frames": [
+  {
+   "id": "frame_paper_original",
+   "name": "Paper \u2014 Original",
+   "family": "paper",
+   "category": "overlay-frame",
+   "elements": [
+    {
+     "kind": "square",
+     "width": 0.62,
+     "height": 0.78,
+     "fill": "#F5EFE0",
+     "stroke": "#D8CDBB",
+     "strokeWidth": 0.003,
+     "cornerRadius": 0.02,
+     "rotation": 0.02,
+     "shadow": {
+      "color": "#D8CDBB",
+      "blur": 0.03
+     }
+    },
+    {
+     "kind": "square",
+     "width": 0.5,
+     "height": 0.64,
+     "fill": "#00000000",
+     "stroke": "#D8CDBB",
+     "strokeWidth": 0.002,
+     "rotation": 0.02
+    }
+   ]
+  },
+  {
+   "id": "frame_paper_warm",
+   "name": "Paper \u2014 Warm",
+   "family": "paper",
+   "category": "overlay-frame",
+   "elements": [
+    {
+     "kind": "square",
+     "width": 0.62,
+     "height": 0.78,
+     "fill": "#FFD9A0",
+     "stroke": "#A86B32",
+     "strokeWidth": 0.003,
+     "cornerRadius": 0.02,
+     "rotation": 0.02,
+     "shadow": {
+      "color": "#A86B32",
+      "blur": 0.03
+     }
+    },
+    {
+     "kind": "square",
+     "width": 0.5,
+     "height": 0.64,
+     "fill": "#00000000",
+     "stroke": "#A86B32",
+     "strokeWidth": 0.002,
+     "rotation": 0.02
+    }
+   ]
+  },
+  {
+   "id": "frame_paper_cold",
+   "name": "Paper \u2014 Cold",
+   "family": "paper",
+   "category": "overlay-frame",
+   "elements": [
+    {
+     "kind": "square",
+     "width": 0.62,
+     "height": 0.78,
+     "fill": "#CFE8FF",
+     "stroke": "#3E7FB5",
+     "strokeWidth": 0.003,
+     "cornerRadius": 0.02,
+     "rotation": 0.02,
+     "shadow": {
+      "color": "#3E7FB5",
+      "blur": 0.03
+     }
+    },
+    {
+     "kind": "square",
+     "width": 0.5,
+     "height": 0.64,
+     "fill": "#00000000",
+     "stroke": "#3E7FB5",
+     "strokeWidth": 0.002,
+     "rotation": 0.02
+    }
+   ]
+  },
+  {
+   "id": "frame_paper_mono",
+   "name": "Paper \u2014 Mono",
+   "family": "paper",
+   "category": "overlay-frame",
+   "elements": [
+    {
+     "kind": "square",
+     "width": 0.62,
+     "height": 0.78,
+     "fill": "#E8E8E8",
+     "stroke": "#444444",
+     "strokeWidth": 0.003,
+     "cornerRadius": 0.02,
+     "rotation": 0.02,
+     "shadow": {
+      "color": "#444444",
+      "blur": 0.03
+     }
+    },
+    {
+     "kind": "square",
+     "width": 0.5,
+     "height": 0.64,
+     "fill": "#00000000",
+     "stroke": "#444444",
+     "strokeWidth": 0.002,
+     "rotation": 0.02
+    }
+   ]
+  },
+  {
+   "id": "frame_paper_accent",
+   "name": "Paper \u2014 Accent",
+   "family": "paper",
+   "category": "overlay-frame",
+   "elements": [
+    {
+     "kind": "square",
+     "width": 0.62,
+     "height": 0.78,
+     "fill": "#FFE066",
+     "stroke": "#E0533B",
+     "strokeWidth": 0.003,
+     "cornerRadius": 0.02,
+     "rotation": 0.02,
+     "shadow": {
+      "color": "#E0533B",
+      "blur": 0.03
+     }
+    },
+    {
+     "kind": "square",
+     "width": 0.5,
+     "height": 0.64,
+     "fill": "#00000000",
+     "stroke": "#E0533B",
+     "strokeWidth": 0.002,
+     "rotation": 0.02
+    }
+   ]
+  },
+  {
+   "id": "frame_vintage_original",
+   "name": "Camera Vintage \u2014 Original",
+   "family": "vintage",
+   "category": "overlay-frame",
+   "elements": [
+    {
+     "kind": "square",
+     "width": 0.62,
+     "height": 0.78,
+     "fill": "#3A2E24",
+     "stroke": "#C9A227",
+     "strokeWidth": 0.003,
+     "cornerRadius": 0.02,
+     "rotation": 0.0,
+     "shadow": {
+      "color": "#C9A227",
+      "blur": 0.03
+     }
+    },
+    {
+     "kind": "square",
+     "width": 0.5,
+     "height": 0.64,
+     "fill": "#00000000",
+     "stroke": "#C9A227",
+     "strokeWidth": 0.002,
+     "rotation": 0.0
+    }
+   ]
+  },
+  {
+   "id": "frame_vintage_warm",
+   "name": "Camera Vintage \u2014 Warm",
+   "family": "vintage",
+   "category": "overlay-frame",
+   "elements": [
+    {
+     "kind": "square",
+     "width": 0.62,
+     "height": 0.78,
+     "fill": "#FFD9A0",
+     "stroke": "#A86B32",
+     "strokeWidth": 0.003,
+     "cornerRadius": 0.02,
+     "rotation": 0.0,
+     "shadow": {
+      "color": "#A86B32",
+      "blur": 0.03
+     }
+    },
+    {
+     "kind": "square",
+     "width": 0.5,
+     "height": 0.64,
+     "fill": "#00000000",
+     "stroke": "#A86B32",
+     "strokeWidth": 0.002,
+     "rotation": 0.0
+    }
+   ]
+  },
+  {
+   "id": "frame_vintage_cold",
+   "name": "Camera Vintage \u2014 Cold",
+   "family": "vintage",
+   "category": "overlay-frame",
+   "elements": [
+    {
+     "kind": "square",
+     "width": 0.62,
+     "height": 0.78,
+     "fill": "#CFE8FF",
+     "stroke": "#3E7FB5",
+     "strokeWidth": 0.003,
+     "cornerRadius": 0.02,
+     "rotation": 0.0,
+     "shadow": {
+      "color": "#3E7FB5",
+      "blur": 0.03
+     }
+    },
+    {
+     "kind": "square",
+     "width": 0.5,
+     "height": 0.64,
+     "fill": "#00000000",
+     "stroke": "#3E7FB5",
+     "strokeWidth": 0.002,
+     "rotation": 0.0
+    }
+   ]
+  },
+  {
+   "id": "frame_vintage_mono",
+   "name": "Camera Vintage \u2014 Mono",
+   "family": "vintage",
+   "category": "overlay-frame",
+   "elements": [
+    {
+     "kind": "square",
+     "width": 0.62,
+     "height": 0.78,
+     "fill": "#E8E8E8",
+     "stroke": "#444444",
+     "strokeWidth": 0.003,
+     "cornerRadius": 0.02,
+     "rotation": 0.0,
+     "shadow": {
+      "color": "#444444",
+      "blur": 0.03
+     }
+    },
+    {
+     "kind": "square",
+     "width": 0.5,
+     "height": 0.64,
+     "fill": "#00000000",
+     "stroke": "#444444",
+     "strokeWidth": 0.002,
+     "rotation": 0.0
+    }
+   ]
+  },
+  {
+   "id": "frame_vintage_accent",
+   "name": "Camera Vintage \u2014 Accent",
+   "family": "vintage",
+   "category": "overlay-frame",
+   "elements": [
+    {
+     "kind": "square",
+     "width": 0.62,
+     "height": 0.78,
+     "fill": "#FFE066",
+     "stroke": "#E0533B",
+     "strokeWidth": 0.003,
+     "cornerRadius": 0.02,
+     "rotation": 0.0,
+     "shadow": {
+      "color": "#E0533B",
+      "blur": 0.03
+     }
+    },
+    {
+     "kind": "square",
+     "width": 0.5,
+     "height": 0.64,
+     "fill": "#00000000",
+     "stroke": "#E0533B",
+     "strokeWidth": 0.002,
+     "rotation": 0.0
+    }
+   ]
+  },
+  {
+   "id": "frame_cutpaper_original",
+   "name": "Cutting Paper \u2014 Original",
+   "family": "cutpaper",
+   "category": "overlay-frame",
+   "elements": [
+    {
+     "kind": "square",
+     "width": 0.62,
+     "height": 0.78,
+     "fill": "#FFFFFF",
+     "stroke": "#E6E6E6",
+     "strokeWidth": 0.003,
+     "cornerRadius": 0.02,
+     "rotation": -0.04,
+     "shadow": {
+      "color": "#E6E6E6",
+      "blur": 0.03
+     }
+    },
+    {
+     "kind": "square",
+     "width": 0.5,
+     "height": 0.64,
+     "fill": "#00000000",
+     "stroke": "#E6E6E6",
+     "strokeWidth": 0.002,
+     "rotation": -0.04
+    }
+   ]
+  },
+  {
+   "id": "frame_cutpaper_warm",
+   "name": "Cutting Paper \u2014 Warm",
+   "family": "cutpaper",
+   "category": "overlay-frame",
+   "elements": [
+    {
+     "kind": "square",
+     "width": 0.62,
+     "height": 0.78,
+     "fill": "#FFD9A0",
+     "stroke": "#A86B32",
+     "strokeWidth": 0.003,
+     "cornerRadius": 0.02,
+     "rotation": -0.04,
+     "shadow": {
+      "color": "#A86B32",
+      "blur": 0.03
+     }
+    },
+    {
+     "kind": "square",
+     "width": 0.5,
+     "height": 0.64,
+     "fill": "#00000000",
+     "stroke": "#A86B32",
+     "strokeWidth": 0.002,
+     "rotation": -0.04
+    }
+   ]
+  },
+  {
+   "id": "frame_cutpaper_cold",
+   "name": "Cutting Paper \u2014 Cold",
+   "family": "cutpaper",
+   "category": "overlay-frame",
+   "elements": [
+    {
+     "kind": "square",
+     "width": 0.62,
+     "height": 0.78,
+     "fill": "#CFE8FF",
+     "stroke": "#3E7FB5",
+     "strokeWidth": 0.003,
+     "cornerRadius": 0.02,
+     "rotation": -0.04,
+     "shadow": {
+      "color": "#3E7FB5",
+      "blur": 0.03
+     }
+    },
+    {
+     "kind": "square",
+     "width": 0.5,
+     "height": 0.64,
+     "fill": "#00000000",
+     "stroke": "#3E7FB5",
+     "strokeWidth": 0.002,
+     "rotation": -0.04
+    }
+   ]
+  },
+  {
+   "id": "frame_cutpaper_mono",
+   "name": "Cutting Paper \u2014 Mono",
+   "family": "cutpaper",
+   "category": "overlay-frame",
+   "elements": [
+    {
+     "kind": "square",
+     "width": 0.62,
+     "height": 0.78,
+     "fill": "#E8E8E8",
+     "stroke": "#444444",
+     "strokeWidth": 0.003,
+     "cornerRadius": 0.02,
+     "rotation": -0.04,
+     "shadow": {
+      "color": "#444444",
+      "blur": 0.03
+     }
+    },
+    {
+     "kind": "square",
+     "width": 0.5,
+     "height": 0.64,
+     "fill": "#00000000",
+     "stroke": "#444444",
+     "strokeWidth": 0.002,
+     "rotation": -0.04
+    }
+   ]
+  },
+  {
+   "id": "frame_cutpaper_accent",
+   "name": "Cutting Paper \u2014 Accent",
+   "family": "cutpaper",
+   "category": "overlay-frame",
+   "elements": [
+    {
+     "kind": "square",
+     "width": 0.62,
+     "height": 0.78,
+     "fill": "#FFE066",
+     "stroke": "#E0533B",
+     "strokeWidth": 0.003,
+     "cornerRadius": 0.02,
+     "rotation": -0.04,
+     "shadow": {
+      "color": "#E0533B",
+      "blur": 0.03
+     }
+    },
+    {
+     "kind": "square",
+     "width": 0.5,
+     "height": 0.64,
+     "fill": "#00000000",
+     "stroke": "#E0533B",
+     "strokeWidth": 0.002,
+     "rotation": -0.04
+    }
+   ]
+  },
+  {
+   "id": "frame_polaroid_original",
+   "name": "Polaroid \u2014 Original",
+   "family": "polaroid",
+   "category": "overlay-frame",
+   "elements": [
+    {
+     "kind": "square",
+     "width": 0.62,
+     "height": 0.78,
+     "fill": "#FAFAFA",
+     "stroke": "#DDDDDD",
+     "strokeWidth": 0.003,
+     "cornerRadius": 0.02,
+     "rotation": 0.03,
+     "shadow": {
+      "color": "#DDDDDD",
+      "blur": 0.03
+     }
+    },
+    {
+     "kind": "square",
+     "width": 0.5,
+     "height": 0.64,
+     "fill": "#00000000",
+     "stroke": "#DDDDDD",
+     "strokeWidth": 0.002,
+     "rotation": 0.03
+    }
+   ]
+  },
+  {
+   "id": "frame_polaroid_warm",
+   "name": "Polaroid \u2014 Warm",
+   "family": "polaroid",
+   "category": "overlay-frame",
+   "elements": [
+    {
+     "kind": "square",
+     "width": 0.62,
+     "height": 0.78,
+     "fill": "#FFD9A0",
+     "stroke": "#A86B32",
+     "strokeWidth": 0.003,
+     "cornerRadius": 0.02,
+     "rotation": 0.03,
+     "shadow": {
+      "color": "#A86B32",
+      "blur": 0.03
+     }
+    },
+    {
+     "kind": "square",
+     "width": 0.5,
+     "height": 0.64,
+     "fill": "#00000000",
+     "stroke": "#A86B32",
+     "strokeWidth": 0.002,
+     "rotation": 0.03
+    }
+   ]
+  },
+  {
+   "id": "frame_polaroid_cold",
+   "name": "Polaroid \u2014 Cold",
+   "family": "polaroid",
+   "category": "overlay-frame",
+   "elements": [
+    {
+     "kind": "square",
+     "width": 0.62,
+     "height": 0.78,
+     "fill": "#CFE8FF",
+     "stroke": "#3E7FB5",
+     "strokeWidth": 0.003,
+     "cornerRadius": 0.02,
+     "rotation": 0.03,
+     "shadow": {
+      "color": "#3E7FB5",
+      "blur": 0.03
+     }
+    },
+    {
+     "kind": "square",
+     "width": 0.5,
+     "height": 0.64,
+     "fill": "#00000000",
+     "stroke": "#3E7FB5",
+     "strokeWidth": 0.002,
+     "rotation": 0.03
+    }
+   ]
+  },
+  {
+   "id": "frame_polaroid_mono",
+   "name": "Polaroid \u2014 Mono",
+   "family": "polaroid",
+   "category": "overlay-frame",
+   "elements": [
+    {
+     "kind": "square",
+     "width": 0.62,
+     "height": 0.78,
+     "fill": "#E8E8E8",
+     "stroke": "#444444",
+     "strokeWidth": 0.003,
+     "cornerRadius": 0.02,
+     "rotation": 0.03,
+     "shadow": {
+      "color": "#444444",
+      "blur": 0.03
+     }
+    },
+    {
+     "kind": "square",
+     "width": 0.5,
+     "height": 0.64,
+     "fill": "#00000000",
+     "stroke": "#444444",
+     "strokeWidth": 0.002,
+     "rotation": 0.03
+    }
+   ]
+  },
+  {
+   "id": "frame_polaroid_accent",
+   "name": "Polaroid \u2014 Accent",
+   "family": "polaroid",
+   "category": "overlay-frame",
+   "elements": [
+    {
+     "kind": "square",
+     "width": 0.62,
+     "height": 0.78,
+     "fill": "#FFE066",
+     "stroke": "#E0533B",
+     "strokeWidth": 0.003,
+     "cornerRadius": 0.02,
+     "rotation": 0.03,
+     "shadow": {
+      "color": "#E0533B",
+      "blur": 0.03
+     }
+    },
+    {
+     "kind": "square",
+     "width": 0.5,
+     "height": 0.64,
+     "fill": "#00000000",
+     "stroke": "#E0533B",
+     "strokeWidth": 0.002,
+     "rotation": 0.03
+    }
+   ]
+  },
+  {
+   "id": "frame_film_original",
+   "name": "Film Strip \u2014 Original",
+   "family": "film",
+   "category": "overlay-frame",
+   "elements": [
+    {
+     "kind": "square",
+     "width": 0.62,
+     "height": 0.78,
+     "fill": "#111111",
+     "stroke": "#FFFFFF",
+     "strokeWidth": 0.003,
+     "cornerRadius": 0.02,
+     "rotation": 0.0,
+     "shadow": {
+      "color": "#FFFFFF",
+      "blur": 0.03
+     }
+    },
+    {
+     "kind": "square",
+     "width": 0.5,
+     "height": 0.64,
+     "fill": "#00000000",
+     "stroke": "#FFFFFF",
+     "strokeWidth": 0.002,
+     "rotation": 0.0
+    }
+   ]
+  },
+  {
+   "id": "frame_film_warm",
+   "name": "Film Strip \u2014 Warm",
+   "family": "film",
+   "category": "overlay-frame",
+   "elements": [
+    {
+     "kind": "square",
+     "width": 0.62,
+     "height": 0.78,
+     "fill": "#FFD9A0",
+     "stroke": "#A86B32",
+     "strokeWidth": 0.003,
+     "cornerRadius": 0.02,
+     "rotation": 0.0,
+     "shadow": {
+      "color": "#A86B32",
+      "blur": 0.03
+     }
+    },
+    {
+     "kind": "square",
+     "width": 0.5,
+     "height": 0.64,
+     "fill": "#00000000",
+     "stroke": "#A86B32",
+     "strokeWidth": 0.002,
+     "rotation": 0.0
+    }
+   ]
+  },
+  {
+   "id": "frame_film_cold",
+   "name": "Film Strip \u2014 Cold",
+   "family": "film",
+   "category": "overlay-frame",
+   "elements": [
+    {
+     "kind": "square",
+     "width": 0.62,
+     "height": 0.78,
+     "fill": "#CFE8FF",
+     "stroke": "#3E7FB5",
+     "strokeWidth": 0.003,
+     "cornerRadius": 0.02,
+     "rotation": 0.0,
+     "shadow": {
+      "color": "#3E7FB5",
+      "blur": 0.03
+     }
+    },
+    {
+     "kind": "square",
+     "width": 0.5,
+     "height": 0.64,
+     "fill": "#00000000",
+     "stroke": "#3E7FB5",
+     "strokeWidth": 0.002,
+     "rotation": 0.0
+    }
+   ]
+  },
+  {
+   "id": "frame_film_mono",
+   "name": "Film Strip \u2014 Mono",
+   "family": "film",
+   "category": "overlay-frame",
+   "elements": [
+    {
+     "kind": "square",
+     "width": 0.62,
+     "height": 0.78,
+     "fill": "#E8E8E8",
+     "stroke": "#444444",
+     "strokeWidth": 0.003,
+     "cornerRadius": 0.02,
+     "rotation": 0.0,
+     "shadow": {
+      "color": "#444444",
+      "blur": 0.03
+     }
+    },
+    {
+     "kind": "square",
+     "width": 0.5,
+     "height": 0.64,
+     "fill": "#00000000",
+     "stroke": "#444444",
+     "strokeWidth": 0.002,
+     "rotation": 0.0
+    }
+   ]
+  },
+  {
+   "id": "frame_film_accent",
+   "name": "Film Strip \u2014 Accent",
+   "family": "film",
+   "category": "overlay-frame",
+   "elements": [
+    {
+     "kind": "square",
+     "width": 0.62,
+     "height": 0.78,
+     "fill": "#FFE066",
+     "stroke": "#E0533B",
+     "strokeWidth": 0.003,
+     "cornerRadius": 0.02,
+     "rotation": 0.0,
+     "shadow": {
+      "color": "#E0533B",
+      "blur": 0.03
+     }
+    },
+    {
+     "kind": "square",
+     "width": 0.5,
+     "height": 0.64,
+     "fill": "#00000000",
+     "stroke": "#E0533B",
+     "strokeWidth": 0.002,
+     "rotation": 0.0
+    }
+   ]
+  },
+  {
+   "id": "frame_neon_original",
+   "name": "Neon Frame \u2014 Original",
+   "family": "neon",
+   "category": "overlay-frame",
+   "elements": [
+    {
+     "kind": "square",
+     "width": 0.62,
+     "height": 0.78,
+     "fill": "#0B0F1A",
+     "stroke": "#00E5FF",
+     "strokeWidth": 0.003,
+     "cornerRadius": 0.02,
+     "rotation": 0.0,
+     "shadow": null
+    },
+    {
+     "kind": "square",
+     "width": 0.5,
+     "height": 0.64,
+     "fill": "#00000000",
+     "stroke": "#00E5FF",
+     "strokeWidth": 0.002,
+     "rotation": 0.0
+    }
+   ]
+  },
+  {
+   "id": "frame_neon_warm",
+   "name": "Neon Frame \u2014 Warm",
+   "family": "neon",
+   "category": "overlay-frame",
+   "elements": [
+    {
+     "kind": "square",
+     "width": 0.62,
+     "height": 0.78,
+     "fill": "#FFD9A0",
+     "stroke": "#A86B32",
+     "strokeWidth": 0.003,
+     "cornerRadius": 0.02,
+     "rotation": 0.0,
+     "shadow": null
+    },
+    {
+     "kind": "square",
+     "width": 0.5,
+     "height": 0.64,
+     "fill": "#00000000",
+     "stroke": "#A86B32",
+     "strokeWidth": 0.002,
+     "rotation": 0.0
+    }
+   ]
+  },
+  {
+   "id": "frame_neon_cold",
+   "name": "Neon Frame \u2014 Cold",
+   "family": "neon",
+   "category": "overlay-frame",
+   "elements": [
+    {
+     "kind": "square",
+     "width": 0.62,
+     "height": 0.78,
+     "fill": "#CFE8FF",
+     "stroke": "#3E7FB5",
+     "strokeWidth": 0.003,
+     "cornerRadius": 0.02,
+     "rotation": 0.0,
+     "shadow": null
+    },
+    {
+     "kind": "square",
+     "width": 0.5,
+     "height": 0.64,
+     "fill": "#00000000",
+     "stroke": "#3E7FB5",
+     "strokeWidth": 0.002,
+     "rotation": 0.0
+    }
+   ]
+  },
+  {
+   "id": "frame_neon_mono",
+   "name": "Neon Frame \u2014 Mono",
+   "family": "neon",
+   "category": "overlay-frame",
+   "elements": [
+    {
+     "kind": "square",
+     "width": 0.62,
+     "height": 0.78,
+     "fill": "#E8E8E8",
+     "stroke": "#444444",
+     "strokeWidth": 0.003,
+     "cornerRadius": 0.02,
+     "rotation": 0.0,
+     "shadow": null
+    },
+    {
+     "kind": "square",
+     "width": 0.5,
+     "height": 0.64,
+     "fill": "#00000000",
+     "stroke": "#444444",
+     "strokeWidth": 0.002,
+     "rotation": 0.0
+    }
+   ]
+  },
+  {
+   "id": "frame_neon_accent",
+   "name": "Neon Frame \u2014 Accent",
+   "family": "neon",
+   "category": "overlay-frame",
+   "elements": [
+    {
+     "kind": "square",
+     "width": 0.62,
+     "height": 0.78,
+     "fill": "#FFE066",
+     "stroke": "#E0533B",
+     "strokeWidth": 0.003,
+     "cornerRadius": 0.02,
+     "rotation": 0.0,
+     "shadow": null
+    },
+    {
+     "kind": "square",
+     "width": 0.5,
+     "height": 0.64,
+     "fill": "#00000000",
+     "stroke": "#E0533B",
+     "strokeWidth": 0.002,
+     "rotation": 0.0
+    }
+   ]
+  },
+  {
+   "id": "frame_dossier_original",
+   "name": "Dark Dossier \u2014 Original",
+   "family": "dossier",
+   "category": "overlay-frame",
+   "elements": [
+    {
+     "kind": "square",
+     "width": 0.62,
+     "height": 0.78,
+     "fill": "#0E1117",
+     "stroke": "#8FA3C8",
+     "strokeWidth": 0.003,
+     "cornerRadius": 0.02,
+     "rotation": 0.0,
+     "shadow": {
+      "color": "#8FA3C8",
+      "blur": 0.03
+     }
+    },
+    {
+     "kind": "square",
+     "width": 0.5,
+     "height": 0.64,
+     "fill": "#00000000",
+     "stroke": "#8FA3C8",
+     "strokeWidth": 0.002,
+     "rotation": 0.0
+    }
+   ]
+  },
+  {
+   "id": "frame_dossier_warm",
+   "name": "Dark Dossier \u2014 Warm",
+   "family": "dossier",
+   "category": "overlay-frame",
+   "elements": [
+    {
+     "kind": "square",
+     "width": 0.62,
+     "height": 0.78,
+     "fill": "#FFD9A0",
+     "stroke": "#A86B32",
+     "strokeWidth": 0.003,
+     "cornerRadius": 0.02,
+     "rotation": 0.0,
+     "shadow": {
+      "color": "#A86B32",
+      "blur": 0.03
+     }
+    },
+    {
+     "kind": "square",
+     "width": 0.5,
+     "height": 0.64,
+     "fill": "#00000000",
+     "stroke": "#A86B32",
+     "strokeWidth": 0.002,
+     "rotation": 0.0
+    }
+   ]
+  },
+  {
+   "id": "frame_dossier_cold",
+   "name": "Dark Dossier \u2014 Cold",
+   "family": "dossier",
+   "category": "overlay-frame",
+   "elements": [
+    {
+     "kind": "square",
+     "width": 0.62,
+     "height": 0.78,
+     "fill": "#CFE8FF",
+     "stroke": "#3E7FB5",
+     "strokeWidth": 0.003,
+     "cornerRadius": 0.02,
+     "rotation": 0.0,
+     "shadow": {
+      "color": "#3E7FB5",
+      "blur": 0.03
+     }
+    },
+    {
+     "kind": "square",
+     "width": 0.5,
+     "height": 0.64,
+     "fill": "#00000000",
+     "stroke": "#3E7FB5",
+     "strokeWidth": 0.002,
+     "rotation": 0.0
+    }
+   ]
+  },
+  {
+   "id": "frame_dossier_mono",
+   "name": "Dark Dossier \u2014 Mono",
+   "family": "dossier",
+   "category": "overlay-frame",
+   "elements": [
+    {
+     "kind": "square",
+     "width": 0.62,
+     "height": 0.78,
+     "fill": "#E8E8E8",
+     "stroke": "#444444",
+     "strokeWidth": 0.003,
+     "cornerRadius": 0.02,
+     "rotation": 0.0,
+     "shadow": {
+      "color": "#444444",
+      "blur": 0.03
+     }
+    },
+    {
+     "kind": "square",
+     "width": 0.5,
+     "height": 0.64,
+     "fill": "#00000000",
+     "stroke": "#444444",
+     "strokeWidth": 0.002,
+     "rotation": 0.0
+    }
+   ]
+  },
+  {
+   "id": "frame_dossier_accent",
+   "name": "Dark Dossier \u2014 Accent",
+   "family": "dossier",
+   "category": "overlay-frame",
+   "elements": [
+    {
+     "kind": "square",
+     "width": 0.62,
+     "height": 0.78,
+     "fill": "#FFE066",
+     "stroke": "#E0533B",
+     "strokeWidth": 0.003,
+     "cornerRadius": 0.02,
+     "rotation": 0.0,
+     "shadow": {
+      "color": "#E0533B",
+      "blur": 0.03
+     }
+    },
+    {
+     "kind": "square",
+     "width": 0.5,
+     "height": 0.64,
+     "fill": "#00000000",
+     "stroke": "#E0533B",
+     "strokeWidth": 0.002,
+     "rotation": 0.0
+    }
+   ]
+  },
+  {
+   "id": "frame_blueprint_original",
+   "name": "Blueprint \u2014 Original",
+   "family": "blueprint",
+   "category": "overlay-frame",
+   "elements": [
+    {
+     "kind": "square",
+     "width": 0.62,
+     "height": 0.78,
+     "fill": "#0A2340",
+     "stroke": "#5EA9FF",
+     "strokeWidth": 0.003,
+     "cornerRadius": 0.02,
+     "rotation": 0.0,
+     "shadow": null
+    },
+    {
+     "kind": "square",
+     "width": 0.5,
+     "height": 0.64,
+     "fill": "#00000000",
+     "stroke": "#5EA9FF",
+     "strokeWidth": 0.002,
+     "rotation": 0.0
+    }
+   ]
+  },
+  {
+   "id": "frame_blueprint_warm",
+   "name": "Blueprint \u2014 Warm",
+   "family": "blueprint",
+   "category": "overlay-frame",
+   "elements": [
+    {
+     "kind": "square",
+     "width": 0.62,
+     "height": 0.78,
+     "fill": "#FFD9A0",
+     "stroke": "#A86B32",
+     "strokeWidth": 0.003,
+     "cornerRadius": 0.02,
+     "rotation": 0.0,
+     "shadow": null
+    },
+    {
+     "kind": "square",
+     "width": 0.5,
+     "height": 0.64,
+     "fill": "#00000000",
+     "stroke": "#A86B32",
+     "strokeWidth": 0.002,
+     "rotation": 0.0
+    }
+   ]
+  },
+  {
+   "id": "frame_blueprint_cold",
+   "name": "Blueprint \u2014 Cold",
+   "family": "blueprint",
+   "category": "overlay-frame",
+   "elements": [
+    {
+     "kind": "square",
+     "width": 0.62,
+     "height": 0.78,
+     "fill": "#CFE8FF",
+     "stroke": "#3E7FB5",
+     "strokeWidth": 0.003,
+     "cornerRadius": 0.02,
+     "rotation": 0.0,
+     "shadow": null
+    },
+    {
+     "kind": "square",
+     "width": 0.5,
+     "height": 0.64,
+     "fill": "#00000000",
+     "stroke": "#3E7FB5",
+     "strokeWidth": 0.002,
+     "rotation": 0.0
+    }
+   ]
+  },
+  {
+   "id": "frame_blueprint_mono",
+   "name": "Blueprint \u2014 Mono",
+   "family": "blueprint",
+   "category": "overlay-frame",
+   "elements": [
+    {
+     "kind": "square",
+     "width": 0.62,
+     "height": 0.78,
+     "fill": "#E8E8E8",
+     "stroke": "#444444",
+     "strokeWidth": 0.003,
+     "cornerRadius": 0.02,
+     "rotation": 0.0,
+     "shadow": null
+    },
+    {
+     "kind": "square",
+     "width": 0.5,
+     "height": 0.64,
+     "fill": "#00000000",
+     "stroke": "#444444",
+     "strokeWidth": 0.002,
+     "rotation": 0.0
+    }
+   ]
+  },
+  {
+   "id": "frame_blueprint_accent",
+   "name": "Blueprint \u2014 Accent",
+   "family": "blueprint",
+   "category": "overlay-frame",
+   "elements": [
+    {
+     "kind": "square",
+     "width": 0.62,
+     "height": 0.78,
+     "fill": "#FFE066",
+     "stroke": "#E0533B",
+     "strokeWidth": 0.003,
+     "cornerRadius": 0.02,
+     "rotation": 0.0,
+     "shadow": null
+    },
+    {
+     "kind": "square",
+     "width": 0.5,
+     "height": 0.64,
+     "fill": "#00000000",
+     "stroke": "#E0533B",
+     "strokeWidth": 0.002,
+     "rotation": 0.0
+    }
+   ]
+  },
+  {
+   "id": "frame_polaroid_dark_original",
+   "name": "Night Polaroid \u2014 Original",
+   "family": "polaroid_dark",
+   "category": "overlay-frame",
+   "elements": [
+    {
+     "kind": "square",
+     "width": 0.62,
+     "height": 0.78,
+     "fill": "#1A1A1A",
+     "stroke": "#E0E0E0",
+     "strokeWidth": 0.003,
+     "cornerRadius": 0.02,
+     "rotation": 0.03,
+     "shadow": {
+      "color": "#E0E0E0",
+      "blur": 0.03
+     }
+    },
+    {
+     "kind": "square",
+     "width": 0.5,
+     "height": 0.64,
+     "fill": "#00000000",
+     "stroke": "#E0E0E0",
+     "strokeWidth": 0.002,
+     "rotation": 0.03
+    }
+   ]
+  },
+  {
+   "id": "frame_polaroid_dark_warm",
+   "name": "Night Polaroid \u2014 Warm",
+   "family": "polaroid_dark",
+   "category": "overlay-frame",
+   "elements": [
+    {
+     "kind": "square",
+     "width": 0.62,
+     "height": 0.78,
+     "fill": "#FFD9A0",
+     "stroke": "#A86B32",
+     "strokeWidth": 0.003,
+     "cornerRadius": 0.02,
+     "rotation": 0.03,
+     "shadow": {
+      "color": "#A86B32",
+      "blur": 0.03
+     }
+    },
+    {
+     "kind": "square",
+     "width": 0.5,
+     "height": 0.64,
+     "fill": "#00000000",
+     "stroke": "#A86B32",
+     "strokeWidth": 0.002,
+     "rotation": 0.03
+    }
+   ]
+  },
+  {
+   "id": "frame_polaroid_dark_cold",
+   "name": "Night Polaroid \u2014 Cold",
+   "family": "polaroid_dark",
+   "category": "overlay-frame",
+   "elements": [
+    {
+     "kind": "square",
+     "width": 0.62,
+     "height": 0.78,
+     "fill": "#CFE8FF",
+     "stroke": "#3E7FB5",
+     "strokeWidth": 0.003,
+     "cornerRadius": 0.02,
+     "rotation": 0.03,
+     "shadow": {
+      "color": "#3E7FB5",
+      "blur": 0.03
+     }
+    },
+    {
+     "kind": "square",
+     "width": 0.5,
+     "height": 0.64,
+     "fill": "#00000000",
+     "stroke": "#3E7FB5",
+     "strokeWidth": 0.002,
+     "rotation": 0.03
+    }
+   ]
+  },
+  {
+   "id": "frame_polaroid_dark_mono",
+   "name": "Night Polaroid \u2014 Mono",
+   "family": "polaroid_dark",
+   "category": "overlay-frame",
+   "elements": [
+    {
+     "kind": "square",
+     "width": 0.62,
+     "height": 0.78,
+     "fill": "#E8E8E8",
+     "stroke": "#444444",
+     "strokeWidth": 0.003,
+     "cornerRadius": 0.02,
+     "rotation": 0.03,
+     "shadow": {
+      "color": "#444444",
+      "blur": 0.03
+     }
+    },
+    {
+     "kind": "square",
+     "width": 0.5,
+     "height": 0.64,
+     "fill": "#00000000",
+     "stroke": "#444444",
+     "strokeWidth": 0.002,
+     "rotation": 0.03
+    }
+   ]
+  },
+  {
+   "id": "frame_polaroid_dark_accent",
+   "name": "Night Polaroid \u2014 Accent",
+   "family": "polaroid_dark",
+   "category": "overlay-frame",
+   "elements": [
+    {
+     "kind": "square",
+     "width": 0.62,
+     "height": 0.78,
+     "fill": "#FFE066",
+     "stroke": "#E0533B",
+     "strokeWidth": 0.003,
+     "cornerRadius": 0.02,
+     "rotation": 0.03,
+     "shadow": {
+      "color": "#E0533B",
+      "blur": 0.03
+     }
+    },
+    {
+     "kind": "square",
+     "width": 0.5,
+     "height": 0.64,
+     "fill": "#00000000",
+     "stroke": "#E0533B",
+     "strokeWidth": 0.002,
+     "rotation": 0.03
+    }
+   ]
+  },
+  {
+   "id": "frame_kraft_original",
+   "name": "Kraft Cutout \u2014 Original",
+   "family": "kraft",
+   "category": "overlay-frame",
+   "elements": [
+    {
+     "kind": "square",
+     "width": 0.62,
+     "height": 0.78,
+     "fill": "#C8A97E",
+     "stroke": "#8B6F47",
+     "strokeWidth": 0.003,
+     "cornerRadius": 0.02,
+     "rotation": -0.02,
+     "shadow": {
+      "color": "#8B6F47",
+      "blur": 0.03
+     }
+    },
+    {
+     "kind": "square",
+     "width": 0.5,
+     "height": 0.64,
+     "fill": "#00000000",
+     "stroke": "#8B6F47",
+     "strokeWidth": 0.002,
+     "rotation": -0.02
+    }
+   ]
+  },
+  {
+   "id": "frame_kraft_warm",
+   "name": "Kraft Cutout \u2014 Warm",
+   "family": "kraft",
+   "category": "overlay-frame",
+   "elements": [
+    {
+     "kind": "square",
+     "width": 0.62,
+     "height": 0.78,
+     "fill": "#FFD9A0",
+     "stroke": "#A86B32",
+     "strokeWidth": 0.003,
+     "cornerRadius": 0.02,
+     "rotation": -0.02,
+     "shadow": {
+      "color": "#A86B32",
+      "blur": 0.03
+     }
+    },
+    {
+     "kind": "square",
+     "width": 0.5,
+     "height": 0.64,
+     "fill": "#00000000",
+     "stroke": "#A86B32",
+     "strokeWidth": 0.002,
+     "rotation": -0.02
+    }
+   ]
+  },
+  {
+   "id": "frame_kraft_cold",
+   "name": "Kraft Cutout \u2014 Cold",
+   "family": "kraft",
+   "category": "overlay-frame",
+   "elements": [
+    {
+     "kind": "square",
+     "width": 0.62,
+     "height": 0.78,
+     "fill": "#CFE8FF",
+     "stroke": "#3E7FB5",
+     "strokeWidth": 0.003,
+     "cornerRadius": 0.02,
+     "rotation": -0.02,
+     "shadow": {
+      "color": "#3E7FB5",
+      "blur": 0.03
+     }
+    },
+    {
+     "kind": "square",
+     "width": 0.5,
+     "height": 0.64,
+     "fill": "#00000000",
+     "stroke": "#3E7FB5",
+     "strokeWidth": 0.002,
+     "rotation": -0.02
+    }
+   ]
+  },
+  {
+   "id": "frame_kraft_mono",
+   "name": "Kraft Cutout \u2014 Mono",
+   "family": "kraft",
+   "category": "overlay-frame",
+   "elements": [
+    {
+     "kind": "square",
+     "width": 0.62,
+     "height": 0.78,
+     "fill": "#E8E8E8",
+     "stroke": "#444444",
+     "strokeWidth": 0.003,
+     "cornerRadius": 0.02,
+     "rotation": -0.02,
+     "shadow": {
+      "color": "#444444",
+      "blur": 0.03
+     }
+    },
+    {
+     "kind": "square",
+     "width": 0.5,
+     "height": 0.64,
+     "fill": "#00000000",
+     "stroke": "#444444",
+     "strokeWidth": 0.002,
+     "rotation": -0.02
+    }
+   ]
+  },
+  {
+   "id": "frame_kraft_accent",
+   "name": "Kraft Cutout \u2014 Accent",
+   "family": "kraft",
+   "category": "overlay-frame",
+   "elements": [
+    {
+     "kind": "square",
+     "width": 0.62,
+     "height": 0.78,
+     "fill": "#FFE066",
+     "stroke": "#E0533B",
+     "strokeWidth": 0.003,
+     "cornerRadius": 0.02,
+     "rotation": -0.02,
+     "shadow": {
+      "color": "#E0533B",
+      "blur": 0.03
+     }
+    },
+    {
+     "kind": "square",
+     "width": 0.5,
+     "height": 0.64,
+     "fill": "#00000000",
+     "stroke": "#E0533B",
+     "strokeWidth": 0.002,
+     "rotation": -0.02
+    }
+   ]
+  },
+  {
+   "id": "frame_glass_original",
+   "name": "Glass Pane \u2014 Original",
+   "family": "glass",
+   "category": "overlay-frame",
+   "elements": [
+    {
+     "kind": "square",
+     "width": 0.62,
+     "height": 0.78,
+     "fill": "#EAF4FF",
+     "stroke": "#9CC5E9",
+     "strokeWidth": 0.003,
+     "cornerRadius": 0.02,
+     "rotation": 0.0,
+     "shadow": null
+    },
+    {
+     "kind": "square",
+     "width": 0.5,
+     "height": 0.64,
+     "fill": "#00000000",
+     "stroke": "#9CC5E9",
+     "strokeWidth": 0.002,
+     "rotation": 0.0
+    }
+   ]
+  },
+  {
+   "id": "frame_glass_warm",
+   "name": "Glass Pane \u2014 Warm",
+   "family": "glass",
+   "category": "overlay-frame",
+   "elements": [
+    {
+     "kind": "square",
+     "width": 0.62,
+     "height": 0.78,
+     "fill": "#FFD9A0",
+     "stroke": "#A86B32",
+     "strokeWidth": 0.003,
+     "cornerRadius": 0.02,
+     "rotation": 0.0,
+     "shadow": null
+    },
+    {
+     "kind": "square",
+     "width": 0.5,
+     "height": 0.64,
+     "fill": "#00000000",
+     "stroke": "#A86B32",
+     "strokeWidth": 0.002,
+     "rotation": 0.0
+    }
+   ]
+  },
+  {
+   "id": "frame_glass_cold",
+   "name": "Glass Pane \u2014 Cold",
+   "family": "glass",
+   "category": "overlay-frame",
+   "elements": [
+    {
+     "kind": "square",
+     "width": 0.62,
+     "height": 0.78,
+     "fill": "#CFE8FF",
+     "stroke": "#3E7FB5",
+     "strokeWidth": 0.003,
+     "cornerRadius": 0.02,
+     "rotation": 0.0,
+     "shadow": null
+    },
+    {
+     "kind": "square",
+     "width": 0.5,
+     "height": 0.64,
+     "fill": "#00000000",
+     "stroke": "#3E7FB5",
+     "strokeWidth": 0.002,
+     "rotation": 0.0
+    }
+   ]
+  },
+  {
+   "id": "frame_glass_mono",
+   "name": "Glass Pane \u2014 Mono",
+   "family": "glass",
+   "category": "overlay-frame",
+   "elements": [
+    {
+     "kind": "square",
+     "width": 0.62,
+     "height": 0.78,
+     "fill": "#E8E8E8",
+     "stroke": "#444444",
+     "strokeWidth": 0.003,
+     "cornerRadius": 0.02,
+     "rotation": 0.0,
+     "shadow": null
+    },
+    {
+     "kind": "square",
+     "width": 0.5,
+     "height": 0.64,
+     "fill": "#00000000",
+     "stroke": "#444444",
+     "strokeWidth": 0.002,
+     "rotation": 0.0
+    }
+   ]
+  },
+  {
+   "id": "frame_glass_accent",
+   "name": "Glass Pane \u2014 Accent",
+   "family": "glass",
+   "category": "overlay-frame",
+   "elements": [
+    {
+     "kind": "square",
+     "width": 0.62,
+     "height": 0.78,
+     "fill": "#FFE066",
+     "stroke": "#E0533B",
+     "strokeWidth": 0.003,
+     "cornerRadius": 0.02,
+     "rotation": 0.0,
+     "shadow": null
+    },
+    {
+     "kind": "square",
+     "width": 0.5,
+     "height": 0.64,
+     "fill": "#00000000",
+     "stroke": "#E0533B",
+     "strokeWidth": 0.002,
+     "rotation": 0.0
+    }
+   ]
+  }
+ ]
+}

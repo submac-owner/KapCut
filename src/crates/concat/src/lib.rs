@@ -2123,6 +2123,35 @@ fn start(project: Option<std::path::PathBuf>, smoke: Smoke) -> Result<(), slint:
     app.on_open_settings(on_window!(|state| {
         state.handle(Msg::Settings(SettingsMsg::Open));
     }));
+    // Studio Look: apply a graded effect layer across the timeline. Each
+    // click cycles to the next look, giving manual editors one-click grading
+    // without the agent. The layer can be trimmed like any other clip.
+    app.on_cycle_studio_look(on_window!(|state| {
+        use std::sync::atomic::{AtomicUsize, Ordering};
+        static LOOK: AtomicUsize = AtomicUsize::new(0);
+        const LOOKS: [(&str, &str); 5] = [
+            ("Teal & Orange", "concat.teal-orange"),
+            ("Vintage Film", "concat.vintage"),
+            ("Noir", "concat.noir"),
+            ("Neon", "concat.neon"),
+            ("Vibrant", "concat.vibrance"),
+        ];
+        let index = LOOK.fetch_add(1, Ordering::Relaxed) % LOOKS.len();
+        let (name, effect_id) = LOOKS[index];
+        let command = concat_project::Command::AddLayerClip {
+            track_id: None,
+            start: 0.0,
+            duration: Some(30.0),
+            effect_id: effect_id.to_owned(),
+            name: name.to_owned(),
+            sound: false,
+        };
+        if let Some(error) = state.apply(command) {
+            state.notify(&format!("Studio Look: {error}"), true);
+        } else {
+            state.notify(&format!("Studio Look: {name}"), false);
+        }
+    }));
     // OpenCode full-UI side panel. The WebView needs its own event loop, so it
     // runs on a dedicated thread; the project path is passed through the
     // JavaScript bridge in the panel.

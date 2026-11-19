@@ -113,6 +113,10 @@ pub enum Action {
     CapCutStudioQuery,
     /// Invent a full editing style from a description and/or reference profile.
     CapCutStudioEdit,
+    /// List overlay frames or animations (read-only).
+    CapCutOverlayQuery,
+    /// Add an overlay frame or apply an overlay animation.
+    CapCutOverlayApply,
 }
 
 /// How a reply is shown to the agent.
@@ -688,7 +692,8 @@ fn input_schema(schemas: &Schemas, tool: &Tool) -> Option<Value> {
         Action::CapCutTranslate | Action::CapCutMotion | Action::CapCutMotionQuery
         | Action::CapCutExpr | Action::CapCutExprQuery
         | Action::CapCutShape | Action::CapCutShapeQuery
-        | Action::CapCutStudio | Action::CapCutStudioQuery | Action::CapCutStudioEdit => {
+        | Action::CapCutStudio | Action::CapCutStudioQuery | Action::CapCutStudioEdit
+        | Action::CapCutOverlayQuery | Action::CapCutOverlayApply => {
             Some(json!({
                 "type": "object",
                 "properties": {
@@ -860,6 +865,24 @@ fn run(tool: &Tool, arguments: Value, context: Context<'_>) -> Result<Outcome, A
             Ok(Outcome::json(summary::view(&result)))
         }
         Action::CapCutShapeQuery => Ok(Outcome::json(capcut_shape::list_shapes())),
+        Action::CapCutOverlayQuery => {
+            if arguments.get("animations").and_then(Value::as_bool).unwrap_or(false) {
+                Ok(Outcome::json(capcut_studio::list_overlay_animations()))
+            } else {
+                Ok(Outcome::json(capcut_studio::list_overlay_frames()))
+            }
+        }
+        Action::CapCutOverlayApply => {
+            let command = if arguments.get("animationId").is_some() && arguments.get("frameId").is_none() {
+                capcut_studio::apply_overlay_animation(&arguments)
+            } else {
+                capcut_studio::add_overlay_frame(&arguments)
+            };
+            let path = arguments.get("path").cloned().unwrap_or(Value::Null);
+            let request = request("edit.apply", json!({ "path": path, "command": command }))?;
+            let result = backend.call(request)?;
+            Ok(Outcome::json(summary::view(&result)))
+        }
         Action::CapCutStudioEdit => {
             let command = capcut_studio::invent_editing_style(&arguments);
             let path = arguments.get("path").cloned().unwrap_or(Value::Null);
@@ -1319,7 +1342,8 @@ mod tests {
                 Action::CapCutTranslate | Action::CapCutMotion | Action::CapCutMotionQuery
                 | Action::CapCutExpr | Action::CapCutExprQuery
                 | Action::CapCutShape | Action::CapCutShapeQuery
-                | Action::CapCutStudio | Action::CapCutStudioQuery | Action::CapCutStudioEdit => {
+                | Action::CapCutStudio | Action::CapCutStudioQuery | Action::CapCutStudioEdit
+                | Action::CapCutOverlayQuery | Action::CapCutOverlayApply => {
                     request("edit.apply", sample.clone())
                 }
                 Action::Mask => mask(sample.clone()),

@@ -252,6 +252,73 @@ pub fn invent_editing_style(args: &Value) -> Value {
         "commands":commands })
 }
 
+fn frames() -> Vec<Value> { serde_json::from_str(FRAMES_JSON).unwrap_or_default() }
+fn anims() -> Vec<Value> { serde_json::from_str(ANIMS_JSON).unwrap_or_default() }
+
+pub fn list_overlay_frames() -> Value {
+    let items: Vec<Value> = frames().iter().map(|f| json!({
+        "id": f["id"], "name": f["name"], "family": f["family"],
+    })).collect();
+    json!({ "frames": items, "count": items.len() })
+}
+
+pub fn list_overlay_animations() -> Value {
+    let items: Vec<Value> = anims().iter().map(|a| json!({
+        "id": a["id"], "name": a["name"], "phase": a["phase"],
+    })).collect();
+    json!({ "animations": items, "count": items.len() })
+}
+
+pub fn add_overlay_frame(args: &Value) -> Value {
+    let fid = args.get("frameId").and_then(Value::as_str).unwrap_or("");
+    let start = f(args, "start", 0.0);
+    let dur = f(args, "duration", 5.0).max(0.1);
+    let aid = args.get("animationId").and_then(Value::as_str);
+    let Some(frame) = frames().into_iter().find(|x| x["id"] == fid) else {
+        return json!({ "op":"batch", "commands":[] });
+    };
+    let anim = aid.and_then(|id| anims().into_iter().find(|x| x["id"] == id));
+    let mut commands: Vec<Value> = Vec::new();
+    if let Some(items) = frame.get("elements").and_then(Value::as_array) {
+        for (i, el) in items.iter().enumerate() {
+            let cid = format!("ov{}", i);
+            commands.push(json!({ "op":"addShapeClip", "start":start, "duration":dur,
+                "name":format!("{} {}", frame["name"], i+1), "style":el }));
+            if let Some(a) = &anim {
+                if let Some(keys) = a.get("keys").and_then(Value::as_array) {
+                    for key in keys {
+                        commands.push(json!({ "op":"setClipKey", "clipId":cid,
+                            "property":key["property"], "at":f(key,"at",0.0),
+                            "value":f(key,"value",0.0),
+                            "ease":key.get("ease").and_then(Value::as_str).unwrap_or("linear") }));
+                    }
+                }
+            }
+        }
+    }
+    json!({ "op":"batch", "frame":frame["name"], "animation":aid, "commands":commands })
+}
+
+pub fn apply_overlay_animation(args: &Value) -> Value {
+    let aid = args.get("animationId").and_then(Value::as_str).unwrap_or("");
+    let clip = args.get("clipId").and_then(Value::as_str).unwrap_or("ov0");
+    let start = f(args, "start", 0.0);
+    let dur = f(args, "duration", 5.0).max(0.1);
+    let Some(a) = anims().into_iter().find(|x| x["id"] == aid) else {
+        return json!({ "op":"batch", "commands":[] });
+    };
+    let mut commands: Vec<Value> = Vec::new();
+    if let Some(keys) = a.get("keys").and_then(Value::as_array) {
+        for key in keys {
+            let at = ((start + f(key,"at",0.0)*dur) / dur).clamp(0.0,1.0);
+            commands.push(json!({ "op":"setClipKey", "clipId":clip,
+                "property":key["property"], "at":at, "value":f(key,"value",0.0),
+                "ease":key.get("ease").and_then(Value::as_str).unwrap_or("linear") }));
+        }
+    }
+    json!({ "op":"batch", "animation":a["name"], "commands":commands })
+}
+
 pub fn compose(args: &Value) -> Value {
     let id = args.get("templateId").and_then(Value::as_str).unwrap_or("");
     let Some(t) = templates().into_iter().find(|x| x["id"] == id) else {
