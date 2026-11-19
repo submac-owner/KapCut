@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "note": "AE-style text animators compiled to per-character/word text clips with staggered keyframes. No engine change needed: each word becomes its own styled title with offset timing.",
+  "animators": [
+    { "id": "type_on", "name": "Type On", "unit": "char", "stagger": 0.06, "keys": [{"property":"opacity","at":0,"value":0},{"property":"opacity","at":0.08,"value":1},{"property":"offsetY","at":0,"value":0.04,"ease":"out"},{"property":"offsetY","at":1,"value":0}] },
+    { "id": "wave", "name": "Wave", "unit": "word", "stagger": 0.12, "keys": [{"property":"offsetY","at":0,"value":0.02,"ease":"inOut"},{"property":"offsetY","at":0.5,"value":-0.03,"ease":"inOut"},{"property":"offsetY","at":1,"value":0.02}] },
+    { "id": "burst", "name": "Burst", "unit": "word", "stagger": 0.09, "keys": [{"property":"scale","at":0,"value":0.2,"ease":"out"},{"property":"scale","at":0.6,"value":1.2,"ease":"in"},{"property":"scale","at":1,"value":1.0}] },
+    { "id": "slider", "name": "Slider", "unit": "word", "stagger": 0.1, "keys": [{"property":"offsetX","at":0,"value":0.3,"ease":"out"},{"property":"offsetX","at":1,"value":0}] },
+    { "id": "flip_up", "name": "Flip Up", "unit": "word", "stagger": 0.08, "keys": [{"property":"rotation","at":0,"value":-45,"ease":"out"},{"property":"rotation","at":1,"value":0},{"property":"opacity","at":0,"value":0},{"property":"opacity","at":0.2,"value":1}] },
+    { "id": "highlight_pop", "name": "Highlight Pop", "unit": "word", "stagger": 0.15, "keys": [{"property":"scale","at":0,"value":1,"ease":"out"},{"property":"scale","at":0.5,"value":1.25,"ease":"inOut"},{"property":"scale","at":1,"value":1}] }
+  ]
+}

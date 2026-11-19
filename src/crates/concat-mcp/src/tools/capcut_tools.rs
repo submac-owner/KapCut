@@ -147,6 +147,8 @@ pub const KAPCUT_NAMES: &[&str] = &[
     "studio_list_templates",
     "studio_design",
     "studio_compose",
+    "studio_animate_text",
+    "studio_list_animators",
     "kapcut_translate",
 ];
 
@@ -1456,6 +1458,24 @@ pub fn capcut_catalogue() -> Vec<Tool> {
             destructive: false,
             idempotent: false,
             action: Action::CapCutStudio,
+        },
+        Tool {
+            name: "studio_animate_text",
+            title: "Animate text per word",
+            description: "Apply an AE-style text animator (type on, wave, burst, flip) with staggered keys.",
+            read_only: false,
+            destructive: false,
+            idempotent: false,
+            action: Action::CapCutStudio,
+        },
+        Tool {
+            name: "studio_list_animators",
+            title: "List text animators",
+            description: "List per-word text animator presets. Uses real Concat engine commands.",
+            read_only: false,
+            destructive: false,
+            idempotent: false,
+            action: Action::CapCutStudioQuery,
         },
         Tool {
             name: "kapcut_translate",

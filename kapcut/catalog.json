@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "name": "kapcut",
-  "toolCount": 146,
+  "toolCount": 148,
   "families": [
     "agent",
     "animations",
@@ -1760,6 +1760,30 @@
       "title": "Compose studio template",
       "description": "Build a full layered composition (shapes, text, keys, effects, camera) from a template.",
       "target_kind": "studio",
+      "target": "capcut_studio",
+      "read_only": false,
+      "destructive": false,
+      "idempotent": false,
+      "capcut_source": "studio_*"
+    },
+    {
+      "family": "studio",
+      "name": "studio_animate_text",
+      "title": "Animate text per word",
+      "description": "Apply an AE-style text animator (type on, wave, burst, flip) with staggered keys.",
+      "target_kind": "studio",
+      "target": "capcut_studio",
+      "read_only": false,
+      "destructive": false,
+      "idempotent": false,
+      "capcut_source": "studio_*"
+    },
+    {
+      "family": "studio",
+      "name": "studio_list_animators",
+      "title": "List text animators",
+      "description": "List per-word text animator presets.",
+      "target_kind": "studio_query",
       "target": "capcut_studio",
       "read_only": false,
       "destructive": false,

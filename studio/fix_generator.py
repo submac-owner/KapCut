@@ -1,0 +1,47 @@
+import pathlib
+p = pathlib.Path(r"C:\Users\Admin\Desktop\Capcut\KapCut\kapcut\studio\generate_studio_rs.py")
+t = p.read_text(encoding="utf-8")
+start = t.index(' "pub fn design_system() -> Value { design() }')
+end = t.index(' "fn ease(name: &str) -> Value {', start)
+block = r''' "pub fn design_system() -> Value { design() }",
+ "",
+ "pub fn list_animators() -> Value {",
+ "    let a: Vec<Value> = serde_json::from_str(ANIMATORS_JSON).unwrap_or_default();",
+ "    let items: Vec<Value> = a.iter().map(|x| json!({",
+ "        \"id\": x[\"id\"], \"name\": x[\"name\"], \"unit\": x[\"unit\"],",
+ "    })).collect();",
+ "    json!({ \"animators\": items })",
+ "}",
+ "",
+ "pub fn animate_text(args: &Value) -> Value {",
+ "    let text = args.get(\"text\").and_then(Value::as_str).unwrap_or(\"TEXT\");",
+ "    let aid = args.get(\"animator\").and_then(Value::as_str).unwrap_or(\"burst\");",
+ "    let start = f(args, \"start\", 0.0);",
+ "    let dur = f(args, \"duration\", 4.0);",
+ "    let a: Vec<Value> = serde_json::from_str(ANIMATORS_JSON).unwrap_or_default();",
+ "    let Some(anim) = a.into_iter().find(|x| x[\"id\"] == aid) else {",
+ "        return json!({ \"op\":\"batch\", \"commands\":[] });",
+ "    };",
+ "    let words: Vec<&str> = text.split_whitespace().collect();",
+ "    let stagger = f(&anim, \"stagger\", 0.1);",
+ "    let mut commands: Vec<Value> = Vec::new();",
+ "    for (i, word) in words.iter().enumerate() {",
+ "        let at = start + i as f64 * stagger;",
+ "        let life = (dur - i as f64 * stagger).max(0.2);",
+ "        commands.push(json!({ \"op\":\"addTextClip\", \"start\":at, \"duration\":life,",
+ "            \"name\":word, \"style\":{ \"content\":word, \"font_family\":\"Inter\",",
+ "            \"font_size\":0.08, \"font_weight\":700, \"color\":\"#FFFFFF\", \"align\":\"center\" } }));",
+ "        if let Some(keys) = anim.get(\"keys\").and_then(Value::as_array) {",
+ "            for key in keys {",
+ "                commands.push(json!({ \"op\":\"setClipKey\", \"clipId\":format!(\"w{}\", i),",
+ "                    \"property\":key[\"property\"], \"at\":f(key,\"at\",0.0), \"value\":f(key,\"value\",0.0),",
+ "                    \"ease\":key.get(\"ease\").and_then(Value::as_str).unwrap_or(\"linear\") }));",
+ "            }",
+ "        }",
+ "    }",
+ "    json!({ \"op\":\"batch\", \"text\":text, \"animator\":aid, \"commands\":commands })",
+ "}",
+ "",
+'''
+p.write_text(t[:start] + block + t[end:], encoding="utf-8")
+print("generator repaired")

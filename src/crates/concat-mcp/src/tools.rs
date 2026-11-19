@@ -859,7 +859,11 @@ fn run(tool: &Tool, arguments: Value, context: Context<'_>) -> Result<Outcome, A
         }
         Action::CapCutShapeQuery => Ok(Outcome::json(capcut_shape::list_shapes())),
         Action::CapCutStudio => {
-            let command = capcut_studio::compose(&arguments);
+            let command = if arguments.get("text").is_some() {
+                capcut_studio::animate_text(&arguments)
+            } else {
+                capcut_studio::compose(&arguments)
+            };
             let path = arguments.get("path").cloned().unwrap_or(Value::Null);
             let request = request("edit.apply", json!({ "path": path, "command": command }))?;
             let result = backend.call(request)?;
@@ -868,6 +872,8 @@ fn run(tool: &Tool, arguments: Value, context: Context<'_>) -> Result<Outcome, A
         Action::CapCutStudioQuery => {
             if arguments.get("design").and_then(Value::as_bool).unwrap_or(false) {
                 Ok(Outcome::json(capcut_studio::design_system()))
+            } else if arguments.get("animators").and_then(Value::as_bool).unwrap_or(false) {
+                Ok(Outcome::json(capcut_studio::list_animators()))
             } else {
                 Ok(Outcome::json(capcut_studio::list_templates()))
             }

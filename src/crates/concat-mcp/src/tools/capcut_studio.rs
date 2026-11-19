@@ -3,6 +3,7 @@ use serde_json::{json, Value};
 
 const TEMPLATES_JSON: &str = r##"[{"id":"kinetic_title","name":"Kinetic Title Reveal","duration":8,"palette":"midnight","background":{"kind":"square","width":2.0,"height":2.0,"fill":"#070B14"},"elements":[{"type":"shape","kind":"circle","width":0.9,"fill":"","stroke":"#00E5FF","strokeWidth":0.002,"at":0.4,"duration":6.5,"anim":"draw_on","camera":true},{"type":"shape","kind":"circle","width":0.6,"fill":"#111A2E","stroke":"#7C5CFC","strokeWidth":0.003,"shadow":{"color":"#7C5CFC","blur":0.08},"at":0.8,"duration":6,"anim":"bounce_in","stagger":0.2},{"type":"text","content":"MOTION","font":"display","size":"display","color":"#F5F7FF","at":1.2,"duration":5.5,"anim":"typewriter","y":0.36},{"type":"text","content":"DESIGN SYSTEM","font":"heading","size":"caption","color":"#00E5FF","at":2.0,"duration":4.5,"anim":"fade_in_up","y":0.52},{"type":"shape","kind":"line","width":0.5,"stroke":"#FF3B6B","strokeWidth":0.002,"at":2.4,"duration":4,"anim":"draw_on","y":0.62}],"effects":[{"id":"concat.glow","at":0,"duration":8},{"id":"concat.film-grain","at":0,"duration":8}],"camera":{"scale":[[0,1.0],[0.5,1.04],[1,1.0]],"offsetX":[[0,-0.02],[1,0.02]]}},{"id":"particle_reveal","name":"Particle Field Reveal","duration":10,"palette":"violet","background":{"kind":"square","width":2.0,"height":2.0,"fill":"#0B0716"},"elements":[{"type":"particlefield","count":14,"kind":"circle","size":0.02,"fill":"#B388FF","at":0.3,"duration":9,"anim":"float","seed":11},{"type":"shape","kind":"star","points":6,"innerRadius":0.4,"width":0.7,"fill":"#1C1133","stroke":"#B388FF","strokeWidth":0.003,"at":1.5,"duration":7,"anim":"bounce_in"},{"type":"text","content":"AGENTIC","font":"display","size":"display","color":"#F6F0FF","at":2.0,"duration":6,"anim":"glitch_in","y":0.36},{"type":"text","content":"VIDEO PRODUCTION","font":"mono","size":"caption","color":"#00E5FF","at":3.0,"duration":5,"anim":"fade_in_up","y":0.52}],"effects":[{"id":"concat.neon","at":1.5,"duration":7},{"id":"concat.chromatic-aberration","at":2,"duration":6}],"camera":{"scale":[[0,0.96],[0.5,1.06],[1,1.0]]}},{"id":"color_grade_showcase","name":"Color Grade Showcase","duration":12,"palette":"ember","background":{"kind":"square","width":2.0,"height":2.0,"fill":"#120806"},"elements":[{"type":"shape","kind":"square","width":1.2,"height":0.7,"fill":"#2A140F","stroke":"#FF6B35","strokeWidth":0.002,"at":0.5,"duration":10,"anim":"fade_in_up","y":0.1},{"type":"text","content":"GRADE","font":"display","size":"display","color":"#FFD166","at":1.0,"duration":9,"anim":"bounce_in","y":0.36},{"type":"text","content":"TEAL · ORANGE · NOIR · VINTAGE","font":"heading","size":"body","color":"#FFF4E6","at":2.0,"duration":8,"anim":"typewriter","y":0.55},{"type":"shape","kind":"line","width":0.8,"stroke":"#FFD166","strokeWidth":0.003,"at":2.5,"duration":7,"anim":"draw_on","y":0.68}],"effects":[{"id":"concat.teal-orange","at":0,"duration":4},{"id":"concat.noir","at":4,"duration":4},{"id":"concat.vintage","at":8,"duration":4}],"camera":{"offsetX":[[0,-0.03],[1,0.03]],"scale":[[0,1.02],[1,1.08]]}},{"id":"logo_lockup","name":"Logo Lockup / End Card","duration":6,"palette":"forest","background":{"kind":"square","width":2.0,"height":2.0,"fill":"#04120D"},"elements":[{"type":"shape","kind":"circle","width":0.5,"fill":"","stroke":"#06D6A0","strokeWidth":0.005,"shadow":{"color":"#06D6A0","blur":0.06},"at":0.3,"duration":5,"anim":"draw_on"},{"type":"text","content":"KAPCUT","font":"display","size":"display","color":"#EAFFF8","at":0.8,"duration":4.5,"anim":"bounce_in","y":0.38},{"type":"text","content":"STUDIO","font":"heading","size":"h2","color":"#06D6A0","at":1.4,"duration":4,"anim":"fade_in_up","y":0.55},{"type":"shape","kind":"line","width":0.3,"stroke":"#118AB2","strokeWidth":0.002,"at":1.8,"duration":3.5,"anim":"draw_on","y":0.66}],"effects":[{"id":"concat.halation","at":0,"duration":6}],"camera":{"scale":[[0,1.1],[0.5,1.0],[1,1.02]]}}]"##;
 const DESIGN_JSON: &str = r##"{"schemaVersion":1,"name":"KapCut Studio Design System","note":"Design tokens for studio-grade compositions. Everything maps to Concat's real shape/text/effect model; no GPU.","palettes":{"midnight":{"bg":"#070B14","surface":"#111A2E","primary":"#00E5FF","secondary":"#7C5CFC","accent":"#FF3B6B","text":"#F5F7FF","muted":"#8FA3C8"},"ember":{"bg":"#120806","surface":"#2A140F","primary":"#FF6B35","secondary":"#FFD166","accent":"#EF476F","text":"#FFF4E6","muted":"#C9A88E"},"forest":{"bg":"#04120D","surface":"#0C2A1F","primary":"#06D6A0","secondary":"#118AB2","accent":"#FFD166","text":"#EAFFF8","muted":"#8FBFAE"},"violet":{"bg":"#0B0716","surface":"#1C1133","primary":"#B388FF","secondary":"#00E5FF","accent":"#FF3B6B","text":"#F6F0FF","muted":"#A99BC4"}},"typeScale":{"display":{"size":0.14,"weight":800},"h1":{"size":0.09,"weight":700},"h2":{"size":0.06,"weight":600},"body":{"size":0.035,"weight":400},"caption":{"size":0.024,"weight":400}},"fonts":{"display":"Anton","heading":"Montserrat","body":"Inter","mono":"JetBrains Mono","script":"Dancing Script"},"motion":{"ease":{"linear":[0,0,1,1],"out":[0,0,0.58,1],"in":[0.42,0,1,1],"inOut":[0.42,0,0.58,1]},"durations":{"in":0.8,"out":0.6,"loop":2.0,"stagger":0.12,"transition":0.7},"principles":["anticipation","overshoot","follow-through","stagger","secondary-action"]},"layout":{"safeMargin":0.08,"gridColumns":12,"titleY":0.36,"subtitleY":0.52,"accentY":0.68}}"##;
+const ANIMATORS_JSON: &str = r##"[{"id":"type_on","name":"Type On","unit":"char","stagger":0.06,"keys":[{"property":"opacity","at":0,"value":0},{"property":"opacity","at":0.08,"value":1},{"property":"offsetY","at":0,"value":0.04,"ease":"out"},{"property":"offsetY","at":1,"value":0}]},{"id":"wave","name":"Wave","unit":"word","stagger":0.12,"keys":[{"property":"offsetY","at":0,"value":0.02,"ease":"inOut"},{"property":"offsetY","at":0.5,"value":-0.03,"ease":"inOut"},{"property":"offsetY","at":1,"value":0.02}]},{"id":"burst","name":"Burst","unit":"word","stagger":0.09,"keys":[{"property":"scale","at":0,"value":0.2,"ease":"out"},{"property":"scale","at":0.6,"value":1.2,"ease":"in"},{"property":"scale","at":1,"value":1.0}]},{"id":"slider","name":"Slider","unit":"word","stagger":0.1,"keys":[{"property":"offsetX","at":0,"value":0.3,"ease":"out"},{"property":"offsetX","at":1,"value":0}]},{"id":"flip_up","name":"Flip Up","unit":"word","stagger":0.08,"keys":[{"property":"rotation","at":0,"value":-45,"ease":"out"},{"property":"rotation","at":1,"value":0},{"property":"opacity","at":0,"value":0},{"property":"opacity","at":0.2,"value":1}]},{"id":"highlight_pop","name":"Highlight Pop","unit":"word","stagger":0.15,"keys":[{"property":"scale","at":0,"value":1,"ease":"out"},{"property":"scale","at":0.5,"value":1.25,"ease":"inOut"},{"property":"scale","at":1,"value":1}]}]"##;
 
 fn templates() -> Vec<Value> { serde_json::from_str(TEMPLATES_JSON).unwrap_or_default() }
 fn design() -> Value { serde_json::from_str(DESIGN_JSON).unwrap_or_default() }
@@ -16,6 +17,43 @@ pub fn list_templates() -> Value {
 }
 
 pub fn design_system() -> Value { design() }
+
+pub fn list_animators() -> Value {
+    let a: Vec<Value> = serde_json::from_str(ANIMATORS_JSON).unwrap_or_default();
+    let items: Vec<Value> = a.iter().map(|x| json!({
+        "id": x["id"], "name": x["name"], "unit": x["unit"],
+    })).collect();
+    json!({ "animators": items })
+}
+
+pub fn animate_text(args: &Value) -> Value {
+    let text = args.get("text").and_then(Value::as_str).unwrap_or("TEXT");
+    let aid = args.get("animator").and_then(Value::as_str).unwrap_or("burst");
+    let start = f(args, "start", 0.0);
+    let dur = f(args, "duration", 4.0);
+    let a: Vec<Value> = serde_json::from_str(ANIMATORS_JSON).unwrap_or_default();
+    let Some(anim) = a.into_iter().find(|x| x["id"] == aid) else {
+        return json!({ "op":"batch", "commands":[] });
+    };
+    let words: Vec<&str> = text.split_whitespace().collect();
+    let stagger = f(&anim, "stagger", 0.1);
+    let mut commands: Vec<Value> = Vec::new();
+    for (i, word) in words.iter().enumerate() {
+        let at = start + i as f64 * stagger;
+        let life = (dur - i as f64 * stagger).max(0.2);
+        commands.push(json!({ "op":"addTextClip", "start":at, "duration":life,
+            "name":word, "style":{ "content":word, "font_family":"Inter",
+            "font_size":0.08, "font_weight":700, "color":"#FFFFFF", "align":"center" } }));
+        if let Some(keys) = anim.get("keys").and_then(Value::as_array) {
+            for key in keys {
+                commands.push(json!({ "op":"setClipKey", "clipId":format!("w{}", i),
+                    "property":key["property"], "at":f(key,"at",0.0), "value":f(key,"value",0.0),
+                    "ease":key.get("ease").and_then(Value::as_str).unwrap_or("linear") }));
+            }
+        }
+    }
+    json!({ "op":"batch", "text":text, "animator":aid, "commands":commands })
+}
 
 fn ease(name: &str) -> Value {
     let d = design();
