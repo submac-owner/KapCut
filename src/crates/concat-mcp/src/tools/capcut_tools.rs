@@ -150,6 +150,7 @@ pub const KAPCUT_NAMES: &[&str] = &[
     "studio_animate_text",
     "studio_list_animators",
     "studio_beat_sync",
+    "studio_invent_style",
     "kapcut_translate",
 ];
 
@@ -1482,6 +1483,15 @@ pub fn capcut_catalogue() -> Vec<Tool> {
             name: "studio_beat_sync",
             title: "Beat-synced motion",
             description: "Generate BPM-based keyframes on any clip property.",
+            read_only: false,
+            destructive: false,
+            idempotent: false,
+            action: Action::CapCutStudio,
+        },
+        Tool {
+            name: "studio_invent_style",
+            title: "Invent a style",
+            description: "Turn a style description into a fresh layered composition recipe.",
             read_only: false,
             destructive: false,
             idempotent: false,

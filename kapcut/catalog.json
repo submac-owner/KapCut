@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "name": "kapcut",
-  "toolCount": 149,
+  "toolCount": 150,
   "families": [
     "agent",
     "animations",
@@ -1795,6 +1795,18 @@
       "name": "studio_beat_sync",
       "title": "Beat-synced motion",
       "description": "Generate BPM-based keyframes on any clip property.",
+      "target_kind": "studio",
+      "target": "capcut_studio",
+      "read_only": false,
+      "destructive": false,
+      "idempotent": false,
+      "capcut_source": "studio_*"
+    },
+    {
+      "family": "studio",
+      "name": "studio_invent_style",
+      "title": "Invent a style",
+      "description": "Turn a style description into a fresh layered composition recipe.",
       "target_kind": "studio",
       "target": "capcut_studio",
       "read_only": false,
