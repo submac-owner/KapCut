@@ -35,7 +35,7 @@ impl Default for StudioPane {
         Self {
             open: false,
             tab: 0,
-            items: ModelRc::new(VecModel::from(Vec::new())),
+            items: ModelRc::new(VecModel::from(Vec::<StudioItem>::new())),
             count: 0,
         }
     }
@@ -132,7 +132,9 @@ impl StudioPane {
             },
             _ => return Err("unknown library".to_owned()),
         };
-        studio.apply(command).map_err(|e| e.to_string())?;
+        if let Some(error) = studio.apply(command) {
+            return Err(error);
+        }
         Ok(format!("STUDIO {id} — applied to {clip}"))
     }
 
