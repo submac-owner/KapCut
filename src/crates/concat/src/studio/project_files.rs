@@ -9,6 +9,24 @@ impl Studio {
 
     /// Opens a project as the session and leaves the launch screen, or
     /// says why it could not.
+    /// Reload the open project if an agent saved it through MCP.
+    ///
+    /// Only runs when the window has no unsaved edits of its own, so an agent
+    /// can never overwrite work in progress. The timestamp is taken before
+    /// the reload so the new document is remembered.
+    pub fn mcp_sync(&mut self) {
+        let Some(session) = self.session.as_ref() else { return };
+        if self.dirty { return; }
+        let path = session.path().to_string();
+        let manifest = std::path::Path::new(&path).join("concat.json");
+        let Ok(stamp) = std::fs::metadata(&manifest).and_then(|m| m.modified()) else { return };
+        if self.mcp_stamp.is_some_and(|seen| seen == stamp) { return; }
+        self.mcp_stamp = Some(stamp);
+        if let Err(error) = self.open_project_at(&path) {
+            log::warn!("mcp sync: could not reload {path}: {error}");
+        }
+    }
+
     pub fn open_project(&mut self, info: ProjectInfo) -> Result<(), String> {
         let name = info.name.clone();
         let began = std::time::Instant::now();

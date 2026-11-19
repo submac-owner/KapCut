@@ -2912,6 +2912,15 @@ fn start(project: Option<std::path::PathBuf>, smoke: Smoke) -> Result<(), slint:
     // memory all of that freed goes back to the system. Open on a 4K
     // project, idle, it held 590 MB, a hundred of it freed and kept by the
     // allocator; the caches fill again as soon as frames are asked for.
+    // KapCut MCP sync: pick up project saves made by an agent so its edits
+    // appear in the open timeline. Guarded against unsaved window edits.
+    let mcp_watch = slint::Timer::default();
+    mcp_watch.start(
+        slint::TimerMode::Repeated,
+        std::time::Duration::from_secs(1),
+        || Shell::with(|shell, _| shell.studio.borrow_mut().mcp_sync()),
+    );
+
     let reader_sweep = slint::Timer::default();
     let quiet = std::cell::Cell::new((u64::MAX, false));
     reader_sweep.start(

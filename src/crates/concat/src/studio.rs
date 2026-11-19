@@ -1025,6 +1025,10 @@ pub struct Studio {
     /// Unsaved changes, and the timer that writes them.
     dirty: bool,
     autosave: slint::Timer,
+    /// Timestamp of the open project's manifest, for the KapCut MCP watcher.
+    /// When an agent saves through MCP, the window reloads the file so edits
+    /// become visible in the timeline without a manual reopen.
+    mcp_stamp: Option<std::time::SystemTime>,
 
     // ── the bin ──
     pub media: crate::panes::media_bin::MediaBin,
@@ -3076,6 +3080,7 @@ impl Studio {
             empty: Project::new(),
             dirty: false,
             autosave: slint::Timer::default(),
+            mcp_stamp: None,
             media: crate::panes::media_bin::MediaBin::default(),
             peaks: HashMap::new(),
             strips: HashMap::new(),
