@@ -518,6 +518,11 @@ impl Studio {
                 pane.update(msg, self);
                 self.settings = pane;
             }
+            crate::panes::Msg::Studio(msg) => {
+                let mut pane = std::mem::take(&mut self.studio);
+                pane.update(msg, self);
+                self.studio = pane;
+            }
             crate::panes::Msg::Captions(msg) => {
                 let mut pane = std::mem::take(&mut self.captions);
                 pane.update(msg, self);

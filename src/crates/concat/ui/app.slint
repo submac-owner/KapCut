@@ -50,6 +50,7 @@ import {
     MissingMediaItem,
 } from "dialogs/relink.slint";
 import { ConfirmData, ConfirmDialog } from "dialogs/confirm.slint";
+import { StudioData, StudioDialog, StudioItem } from "dialogs/studio.slint";
 import { CaptionsDialog, CaptionsSheetData } from "dialogs/captions.slint";
 import { SpeechDialog, SpeechSheetData } from "dialogs/speech.slint";
 import { NewVoiceData, NewVoiceDialog } from "dialogs/new-voice.slint";
@@ -240,7 +241,7 @@ export component App inherits Window {
     }
     property <bool> sheet-open: root.export.open || root.settings.open
         || root.project-sheet.open || root.captions.open || root.speech.open
-        || root.start.composing || root.new-voice.open;
+        || root.start.composing || root.new-voice.open || root.studio.open;
     changed sheet-open => {
         if (!root.sheet-open) {
             keys.focus();
@@ -326,7 +327,7 @@ export component App inherits Window {
     /// then, and nothing that acts on what the sheet covers.
     property <bool> sheet-up: root.start.composing || root.export.open || root.settings.open
         || root.project-sheet.open || root.new-voice.open || root.relink.open
-        || root.confirm.open;
+        || root.confirm.open || root.studio.open;
     /// Which floating tool card is in front: "captions" or "speech". The
     /// one opened or grabbed last; Escape closes it first.
     property <string> front-tool: "captions";
@@ -367,6 +368,11 @@ export component App inherits Window {
     // everything.
     in property <ExportData> export;
     in property <SettingsData> settings;
+    in property <StudioData> studio;
+    callback open-studio();
+    callback studio-tab-changed(index: int);
+    callback studio-chosen(id: string);
+    callback studio-closed();
     in property <[ModelData]> transcribers;
     in property <[ModelData]> voices;
     in property <[string]> versions;
@@ -674,6 +680,7 @@ export component App inherits Window {
                 }
                 if (root.project-sheet.open) { root.project-closed(); return accept; }
                 if (root.settings.open) { root.settings-closed(); return accept; }
+                if (root.studio.open) { root.studio-closed(); return accept; }
                 if (root.export.open) {
                     if (root.export.phase != ExportPhase.running) { root.export-closed(); }
                     return accept;
@@ -772,6 +779,7 @@ export component App inherits Window {
                 minimize => { root.titlebar-minimize(); }
                 close => { root.titlebar-close(); }
                 open-settings => { root.open-settings(); }
+                open-studio => { root.open-studio(); }
                 open-opencode => { root.open-opencode(); }
                 cycle-studio-look => { root.cycle-studio-look(); }
                 add-pane(kind) => { Editor.dock-add(kind); }
@@ -795,6 +803,7 @@ export component App inherits Window {
                 open => { root.start-open(); }
                 import-capcut => { root.start-import-capcut(); }
                 open-settings => { root.open-settings(); }
+                open-studio => { root.open-studio(); }
                 open-recent(path) => { root.start-open-recent(path); }
                 forget-recent(path) => { root.start-forget-recent(path); }
                 reveal-recent(path) => { root.start-reveal-recent(path); }
@@ -821,6 +830,7 @@ export component App inherits Window {
 
                 export-clicked => { root.export-clicked(); }
                 open-settings => { root.open-settings(); }
+                open-studio => { root.open-studio(); }
                 close-project => { root.app-menu-selected("close-project"); }
             }
         }
@@ -1076,6 +1086,22 @@ export component App inherits Window {
         model-remove(id) => { root.model-remove(id); }
         model-open-link(id) => { root.model-open-link(id); }
         model-choose-file(id) => { root.model-choose-file(id); }
+    }
+
+    StudioDialog {
+        inset-top: root.safe-area-insets.top;
+        inset-bottom: root.safe-area-insets.bottom;
+        inset-left: root.safe-area-insets.left;
+        inset-right: root.safe-area-insets.right;
+        x: 0;
+        y: root.sheets-top;
+        width: root.width;
+        height: root.height - root.sheets-top;
+        phone: root.phone;
+        data: root.studio;
+        tab-changed(index) => { root.studio-tab-changed(index); }
+        chosen(id) => { root.studio-chosen(id); }
+        closed => { root.studio-closed(); }
     }
 
     in property <RelinkData> relink;

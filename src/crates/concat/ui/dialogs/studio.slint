@@ -1,0 +1,86 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// SPDX-FileCopyrightText: 2026 Jareer Abdullah and Concat contributors
+
+import { Theme } from "../theme/theme.slint";
+import { Glyph } from "../icons.slint";
+import { Modal, Button } from "../primitives/modal.slint";
+
+// One library preset. The id is the same one the MCP tools take, so applying
+// from here and from an agent produce the same edit.
+export struct StudioItem {
+    id: string,
+    name: string,
+}
+
+export struct StudioData {
+    open: bool,
+    /// 0 Frames, 1 Animations, 2 Curves, 3 Rigs, 4 Tracking.
+    tab: int,
+    items: [StudioItem],
+    count: int,
+}
+
+export component StudioDialog inherits Modal {
+    in property <StudioData> data;
+
+    callback tab-changed(index: int);
+    callback chosen(id: string);
+    callback closed();
+
+    open: root.data.open;
+    title: "Studio Library";
+    glyph: Glyph.wand;
+    surface-width: 720px;
+    surface-height: 560px;
+
+    VerticalLayout {
+        spacing: 8px;
+
+        HorizontalLayout {
+            spacing: 4px;
+            Button {
+                label: "Frames";
+                primary: root.data.tab == 0;
+                clicked => { root.tab-changed(0); }
+            }
+            Button {
+                label: "Animations";
+                primary: root.data.tab == 1;
+                clicked => { root.tab-changed(1); }
+            }
+            Button {
+                label: "Curves";
+                primary: root.data.tab == 2;
+                clicked => { root.tab-changed(2); }
+            }
+            Button {
+                label: "Rigs";
+                primary: root.data.tab == 3;
+                clicked => { root.tab-changed(3); }
+            }
+            Button {
+                label: "Tracking";
+                primary: root.data.tab == 4;
+                clicked => { root.tab-changed(4); }
+            }
+        }
+
+        Text {
+            text: "\{root.data.count} presets · click one to apply it to the selected clip";
+            color: Theme.fg-dim;
+            font-size: Theme.fs;
+        }
+
+        ScrollView {
+            VerticalLayout {
+                spacing: 3px;
+                for item in root.data.items : Button {
+                    label: item.name;
+                    ghost: true;
+                    block: true;
+                    clicked => { root.chosen(item.id); }
+                }
+            }
+        }
+    }
+}

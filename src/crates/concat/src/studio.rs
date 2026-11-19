@@ -988,6 +988,7 @@ same_with_models! {
     same_key_row: crate::ui::KeyRowData => keys;
     same_export: crate::ui::ExportData => resolutions, rates, rate_details;
     same_settings: crate::ui::SettingsData => shortcuts;
+    same_studio: crate::ui::StudioData => items;
     same_relink: crate::ui::RelinkData => items;
     same_start: crate::ui::StartData => rate_options;
     same_captions: crate::ui::CaptionsSheetData => sources;
@@ -1084,6 +1085,7 @@ pub struct Studio {
     // ── the sheets and menus ──
     pub export: crate::panes::export::ExportPane,
     pub settings: crate::panes::settings::SettingsPane,
+    pub studio: crate::panes::studio::StudioPane,
     pub relink: crate::panes::relink::RelinkPane,
     /// The notice that part of the project cannot be shown, held back while
     /// the relink dialog the same open raised is up; raised when it closes.
@@ -3105,6 +3107,7 @@ impl Studio {
             monitor: crate::panes::monitor::MonitorPane::default(),
             export: Default::default(),
             settings: crate::panes::settings::SettingsPane::default(),
+            studio: crate::panes::studio::StudioPane::default(),
             relink: crate::panes::relink::RelinkPane::default(),
             unread_pending: None,
             confirm: None,

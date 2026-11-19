@@ -46,6 +46,7 @@ mod ios;
 mod keymap;
 mod meters;
 mod motion_tiles;
+mod ui_libraries;
 mod platform;
 /// How a phone keeps its screen on while a job runs; see
 /// `concat_host::awake`.
@@ -2122,6 +2123,19 @@ fn start(project: Option<std::path::PathBuf>, smoke: Smoke) -> Result<(), slint:
     }));
     app.on_open_settings(on_window!(|state| {
         state.handle(Msg::Settings(SettingsMsg::Open));
+    }));
+    // Studio Library: browse and apply the same presets the agent can.
+    app.on_open_studio(on_window!(|state| {
+        state.handle(Msg::Studio(crate::panes::studio::StudioMsg::Open));
+    }));
+    app.on_studio_tab_changed(on_window!(|state, index: i32| {
+        state.handle(Msg::Studio(crate::panes::studio::StudioMsg::Tab(index)));
+    }));
+    app.on_studio_chosen(on_window!(|state, id: SharedString| {
+        state.handle(Msg::Studio(crate::panes::studio::StudioMsg::Chosen(id.to_string())));
+    }));
+    app.on_studio_closed(on_window!(|state| {
+        state.handle(Msg::Studio(crate::panes::studio::StudioMsg::Close));
     }));
     // Studio Look: apply a graded effect layer across the timeline. Each
     // click cycles to the next look, giving manual editors one-click grading

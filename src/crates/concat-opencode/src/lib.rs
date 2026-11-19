@@ -23,7 +23,11 @@ pub const DEFAULT_OPENCODE_URL: &str = "http://127.0.0.1:4096";
 fn discovery_dirs() -> Vec<PathBuf> {
     let mut dirs = Vec::new();
     if let Ok(appdata) = std::env::var("APPDATA") {
-        dirs.push(PathBuf::from(appdata).join("ai.opencode.desktop").join("logs"));
+        dirs.push(
+            PathBuf::from(appdata)
+                .join("ai.opencode.desktop")
+                .join("logs"),
+        );
     }
     if let Ok(home) = std::env::var("USERPROFILE") {
         dirs.push(PathBuf::from(&home).join(".opencode"));
@@ -126,7 +130,10 @@ mod tests {
     #[test]
     fn finds_local_url_in_a_log_line() {
         let log = "info: starting service\n  url: 'http://127.0.0.1:28894',\n";
-        assert_eq!(find_local_url(log).as_deref(), Some("http://127.0.0.1:28894"));
+        assert_eq!(
+            find_local_url(log).as_deref(),
+            Some("http://127.0.0.1:28894")
+        );
         assert_eq!(find_local_url("nothing here").as_deref(), None);
     }
 }
