@@ -8,22 +8,19 @@
 //! server in window mode.
 
 use std::path::Path;
-use wry::application::event_loop::{ControlFlow, EventLoop};
-use wry::application::window::WindowBuilder;
-use wry::webview::WebViewBuilder;
+use tao::event_loop::{ControlFlow, EventLoop};
+use tao::window::WindowBuilder;
+use wry::WebViewBuilder;
 
 /// Default local OpenCode web UI address (the desktop service).
 pub const DEFAULT_OPENCODE_URL: &str = "http://127.0.0.1:4096";
 
-/// Open the full OpenCode UI in a WebView panel.
-///
-/// `url` is the OpenCode web UI to load; `project` is the folder the agent
-/// should act on (exposed to the page through the bridge initialization).
+/// Open the full OpenCode UI in a WebView panel and run its event loop.
 pub fn open_panel(url: &str, project: Option<&Path>) -> Result<(), String> {
-    let event_loop = EventLoop::new().map_err(|e| e.to_string())?;
+    let event_loop = EventLoop::new();
     let window = WindowBuilder::new()
         .with_title("OpenCode — KapCut Studio")
-        .with_inner_size(wry::application::dpi::LogicalSize::new(520, 900))
+        .with_inner_size(tao::dpi::LogicalSize::new(520.0, 900.0))
         .build(&event_loop)
         .map_err(|e| e.to_string())?;
 
@@ -35,17 +32,17 @@ pub fn open_panel(url: &str, project: Option<&Path>) -> Result<(), String> {
         None => "window.kapcutStudio = {};".to_string(),
     };
 
-    let _webview = WebViewBuilder::new(window)
-        .map_err(|e| e.to_string())?
+    let _webview = WebViewBuilder::new()
         .with_url(url)
         .map_err(|e| e.to_string())?
         .with_initialization_script(&init)
-        .build()
+        .build(&window)
         .map_err(|e| e.to_string())?;
 
     event_loop.run(move |_event, _, control_flow| {
         *control_flow = ControlFlow::Wait;
     });
+    Ok(())
 }
 
 #[cfg(test)]
