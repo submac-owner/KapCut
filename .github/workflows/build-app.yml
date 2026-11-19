@@ -477,6 +477,11 @@ jobs:
         run: |
           set -o pipefail
           cargo build --profile app -p concat --target ${{ matrix.target }} 2>&1 | tee build.log
+          # The streamable-HTTP MCP endpoint is a separate binary. It shares
+          # concat-mcp with the app, so this is quick after the build above.
+          if [ "${{ matrix.platform }}" = "windows" ]; then
+            cargo build --profile app -p concat-mcp --bin concat-mcp-http --target ${{ matrix.target }} 2>&1 | tee -a build.log
+          fi
 
       - name: Build log to the summary (failure only)
         if: failure()
@@ -901,6 +906,9 @@ jobs:
           $dir = "stage\$name"
           New-Item -ItemType Directory -Force $dir | Out-Null
           Copy-Item "src\target\${{ matrix.target }}\app\concat.exe" $dir
+          # The streamable-HTTP MCP endpoint, for remote agents. It uses the
+          # same DLLs beside it as concat.exe.
+          Copy-Item "src\target\${{ matrix.target }}\app\concat-mcp-http.exe" $dir
           Copy-Item "$env:FFMPEG_DIR\bin\*.dll" $dir
           Copy-Item "$env:ORT_DIR\lib\*.dll" $dir
           # whisper's DLLs and its CPU modules, one per x86_64 generation
