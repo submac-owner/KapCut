@@ -25,8 +25,8 @@ pub mod relink;
 pub mod settings;
 pub mod sounds;
 pub mod speech;
-pub mod studio;
 pub mod start;
+pub mod studio;
 pub mod timeline;
 pub mod voiceover;
 

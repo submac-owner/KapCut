@@ -50,7 +50,7 @@ import {
     MissingMediaItem,
 } from "dialogs/relink.slint";
 import { ConfirmData, ConfirmDialog } from "dialogs/confirm.slint";
-import { StudioData, StudioDialog, StudioItem } from "dialogs/studio.slint";
+import { StudioData, StudioDialog } from "dialogs/studio.slint";
 import { CaptionsDialog, CaptionsSheetData } from "dialogs/captions.slint";
 import { SpeechDialog, SpeechSheetData } from "dialogs/speech.slint";
 import { NewVoiceData, NewVoiceDialog } from "dialogs/new-voice.slint";
@@ -803,7 +803,6 @@ export component App inherits Window {
                 open => { root.start-open(); }
                 import-capcut => { root.start-import-capcut(); }
                 open-settings => { root.open-settings(); }
-                open-studio => { root.open-studio(); }
                 open-recent(path) => { root.start-open-recent(path); }
                 forget-recent(path) => { root.start-forget-recent(path); }
                 reveal-recent(path) => { root.start-reveal-recent(path); }
@@ -830,7 +829,6 @@ export component App inherits Window {
 
                 export-clicked => { root.export-clicked(); }
                 open-settings => { root.open-settings(); }
-                open-studio => { root.open-studio(); }
                 close-project => { root.app-menu-selected("close-project"); }
             }
         }

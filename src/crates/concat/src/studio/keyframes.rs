@@ -2038,12 +2038,9 @@ impl Studio {
             same_settings,
             |data| app.set_settings(data),
         );
-        set_changed(
-            app.get_studio(),
-            self.studio.data(),
-            same_studio,
-            |data| app.set_studio(data),
-        );
+        set_changed(app.get_studio(), self.studio.data(), same_studio, |data| {
+            app.set_studio(data)
+        });
         sync(&models.transcribers, self.settings.transcriber_rows());
         sync(&models.voices, self.settings.voice_rows());
         sync(&models.versions, self.settings.version_rows());

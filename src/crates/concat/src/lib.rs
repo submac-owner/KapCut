@@ -46,8 +46,8 @@ mod ios;
 mod keymap;
 mod meters;
 mod motion_tiles;
-mod ui_libraries;
 mod platform;
+mod ui_libraries;
 /// How a phone keeps its screen on while a job runs; see
 /// `concat_host::awake`.
 #[cfg(target_os = "android")]
@@ -2132,7 +2132,9 @@ fn start(project: Option<std::path::PathBuf>, smoke: Smoke) -> Result<(), slint:
         state.handle(Msg::Studio(crate::panes::studio::StudioMsg::Tab(index)));
     }));
     app.on_studio_chosen(on_window!(|state, id: SharedString| {
-        state.handle(Msg::Studio(crate::panes::studio::StudioMsg::Chosen(id.to_string())));
+        state.handle(Msg::Studio(crate::panes::studio::StudioMsg::Chosen(
+            id.to_string(),
+        )));
     }));
     app.on_studio_closed(on_window!(|state| {
         state.handle(Msg::Studio(crate::panes::studio::StudioMsg::Close));

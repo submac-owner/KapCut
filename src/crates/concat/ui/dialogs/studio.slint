@@ -22,10 +22,10 @@ export struct StudioData {
 
 export component StudioDialog inherits Modal {
     in property <StudioData> data;
+    in property <bool> phone;
 
     callback tab-changed(index: int);
     callback chosen(id: string);
-    callback closed();
 
     open: root.data.open;
     title: "Studio Library";
@@ -71,8 +71,9 @@ export component StudioDialog inherits Modal {
             font-size: Theme.fs;
         }
 
-        ScrollView {
-            VerticalLayout {
+        Flickable {
+            viewport-height: Math.max(self.height, list.preferred-height);
+            list := VerticalLayout {
                 spacing: 3px;
                 for item in root.data.items : Button {
                     label: item.name;
