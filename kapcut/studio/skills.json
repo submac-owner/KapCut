@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "name": "KapCut Video Production Skills",
+  "note": "Skills live in .opencode/skills/ and are loaded by OpenCode. They teach craft, not just templates, so the agent can invent styles and hybrid edits.",
+  "skills": [
+    { "id": "video-editing-craft", "purpose": "pacing, cut grammar, hooks, retention" },
+    { "id": "editing-styles", "purpose": "named creator/genre styles decoded into five dials" },
+    { "id": "motion-graphics-styles", "purpose": "kinetic type, Swiss/Bauhaus, glitch, neon, minimal, collage, data, logo" },
+    { "id": "short-form-video", "purpose": "9:16 safe zones, hooks, sound-off captions, aesthetics" },
+    { "id": "long-form-and-niches", "purpose": "video essays, tutorials, podcasts, ads, music videos, travel" },
+    { "id": "color-and-sound", "purpose": "grading workflow, loudness, music sync, sound layers" }
+  ]
+}
