@@ -2123,6 +2123,20 @@ fn start(project: Option<std::path::PathBuf>, smoke: Smoke) -> Result<(), slint:
     app.on_open_settings(on_window!(|state| {
         state.handle(Msg::Settings(SettingsMsg::Open));
     }));
+    // OpenCode full-UI side panel. The WebView needs its own event loop, so it
+    // runs on a dedicated thread; the project path is passed through the
+    // JavaScript bridge in the panel.
+    app.on_open_opencode(on_window!(|state| {
+        let project = state.session.as_ref().map(|s| s.path().to_string());
+        let url = std::env::var("KAPCUT_OPENCODE_URL")
+            .unwrap_or_else(|_| concat_opencode::DEFAULT_OPENCODE_URL.to_string());
+        std::thread::spawn(move || {
+            let path = project.as_deref().map(std::path::Path::new);
+            if let Err(error) = concat_opencode::open_panel(&url, path) {
+                log::error!("opencode panel: {error}");
+            }
+        });
+    }));
     // The theme is one bool on the Theme global, and every colour in the
     // tree is a binding away from it; it is also remembered.
     app.on_settings_theme_changed({

@@ -431,6 +431,7 @@ export component App inherits Window {
     callback model-choose-file(id: string);
 
     callback open-settings();
+    callback open-opencode();
     callback export-clicked();
 
     /// The project sheet, opened from the Details panel.
@@ -770,6 +771,7 @@ export component App inherits Window {
                 minimize => { root.titlebar-minimize(); }
                 close => { root.titlebar-close(); }
                 open-settings => { root.open-settings(); }
+                open-opencode => { root.open-opencode(); }
                 add-pane(kind) => { Editor.dock-add(kind); }
                 export-clicked => { root.export-clicked(); }
             }

@@ -156,6 +156,8 @@ export component TitleBar inherits Rectangle {
     in property <int> keyboard-menu: -1;
     in property <int> keyboard-token;
     callback open-settings();
+    /// Open the full OpenCode UI in a docked WebView side panel.
+    callback open-opencode();
     /// A view was picked from the add-panel list.
     callback add-pane(kind: PaneKind);
     callback export-clicked();
@@ -283,6 +285,10 @@ export component TitleBar inherits Rectangle {
             HeaderIconButton {
                 glyph: Glyph.settings;
                 clicked => { root.open-settings(); }
+            }
+            HeaderIconButton {
+                glyph: Glyph.discord;
+                clicked => { root.open-opencode(); }
             }
         }
 
