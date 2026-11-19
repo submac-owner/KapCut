@@ -859,7 +859,9 @@ fn run(tool: &Tool, arguments: Value, context: Context<'_>) -> Result<Outcome, A
         }
         Action::CapCutShapeQuery => Ok(Outcome::json(capcut_shape::list_shapes())),
         Action::CapCutStudio => {
-            let command = if arguments.get("text").is_some() {
+            let command = if arguments.get("bpm").is_some() {
+                capcut_studio::beat_keys(&arguments)
+            } else if arguments.get("text").is_some() {
                 capcut_studio::animate_text(&arguments)
             } else {
                 capcut_studio::compose(&arguments)

@@ -246,6 +246,7 @@ add("studio","studio_design","Get design system","Return typography, palette, mo
 add("studio","studio_compose","Compose studio template","Build a full layered composition (shapes, text, keys, effects, camera) from a template.","studio","capcut_studio")
 add("studio","studio_animate_text","Animate text per word","Apply an AE-style text animator (type on, wave, burst, flip) with staggered keys.","studio","capcut_studio")
 add("studio","studio_list_animators","List text animators","List per-word text animator presets.","studio_query","capcut_studio")
+add("studio","studio_beat_sync","Beat-synced motion","Generate BPM-based keyframes on any clip property.","studio","capcut_studio")
 
 add("agent","kapcut_translate","Translate CapCut material",
     "Translate a CapCut material (capcutType/value or effectName/start/duration) into real Concat edit commands.","bridge","capcut_bridge")
