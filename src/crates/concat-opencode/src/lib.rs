@@ -26,8 +26,8 @@ fn discovery_dirs() -> Vec<PathBuf> {
         dirs.push(PathBuf::from(appdata).join("ai.opencode.desktop").join("logs"));
     }
     if let Ok(home) = std::env::var("USERPROFILE") {
-        dirs.push(PathBuf::from(home).join(".opencode"));
-        dirs.push(PathBuf::from(home).join(".config").join("opencode"));
+        dirs.push(PathBuf::from(&home).join(".opencode"));
+        dirs.push(PathBuf::from(&home).join(".config").join("opencode"));
     }
     dirs
 }

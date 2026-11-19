@@ -88,3 +88,9 @@ whisper.dll                    48    0     0      0          0
 # Haswell fails the build.
 concat.exe                     -     -     ~1000  -          -
 concat                         -     -     ~1000  -          -
+# The standalone streamable-HTTP MCP binary links the same runtime-dispatched
+# libraries (ring, memchr, aho-corasick) as concat.exe, under the same target
+# and profile. It is started on demand and never shown in the editor, but the
+# signed bundle must still start on an Ivy Bridge, so keep the same limits.
+concat-mcp-http.exe            -     -     ~1000  -          -
+concat-mcp-http                -     -     ~1000  -          -
