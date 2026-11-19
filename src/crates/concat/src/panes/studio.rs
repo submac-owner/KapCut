@@ -95,6 +95,7 @@ impl StudioPane {
         let Some(clip) = studio.selection.first().cloned() else {
             return Err("select a clip first".to_owned());
         };
+        let clip_name = clip.clone();
         let command = match tab {
             "curves" => Command::SetClipKey {
                 clip_id: clip,
@@ -135,7 +136,7 @@ impl StudioPane {
         if let Some(error) = studio.apply(command) {
             return Err(error);
         }
-        Ok(format!("STUDIO {id} — applied to {clip}"))
+        Ok(format!("STUDIO {id} — applied to {clip_name}"))
     }
 
     /// Handle one message.
