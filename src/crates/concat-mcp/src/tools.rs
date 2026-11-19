@@ -35,6 +35,8 @@ mod capcut_shape;
 #[rustfmt::skip]
 mod capcut_studio;
 #[rustfmt::skip]
+mod capcut_voice;
+#[rustfmt::skip]
 mod capcut_tools;
 
 /// The longest preview side handed back when the agent names no size: a
@@ -117,6 +119,12 @@ pub enum Action {
     CapCutOverlayQuery,
     /// Add an overlay frame or apply an overlay animation.
     CapCutOverlayApply,
+    /// Answer a read-only transcript or STT-status query (no backend call).
+    VoiceQuery,
+    /// Import/export/write a voice artifact in the project folder.
+    VoiceImport,
+    /// Apply a transcript-driven voice edit to the timeline.
+    VoiceEdit,
 }
 
 /// How a reply is shown to the agent.
@@ -693,7 +701,8 @@ fn input_schema(schemas: &Schemas, tool: &Tool) -> Option<Value> {
         | Action::CapCutExpr | Action::CapCutExprQuery
         | Action::CapCutShape | Action::CapCutShapeQuery
         | Action::CapCutStudio | Action::CapCutStudioQuery | Action::CapCutStudioEdit
-        | Action::CapCutOverlayQuery | Action::CapCutOverlayApply => {
+        | Action::CapCutOverlayQuery | Action::CapCutOverlayApply
+        | Action::VoiceQuery | Action::VoiceImport | Action::VoiceEdit => {
             Some(json!({
                 "type": "object",
                 "properties": {
@@ -914,7 +923,61 @@ fn run(tool: &Tool, arguments: Value, context: Context<'_>) -> Result<Outcome, A
                 Ok(Outcome::json(capcut_studio::list_templates()))
             }
         }
+        Action::VoiceQuery => Ok(Outcome::json(capcut_voice::query(tool.name, &arguments))),
+        Action::VoiceImport => Ok(Outcome::json(capcut_voice::import(tool.name, &arguments))),
+        Action::VoiceEdit => voice_edit(tool, &arguments, backend),
     }
+}
+
+/// Apply a transcript-driven voice edit. Each cut is split-at-start,
+/// split-at-end, remove-the-middle; splits mint ids, so they are separate
+/// edit steps and the tail of one split becomes the piece the next range
+/// works on. `#[rustfmt::skip]` keeps this deliberate layout intact.
+#[rustfmt::skip]
+fn voice_edit(tool: &Tool, arguments: &Value, backend: &mut dyn Backend) -> Result<Outcome, ApiError> {
+    let path = arguments.get("path").cloned().unwrap_or(Value::Null);
+    if !capcut_voice::is_cutting_tool(tool.name) {
+        let command = capcut_voice::edit_command(tool.name, arguments);
+        let result = backend.call(request("edit.apply", json!({ "path": path, "command": command }))?)?;
+        return Ok(Outcome::json(summary::view(&result)));
+    }
+    let plan = capcut_voice::cut_ranges(tool.name, arguments);
+    let ranges = plan.get("ranges").and_then(Value::as_array).cloned().unwrap_or_default();
+    let ripple = plan.get("ripple").and_then(Value::as_bool).unwrap_or(false);
+    let clip_ids: Vec<String> = arguments.get("clipIds").and_then(Value::as_array)
+        .map(|a| a.iter().filter_map(Value::as_str).map(|s| s.to_string()).collect())
+        .unwrap_or_default();
+    let mut applied = Vec::new();
+    for cid in &clip_ids {
+        let mut current = cid.clone();
+        for range in &ranges {
+            let a = range.get("start").and_then(Value::as_f64).unwrap_or(0.0);
+            let z = range.get("end").and_then(Value::as_f64).unwrap_or(a);
+            let split = json!({ "op": "splitClips", "clipIds": [&current], "time": a });
+            let first = backend.call(request("edit.apply", json!({ "path": path.clone(), "command": split }))?)?;
+            let Some(xid) = first.get("createdId").and_then(Value::as_str).map(|s| s.to_string()) else {
+                continue;
+            };
+            if z <= a + 0.0001 {
+                applied.push(json!({ "split": xid, "at": a, "reason": range.get("reason") }));
+                continue;
+            }
+            let split_end = json!({ "op": "splitClips", "clipIds": [&xid], "time": z });
+            let second = backend.call(request("edit.apply", json!({ "path": path.clone(), "command": split_end }))?)?;
+            let yid = second.get("createdId").and_then(Value::as_str).map(|s| s.to_string());
+            let remove = json!({ "op": "removeClips", "clipIds": [&xid], "ripple": ripple });
+            let removed = backend.call(request("edit.apply", json!({ "path": path.clone(), "command": remove }))?)?;
+            applied.push(json!({
+                "removed": xid, "start": a, "end": z,
+                "reason": range.get("reason"), "result": summary::view(&removed)
+            }));
+            if let Some(y) = yid { current = y; }
+        }
+    }
+    Ok(Outcome::json(json!({
+        "tool": tool.name, "count": ranges.len(), "ranges": ranges,
+        "clipIds": clip_ids, "ripple": ripple, "applied": applied
+    })))
 }
 
 /// `clip_masks`: a clip patch with only its masks.
@@ -1343,7 +1406,8 @@ mod tests {
                 | Action::CapCutExpr | Action::CapCutExprQuery
                 | Action::CapCutShape | Action::CapCutShapeQuery
                 | Action::CapCutStudio | Action::CapCutStudioQuery | Action::CapCutStudioEdit
-                | Action::CapCutOverlayQuery | Action::CapCutOverlayApply => {
+                | Action::CapCutOverlayQuery | Action::CapCutOverlayApply
+                | Action::VoiceQuery | Action::VoiceImport | Action::VoiceEdit => {
                     request("edit.apply", sample.clone())
                 }
                 Action::Mask => mask(sample.clone()),

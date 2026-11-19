@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "fillers": {
+    "en": ["um", "uh", "erm", "er", "ah", "mm", "hmm", "like", "you know", "basically", "actually", "sort of", "kind of"],
+    "so": ["hmm", "hm", "mm", "ah", "ee", "oo", "waa hagaag", "marka"]
+  },
+  "breaths": ["*breath*", "[breath]", "(breath)", "*inhale*", "[inhale]", "(sigh)"],
+  "pause_threshold_seconds": 0.65,
+  "lufs_targets": {
+    "podcast": -16.0,
+    "online_video": -14.0,
+    "broadcast": -23.0,
+    "streaming": -18.0
+  },
+  "cleanup_chains": {
+    "voice_standard": [
+      {"id": "denoise", "params": {"amount": 0.5}},
+      {"id": "deesser", "params": {"amount": 0.4}},
+      {"id": "equalizer", "params": {"lowCut": 80.0, "presence": 2.0}},
+      {"id": "compressor", "params": {"threshold": -20.0, "ratio": 3.0}},
+      {"id": "loudnorm", "params": {"target": -16.0}}
+    ],
+    "voice_podcast": [
+      {"id": "denoise", "params": {"amount": 0.6}},
+      {"id": "deesser", "params": {"amount": 0.5}},
+      {"id": "compressor", "params": {"threshold": -18.0, "ratio": 4.0}},
+      {"id": "loudnorm", "params": {"target": -16.0}}
+    ],
+    "voice_light": [
+      {"id": "denoise", "params": {"amount": 0.3}},
+      {"id": "loudnorm", "params": {"target": -14.0}}
+    ],
+    "voice_restore": [
+      {"id": "denoise", "params": {"amount": 0.8}},
+      {"id": "equalizer", "params": {"lowCut": 60.0, "presence": 3.0}},
+      {"id": "deesser", "params": {"amount": 0.6}},
+      {"id": "compressor", "params": {"threshold": -22.0, "ratio": 2.5}},
+      {"id": "loudnorm", "params": {"target": -18.0}}
+    ]
+  },
+  "eq_presets": {
+    "warm": {"lowCut": 80.0, "low": 1.5, "mid": -1.0, "presence": 2.5, "air": 1.0},
+    "bright": {"lowCut": 100.0, "low": -1.0, "mid": 0.0, "presence": 3.5, "air": 2.0},
+    "podcast": {"lowCut": 70.0, "low": 2.0, "mid": -1.5, "presence": 2.0, "air": 0.5},
+    "telephone": {"lowCut": 300.0, "highCut": 3400.0, "mid": 1.0},
+    "somali_voice": {"lowCut": 75.0, "low": 1.0, "mid": -0.5, "presence": 3.0, "air": 1.5}
+  },
+  "compressor_presets": {
+    "gentle": {"threshold": -24.0, "ratio": 2.0, "attack": 20.0, "release": 150.0},
+    "podcast": {"threshold": -18.0, "ratio": 4.0, "attack": 10.0, "release": 120.0},
+    "aggressive": {"threshold": -14.0, "ratio": 8.0, "attack": 5.0, "release": 90.0}
+  },
+  "reverb_presets": {
+    "room": {"size": 0.3, "decay": 1.2, "mix": 0.15},
+    "studio": {"size": 0.15, "decay": 0.7, "mix": 0.08},
+    "hall": {"size": 0.75, "decay": 3.0, "mix": 0.3}
+  },
+  "stt_providers": ["gemini", "whisper", "auto"],
+  "default_provider": "gemini",
+  "default_language": "so"
+}

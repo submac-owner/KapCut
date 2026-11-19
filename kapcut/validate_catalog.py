@@ -36,6 +36,8 @@ for t in tools:
         errors.append(f"{t['name']}: unknown studio backend {t['target']}")
     if t["target_kind"] in ("overlay_query", "overlay_apply") and t["target"] != "capcut_overlay":
         errors.append(f"{t['name']}: unknown overlay backend {t['target']}")
+    if t["target_kind"] in ("voice_query", "voice_import", "voice_edit") and t["target"] != "capcut_voice":
+        errors.append(f"{t['name']}: unknown voice backend {t['target']}")
     if t["target_kind"] == "op" and not re.match(r"^[a-z][A-Za-z]+$", t["target"]):
         errors.append(f"{t['name']}: bad op {t['target']}")
     if not t["description"] or len(t["description"]) < 12:

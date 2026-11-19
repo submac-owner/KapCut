@@ -256,6 +256,53 @@ add("overlays","overlay_list_animations","List overlay animations","List 50+ in/
 add("overlays","overlay_add_frame","Add overlay frame","Add a styled frame around an overlay with optional animation.","overlay_apply","capcut_overlay")
 add("overlays","overlay_animate","Animate overlay","Apply an in/out/loop animation to an overlay clip.","overlay_apply","capcut_overlay")
 
+# ---- voice / narration: transcript-first (40) ----
+# A. transcript core (10)
+add("voice","voice_transcript_import","Import transcript","Parse a supplied timestamped transcript (SRT/VTT/JSON) into the canonical voice model.","voice_import","capcut_voice")
+add("voice","voice_transcript_get","Get transcript","Return the whole canonical transcript as agent-readable text with timestamps.","voice_query","capcut_voice",ro=True,idempotent=True)
+add("voice","voice_transcript_segments","List transcript segments","List transcript segments with start, end, speaker and language.","voice_query","capcut_voice",ro=True,idempotent=True)
+add("voice","voice_transcript_search","Search transcript","Search words or phrases in the transcript and return matching timestamps.","voice_query","capcut_voice",ro=True,idempotent=True)
+add("voice","voice_transcript_word","Find a word","Find one word's exact start and end time.","voice_query","capcut_voice",ro=True,idempotent=True)
+add("voice","voice_transcript_context","Build voice context brief","Generate voice_context.md: full text, topics, named entities, filler/pause/breath markers.","voice_import","capcut_voice",idempotent=True)
+add("voice","voice_transcript_set_language","Tag transcript language","Tag all (or a matching subset of) segments with a language code such as so or en.","voice_import","capcut_voice",idempotent=True)
+add("voice","voice_transcript_merge","Merge transcripts","Merge a Somali transcript with auto English segments into one canonical transcript.","voice_import","capcut_voice",idempotent=True)
+add("voice","voice_transcript_export","Export transcript","Write the canonical transcript to SRT or VTT.","voice_import","capcut_voice",idempotent=True)
+add("voice","voice_transcript_captions","Transcript caption cues","Get caption cues (text, start, end) from the transcript for captions_add.","voice_query","capcut_voice",ro=True,idempotent=True)
+# B. English STT - Gemini priority, Whisper fallback (5)
+add("voice","voice_stt_status","STT status","Report which speech engines are usable (Gemini key in env, local Whisper).","voice_query","capcut_voice",ro=True,idempotent=True)
+add("voice","voice_transcribe_gemini","Transcribe with Gemini","Hand off English audio to Gemini 3.5 Transcribe; import the result as the canonical transcript.","voice_query","capcut_voice",ro=True,idempotent=True)
+add("voice","voice_transcribe_whisper","Transcribe with Whisper","Hand off audio to local CPU Whisper; import the result as the canonical transcript.","voice_query","capcut_voice",ro=True,idempotent=True)
+add("voice","voice_transcribe_auto","Auto transcribe (English)","Gemini first (top priority), local Whisper fallback; import the result as canonical.","voice_query","capcut_voice",ro=True,idempotent=True)
+add("voice","voice_stt_set_provider","Set STT provider","Set the preferred speech engine (gemini, whisper or auto).","voice_import","capcut_voice",idempotent=True)
+# C. transcript-driven editing (12)
+add("voice","voice_edit_delete_phrase","Delete a phrase","Delete a spoken phrase from the timeline using its transcript word timestamps.","voice_edit","capcut_voice",destructive=True)
+add("voice","voice_edit_replace_phrase","Plan phrase replacement","Return the exact time range of a phrase to replace (e.g. with TTS), keeping its duration.","voice_query","capcut_voice",ro=True,idempotent=True)
+add("voice","voice_cut_fillers","Cut filler words","Cut filler words detected in the transcript (Somali and English lists).","voice_edit","capcut_voice",destructive=True)
+add("voice","voice_cut_pauses","Cut pauses","Jump-cut gaps between words longer than a threshold.","voice_edit","capcut_voice",destructive=True)
+add("voice","voice_cut_breaths","Cut breaths","Remove breath and sigh markers found in the transcript.","voice_edit","capcut_voice",destructive=True)
+add("voice","voice_select_phrase","Select a phrase","Select a range of time by transcript text, ready for a downstream edit.","voice_query","capcut_voice",ro=True,idempotent=True)
+add("voice","voice_split_at_word","Split at a word","Split clips at the boundary of a named word.","voice_edit","capcut_voice")
+add("voice","voice_jcut_lcut","J-cut / L-cut","Overlap dialogue by moving clips across tracks with the supplied move list.","voice_edit","capcut_voice")
+add("voice","voice_ripple_delete","Ripple delete phrase","Delete a transcript phrase and close the gap (magnetic timeline).","voice_edit","capcut_voice",destructive=True)
+add("voice","voice_trim_to_phrases","Trim to phrases","Keep only the chosen phrases and cut everything else.","voice_edit","capcut_voice",destructive=True)
+add("voice","voice_mark_markers","Mark transcript events","Write timeline markers for fillers, pauses or breaths from the transcript.","voice_import","capcut_voice",idempotent=True)
+add("voice","voice_dialogue_crossfade","Dialogue crossfade","Set a short crossfade transition into a dialogue clip.","voice_edit","capcut_voice")
+# D. captions and styling (5)
+add("voice","voice_caption_style","Style caption runs","Apply styled text runs (color, size, background) to caption words.","voice_edit","capcut_voice")
+add("voice","voice_word_highlight","Highlight words","Highlight per-word ranges of a title using transcript timings.","voice_edit","capcut_voice")
+add("voice","voice_caption_translate","Translate captions","Replace caption text on clips with supplied translated text.","voice_edit","capcut_voice")
+add("voice","voice_subtitle_export","Export subtitles","Export the transcript as SRT or VTT subtitles.","voice_import","capcut_voice",idempotent=True)
+add("voice","voice_subtitle_import","Import subtitles","Import an SRT or VTT file into the canonical transcript.","voice_import","capcut_voice",idempotent=True)
+# E. cleanup, mix and analysis (8)
+add("voice","voice_denoise","Denoise voice","Reduce background noise on a voice clip.","voice_edit","capcut_voice")
+add("voice","voice_enhance","One-click voice cleanup","Apply the standard cleanup chain: denoise, de-esser, EQ, compression, loudness.","voice_edit","capcut_voice")
+add("voice","voice_normalize","Normalize loudness","Normalize a voice clip to a target LUFS.","voice_edit","capcut_voice")
+add("voice","voice_compress","Compress voice","Apply a named compressor preset to a voice clip.","voice_edit","capcut_voice")
+add("voice","voice_equalize","Equalize voice","Apply a named EQ preset, including the Somali voice curve.","voice_edit","capcut_voice")
+add("voice","voice_duck_music","Duck music under voice","Key the music clip's volume down under narration.","voice_edit","capcut_voice")
+add("voice","voice_remove_silence","Remove silence","Apply a light cleanup pass that reduces silent sections.","voice_edit","capcut_voice")
+add("voice","voice_analyze_loudness","Analyze loudness","Report configured LUFS targets (podcast -16, online -14).","voice_query","capcut_voice",ro=True,idempotent=True)
+
 add("agent","kapcut_translate","Translate CapCut material",
     "Translate a CapCut material (capcutType/value or effectName/start/duration) into real Concat edit commands.","bridge","capcut_bridge")
 
@@ -341,6 +388,12 @@ for t in T:
         action = "Action::CapCutOverlayQuery"
     elif t["target_kind"] == "overlay_apply":
         action = "Action::CapCutOverlayApply"
+    elif t["target_kind"] == "voice_query":
+        action = "Action::VoiceQuery"
+    elif t["target_kind"] == "voice_import":
+        action = "Action::VoiceImport"
+    elif t["target_kind"] == "voice_edit":
+        action = "Action::VoiceEdit"
     elif t["target_kind"] == "studio_edit":
         action = "Action::CapCutStudioEdit"
     elif t["target_kind"] == "studio":
