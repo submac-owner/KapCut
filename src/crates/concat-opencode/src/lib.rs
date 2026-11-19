@@ -1,19 +1,17 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
-//! KapCut Studio — OpenCode full-UI side panel.
+// SPDX-FileCopyrightText: 2026 Jareer Abdullah and Concat contributors
+
+//! KapCut Studio — the OpenCode full-UI hand-off.
 //!
-//! Opens the OpenCode web UI in a native WebView window that can be docked
-//! beside the Concat timeline. The panel hosts the *full* OpenCode surface
-//! (sessions, model picker, diffs, tools, permissions, MCP list), not a chat
-//! input. The editor and the panel share the project through the KapCut MCP
-//! server in window mode.
+//! The studio button opens OpenCode's full web UI (sessions, model picker,
+//! diffs, tools, permissions, MCP list) in the system browser. An earlier
+//! version tried to host it in an in-process WebView on a worker thread;
+//! WebView2 requires a main-thread STA message loop and crashed the editor
+//! with an access violation on Windows. The browser hosts the identical UI
+//! reliably and shares the project through the KapCut MCP server.
 
 use std::fs;
 use std::path::{Path, PathBuf};
-use tao::event_loop::{ControlFlow, EventLoopBuilder};
-#[cfg(target_os = "windows")]
-use tao::platform::windows::EventLoopBuilderExtWindows;
-use tao::window::WindowBuilder;
-use wry::WebViewBuilder;
 
 /// Fallback local OpenCode web UI address (the desktop service).
 pub const DEFAULT_OPENCODE_URL: &str = "http://127.0.0.1:4096";
@@ -85,38 +83,25 @@ pub fn discover_url() -> String {
     DEFAULT_OPENCODE_URL.to_string()
 }
 
-/// Open the full OpenCode UI in a WebView panel and run its event loop.
+/// Open the full OpenCode UI. `project` is the folder the editor has open;
+/// it is passed as a URL fragment so an OpenCode session started from here
+/// can use it as its working directory.
 pub fn open_panel(url: &str, project: Option<&Path>) -> Result<(), String> {
-    // The panel lives on its own thread so the editor's Slint loop is never
-    // blocked. On Windows tao rejects an event loop off the main thread unless
-    // this is set; without it the panel button panics and takes the app down.
-    let mut builder = EventLoopBuilder::new();
-    #[cfg(target_os = "windows")]
-    builder.with_any_thread(true);
-    let event_loop = builder.build();
-    let window = WindowBuilder::new()
-        .with_title("OpenCode — KapCut Studio")
-        .with_inner_size(tao::dpi::LogicalSize::new(520.0, 900.0))
-        .build(&event_loop)
-        .map_err(|e| e.to_string())?;
-
-    let init = match project {
-        Some(p) => {
-            let json = serde_json::to_string(p.to_string_lossy().as_ref()).unwrap_or_default();
-            format!("window.kapcutStudio = {{ project: {} }};", json)
-        }
-        None => "window.kapcutStudio = {};".to_string(),
+    let target = match project {
+        Some(path) => format!("{url}/#/?folder={}", path.to_string_lossy()),
+        None => url.to_string(),
     };
-
-    let _webview = WebViewBuilder::new()
-        .with_url(url)
-        .with_initialization_script(&init)
-        .build(&window)
-        .map_err(|e| e.to_string())?;
-
-    event_loop.run(move |_event, _, control_flow| {
-        *control_flow = ControlFlow::Wait;
-    });
+    // On Windows `cmd /c start "" <url>` opens the default browser without
+    // waiting. No COM or UI thread is created in the editor process, so this
+    // cannot crash it.
+    let mut command = std::process::Command::new("cmd");
+    command.args(["/C", "start", "", &target]);
+    #[cfg(windows)]
+    {
+        use std::os::windows::process::CommandExt;
+        command.creation_flags(0x08000000); // CREATE_NO_WINDOW
+    }
+    command.spawn().map_err(|error| error.to_string())?;
     Ok(())
 }
 

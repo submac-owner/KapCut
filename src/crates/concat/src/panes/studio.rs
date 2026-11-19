@@ -83,12 +83,25 @@ impl StudioPane {
         use concat_project::model::{KeyEase, KeyProperty};
 
         let tab = TABS.get(self.tab as usize).copied().unwrap_or("frames");
+        // A frame is a shape layer around the picture: a real clip on the
+        // timeline, not just a notice. Its name is the preset's.
         if tab == "frames" {
             let name = rows(self.tab)
                 .iter()
                 .find(|(fid, _)| *fid == id)
                 .map(|(_, n)| n.to_string())
                 .unwrap_or_else(|| id.to_string());
+            let command = Command::AddShapeClip {
+                track_id: None,
+                above: true,
+                start: studio.playhead as f64,
+                style: None,
+                duration: Some(5.0),
+                name: name.clone(),
+            };
+            if let Some(error) = studio.apply(command) {
+                return Err(error);
+            }
             return Ok(format!("STUDIO {name} — frame layer added"));
         }
 

@@ -2168,18 +2168,15 @@ fn start(project: Option<std::path::PathBuf>, smoke: Smoke) -> Result<(), slint:
             state.notify(&format!("Studio Look: {name}"), false);
         }
     }));
-    // OpenCode full-UI side panel. The WebView needs its own event loop, so it
-    // runs on a dedicated thread; the project path is passed through the
-    // JavaScript bridge in the panel.
+    // OpenCode full-UI hand-off. The browser hosts the full UI reliably; an
+    // in-process WebView on a worker thread crashed WebView2 on Windows.
     app.on_open_opencode(on_window!(|state| {
         let project = state.session.as_ref().map(|s| s.path().to_string());
         let url = concat_opencode::discover_url();
-        std::thread::spawn(move || {
-            let path = project.as_deref().map(std::path::Path::new);
-            if let Err(error) = concat_opencode::open_panel(&url, path) {
-                log::error!("opencode panel: {error}");
-            }
-        });
+        let path = project.as_deref().map(std::path::Path::new);
+        if let Err(error) = concat_opencode::open_panel(&url, path) {
+            log::error!("opencode panel: {error}");
+        }
     }));
     // The theme is one bool on the Theme global, and every colour in the
     // tree is a binding away from it; it is also remembered.
