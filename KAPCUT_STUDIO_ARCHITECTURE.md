@@ -33,9 +33,9 @@ debugging and inspection only.
 | Transcript-first voice + narration | Premiere / Resolve | 40 MCP tools, Somali + English | done (V1) |
 | OpenCode full-UI side panel | — | native WebView crate + title-bar button | source done |
 | Live reload on MCP save | — | project watcher | source done |
-| Remote HTTP MCP transport | — | design doc (`docs/KAPCUT_REMOTE_MCP.md`) | pending |
-| Visual graph/curve editor UI | AE | data layer done; Slint curve widget | pending |
-| Manual studio UI parity (waveform, LUFS meter) | Premiere / Resolve | not started | pending |
+| Remote MCP transport | — | token-protected JSON-RPC over TCP at `127.0.0.1:7420` (window mode) | done in source |
+| Visual graph/curve editor UI | AE | `BezierEditor` + `InterpolationPanel` + `Curves.ease` solver | done in source |
+| Peak meter / waveform UI | Premiere / Resolve | `vu-meter.slint`, `LevelMeter`, waveform rendering | done in source |
 
 ## Tool surface
 **213 MCP tools across 25 families**, compiled and verified by Windows CI.
@@ -45,8 +45,9 @@ studio, style, text, three_d, timeline, tracking, transitions, voice.
 
 ## Phases
 - **A–D (done)** — motion, expressions, shapes, advanced presets.
-- **E (partial)** — templates + render-worker workflow done; remote HTTP
-  transport pending.
+- **E (done in source)** — templates, render-worker workflow, and token-
+  protected remote transport at `127.0.0.1:7420`. A separate streamable-HTTP
+  `/mcp` endpoint remains an optional enhancement, not a blocker.
 - **F (done)** — studio composition engine, design system, 4 templates.
 - **G (done)** — editing-style engine, reference-video decoder, overlay
   libraries (67 frames, 76 animations), Studio Look button.
