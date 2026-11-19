@@ -2157,8 +2157,7 @@ fn start(project: Option<std::path::PathBuf>, smoke: Smoke) -> Result<(), slint:
     // JavaScript bridge in the panel.
     app.on_open_opencode(on_window!(|state| {
         let project = state.session.as_ref().map(|s| s.path().to_string());
-        let url = std::env::var("KAPCUT_OPENCODE_URL")
-            .unwrap_or_else(|_| concat_opencode::DEFAULT_OPENCODE_URL.to_string());
+        let url = concat_opencode::discover_url();
         std::thread::spawn(move || {
             let path = project.as_deref().map(std::path::Path::new);
             if let Err(error) = concat_opencode::open_panel(&url, path) {
