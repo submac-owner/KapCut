@@ -1,5 +1,5 @@
 {
- "count": 55,
+ "count": 67,
  "frames": [
   {
    "id": "frame_paper_original",
@@ -1658,6 +1658,618 @@
      "stroke": "#E0533B",
      "strokeWidth": 0.002,
      "rotation": 0.0
+    }
+   ]
+  },
+  {
+   "id": "frame_dossier_sheet",
+   "name": "Dossier Sheet",
+   "family": "dossier_pack",
+   "category": "overlay-frame",
+   "elements": [
+    {
+     "kind": "square",
+     "width": 0.6,
+     "height": 0.78,
+     "fill": "#11151C",
+     "stroke": "#C9D3E0",
+     "strokeWidth": 0.003,
+     "rotation": 0.0,
+     "shadow": {
+      "color": "#C9D3E0",
+      "blur": 0.02
+     }
+    },
+    {
+     "kind": "line",
+     "width": 0.42,
+     "fill": "#00000000",
+     "stroke": "#C9D3E0",
+     "strokeWidth": 0.0015,
+     "rotation": 0.0,
+     "_y": 0.12
+    },
+    {
+     "kind": "line",
+     "width": 0.36,
+     "fill": "#00000000",
+     "stroke": "#C9D3E0",
+     "strokeWidth": 0.0015,
+     "rotation": 0.0,
+     "_y": 0.19
+    },
+    {
+     "kind": "line",
+     "width": 0.3,
+     "fill": "#00000000",
+     "stroke": "#C9D3E0",
+     "strokeWidth": 0.0015,
+     "rotation": 0.0,
+     "_y": 0.26
+    },
+    {
+     "kind": "line",
+     "width": 0.42,
+     "fill": "#00000000",
+     "stroke": "#C9D3E0",
+     "strokeWidth": 0.0015,
+     "rotation": 0.0,
+     "_y": 0.33
+    }
+   ]
+  },
+  {
+   "id": "frame_classified_file",
+   "name": "Classified File",
+   "family": "dossier_pack",
+   "category": "overlay-frame",
+   "elements": [
+    {
+     "kind": "square",
+     "width": 0.6,
+     "height": 0.78,
+     "fill": "#161616",
+     "stroke": "#D6D6D6",
+     "strokeWidth": 0.003,
+     "rotation": 0.0,
+     "shadow": {
+      "color": "#D6D6D6",
+      "blur": 0.02
+     }
+    },
+    {
+     "kind": "line",
+     "width": 0.42,
+     "fill": "#00000000",
+     "stroke": "#D6D6D6",
+     "strokeWidth": 0.0015,
+     "rotation": 0.0,
+     "_y": 0.12
+    },
+    {
+     "kind": "line",
+     "width": 0.36,
+     "fill": "#00000000",
+     "stroke": "#D6D6D6",
+     "strokeWidth": 0.0015,
+     "rotation": 0.0,
+     "_y": 0.19
+    },
+    {
+     "kind": "line",
+     "width": 0.3,
+     "fill": "#00000000",
+     "stroke": "#D6D6D6",
+     "strokeWidth": 0.0015,
+     "rotation": 0.0,
+     "_y": 0.26
+    }
+   ]
+  },
+  {
+   "id": "frame_redacted_doc",
+   "name": "Redacted Document",
+   "family": "dossier_pack",
+   "category": "overlay-frame",
+   "elements": [
+    {
+     "kind": "square",
+     "width": 0.6,
+     "height": 0.78,
+     "fill": "#0D1117",
+     "stroke": "#8FA3C8",
+     "strokeWidth": 0.003,
+     "rotation": 0.0,
+     "shadow": {
+      "color": "#8FA3C8",
+      "blur": 0.02
+     }
+    },
+    {
+     "kind": "line",
+     "width": 0.42,
+     "fill": "#00000000",
+     "stroke": "#8FA3C8",
+     "strokeWidth": 0.0015,
+     "rotation": 0.0,
+     "_y": 0.12
+    },
+    {
+     "kind": "line",
+     "width": 0.36,
+     "fill": "#00000000",
+     "stroke": "#8FA3C8",
+     "strokeWidth": 0.0015,
+     "rotation": 0.0,
+     "_y": 0.19
+    },
+    {
+     "kind": "line",
+     "width": 0.3,
+     "fill": "#00000000",
+     "stroke": "#8FA3C8",
+     "strokeWidth": 0.0015,
+     "rotation": 0.0,
+     "_y": 0.26
+    },
+    {
+     "kind": "line",
+     "width": 0.42,
+     "fill": "#00000000",
+     "stroke": "#8FA3C8",
+     "strokeWidth": 0.0015,
+     "rotation": 0.0,
+     "_y": 0.33
+    },
+    {
+     "kind": "line",
+     "width": 0.36,
+     "fill": "#00000000",
+     "stroke": "#8FA3C8",
+     "strokeWidth": 0.0015,
+     "rotation": 0.0,
+     "_y": 0.4
+    }
+   ]
+  },
+  {
+   "id": "frame_evidence_photo",
+   "name": "Evidence Photo",
+   "family": "dossier_pack",
+   "category": "overlay-frame",
+   "elements": [
+    {
+     "kind": "square",
+     "width": 0.6,
+     "height": 0.78,
+     "fill": "#101418",
+     "stroke": "#E0E0E0",
+     "strokeWidth": 0.003,
+     "rotation": 0.0,
+     "shadow": {
+      "color": "#E0E0E0",
+      "blur": 0.02
+     }
+    },
+    {
+     "kind": "line",
+     "width": 0.42,
+     "fill": "#00000000",
+     "stroke": "#E0E0E0",
+     "strokeWidth": 0.0015,
+     "rotation": 0.0,
+     "_y": 0.12
+    },
+    {
+     "kind": "line",
+     "width": 0.36,
+     "fill": "#00000000",
+     "stroke": "#E0E0E0",
+     "strokeWidth": 0.0015,
+     "rotation": 0.0,
+     "_y": 0.19
+    }
+   ]
+  },
+  {
+   "id": "frame_case_folder",
+   "name": "Case Folder",
+   "family": "dossier_pack",
+   "category": "overlay-frame",
+   "elements": [
+    {
+     "kind": "square",
+     "width": 0.6,
+     "height": 0.78,
+     "fill": "#1A1A1A",
+     "stroke": "#C0A060",
+     "strokeWidth": 0.003,
+     "rotation": 0.0,
+     "shadow": {
+      "color": "#C0A060",
+      "blur": 0.02
+     }
+    },
+    {
+     "kind": "line",
+     "width": 0.42,
+     "fill": "#00000000",
+     "stroke": "#C0A060",
+     "strokeWidth": 0.0015,
+     "rotation": 0.0,
+     "_y": 0.12
+    },
+    {
+     "kind": "line",
+     "width": 0.36,
+     "fill": "#00000000",
+     "stroke": "#C0A060",
+     "strokeWidth": 0.0015,
+     "rotation": 0.0,
+     "_y": 0.19
+    },
+    {
+     "kind": "line",
+     "width": 0.3,
+     "fill": "#00000000",
+     "stroke": "#C0A060",
+     "strokeWidth": 0.0015,
+     "rotation": 0.0,
+     "_y": 0.26
+    }
+   ]
+  },
+  {
+   "id": "frame_fingerprint_card",
+   "name": "Fingerprint Card",
+   "family": "dossier_pack",
+   "category": "overlay-frame",
+   "elements": [
+    {
+     "kind": "square",
+     "width": 0.6,
+     "height": 0.78,
+     "fill": "#0E1117",
+     "stroke": "#6FA8DC",
+     "strokeWidth": 0.003,
+     "rotation": 0.0,
+     "shadow": {
+      "color": "#6FA8DC",
+      "blur": 0.02
+     }
+    },
+    {
+     "kind": "line",
+     "width": 0.42,
+     "fill": "#00000000",
+     "stroke": "#6FA8DC",
+     "strokeWidth": 0.0015,
+     "rotation": 0.0,
+     "_y": 0.12
+    },
+    {
+     "kind": "line",
+     "width": 0.36,
+     "fill": "#00000000",
+     "stroke": "#6FA8DC",
+     "strokeWidth": 0.0015,
+     "rotation": 0.0,
+     "_y": 0.19
+    },
+    {
+     "kind": "line",
+     "width": 0.3,
+     "fill": "#00000000",
+     "stroke": "#6FA8DC",
+     "strokeWidth": 0.0015,
+     "rotation": 0.0,
+     "_y": 0.26
+    },
+    {
+     "kind": "line",
+     "width": 0.42,
+     "fill": "#00000000",
+     "stroke": "#6FA8DC",
+     "strokeWidth": 0.0015,
+     "rotation": 0.0,
+     "_y": 0.33
+    }
+   ]
+  },
+  {
+   "id": "frame_news_clipping",
+   "name": "News Clipping",
+   "family": "dossier_pack",
+   "category": "overlay-frame",
+   "elements": [
+    {
+     "kind": "square",
+     "width": 0.6,
+     "height": 0.78,
+     "fill": "#E8E2D4",
+     "stroke": "#333333",
+     "strokeWidth": 0.003,
+     "rotation": 0.0,
+     "shadow": {
+      "color": "#333333",
+      "blur": 0.02
+     }
+    },
+    {
+     "kind": "line",
+     "width": 0.42,
+     "fill": "#00000000",
+     "stroke": "#333333",
+     "strokeWidth": 0.0015,
+     "rotation": 0.0,
+     "_y": 0.12
+    },
+    {
+     "kind": "line",
+     "width": 0.36,
+     "fill": "#00000000",
+     "stroke": "#333333",
+     "strokeWidth": 0.0015,
+     "rotation": 0.0,
+     "_y": 0.19
+    }
+   ]
+  },
+  {
+   "id": "frame_police_report",
+   "name": "Police Report",
+   "family": "dossier_pack",
+   "category": "overlay-frame",
+   "elements": [
+    {
+     "kind": "square",
+     "width": 0.6,
+     "height": 0.78,
+     "fill": "#F2F0EA",
+     "stroke": "#2B2B2B",
+     "strokeWidth": 0.003,
+     "rotation": 0.0,
+     "shadow": {
+      "color": "#2B2B2B",
+      "blur": 0.02
+     }
+    },
+    {
+     "kind": "line",
+     "width": 0.42,
+     "fill": "#00000000",
+     "stroke": "#2B2B2B",
+     "strokeWidth": 0.0015,
+     "rotation": 0.0,
+     "_y": 0.12
+    },
+    {
+     "kind": "line",
+     "width": 0.36,
+     "fill": "#00000000",
+     "stroke": "#2B2B2B",
+     "strokeWidth": 0.0015,
+     "rotation": 0.0,
+     "_y": 0.19
+    },
+    {
+     "kind": "line",
+     "width": 0.3,
+     "fill": "#00000000",
+     "stroke": "#2B2B2B",
+     "strokeWidth": 0.0015,
+     "rotation": 0.0,
+     "_y": 0.26
+    }
+   ]
+  },
+  {
+   "id": "frame_lab_result",
+   "name": "Lab Result",
+   "family": "dossier_pack",
+   "category": "overlay-frame",
+   "elements": [
+    {
+     "kind": "square",
+     "width": 0.6,
+     "height": 0.78,
+     "fill": "#EFF6F5",
+     "stroke": "#1F7A6B",
+     "strokeWidth": 0.003,
+     "rotation": 0.0,
+     "shadow": {
+      "color": "#1F7A6B",
+      "blur": 0.02
+     }
+    },
+    {
+     "kind": "line",
+     "width": 0.42,
+     "fill": "#00000000",
+     "stroke": "#1F7A6B",
+     "strokeWidth": 0.0015,
+     "rotation": 0.0,
+     "_y": 0.12
+    },
+    {
+     "kind": "line",
+     "width": 0.36,
+     "fill": "#00000000",
+     "stroke": "#1F7A6B",
+     "strokeWidth": 0.0015,
+     "rotation": 0.0,
+     "_y": 0.19
+    },
+    {
+     "kind": "line",
+     "width": 0.3,
+     "fill": "#00000000",
+     "stroke": "#1F7A6B",
+     "strokeWidth": 0.0015,
+     "rotation": 0.0,
+     "_y": 0.26
+    },
+    {
+     "kind": "line",
+     "width": 0.42,
+     "fill": "#00000000",
+     "stroke": "#1F7A6B",
+     "strokeWidth": 0.0015,
+     "rotation": 0.0,
+     "_y": 0.33
+    }
+   ]
+  },
+  {
+   "id": "frame_map_pin",
+   "name": "Evidence Map",
+   "family": "dossier_pack",
+   "category": "overlay-frame",
+   "elements": [
+    {
+     "kind": "square",
+     "width": 0.6,
+     "height": 0.78,
+     "fill": "#0B1A24",
+     "stroke": "#5EA9FF",
+     "strokeWidth": 0.003,
+     "rotation": 0.0,
+     "shadow": {
+      "color": "#5EA9FF",
+      "blur": 0.02
+     }
+    },
+    {
+     "kind": "line",
+     "width": 0.42,
+     "fill": "#00000000",
+     "stroke": "#5EA9FF",
+     "strokeWidth": 0.0015,
+     "rotation": 0.0,
+     "_y": 0.12
+    },
+    {
+     "kind": "line",
+     "width": 0.36,
+     "fill": "#00000000",
+     "stroke": "#5EA9FF",
+     "strokeWidth": 0.0015,
+     "rotation": 0.0,
+     "_y": 0.19
+    }
+   ]
+  },
+  {
+   "id": "frame_wiretap",
+   "name": "Wiretap Transcript",
+   "family": "dossier_pack",
+   "category": "overlay-frame",
+   "elements": [
+    {
+     "kind": "square",
+     "width": 0.6,
+     "height": 0.78,
+     "fill": "#121212",
+     "stroke": "#9CC5E9",
+     "strokeWidth": 0.003,
+     "rotation": 0.0,
+     "shadow": {
+      "color": "#9CC5E9",
+      "blur": 0.02
+     }
+    },
+    {
+     "kind": "line",
+     "width": 0.42,
+     "fill": "#00000000",
+     "stroke": "#9CC5E9",
+     "strokeWidth": 0.0015,
+     "rotation": 0.0,
+     "_y": 0.12
+    },
+    {
+     "kind": "line",
+     "width": 0.36,
+     "fill": "#00000000",
+     "stroke": "#9CC5E9",
+     "strokeWidth": 0.0015,
+     "rotation": 0.0,
+     "_y": 0.19
+    },
+    {
+     "kind": "line",
+     "width": 0.3,
+     "fill": "#00000000",
+     "stroke": "#9CC5E9",
+     "strokeWidth": 0.0015,
+     "rotation": 0.0,
+     "_y": 0.26
+    }
+   ]
+  },
+  {
+   "id": "frame_stamp_approved",
+   "name": "Approved Stamp",
+   "family": "dossier_pack",
+   "category": "overlay-frame",
+   "elements": [
+    {
+     "kind": "square",
+     "width": 0.6,
+     "height": 0.78,
+     "fill": "#0E1117",
+     "stroke": "#E0533B",
+     "strokeWidth": 0.003,
+     "rotation": 0.0,
+     "shadow": {
+      "color": "#E0533B",
+      "blur": 0.02
+     }
+    },
+    {
+     "kind": "line",
+     "width": 0.42,
+     "fill": "#00000000",
+     "stroke": "#E0533B",
+     "strokeWidth": 0.0015,
+     "rotation": 0.0,
+     "_y": 0.12
+    },
+    {
+     "kind": "line",
+     "width": 0.36,
+     "fill": "#00000000",
+     "stroke": "#E0533B",
+     "strokeWidth": 0.0015,
+     "rotation": 0.0,
+     "_y": 0.19
+    },
+    {
+     "kind": "line",
+     "width": 0.3,
+     "fill": "#00000000",
+     "stroke": "#E0533B",
+     "strokeWidth": 0.0015,
+     "rotation": 0.0,
+     "_y": 0.26
+    },
+    {
+     "kind": "line",
+     "width": 0.42,
+     "fill": "#00000000",
+     "stroke": "#E0533B",
+     "strokeWidth": 0.0015,
+     "rotation": 0.0,
+     "_y": 0.33
+    },
+    {
+     "kind": "line",
+     "width": 0.36,
+     "fill": "#00000000",
+     "stroke": "#E0533B",
+     "strokeWidth": 0.0015,
+     "rotation": 0.0,
+     "_y": 0.4
     }
    ]
   }

@@ -10,6 +10,8 @@ raw_t = json.dumps(templates, separators=(",", ":"), ensure_ascii=False)
 raw_d = json.dumps(design, separators=(",", ":"), ensure_ascii=False)
 anims = json.loads((HERE / "text_animators.json").read_text(encoding="utf-8"))["animators"]
 raw_a = json.dumps(anims, separators=(",", ":"), ensure_ascii=False)
+raw_f = (HERE / "overlay_frames.json").read_text(encoding="utf-8").strip()
+raw_an = (HERE / "overlay_animations.json").read_text(encoding="utf-8").strip()
 
 L = [
  "// GENERATED FILE - do not edit. Run: python3 kapcut/studio/generate_studio_rs.py",
@@ -18,6 +20,8 @@ L = [
  "const TEMPLATES_JSON: &str = r##\"" + raw_t + "\"##;",
  "const DESIGN_JSON: &str = r##\"" + raw_d + "\"##;",
  "const ANIMATORS_JSON: &str = r##\"" + raw_a + "\"##;",
+ "const FRAMES_JSON: &str = r##\"" + raw_f + "\"##;",
+ "const ANIMS_JSON: &str = r##\"" + raw_an + "\"##;",
  "",
  "fn templates() -> Vec<Value> { serde_json::from_str(TEMPLATES_JSON).unwrap_or_default() }",
  "fn design() -> Value { serde_json::from_str(DESIGN_JSON).unwrap_or_default() }",

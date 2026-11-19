@@ -1,5 +1,5 @@
 {
- "count": 58,
+ "count": 76,
  "animations": [
   {
    "id": "anim_fade_in",
@@ -1438,6 +1438,456 @@
      "at": 1,
      "value": 0,
      "ease": "linear"
+    }
+   ]
+  },
+  {
+   "id": "anim_page_flip_in",
+   "name": "Page Flip \u2014 IN",
+   "family": "page_flip",
+   "phase": "in",
+   "category": "overlay-animation",
+   "keys": [
+    {
+     "property": "rotation",
+     "at": 0.0,
+     "value": -28.0,
+     "ease": "out"
+    },
+    {
+     "property": "rotation",
+     "at": 0.5,
+     "value": 8.0,
+     "ease": "out"
+    },
+    {
+     "property": "rotation",
+     "at": 1.0,
+     "value": 0.0,
+     "ease": "out"
+    }
+   ]
+  },
+  {
+   "id": "anim_page_flip_out",
+   "name": "Page Flip \u2014 OUT",
+   "family": "page_flip",
+   "phase": "out",
+   "category": "overlay-animation",
+   "keys": [
+    {
+     "property": "rotation",
+     "at": 0.0,
+     "value": -28.0,
+     "ease": "in"
+    },
+    {
+     "property": "rotation",
+     "at": 0.5,
+     "value": 8.0,
+     "ease": "in"
+    },
+    {
+     "property": "rotation",
+     "at": 1.0,
+     "value": 0.0,
+     "ease": "in"
+    }
+   ]
+  },
+  {
+   "id": "anim_page_flip_loop",
+   "name": "Page Flip \u2014 LOOP",
+   "family": "page_flip",
+   "phase": "loop",
+   "category": "overlay-animation",
+   "keys": [
+    {
+     "property": "rotation",
+     "at": 0.0,
+     "value": -28.0,
+     "ease": "inOut"
+    },
+    {
+     "property": "rotation",
+     "at": 0.5,
+     "value": 8.0,
+     "ease": "inOut"
+    },
+    {
+     "property": "rotation",
+     "at": 1.0,
+     "value": 0.0,
+     "ease": "inOut"
+    }
+   ]
+  },
+  {
+   "id": "anim_stamp_in",
+   "name": "Stamp Down \u2014 IN",
+   "family": "stamp",
+   "phase": "in",
+   "category": "overlay-animation",
+   "keys": [
+    {
+     "property": "scale",
+     "at": 0.0,
+     "value": 2.2,
+     "ease": "out"
+    },
+    {
+     "property": "scale",
+     "at": 0.4,
+     "value": 0.92,
+     "ease": "out"
+    },
+    {
+     "property": "scale",
+     "at": 1.0,
+     "value": 1.0,
+     "ease": "out"
+    }
+   ]
+  },
+  {
+   "id": "anim_stamp_out",
+   "name": "Stamp Down \u2014 OUT",
+   "family": "stamp",
+   "phase": "out",
+   "category": "overlay-animation",
+   "keys": [
+    {
+     "property": "scale",
+     "at": 0.0,
+     "value": 2.2,
+     "ease": "in"
+    },
+    {
+     "property": "scale",
+     "at": 0.4,
+     "value": 0.92,
+     "ease": "in"
+    },
+    {
+     "property": "scale",
+     "at": 1.0,
+     "value": 1.0,
+     "ease": "in"
+    }
+   ]
+  },
+  {
+   "id": "anim_stamp_loop",
+   "name": "Stamp Down \u2014 LOOP",
+   "family": "stamp",
+   "phase": "loop",
+   "category": "overlay-animation",
+   "keys": [
+    {
+     "property": "scale",
+     "at": 0.0,
+     "value": 2.2,
+     "ease": "inOut"
+    },
+    {
+     "property": "scale",
+     "at": 0.4,
+     "value": 0.92,
+     "ease": "inOut"
+    },
+    {
+     "property": "scale",
+     "at": 1.0,
+     "value": 1.0,
+     "ease": "inOut"
+    }
+   ]
+  },
+  {
+   "id": "anim_type_lines_in",
+   "name": "Type Lines \u2014 IN",
+   "family": "type_lines",
+   "phase": "in",
+   "category": "overlay-animation",
+   "keys": [
+    {
+     "property": "opacity",
+     "at": 0.0,
+     "value": 0.0,
+     "ease": "out"
+    },
+    {
+     "property": "opacity",
+     "at": 0.3,
+     "value": 1.0,
+     "ease": "out"
+    },
+    {
+     "property": "offsetY",
+     "at": 0.0,
+     "value": 0.06,
+     "ease": "out"
+    },
+    {
+     "property": "offsetY",
+     "at": 1.0,
+     "value": 0.0,
+     "ease": "out"
+    }
+   ]
+  },
+  {
+   "id": "anim_type_lines_out",
+   "name": "Type Lines \u2014 OUT",
+   "family": "type_lines",
+   "phase": "out",
+   "category": "overlay-animation",
+   "keys": [
+    {
+     "property": "opacity",
+     "at": 0.0,
+     "value": 0.0,
+     "ease": "in"
+    },
+    {
+     "property": "opacity",
+     "at": 0.3,
+     "value": 1.0,
+     "ease": "in"
+    },
+    {
+     "property": "offsetY",
+     "at": 0.0,
+     "value": 0.06,
+     "ease": "in"
+    },
+    {
+     "property": "offsetY",
+     "at": 1.0,
+     "value": 0.0,
+     "ease": "in"
+    }
+   ]
+  },
+  {
+   "id": "anim_type_lines_loop",
+   "name": "Type Lines \u2014 LOOP",
+   "family": "type_lines",
+   "phase": "loop",
+   "category": "overlay-animation",
+   "keys": [
+    {
+     "property": "opacity",
+     "at": 0.0,
+     "value": 0.0,
+     "ease": "inOut"
+    },
+    {
+     "property": "opacity",
+     "at": 0.3,
+     "value": 1.0,
+     "ease": "inOut"
+    },
+    {
+     "property": "offsetY",
+     "at": 0.0,
+     "value": 0.06,
+     "ease": "inOut"
+    },
+    {
+     "property": "offsetY",
+     "at": 1.0,
+     "value": 0.0,
+     "ease": "inOut"
+    }
+   ]
+  },
+  {
+   "id": "anim_highlight_in",
+   "name": "Highlight Sweep \u2014 IN",
+   "family": "highlight",
+   "phase": "in",
+   "category": "overlay-animation",
+   "keys": [
+    {
+     "property": "offsetX",
+     "at": 0.0,
+     "value": -0.3,
+     "ease": "out"
+    },
+    {
+     "property": "offsetX",
+     "at": 1.0,
+     "value": 0.3,
+     "ease": "out"
+    }
+   ]
+  },
+  {
+   "id": "anim_highlight_out",
+   "name": "Highlight Sweep \u2014 OUT",
+   "family": "highlight",
+   "phase": "out",
+   "category": "overlay-animation",
+   "keys": [
+    {
+     "property": "offsetX",
+     "at": 0.0,
+     "value": -0.3,
+     "ease": "in"
+    },
+    {
+     "property": "offsetX",
+     "at": 1.0,
+     "value": 0.3,
+     "ease": "in"
+    }
+   ]
+  },
+  {
+   "id": "anim_highlight_loop",
+   "name": "Highlight Sweep \u2014 LOOP",
+   "family": "highlight",
+   "phase": "loop",
+   "category": "overlay-animation",
+   "keys": [
+    {
+     "property": "offsetX",
+     "at": 0.0,
+     "value": -0.3,
+     "ease": "inOut"
+    },
+    {
+     "property": "offsetX",
+     "at": 1.0,
+     "value": 0.3,
+     "ease": "inOut"
+    }
+   ]
+  },
+  {
+   "id": "anim_redact_in",
+   "name": "Redact \u2014 IN",
+   "family": "redact",
+   "phase": "in",
+   "category": "overlay-animation",
+   "keys": [
+    {
+     "property": "scale",
+     "at": 0.0,
+     "value": 1.4,
+     "ease": "out"
+    },
+    {
+     "property": "scale",
+     "at": 1.0,
+     "value": 1.0,
+     "ease": "out"
+    }
+   ]
+  },
+  {
+   "id": "anim_redact_out",
+   "name": "Redact \u2014 OUT",
+   "family": "redact",
+   "phase": "out",
+   "category": "overlay-animation",
+   "keys": [
+    {
+     "property": "scale",
+     "at": 0.0,
+     "value": 1.4,
+     "ease": "in"
+    },
+    {
+     "property": "scale",
+     "at": 1.0,
+     "value": 1.0,
+     "ease": "in"
+    }
+   ]
+  },
+  {
+   "id": "anim_redact_loop",
+   "name": "Redact \u2014 LOOP",
+   "family": "redact",
+   "phase": "loop",
+   "category": "overlay-animation",
+   "keys": [
+    {
+     "property": "scale",
+     "at": 0.0,
+     "value": 1.4,
+     "ease": "inOut"
+    },
+    {
+     "property": "scale",
+     "at": 1.0,
+     "value": 1.0,
+     "ease": "inOut"
+    }
+   ]
+  },
+  {
+   "id": "anim_scan_in",
+   "name": "Document Scan \u2014 IN",
+   "family": "scan",
+   "phase": "in",
+   "category": "overlay-animation",
+   "keys": [
+    {
+     "property": "offsetY",
+     "at": 0.0,
+     "value": 0.35,
+     "ease": "out"
+    },
+    {
+     "property": "offsetY",
+     "at": 1.0,
+     "value": 0.0,
+     "ease": "out"
+    }
+   ]
+  },
+  {
+   "id": "anim_scan_out",
+   "name": "Document Scan \u2014 OUT",
+   "family": "scan",
+   "phase": "out",
+   "category": "overlay-animation",
+   "keys": [
+    {
+     "property": "offsetY",
+     "at": 0.0,
+     "value": 0.35,
+     "ease": "in"
+    },
+    {
+     "property": "offsetY",
+     "at": 1.0,
+     "value": 0.0,
+     "ease": "in"
+    }
+   ]
+  },
+  {
+   "id": "anim_scan_loop",
+   "name": "Document Scan \u2014 LOOP",
+   "family": "scan",
+   "phase": "loop",
+   "category": "overlay-animation",
+   "keys": [
+    {
+     "property": "offsetY",
+     "at": 0.0,
+     "value": 0.35,
+     "ease": "inOut"
+    },
+    {
+     "property": "offsetY",
+     "at": 1.0,
+     "value": 0.0,
+     "ease": "inOut"
     }
    ]
   }
