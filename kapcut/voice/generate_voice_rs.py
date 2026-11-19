@@ -100,7 +100,7 @@ fn parse_vtt(text: &str, language: &str) -> Value {
 }
 fn parse_json_input(text: &str, language: &str) -> Value {
     let v: Value = serde_json::from_str(text).unwrap_or(json!({}));
-    let lang = if s(&v, "language").is_empty() { language } else { s(&v, "language") };
+    let lang = if s(&v, "language").is_empty() { language.to_string() } else { s(&v, "language") };
     if let Some(segs) = v.get("segments").and_then(Value::as_array) {
         let mut out = Vec::new();
         for sg in segs {
@@ -292,8 +292,8 @@ pub fn query(name: &str, args: &Value) -> Value {
         }
         "voice_transcribe_gemini" | "voice_transcribe_whisper" | "voice_transcribe_auto" => {
             let provider = match name {
-                "voice_transcribe_gemini" => "gemini",
-                "voice_transcribe_whisper" => "whisper",
+                "voice_transcribe_gemini" => "gemini".to_string(),
+                "voice_transcribe_whisper" => "whisper".to_string(),
                 _ => s(args, "provider"),
             };
             if provider == "auto" || name == "voice_transcribe_auto" {
