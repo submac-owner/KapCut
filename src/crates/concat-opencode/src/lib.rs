@@ -9,7 +9,9 @@
 
 use std::fs;
 use std::path::{Path, PathBuf};
-use tao::event_loop::{ControlFlow, EventLoop};
+use tao::event_loop::{ControlFlow, EventLoopBuilder};
+#[cfg(target_os = "windows")]
+use tao::platform::windows::EventLoopBuilderExtWindows;
 use tao::window::WindowBuilder;
 use wry::WebViewBuilder;
 
@@ -81,7 +83,13 @@ pub fn discover_url() -> String {
 
 /// Open the full OpenCode UI in a WebView panel and run its event loop.
 pub fn open_panel(url: &str, project: Option<&Path>) -> Result<(), String> {
-    let event_loop = EventLoop::new();
+    // The panel lives on its own thread so the editor's Slint loop is never
+    // blocked. On Windows tao rejects an event loop off the main thread unless
+    // this is set; without it the panel button panics and takes the app down.
+    let mut builder = EventLoopBuilder::new();
+    #[cfg(target_os = "windows")]
+    builder.with_any_thread(true);
+    let event_loop = builder.build();
     let window = WindowBuilder::new()
         .with_title("OpenCode — KapCut Studio")
         .with_inner_size(tao::dpi::LogicalSize::new(520.0, 900.0))
