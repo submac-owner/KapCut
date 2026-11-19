@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "interpolations": ["linear", "bezier", "hold", "easeIn", "easeOut", "easeInOut", "elastic", "bounce", "spring", "exponential"],
+  "presets": [
+    {"id": "smooth", "name": "Smooth", "ease": [0.42, 0.0, 0.58, 1.0], "description": "Balanced ease in and out."},
+    {"id": "snap", "name": "Snap", "ease": [0.2, 0.9, 0.3, 1.0], "description": "Fast start, firm settle."},
+    {"id": "glide", "name": "Glide", "ease": [0.25, 0.1, 0.25, 1.0], "description": "Long, quiet deceleration."},
+    {"id": "swift", "name": "Swift", "ease": [0.4, 0.0, 0.2, 1.0], "description": "Quick acceleration then coast."},
+    {"id": "settle", "name": "Settle", "ease": [0.34, 1.56, 0.64, 1.0], "description": "Overshoot and settle."},
+    {"id": "anticipate", "name": "Anticipate", "ease": [0.6, -0.5, 0.4, 1.0], "description": "Pull back before moving."},
+    {"id": "expo_out", "name": "Expo Out", "ease": [0.16, 1.0, 0.3, 1.0], "description": "Strong deceleration."},
+    {"id": "expo_in", "name": "Expo In", "ease": [0.7, 0.0, 0.84, 0.0], "description": "Strong acceleration."},
+    {"id": "soft", "name": "Soft", "ease": [0.35, 0.0, 0.65, 1.0], "description": "Gentle symmetric ease."},
+    {"id": "linear", "name": "Linear", "ease": [0.0, 0.0, 1.0, 1.0], "description": "Constant speed."},
+    {"id": "hold", "name": "Hold", "ease": [1.0, 0.0, 1.0, 0.0], "description": "Step at the end."},
+    {"id": "pulse", "name": "Pulse", "ease": [0.4, 0.0, 0.6, 1.0], "description": "Repeating eased cycle."}
+  ]
+}

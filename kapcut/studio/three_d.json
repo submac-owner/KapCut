@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "camera_rigs": [
+    {"id": "dolly_in", "name": "Dolly In", "keys": [{"property": "scale", "at": 0.0, "value": 1.0}, {"property": "scale", "at": 1.0, "value": 1.35}]},
+    {"id": "dolly_out", "name": "Dolly Out", "keys": [{"property": "scale", "at": 0.0, "value": 1.35}, {"property": "scale", "at": 1.0, "value": 1.0}]},
+    {"id": "push_in", "name": "Push In", "keys": [{"property": "offsetZ", "at": 0.0, "value": -0.4}, {"property": "offsetZ", "at": 1.0, "value": 0.0}]},
+    {"id": "pull_back", "name": "Pull Back", "keys": [{"property": "offsetZ", "at": 0.0, "value": 0.0}, {"property": "offsetZ", "at": 1.0, "value": -0.4}]},
+    {"id": "orbit_left", "name": "Orbit Left", "keys": [{"property": "rotation", "at": 0.0, "value": 8.0}, {"property": "offsetX", "at": 0.5, "value": 0.06}, {"property": "rotation", "at": 1.0, "value": -8.0}]},
+    {"id": "orbit_right", "name": "Orbit Right", "keys": [{"property": "rotation", "at": 0.0, "value": -8.0}, {"property": "offsetX", "at": 0.5, "value": -0.06}, {"property": "rotation", "at": 1.0, "value": 8.0}]},
+    {"id": "crane_up", "name": "Crane Up", "keys": [{"property": "offsetY", "at": 0.0, "value": 0.3}, {"property": "offsetY", "at": 1.0, "value": -0.3}]},
+    {"id": "crane_down", "name": "Crane Down", "keys": [{"property": "offsetY", "at": 0.0, "value": -0.3}, {"property": "offsetY", "at": 1.0, "value": 0.3}]},
+    {"id": "handheld", "name": "Handheld", "keys": [{"property": "offsetX", "at": 0.0, "value": 0.01}, {"property": "offsetY", "at": 0.3, "value": -0.015}, {"property": "rotation", "at": 0.6, "value": 0.6}, {"property": "offsetX", "at": 1.0, "value": -0.01}]},
+    {"id": "rack_focus", "name": "Rack Focus", "keys": [{"property": "blur", "at": 0.0, "value": 0.0}, {"property": "blur", "at": 0.5, "value": 0.6}, {"property": "blur", "at": 1.0, "value": 0.0}]}
+  ],
+  "light_rigs": [
+    {"id": "three_point", "name": "Three Point", "layers": [{"kind": "effect", "id": "light", "params": {"key": 0.8, "fill": 0.4, "rim": 0.6}}]},
+    {"id": "noir", "name": "Noir", "layers": [{"kind": "effect", "id": "light", "params": {"key": 0.9, "fill": 0.1, "rim": 0.7}}]},
+    {"id": "soft_studio", "name": "Soft Studio", "layers": [{"kind": "effect", "id": "light", "params": {"key": 0.5, "fill": 0.5, "rim": 0.2}}]},
+    {"id": "golden_hour", "name": "Golden Hour", "layers": [{"kind": "effect", "id": "light", "params": {"key": 0.7, "fill": 0.3, "warm": 0.8}}]},
+    {"id": "backlit", "name": "Backlit", "layers": [{"kind": "effect", "id": "light", "params": {"key": 0.2, "fill": 0.1, "rim": 1.0}}]}
+  ],
+  "particle_fields": [
+    {"id": "dust", "name": "Dust", "params": {"count": 60, "size": 0.01, "speed": 0.05}},
+    {"id": "sparks", "name": "Sparks", "params": {"count": 40, "size": 0.008, "speed": 0.2}},
+    {"id": "snow", "name": "Snow", "params": {"count": 90, "size": 0.012, "speed": 0.08}},
+    {"id": "bokeh", "name": "Bokeh", "params": {"count": 30, "size": 0.04, "speed": 0.02}},
+    {"id": "embers", "name": "Embers", "params": {"count": 50, "size": 0.01, "speed": 0.12}},
+    {"id": "stars", "name": "Stars", "params": {"count": 120, "size": 0.006, "speed": 0.01}},
+    {"id": "rain", "name": "Rain", "params": {"count": 100, "size": 0.005, "speed": 0.4}},
+    {"id": "smoke", "name": "Smoke", "params": {"count": 25, "size": 0.06, "speed": 0.03}}
+  ],
+  "composite_modes": [
+    {"id": "normal", "name": "Normal", "blend": "normal"},
+    {"id": "screen", "name": "Screen", "blend": "screen"},
+    {"id": "multiply", "name": "Multiply", "blend": "multiply"},
+    {"id": "overlay", "name": "Overlay", "blend": "overlay"},
+    {"id": "add", "name": "Add", "blend": "add"},
+    {"id": "soft_light", "name": "Soft Light", "blend": "soft-light"},
+    {"id": "hard_light", "name": "Hard Light", "blend": "hard-light"},
+    {"id": "difference", "name": "Difference", "blend": "difference"}
+  ]
+}

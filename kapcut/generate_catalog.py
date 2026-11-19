@@ -303,6 +303,26 @@ add("voice","voice_duck_music","Duck music under voice","Key the music clip's vo
 add("voice","voice_remove_silence","Remove silence","Apply a light cleanup pass that reduces silent sections.","voice_edit","capcut_voice")
 add("voice","voice_analyze_loudness","Analyze loudness","Report configured LUFS targets (podcast -16, online -14).","voice_query","capcut_voice",ro=True,idempotent=True)
 
+# ---- studio completion: curve editor, 3D rigs, tracking/roto (18) ----
+add("curves","curve_list","List easing curves","List easing-curve presets with bezier handles and interpolation modes.","studio_complete_query","capcut_studio_complete",ro=True,idempotent=True)
+add("curves","curve_interpolations","List interpolations","List built-in interpolation modes (linear, bezier, hold, elastic, bounce, spring...).","studio_complete_query","capcut_studio_complete",ro=True,idempotent=True)
+add("curves","curve_sample","Sample a curve","Sample an easing curve into normalized values for inspection.","studio_complete_query","capcut_studio_complete",ro=True,idempotent=True)
+add("curves","curve_apply","Apply easing curve","Sample an easing curve onto a clip property as real keyframes.","studio_complete_apply","capcut_studio_complete")
+add("curves","curve_key_smooth","Smooth keyframes","Smooth a clip property's keyframes with a strength.","studio_complete_apply","capcut_studio_complete")
+add("three_d","camera_list_rigs","List camera rigs","List 3D-style camera rigs (dolly, orbit, crane, handheld, rack focus...).","studio_complete_query","capcut_studio_complete",ro=True,idempotent=True)
+add("three_d","camera_apply_rig","Apply camera rig","Compile a camera rig into Concat transform keyframes on a clip.","studio_complete_apply","capcut_studio_complete")
+add("three_d","light_list_rigs","List light rigs","List lighting rigs (three point, noir, soft studio, golden hour, backlit).","studio_complete_query","capcut_studio_complete",ro=True,idempotent=True)
+add("three_d","light_apply_rig","Apply light rig","Add a lighting rig's layers over a span.","studio_complete_apply","capcut_studio_complete")
+add("three_d","particle_list","List particle fields","List CPU particle-field presets (dust, sparks, snow, bokeh, rain...).","studio_complete_query","capcut_studio_complete",ro=True,idempotent=True)
+add("three_d","particle_add","Add particle field","Add a particle-field layer over a span.","studio_complete_apply","capcut_studio_complete")
+add("three_d","composite_list","List composite modes","List compositing blend modes (screen, multiply, overlay, add...).","studio_complete_query","capcut_studio_complete",ro=True,idempotent=True)
+add("three_d","composite_layer","Set composite mode","Set a clip's blend mode for compositing.","studio_complete_apply","capcut_studio_complete")
+add("tracking","track_list","List trackers","List point, two-point, corner-pin and planar tracking presets.","studio_complete_query","capcut_studio_complete",ro=True,idempotent=True)
+add("tracking","track_apply","Apply motion track","Compile tracker points into position/rotation keyframes on a clip.","studio_complete_apply","capcut_studio_complete")
+add("tracking","roto_list_shapes","List roto shapes","List rotoscoping mask shapes (bezier, ellipse, rectangle, polygon).","studio_complete_query","capcut_studio_complete",ro=True,idempotent=True)
+add("tracking","roto_shape_add","Add roto mask","Add a rotoscoping cutout mask to a clip.","studio_complete_apply","capcut_studio_complete")
+add("tracking","motion_stabilize","Stabilize motion","Apply a named stabilization/smoothing level to a clip.","studio_complete_apply","capcut_studio_complete")
+
 add("agent","kapcut_translate","Translate CapCut material",
     "Translate a CapCut material (capcutType/value or effectName/start/duration) into real Concat edit commands.","bridge","capcut_bridge")
 
@@ -394,6 +414,10 @@ for t in T:
         action = "Action::VoiceImport"
     elif t["target_kind"] == "voice_edit":
         action = "Action::VoiceEdit"
+    elif t["target_kind"] == "studio_complete_query":
+        action = "Action::StudioCompleteQuery"
+    elif t["target_kind"] == "studio_complete_apply":
+        action = "Action::StudioCompleteApply"
     elif t["target_kind"] == "studio_edit":
         action = "Action::CapCutStudioEdit"
     elif t["target_kind"] == "studio":

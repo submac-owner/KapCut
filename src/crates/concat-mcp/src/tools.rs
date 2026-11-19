@@ -35,6 +35,8 @@ mod capcut_shape;
 #[rustfmt::skip]
 mod capcut_studio;
 #[rustfmt::skip]
+mod capcut_studio_complete;
+#[rustfmt::skip]
 mod capcut_voice;
 #[rustfmt::skip]
 mod capcut_tools;
@@ -125,6 +127,10 @@ pub enum Action {
     VoiceImport,
     /// Apply a transcript-driven voice edit to the timeline.
     VoiceEdit,
+    /// Query studio-completion data (curves, 3D rigs, trackers) read-only.
+    StudioCompleteQuery,
+    /// Apply a studio-completion preset as real Concat commands.
+    StudioCompleteApply,
 }
 
 /// How a reply is shown to the agent.
@@ -702,7 +708,8 @@ fn input_schema(schemas: &Schemas, tool: &Tool) -> Option<Value> {
         | Action::CapCutShape | Action::CapCutShapeQuery
         | Action::CapCutStudio | Action::CapCutStudioQuery | Action::CapCutStudioEdit
         | Action::CapCutOverlayQuery | Action::CapCutOverlayApply
-        | Action::VoiceQuery | Action::VoiceImport | Action::VoiceEdit => {
+        | Action::VoiceQuery | Action::VoiceImport | Action::VoiceEdit
+        | Action::StudioCompleteQuery | Action::StudioCompleteApply => {
             Some(json!({
                 "type": "object",
                 "properties": {
@@ -926,7 +933,46 @@ fn run(tool: &Tool, arguments: Value, context: Context<'_>) -> Result<Outcome, A
         Action::VoiceQuery => Ok(Outcome::json(capcut_voice::query(tool.name, &arguments))),
         Action::VoiceImport => Ok(Outcome::json(capcut_voice::import(tool.name, &arguments))),
         Action::VoiceEdit => voice_edit(tool, &arguments, backend),
+        Action::StudioCompleteQuery => Ok(Outcome::json(studio_complete_query(tool.name, &arguments))),
+        Action::StudioCompleteApply => studio_complete_apply(tool.name, &arguments, backend),
     }
+}
+
+/// Read-only queries over the studio-completion data.
+#[rustfmt::skip]
+fn studio_complete_query(name: &str, args: &Value) -> Value {
+    match name {
+        "curve_list" => capcut_studio_complete::list_curves(),
+        "curve_interpolations" => capcut_studio_complete::list_interpolations(),
+        "curve_sample" => capcut_studio_complete::curve_sample(args),
+        "camera_list_rigs" => capcut_studio_complete::list_camera_rigs(),
+        "light_list_rigs" => capcut_studio_complete::list_light_rigs(),
+        "particle_list" => capcut_studio_complete::list_particles(),
+        "composite_list" => capcut_studio_complete::list_composite(),
+        "track_list" => capcut_studio_complete::list_trackers(),
+        "roto_list_shapes" => capcut_studio_complete::list_roto_shapes(),
+        _ => json!({ "note": "unknown studio completion query", "name": name }),
+    }
+}
+
+/// Compile a studio-completion preset into one Concat edit step.
+#[rustfmt::skip]
+fn studio_complete_apply(name: &str, args: &Value, backend: &mut dyn Backend) -> Result<Outcome, ApiError> {
+    let command = match name {
+        "curve_apply" => capcut_studio_complete::curve_keys(args),
+        "curve_key_smooth" => capcut_studio_complete::curve_smooth(args),
+        "camera_apply_rig" => capcut_studio_complete::camera_keys(args),
+        "light_apply_rig" => capcut_studio_complete::light_apply(args),
+        "particle_add" => capcut_studio_complete::particle_add(args),
+        "composite_layer" => capcut_studio_complete::composite_layer(args),
+        "track_apply" => capcut_studio_complete::track_apply(args),
+        "roto_shape_add" => capcut_studio_complete::roto_shape(args),
+        "motion_stabilize" => capcut_studio_complete::motion_stabilize(args),
+        _ => json!({ "op": "batch", "commands": [] }),
+    };
+    let path = args.get("path").cloned().unwrap_or(Value::Null);
+    let result = backend.call(request("edit.apply", json!({ "path": path, "command": command }))?)?;
+    Ok(Outcome::json(summary::view(&result)))
 }
 
 /// Apply a transcript-driven voice edit. Each cut is split-at-start,
@@ -1407,7 +1453,8 @@ mod tests {
                 | Action::CapCutShape | Action::CapCutShapeQuery
                 | Action::CapCutStudio | Action::CapCutStudioQuery | Action::CapCutStudioEdit
                 | Action::CapCutOverlayQuery | Action::CapCutOverlayApply
-                | Action::VoiceQuery | Action::VoiceImport | Action::VoiceEdit => {
+                | Action::VoiceQuery | Action::VoiceImport | Action::VoiceEdit
+                | Action::StudioCompleteQuery | Action::StudioCompleteApply => {
                     request("edit.apply", sample.clone())
                 }
                 Action::Mask => mask(sample.clone()),

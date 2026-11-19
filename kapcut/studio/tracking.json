@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "trackers": [
+    {"id": "point", "name": "Point Track", "points": 1, "description": "Track one feature and follow it."},
+    {"id": "two_point", "name": "Two Point", "points": 2, "description": "Track scale and rotation from two features."},
+    {"id": "corner_pin", "name": "Corner Pin", "points": 4, "description": "Track a surface with four corners."},
+    {"id": "planar", "name": "Planar", "points": 4, "description": "Track a flat surface with perspective."}
+  ],
+  "roto_shapes": [
+    {"id": "bezier", "name": "Bezier Shape", "kind": "custom", "points": 4},
+    {"id": "ellipse", "name": "Ellipse", "kind": "ellipse", "points": 0},
+    {"id": "rectangle", "name": "Rectangle", "kind": "rectangle", "points": 4},
+    {"id": "polygon", "name": "Polygon", "kind": "custom", "points": 6}
+  ],
+  "smoothing": [
+    {"id": "steady", "name": "Steady", "strength": 0.4},
+    {"id": "smooth", "name": "Smooth", "strength": 0.7},
+    {"id": "lock", "name": "Lock", "strength": 0.95}
+  ]
+}

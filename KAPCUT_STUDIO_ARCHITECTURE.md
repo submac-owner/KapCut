@@ -1,98 +1,72 @@
-# KapCut Ultra Studio — architecture
+# KapCut Ultra Studio — architecture and status
 
 ## Vision
-
-One agentic video studio combining the capabilities of **CapCut, DaVinci
-Resolve, After Effects, Premiere Pro and Blender** — usable by the local agent
-through the chat panel and by remote agents through MCP. The agent can create
-and edit any video a human can describe.
+One agentic video studio combining **CapCut, DaVinci Resolve, After Effects,
+Premiere Pro and Blender**, usable by the local agent through the OpenCode
+panel and by remote agents through MCP. The agent can create and edit any video
+a human can describe. Voice/narration is a first-class discipline (see
+`docs/KAPCUT_VOICE_PLAN.md`).
 
 ## Hard constraint: CPU only
+This host has **8 GB RAM and no GPU**. All new features compile to CPU data
+(Concat keyframe/command batches or FFmpeg CPU filter graphs). Heavy builds and
+final renders run on GitHub Actions CPU runners. Local work is authoring,
+debugging and inspection only.
 
-This host has **8 GB RAM and no GPU**. Therefore:
-
-- All new Phase A features are **CPU-native**: motion presets compile to
-  Concat keyframe commands (CPU data), and the parallel render path is an
-  **FFmpeg CPU filter graph** (`zoompan`, `fade`, `rotate`, `eq`, `drawtext`,
-  `overlay`) — no WGSL/GPU shaders in our new code.
-- Concat's own compositor has a software-adapter fallback
-  (`CONCAT_GPU=software`, WARP/lavapipe/SwiftShader); we treat it as a
-  preview-only path, not a render path.
-- Heavy builds and final renders run on **GitHub Actions CPU runners**, never
-  on this machine. Local work is authoring, debugging and inspection only.
-- RAM budget: one heavy operation at a time; close sessions and export
-  Evidence between targets. 8 GB cannot hold a 4K timeline + a JVM + Chrome
-  simultaneously.
-
-## Capability map (target -> how we get there -> status)
-
+## Capability map
 | Capability | Inspired by | Our approach | Status |
 |---|---|---|---|
-| Timeline cutting, tracks, captions, stickers | CapCut | Concat core commands; 120+ MCP tools | Phase 0 done |
-| Effects, filters, transitions, masks, audio | CapCut | material bridge -> 132 real Concat packages | bridge done |
-| Motion graphics: presets, keys, easing, loop | After Effects / CapCut | `motion_*` tools + preset compiler (12 presets, CPU graphs) | Phase A done |
-| Graph editor, expressions, shape paths | After Effects | Phase B/C: JS expression runtime + bezier path layers + curve UI | planned |
-| Color grading, wheels, curves, LUTs | Resolve | `concat.adjust`, `concat.color-wheels`, `concat.curves`, LUT packages | mapped |
-| Multi-cam, proxies,响 loudness, delivery | Premiere | Concat core + CI render workers | partial |
-| 3D camera, lights, particles, compositing | Blender | Phase D: engine crates + CPU particle raster | planned |
-| Tracking / camera solve / roto | AE / Resolve | Phase D: point tracker + rotoscoping | planned |
-| Agentic control, remote MCP, chat panel | — | OpenCode chat bridge + stdio/HTTP MCP | prototype |
+| Timeline cutting, tracks, captions, stickers | CapCut | Concat core commands | done |
+| Effects, filters, transitions, masks, audio | CapCut | material bridge (132 packages) | done |
+| Motion: presets, keys, easing, loop | AE / CapCut | 12 presets, CPU keyframe compiler | done |
+| Expressions → keyframes | AE | 8 sampled expressions | done |
+| Shapes / paths | AE | 12 shape presets, trim-path draw-on | done (data layer) |
+| Color grading, wheels, curves, LUTs | Resolve | `concat.adjust` + LUT packages | done (preset layer) |
+| Multi-cam, loudness, delivery | Premiere | Concat core + CI render workers | partial |
+| Studio composition, design system | AE | templates + design tokens + compiler | done |
+| Per-word text animators, beat sync | AE | sampled keyframe compilers | done |
+| Editing-style engine, reference decoder | AE / Resolve | five-dial style + reference profile | done |
+| Overlay frames & animations | CapCut | 67 frames + 76 in/out/loop animations | done |
+| Curve / graph editing | AE | 12 easing curves + bezier sampler → keys | done (data layer) |
+| 3D camera / lights / particles / composite | Blender / AE | 10 rigs, 5 lights, 8 particle fields, 8 blend modes | done (preset layer) |
+| Tracking / camera solve / rotoscoping | AE / Resolve | 4 trackers, 4 roto shapes, 3 smoothing levels | done (data layer) |
+| Transcript-first voice + narration | Premiere / Resolve | 40 MCP tools, Somali + English | done (V1) |
+| OpenCode full-UI side panel | — | native WebView crate + title-bar button | source done |
+| Live reload on MCP save | — | project watcher | source done |
+| Remote HTTP MCP transport | — | design doc (`docs/KAPCUT_REMOTE_MCP.md`) | pending |
+| Visual graph/curve editor UI | AE | data layer done; Slint curve widget | pending |
+| Manual studio UI parity (waveform, LUFS meter) | Premiere / Resolve | not started | pending |
 
-## Phase A (this slice)
+## Tool surface
+**213 MCP tools across 25 families**, compiled and verified by Windows CI.
+Families: agent, animations, audio, captions, clip, color, curves, effects,
+export, expressions, masks, media, motion, overlays, preview, project, shapes,
+studio, style, text, three_d, timeline, tracking, transitions, voice.
 
-- `kapcut/motion/presets.json` — 12 motion presets (in/out/loop), including the
-  three seen in the real CapCut draft: **Slice Rebuild**, **Glare Shrink**,
-  **Popping Candy**.
-- `kapcut/motion/compile.py` — compiles a preset into real `setClipKey` /
-  `addLayerClip` batches and a CPU FFmpeg graph; tests pass.
-- 13 `motion_*` MCP tools (134 total tools, 18 families).
-- Generated Rust `capcut_motion.rs`, wired via `Action::CapCutMotion` and
-  `Action::CapCutMotionQuery`.
-
-## Phases B–E — status
-
-- **B — Expressions (done)**: instead of a heavy JS runtime, 8 AE-style
-  expressions (wiggle, sine, damped sine, pulse, random steps, drift, loopOut,
-  follow path) are **sampled into real keyframe commands** by a CPU compiler.
-  Deterministic, no GPU. 6 `expr_*` tools.
-- **C — Shapes (done for the data/tool layer)**: 12 AE-style shape presets
-  (neon ring, progress arc, gradient orb, star burst, orbit dots, …) mapped to
-  Concat's existing `ShapeStyle` (kind/fill/gradient/stroke/dash/shadow/trim).
-  Trim-path draw-on and radial repeaters compile to real `addShapeClip` batches.
-  3 `shape_*` tools. The visual curve editor UI remains a future window change.
-- **D — Advanced (done as presets)**: 15 presets for camera moves, particle-like
-  effects, color grades and transitions — all mapped to existing Concat commands.
-- **E — Studio glue (partly done)**: 5 project templates, a CPU render-worker
-  workflow, and the remote-MCP design doc. Remote HTTP transport itself is still
-  a future code item; stdio + OpenCode chat panel work now.
-
-Total MCP surface: **143 tools across 20 families**, all compiled and verified
-by Windows CI. All our new code is CPU-only keyframe/command data.
-
-## Phase F — Studio Composition Engine (in progress)
-
-- `kapcut/studio/design.json` — design tokens (4 palettes, type scale, fonts,
-  easing curves, motion durations, layout grid).
-- `kapcut/studio/templates.json` — 4 layered composition templates (Kinetic
-  Title, Particle Reveal, Color Grade Showcase, Logo Lockup) with shapes,
-  typography, effects and camera rigs.
-- `kapcut/studio/compose.py` — compiles a template into real Concat commands:
-  background + element layers, gradient/stroke/shadow shape styles, per-word
-  text, staggered keyframes, particle fields, effect layers, camera rig.
-- 3 `studio_*` MCP tools; total catalog **146 tools / 21 families**.
+## Phases
+- **A–D (done)** — motion, expressions, shapes, advanced presets.
+- **E (partial)** — templates + render-worker workflow done; remote HTTP
+  transport pending.
+- **F (done)** — studio composition engine, design system, 4 templates.
+- **G (done)** — editing-style engine, reference-video decoder, overlay
+  libraries (67 frames, 76 animations), Studio Look button.
+- **H (done)** — curve engine, 3D camera/light/particle/composite rigs,
+  tracking/rotoscoping presets (18 tools).
+- **Voice V1 (done, verified)** — transcript-first voice engine, 40 tools.
 
 ## Holds (per user directive)
+- **No Windows installer / exe** until the mixed AE + CapCut + Premiere +
+  Resolve capability set is approved. The existing draft release stays as-is.
+- The OpenCode panel must host OpenCode's **full UI**, not a chat prototype
+  (`docs/KAPCUT_OPENCODE_PANEL.md`).
 
-- **No Windows installer / exe builds** until the studio reaches the mixed
-  After Effects + CapCut + Premiere Pro + DaVinci Resolve capability set.
-  The existing draft release stays as-is; do not publish or re-tag.
-- **OpenCode side panel must host OpenCode's full UI** (sessions, model picker,
-  diffs, tools), not the minimal chat prototype. See
-  `docs/KAPCUT_OPENCODE_PANEL.md` for the native WebView design.
+## Verification status
+- Source-only features are **not live** in the installed Concat binary.
+- Nothing is called "Done" until GitHub CI reports success and this document
+  reflects it. No installer is built without explicit approval.
 
 ## Rule for every change
-
-1. Data/preset first (JSON) -> generator -> Rust module -> catalog -> CI.
-2. Validate locally with Python (`test_bridge.py`, `test_compile.py`,
-   `validate_catalog.py`) before pushing.
-3. Push; let GitHub CI compile and lint. Never compile on this host.
+1. Data/preset (JSON) → generator → Rust module → catalog → CI.
+2. Validate locally (`generate_catalog.py`, `validate_catalog.py`, `test_*.py`)
+   before pushing.
+3. Push; let Windows CI compile, lint and test. Never build on this host.
