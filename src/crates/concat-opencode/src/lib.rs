@@ -34,7 +34,6 @@ pub fn open_panel(url: &str, project: Option<&Path>) -> Result<(), String> {
 
     let _webview = WebViewBuilder::new()
         .with_url(url)
-        .map_err(|e| e.to_string())?
         .with_initialization_script(&init)
         .build(&window)
         .map_err(|e| e.to_string())?;
