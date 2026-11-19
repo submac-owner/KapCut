@@ -62,9 +62,17 @@ impl Policy {
         let families = std::env::var("KAPCUT_TOOL_FAMILIES")
             .ok()
             .filter(|t| !t.is_empty())
-            .map(|t| t.split(',').map(|f| f.trim().to_ascii_lowercase()).collect())
+            .map(|t| {
+                t.split(',')
+                    .map(|f| f.trim().to_ascii_lowercase())
+                    .collect()
+            })
             .unwrap_or_default();
-        Policy { token, root, families }
+        Policy {
+            token,
+            root,
+            families,
+        }
     }
 
     fn authorized(&self, header: &str) -> bool {
@@ -78,16 +86,24 @@ impl Policy {
     }
 
     fn path_allowed(&self, path: &str) -> bool {
-        let Some(root) = &self.root else { return true; };
-        if path.is_empty() { return true; }
+        let Some(root) = &self.root else {
+            return true;
+        };
+        if path.is_empty() {
+            return true;
+        }
         let candidate = std::path::Path::new(path);
-        if !candidate.is_absolute() { return true; }
+        if !candidate.is_absolute() {
+            return true;
+        }
         let base = std::path::Path::new(root);
         candidate.starts_with(base)
     }
 
     fn tool_allowed(&self, name: &str) -> bool {
-        if self.families.is_empty() { return true; }
+        if self.families.is_empty() {
+            return true;
+        }
         let family = name.split('_').next().unwrap_or("").to_ascii_lowercase();
         self.families.iter().any(|f| f == &family)
     }
@@ -113,7 +129,11 @@ fn refuse_reason(body: &Value, policy: &Policy) -> Option<String> {
                 }
             }
         }
-        if let Some(path) = obj.get("params").and_then(|p| p.get("path")).and_then(Value::as_str) {
+        if let Some(path) = obj
+            .get("params")
+            .and_then(|p| p.get("path"))
+            .and_then(Value::as_str)
+        {
             if !policy.path_allowed(path) {
                 return Some("path is outside KAPCUT_PROJECT_ROOT".to_owned());
             }
@@ -163,27 +183,42 @@ fn read_request(
     let mut headers = Vec::new();
     loop {
         let mut h = String::new();
-        if reader.read_line(&mut h)? == 0 { break; }
-        if h == "\r\n" || h == "\n" { break; }
+        if reader.read_line(&mut h)? == 0 {
+            break;
+        }
+        if h == "\r\n" || h == "\n" {
+            break;
+        }
         if let Some((k, v)) = h.split_once(':') {
             headers.push((k.trim().to_ascii_lowercase(), v.trim().to_string()));
         }
     }
-    let len: usize = headers.iter()
+    let len: usize = headers
+        .iter()
         .find(|(k, _)| k == "content-length")
         .and_then(|(_, v)| v.parse().ok())
         .unwrap_or(0);
     let mut body = vec![0u8; len];
-    if len > 0 { reader.read_exact(&mut body)?; }
+    if len > 0 {
+        reader.read_exact(&mut body)?;
+    }
     Ok((method, path, body, headers))
 }
 
 fn header<'a>(headers: &'a [(String, String)], key: &str) -> &'a str {
-    headers.iter().find(|(k, _)| k == key).map(|(_, v)| v.as_str()).unwrap_or("")
+    headers
+        .iter()
+        .find(|(k, _)| k == key)
+        .map(|(_, v)| v.as_str())
+        .unwrap_or("")
 }
 
 fn respond(stream: &mut TcpStream, status: &str, body: &[u8], json: bool) -> std::io::Result<()> {
-    let kind = if json { "application/json" } else { "text/plain; charset=utf-8" };
+    let kind = if json {
+        "application/json"
+    } else {
+        "text/plain; charset=utf-8"
+    };
     let head = format!(
         "HTTP/1.1 {status}\r\nContent-Type: {kind}\r\nContent-Length: {}\r\nConnection: close\r\nAccess-Control-Allow-Origin: *\r\n\r\n",
         body.len()
@@ -195,7 +230,8 @@ fn respond(stream: &mut TcpStream, status: &str, body: &[u8], json: bool) -> std
 
 fn json_error(id: Value, message: &str, code: i64) -> Vec<u8> {
     serde_json::to_vec(&json!({ "jsonrpc": "2.0", "id": id,
-        "error": { "code": code, "message": message } })).unwrap_or_default()
+        "error": { "code": code, "message": message } }))
+    .unwrap_or_default()
 }
 
 fn handle(mut stream: TcpStream, mode: Mode, policy: &Policy) {
@@ -204,7 +240,12 @@ fn handle(mut stream: TcpStream, mode: Mode, policy: &Policy) {
         Err(_) => return,
     };
     if !policy.authorized(header(&headers, "authorization")) {
-        let _ = respond(&mut stream, "401 Unauthorized", b"bearer token required", false);
+        let _ = respond(
+            &mut stream,
+            "401 Unauthorized",
+            b"bearer token required",
+            false,
+        );
         return;
     }
     if method == "OPTIONS" {
@@ -217,7 +258,8 @@ fn handle(mut stream: TcpStream, mode: Mode, policy: &Policy) {
             "endpoint": "/mcp", "methods": ["POST"],
             "token": if policy.token.is_some() { "bearer" } else { "none" },
             "sandbox": { "projectRoot": policy.root, "toolFamilies": policy.families }
-        }).to_string();
+        })
+        .to_string();
         let _ = respond(&mut stream, "200 OK", info.as_bytes(), true);
         return;
     }
@@ -244,13 +286,16 @@ fn handle(mut stream: TcpStream, mode: Mode, policy: &Policy) {
 
 /// Serve streamable HTTP MCP on `address` until the process ends.
 pub fn serve_http(address: &str, mode: Mode) -> Result<(), String> {
-    let listener = TcpListener::bind(address)
-        .map_err(|e| format!("cannot bind {address}: {e}"))?;
+    let listener = TcpListener::bind(address).map_err(|e| format!("cannot bind {address}: {e}"))?;
     let policy = Policy::from_env();
     eprintln!(
         "concat mcp: HTTP endpoint at http://{address}/mcp through {} (token: {}, root: {:?})",
         backend_description(mode),
-        if policy.token.is_some() { "bearer" } else { "none" },
+        if policy.token.is_some() {
+            "bearer"
+        } else {
+            "none"
+        },
         policy.root
     );
     for stream in listener.incoming() {
@@ -276,10 +321,21 @@ mod tests {
 
     fn policy(token: &str, root: &str, families: &str) -> Policy {
         Policy {
-            token: if token.is_empty() { None } else { Some(token.to_owned()) },
-            root: if root.is_empty() { None } else { Some(root.to_owned()) },
-            families: families.split(',').filter(|f| !f.is_empty())
-                .map(|f| f.to_ascii_lowercase()).collect(),
+            token: if token.is_empty() {
+                None
+            } else {
+                Some(token.to_owned())
+            },
+            root: if root.is_empty() {
+                None
+            } else {
+                Some(root.to_owned())
+            },
+            families: families
+                .split(',')
+                .filter(|f| !f.is_empty())
+                .map(|f| f.to_ascii_lowercase())
+                .collect(),
         }
     }
 
@@ -313,7 +369,10 @@ mod tests {
 
     #[test]
     fn dispatch_answers_a_protocol_ping() {
-        let out = dispatch(br#"{"jsonrpc":"2.0","id":1,"method":"ping"}"#, Mode::Headless);
+        let out = dispatch(
+            br#"{"jsonrpc":"2.0","id":1,"method":"ping"}"#,
+            Mode::Headless,
+        );
         let text = String::from_utf8_lossy(&out);
         assert!(text.contains("\"result\""), "{text}");
     }
