@@ -18,6 +18,7 @@
 //! when it does not.
 
 pub mod backend;
+pub mod http;
 pub mod protocol;
 pub mod schema;
 pub mod summary;
@@ -38,4 +39,10 @@ pub fn run(mode: Mode) -> Result<(), String> {
         backend,
     );
     Ok(())
+}
+
+/// Serve MCP over streamable HTTP at `/mcp`, with bearer auth and the
+/// project-root and tool-family sandbox read from the environment.
+pub fn run_http(address: &str, mode: Mode) -> Result<(), String> {
+    http::serve_http(address, mode)
 }
